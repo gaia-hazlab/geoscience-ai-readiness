@@ -1,0 +1,65 @@
+GEOSCIENCE MODALITIES, MACHINE LEARNING AND DATA READINESS
+Proposed protocol v0.1 | 21 October 2026
+Status: design only. No new corpus, prevalence result, account, API key or repository was created. The separate local scaffold defaults to dry-run.
+
+1. Questions and claims
+
+Measure actual scientific use, not how often papers say “multimodal.” Estimate the share of research articles that (a) use two or more measurement families, (b) actually use ML/DL, (c) jointly train or use a model with multiple families, and (d) test cross-modal representation learning or transfer. Report co-use, joint non-ML inversion, output fusion, joint ML inputs, representation learning and transfer separately. Count input families and evaluation-target families separately. A second target family alone does not establish joint multimodal model inputs.
+
+Report both P(multifamily | AI) and P(AI | multifamily), with joint-training rates distinguished from co-use. Estimate trends only after validation. Publication growth is not dataset reuse; citations are not adoption; a targeted example is not prevalence. An existing cross-modal model refutes “never done” but does not establish general readiness. Any proposition that most papers are single-modality, demand is increasing, or PB access is not replicated remains a hypothesis until this study or a specific source supports it.
+
+2. Two-axis readiness assessment
+
+Task readiness and community maturity should be assessed separately for each holding and task. Task readiness asks whether an identified user can lawfully access the data, interpret units/calibration and native supports, reproduce training, and evaluate leakage, missing modalities and transfer at a documented scale. Community maturity asks whether stewardship, recurring releases, benchmark maintenance, user support, independent reuse and independent replication exist. These are working project assessments, not NSF-mandated grades.
+
+Use an evidence profile rather than one average score. On each relevant dimension distinguish: documented/discoverable; operational demonstration by the originating team; independent use or replication at a stated scope; and sustained, maintained service. “Unknown” is not the lowest grade. Some datasets can be technically operable but lightly adopted; some communities can have mature archives whose cross-modal training workflows are exploratory. A benchmark does not imply a maintained leaderboard; access to a PB archive does not prove that PB were trained on or independently accessed. Retain dates, versions, tasks and citations for every assessment.
+
+3. Corpus and denominators
+
+Freeze original research articles in complete years 2016–2025 from a reviewed journal list. Candidate coverage includes GRL; JGR Solid Earth, Atmospheres, Earth Surface and Oceans; Water Resources Research; HESS; GMD; ESSD; GJI; SRL; Geophysics; Remote Sensing of Environment; and IEEE TGRS. Resolve titles/ISSNs to source IDs and verify publishers and coverage before retrieval. Use four subject strata: solid Earth/geophysics, atmosphere/climate, hydrology/land, and ocean/remote sensing. Prespecify a deterministic assignment for cross-field papers.
+
+The denominator is all eligible research articles in this frozen frame, not papers selected by AI or modality keywords. Include data-free theoretical research in the all-research denominator and report a secondary data-using denominator. Flag data descriptors and methods papers; conduct a sensitivity analysis excluding them. Reviews form a separate evidence corpus. Preprints, editorials and corrections are excluded; conference ML papers supply supplementary examples without entering journal prevalence. This frame supports bounded claims about sampled journals, not all geoscience. A separately specified Earth-science topic frame can test scope sensitivity.
+
+Normalize DOI and deduplicate published/preprint versions; inspect fuzzy title/author matches. Preserve OpenAlex IDs, source/version IDs, query URLs, timestamps and response hashes. Freeze one metadata vintage. Never compare partial 2026 with complete years. Screen likely duplicated studies for clustered sensitivity analysis. Journal coverage and missing abstracts must be reported by year.
+
+4. What counts as a modality
+
+Record broad physical measurement family and fine sensing type, with platform, origin and representation in separate fields. The companion codebook distinguishes elastic/seismic motion, positioning/geodesy, radar, optical reflectance, passive microwave, thermal radiance, atmospheric/hydrologic/oceanographic instruments, gravity, electromagnetic measurements, geochemistry/biology and human-system records. Preserve “other” and uncertain cases; domain experts refine boundaries during calibration.
+
+DAS and seismometers share an elastic family but differ in measurement response and sampling. GNSS and InSAR are separate sensing families here but share a deformation phenomenon; repeat counts under a coarser phenomenon grouping. Three seismic components count as one elastic family. Radar and optical images may share grid dimensions while measuring different physics. A waveform and its spectrogram remain one source family. Simulated and observed waveforms differ in origin, not automatically family. Reanalysis is not direct use of every assimilated instrument. Coordinates or acquisition dates alone are contextual metadata, not automatic cross-modal training.
+
+Record native axes, units, spatial/temporal supports, model representation, alignment, pairing, missing inputs, volume as reported, split units and actual input/target roles. A common model grid must not erase native heterogeneity.
+
+5. Pilot and validation
+
+First calibrate the codebook on 60 diverse papers; keep them outside independent validation. Then select 240 inference papers: four subject strata × three year bands (2016–2018, 2019–2021, 2022–2025) × AI lexical screen positive/negative × ten papers. Within each cell, randomize across its journal/year frame; retain source/year labels. Treat missing abstracts as an explicit audit flag, never a negative actual-use label. If needed, allocate a separate missing-abstract stratum and preserve 240 total. Census undersized cells and record changed probabilities. Save N_h, n_h, seed and inclusion probabilities. Never select most-cited or first-page hits.
+
+Two readers independently annotate all 240; a third adjudicates disagreements. Titles/abstracts screen; methods, results, figures, supplements and data statements substantiate actual use. Every positive label needs a URL/version, section/page and short evidence or paraphrase. Assess mention-only, uncertain, unavailable and not-assessed separately. Missing text cannot establish no ML or one modality.
+
+For automated expansion, freeze a separate double-coded test set, report per-label precision/recall, confusion matrices and agreement, and inspect subfield/year/accessibility errors. Rare labels need actual positive counts and intervals. No model confidence score substitutes for this validation. Choose any larger sample, perhaps 1,200–2,000 papers, after the pilot’s variance, label rarity and annotation time are known. The 240-paper pilot supports pooled/year-band estimates, not precise annual curves.
+
+6. Estimates and missingness
+
+Use inverse inclusion weights 1/pi_i. A binary prevalence is sum(w_i*y_i)/sum(w_i). Conditional rates use the same weighted numerator and prespecified denominator. Report all-paper, actual-ML, actual-ML-plus-multifamily and accessible-full-text denominators. Show modality-count distributions and family-pair matrices, not a single multimodal score.
+
+Use design-based variance or stratified bootstrap, retaining sampling/source and repeated-study structure. Report raw sample sizes, effective sample sizes, 95% intervals and coverage. Composition-standardize pooled trends to fixed subfield weights. Require uncertainty on changes, not two point estimates. Validate any model-assisted error correction against the probability sample.
+
+Unresolved full text is nonresponse; do not replace it after observing outcomes. Report accessible-subset estimates and all-frame bounds assigning unresolved cases negative versus positive. Nonresponse weighting requires explicit assumptions and belongs in sensitivity analyses. Zero rare events cannot establish absence. Code explicit expressed needs from Methods/Data/Discussion separately from assessor-inferred barriers: coverage, labels/QC, additional simulations, metadata, access, benchmarks and transfer. Record source section/page. These requests are not project endorsements; frequency of use does not measure community desire.
+
+7. Execution, outputs and stop gates
+
+A local repository should contain source-resolution/config files, frozen metadata/query manifests, sampling probabilities, codebook/schema, original/adjudicated annotations, validation reports, estimates with intervals/bounds, figures and a DOI-linked evidence table. Publish code, labels and aggregates; retain article text only where rights permit. Public excerpts should total no more than 25 words per work. Legal access does not automatically authorize redistribution.
+
+Gate 1: verify source mapping and scope before counts. Gate 2: inspect 20 diverse screened examples and freeze the calibrated codebook. Gate 3: validate human agreement and ML-label accuracy before prevalence. Gate 4: expand only after a workload/precision/API-cost estimate. Stop on access/authentication/budget limits, inadequate rare-label validation or unsupported coverage. Do not create keys/accounts, buy services, or publish GitHub automatically.
+
+Independent-agent handoff: “Prepare a dry-run frame/query manifest and cost estimate; retrieve only permitted pilot material. Keep keyword screens separate from actual use. Draw the prespecified probability sample, attach evidence and uncertainty, and prepare independent double annotation. Return weighted estimates and missingness bounds only after validation. Do not turn tentative patterns into proposal claims or create a public repository.”
+
+8. Official API checks, 21 October 2026
+
+Use scoped search.title_and_abstract for candidate text queries; default search also matches full text and keywords. Main-frame retrieval uses source/year/type filters without AI keywords. Supported per_page maximum is 100; 200 is deprecated. Basic paging reaches 10,000 results; following a cursor after the first page requires a verified key. Cached PDF/TEI downloads via content_urls also require a key and consume usage. Use legal publisher/repository text for a small pilot, or record unavailable text. No credentials were requested or created here.
+
+https://help.openalex.org/api/searching/
+https://help.openalex.org/api/paging/
+https://help.openalex.org/api/authentication/
+https://help.openalex.org/access/fulltext/
+https://help.openalex.org/data/works/attributes/

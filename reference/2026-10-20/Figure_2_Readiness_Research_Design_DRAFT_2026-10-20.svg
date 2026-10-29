@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="468.0" height="237.6" preserveAspectRatio="xMinYMin meet" viewBox="0 0 468 237" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="468.0" height="237.6"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-237)" style="clip-path: url(#clip)">
+		<g transform="">
+			<text x="6.4799999999999995" y="222.83265753424658" style="font-family: VeraBold; font-size: 12.8px;fill: rgb(9%,12%,16%); stroke:none;" transform="translate(0,445) scale(1,-1)">AI readiness is a testable research question.</text>
+			<text x="6.4799999999999995" y="208.8271232876712" style="font-family: Vera; font-size: 9.0px;fill: rgb(9%,12%,16%); stroke:none;" transform="translate(0,417) scale(1,-1)">Which dataset properties predict reliable scientific use for a stated task and learning method?</text>
+			<ellipse cx="14.760000000000002" cy="187.8016438356164" rx="7.919999999999999" ry="7.160547945205479" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<text x="8.497792968750002" y="184.7416438356164" style="font-family: VeraBold; font-size: 9.0px;fill: rgb(100%,100%,100%); stroke:none;" transform="translate(0,369) scale(1,-1)">01</text>
+			<text x="28.080000000000002" y="184.7076438356164" style="font-family: VeraBold; font-size: 9.1px;fill: rgb(9%,12%,16%); stroke:none;" transform="translate(0,369) scale(1,-1)">Vary the corpus</text>
+			<polyline points="6.48 175.1079, 131.04 175.1079" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 1.5; fill: None; fill-rule: evenodd;"/>
+			<ellipse cx="165.60000000000002" cy="187.8016438356164" rx="7.9199999999999875" ry="7.160547945205479" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,61%,45%); fill-rule: evenodd;"/>
+			<text x="159.33779296875002" y="184.7416438356164" style="font-family: VeraBold; font-size: 9.0px;fill: rgb(100%,100%,100%); stroke:none;" transform="translate(0,369) scale(1,-1)">02</text>
+			<text x="178.92" y="184.7076438356164" style="font-family: VeraBold; font-size: 9.1px;fill: rgb(9%,12%,16%); stroke:none;" transform="translate(0,369) scale(1,-1)">Hold experiment fixed</text>
+			<polyline points="157.32 175.1079, 292.68 175.1079" style="stroke: rgb(0%,61%,45%); stroke-linecap: butt; stroke-width: 1.5; fill: None; fill-rule: evenodd;"/>
+			<ellipse cx="327.96000000000004" cy="187.8016438356164" rx="7.920000000000016" ry="7.160547945205479" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(83%,36%,0%); fill-rule: evenodd;"/>
+			<text x="321.69779296875004" y="184.7416438356164" style="font-family: VeraBold; font-size: 9.0px;fill: rgb(100%,100%,100%); stroke:none;" transform="translate(0,369) scale(1,-1)">03</text>
+			<text x="341.28000000000003" y="184.7076438356164" style="font-family: VeraBold; font-size: 9.1px;fill: rgb(9%,12%,16%); stroke:none;" transform="translate(0,369) scale(1,-1)">Measure consequences</text>
+			<polyline points="319.68 175.1079, 461.52 175.1079" style="stroke: rgb(83%,36%,0%); stroke-linecap: butt; stroke-width: 1.5; fill: None; fill-rule: evenodd;"/>
+			<rect x="9.36" y="153.626301369863" width="3.0600000000000005" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="13.5" y="153.626301369863" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="17.64" y="153.626301369863" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="21.779999999999998" y="153.626301369863" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="25.919999999999998" y="153.626301369863" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="30.06" y="153.626301369863" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="9.36" y="156.71835616438355" width="3.0600000000000005" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="13.5" y="156.71835616438355" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="17.64" y="156.71835616438355" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="21.779999999999998" y="156.71835616438355" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="25.919999999999998" y="156.71835616438355" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="30.06" y="156.71835616438355" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="9.36" y="159.81041095890413" width="3.0600000000000005" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="13.5" y="159.81041095890413" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="17.64" y="159.81041095890413" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="21.779999999999998" y="159.81041095890413" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="25.919999999999998" y="159.81041095890413" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="30.06" y="159.81041095890413" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<text x="40.32000000000001" y="159.87205479452055" style="font-family: Vera; font-size: 9.0px;fill: rgb(9%,12%,16%); stroke:none;" transform="translate(0,319) scale(1,-1)">Native / minimally</text>
+			<text x="40.32000000000001" y="149.07205479452054" style="font-family: Vera; font-size: 9.0px;fill: rgb(9%,12%,16%); stroke:none;" transform="translate(0,298) scale(1,-1)">enhanced</text>
+			<rect x="9.36" y="130.1917808219178" width="3.0600000000000005" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="13.5" y="130.1917808219178" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(73%,78%,81%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<rect x="17.64" y="130.1917808219178" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="21.779999999999998" y="130.1917808219178" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="25.919999999999998" y="130.1917808219178" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(73%,78%,81%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<rect x="30.06" y="130.1917808219178" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="9.36" y="133.28383561643835" width="3.0600000000000005" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="13.5" y="133.28383561643835" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="17.64" y="133.28383561643835" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(73%,78%,81%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<rect x="21.779999999999998" y="133.28383561643835" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="25.919999999999998" y="133.28383561643835" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="30.06" y="133.28383561643835" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="9.36" y="136.3758904109589" width="3.0600000000000005" height="2.11561643835617" style="stroke: rgb(73%,78%,81%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<rect x="13.5" y="136.3758904109589" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="17.64" y="136.3758904109589" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="21.779999999999998" y="136.3758904109589" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="25.919999999999998" y="136.3758904109589" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="30.06" y="136.3758904109589" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(73%,78%,81%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="40.32000000000001" y="136.43753424657535" style="font-family: Vera; font-size: 9.0px;fill: rgb(9%,12%,16%); stroke:none;" transform="translate(0,272) scale(1,-1)">Coverage and</text>
+			<text x="40.32000000000001" y="125.63753424657536" style="font-family: Vera; font-size: 9.0px;fill: rgb(9%,12%,16%); stroke:none;" transform="translate(0,251) scale(1,-1)">rare conditions</text>
+			<rect x="9.36" y="106.75726027397259" width="3.0600000000000005" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="13.5" y="106.75726027397259" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="17.64" y="106.75726027397259" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="21.779999999999998" y="106.75726027397259" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="25.919999999999998" y="106.75726027397259" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="30.06" y="106.75726027397259" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="9.36" y="109.84931506849315" width="3.0600000000000005" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="13.5" y="109.84931506849315" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="17.64" y="109.84931506849315" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="21.779999999999998" y="109.84931506849315" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="25.919999999999998" y="109.84931506849315" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="30.06" y="109.84931506849315" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="9.36" y="112.94136986301369" width="3.0600000000000005" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="13.5" y="112.94136986301369" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="17.64" y="112.94136986301369" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="21.779999999999998" y="112.94136986301369" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="25.919999999999998" y="112.94136986301369" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="30.06" y="112.94136986301369" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="9.0" y="106.4317808219178" width="7.379999999999999" height="3.905753424657533" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.75; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<rect x="17.279999999999998" y="106.4317808219178" width="7.379999999999999" height="3.905753424657533" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.75; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<rect x="25.56" y="106.4317808219178" width="7.379999999999999" height="3.905753424657533" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.75; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<rect x="9.0" y="111.15123287671233" width="7.379999999999999" height="3.905753424657533" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.75; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<rect x="17.279999999999998" y="111.15123287671233" width="7.379999999999999" height="3.905753424657533" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.75; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<rect x="25.56" y="111.15123287671233" width="7.379999999999999" height="3.905753424657533" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.75; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="40.32000000000001" y="113.00301369863013" style="font-family: Vera; font-size: 9.0px;fill: rgb(9%,12%,16%); stroke:none;" transform="translate(0,226) scale(1,-1)">Resolution and</text>
+			<text x="40.32000000000001" y="102.20301369863013" style="font-family: Vera; font-size: 9.0px;fill: rgb(9%,12%,16%); stroke:none;" transform="translate(0,204) scale(1,-1)">compression</text>
+			<rect x="9.36" y="83.3227397260274" width="3.0600000000000005" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="13.5" y="83.3227397260274" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="17.64" y="83.3227397260274" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="21.779999999999998" y="83.3227397260274" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="25.919999999999998" y="83.3227397260274" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="30.06" y="83.3227397260274" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="9.36" y="86.41479452054796" width="3.0600000000000005" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="13.5" y="86.41479452054796" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="17.64" y="86.41479452054796" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="21.779999999999998" y="86.41479452054796" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="25.919999999999998" y="86.41479452054796" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="30.06" y="86.41479452054796" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="9.36" y="89.5068493150685" width="3.0600000000000005" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="13.5" y="89.5068493150685" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="17.64" y="89.5068493150685" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="21.779999999999998" y="89.5068493150685" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="25.919999999999998" y="89.5068493150685" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<rect x="30.06" y="89.5068493150685" width="3.0599999999999987" height="2.11561643835617" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.45; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<polyline points="12.6 87.22849, 30.6 87.22849" style="stroke: rgb(100%,100%,100%); stroke-linecap: butt; stroke-width: 2; fill: None; fill-rule: evenodd;"/>
+			<text x="18.989648437500005" y="84.81945205479452" style="font-family: VeraBold; font-size: 9px;fill: rgb(0%,44%,69%); stroke:none;" transform="translate(0,169) scale(1,-1)">?</text>
+			<text x="40.32000000000001" y="89.56849315068494" style="font-family: Vera; font-size: 9.0px;fill: rgb(9%,12%,16%); stroke:none;" transform="translate(0,179) scale(1,-1)">Metadata and</text>
+			<text x="40.32000000000001" y="78.76849315068495" style="font-family: Vera; font-size: 9.0px;fill: rgb(9%,12%,16%); stroke:none;" transform="translate(0,157) scale(1,-1)">provenance</text>
+			<text x="6.4799999999999995" y="66.45945205479453" style="font-family: Vera; font-size: 9.0px;fill: rgb(30%,35%,40%); stroke:none;" transform="translate(0,132) scale(1,-1)">Controlled changes;</text>
+			<text x="6.4799999999999995" y="55.65945205479453" style="font-family: Vera; font-size: 9.0px;fill: rgb(30%,35%,40%); stroke:none;" transform="translate(0,111) scale(1,-1)">rights preserved.</text>
+			<path d="M 136.08,123.031233 L 147.44,123.031233 Z" style="stroke: rgb(30%,35%,40%); stroke-linecap: butt; stroke-width: 1.2;"/>
+			<polygon points="152.64 123.0312, 147.44 121.0552, 147.44 125.0072" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(30%,35%,40%); fill-rule: evenodd;"/>
+			<rect x="160.2" y="126.93698630136987" width="129.59999999999997" height="39.05753424657533" rx="4.319999999999999" ry="4.319999999999999" style="stroke: none; stroke-linecap: butt; stroke-width: 0.8; fill: rgb(93%,96%,95%); fill-rule: evenodd;"/>
+			<text x="158.92822265625" y="153.17013698630134" style="font-family: VeraBold; font-size: 9.0px;fill: rgb(9%,12%,16%); stroke:none;" transform="translate(0,306) scale(1,-1)">Reference learning + task</text>
+			<text x="181.94677734375" y="143.59808219178083" style="font-family: Vera; font-size: 9.0px;fill: rgb(9%,12%,16%); stroke:none;" transform="translate(0,287) scale(1,-1)">Same architecture,</text>
+			<text x="186.767578125" y="132.79808219178082" style="font-family: Vera; font-size: 9.0px;fill: rgb(9%,12%,16%); stroke:none;" transform="translate(0,265) scale(1,-1)">training and task</text>
+			<path d="M 225,126.286027 L 225,118.466849 Z" style="stroke: rgb(0%,61%,45%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="225 113.2668, 223.024 118.4668, 226.976 118.4668" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,61%,45%); fill-rule: evenodd;"/>
+			<rect x="160.2" y="74.86027397260274" width="129.59999999999997" height="36.453698630137" rx="4.319999999999999" ry="4.319999999999999" style="stroke: rgb(0%,61%,45%); stroke-linecap: butt; stroke-width: 0.9; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="165.19482421875" y="98.16410958904109" style="font-family: VeraBold; font-size: 9.0px;fill: rgb(9%,12%,16%); stroke:none;" transform="translate(0,196) scale(1,-1)">HELD-OUT EVALUATION</text>
+			<text x="171.823974609375" y="88.59205479452055" style="font-family: Vera; font-size: 9.0px;fill: rgb(9%,12%,16%); stroke:none;" transform="translate(0,177) scale(1,-1)">Events / regions / times</text>
+			<text x="174.640869140625" y="77.79205479452055" style="font-family: Vera; font-size: 9.0px;fill: rgb(9%,12%,16%); stroke:none;" transform="translate(0,155) scale(1,-1)">Prespecified partitions</text>
+			<text x="157.798828125" y="61.05945205479452" style="font-family: Vera; font-size: 9.0px;fill: rgb(30%,35%,40%); stroke:none;" transform="translate(0,122) scale(1,-1)">Prevent leakage across splits.</text>
+			<path d="M 296.64,123.031233 L 308.72,123.031233 Z" style="stroke: rgb(30%,35%,40%); stroke-linecap: butt; stroke-width: 1.2;"/>
+			<polygon points="313.92 123.0312, 308.72 121.0552, 308.72 125.0072" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(30%,35%,40%); fill-rule: evenodd;"/>
+			<ellipse cx="326.16" cy="159.4849315068493" rx="2.8799999999999955" ry="2.603835616438346" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(83%,36%,0%); fill-rule: evenodd;"/>
+			<text x="334.43999999999994" y="156.4249315068493" style="font-family: VeraBold; font-size: 9.0px;fill: rgb(9%,12%,16%); stroke:none;" transform="translate(0,312) scale(1,-1)">Performance + transfer</text>
+			<text x="334.43999999999994" y="144.5745205479452" style="font-family: Vera; font-size: 9.0px;fill: rgb(9%,12%,16%); stroke:none;" transform="translate(0,289) scale(1,-1)">Accuracy, transfer,</text>
+			<text x="334.43999999999994" y="133.7745205479452" style="font-family: Vera; font-size: 9.0px;fill: rgb(9%,12%,16%); stroke:none;" transform="translate(0,267) scale(1,-1)">reproducibility</text>
+			<ellipse cx="326.16" cy="122.05479452054796" rx="2.8799999999999955" ry="2.60383561643836" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(83%,36%,0%); fill-rule: evenodd;"/>
+			<text x="334.43999999999994" y="118.99479452054796" style="font-family: VeraBold; font-size: 9.0px;fill: rgb(9%,12%,16%); stroke:none;" transform="translate(0,237) scale(1,-1)">Uncertainty + failure</text>
+			<text x="334.43999999999994" y="107.14438356164383" style="font-family: Vera; font-size: 9.0px;fill: rgb(9%,12%,16%); stroke:none;" transform="translate(0,214) scale(1,-1)">Missing support,</text>
+			<text x="334.43999999999994" y="96.34438356164384" style="font-family: Vera; font-size: 9.0px;fill: rgb(9%,12%,16%); stroke:none;" transform="translate(0,192) scale(1,-1)">failure modes</text>
+			<ellipse cx="326.16" cy="84.62465753424658" rx="2.8799999999999955" ry="2.60383561643836" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(83%,36%,0%); fill-rule: evenodd;"/>
+			<text x="334.43999999999994" y="81.56465753424658" style="font-family: VeraBold; font-size: 9.0px;fill: rgb(9%,12%,16%); stroke:none;" transform="translate(0,163) scale(1,-1)">Appropriate abstention</text>
+			<text x="334.43999999999994" y="69.71424657534249" style="font-family: Vera; font-size: 9.0px;fill: rgb(9%,12%,16%); stroke:none;" transform="translate(0,139) scale(1,-1)">Recognize inadequate</text>
+			<text x="334.43999999999994" y="58.91424657534249" style="font-family: Vera; font-size: 9.0px;fill: rgb(9%,12%,16%); stroke:none;" transform="translate(0,117) scale(1,-1)">evidence</text>
+			<rect x="6.4799999999999995" y="23.10904109589041" width="455.04" height="28.316712328767117" rx="4.319999999999999" ry="4.319999999999999" style="stroke: rgb(68%,74%,78%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(94%,96%,96%); fill-rule: evenodd;"/>
+			<text x="89.37177734375001" y="37.88241095890411" style="font-family: VeraBold; font-size: 9.2px;fill: rgb(9%,12%,16%); stroke:none;" transform="translate(0,75) scale(1,-1)">EVIDENCE-BASED, TASK-SPECIFIC READINESS PROFILES</text>
+			<text x="82.14038085937497" y="26.8841095890411" style="font-family: Vera; font-size: 9.0px;fill: rgb(9%,12%,16%); stroke:none;" transform="translate(0,53) scale(1,-1)">Revise hypotheses and corpus design using independent evidence.</text>
+			<text x="6.4799999999999995" y="6.704383561643834" style="font-family: Vera; font-size: 9.0px;fill: rgb(30%,35%,40%); stroke:none;" transform="translate(0,13) scale(1,-1)">CONCEPTUAL DRAFT | Oct 20, 2026 | Experimental design; no performance results implied.</text>
+		</g>
+	</g>
+</svg>

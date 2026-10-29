@@ -1,0 +1,1047 @@
+[
+  {
+    "id": "das_need_annual",
+    "url": "https://api.openalex.org/works?filter=from_publication_date%3A2020-01-01%2Cto_publication_date%3A2025-12-31%2Ctype%3Aarticle%7Creview%2Ctitle_and_abstract.search%3A%28%22distributed+acoustic+sensing%22%29+AND+%28%22data+scarcity%22+OR+%22data+availability%22+OR+%22data+sharing%22+OR+%22open+dataset%22+OR+%22benchmark+dataset%22+OR+interoperability+OR+standardization+OR+standardisation+OR+%22training+data%22%29&per_page=200&group_by=publication_year",
+    "filter": "from_publication_date:2020-01-01,to_publication_date:2025-12-31,type:article|review,title_and_abstract.search:(\"distributed acoustic sensing\") AND (\"data scarcity\" OR \"data availability\" OR \"data sharing\" OR \"open dataset\" OR \"benchmark dataset\" OR interoperability OR standardization OR standardisation OR \"training data\")",
+    "raw_file": "das_need_annual.json",
+    "count": 41,
+    "x_query": {
+      "oql": "get works where published since 2020-01-01\n  and title-abstract has (stemmed \"distributed acoustic sensing\" AND (stemmed \"benchmark dataset\" OR stemmed \"data availability\" OR stemmed \"data scarcity\" OR stemmed \"data sharing\" OR stemmed \"open dataset\" OR stemmed \"training data\" OR interoperability OR standardisation OR standardization))\n  and published through 2025-12-31\n  and type is ([article](article) or [review](review));\nthen, group those works by year",
+      "x_new_oql": "get the count of works with (stemmed \"distributed acoustic sensing\" AND (stemmed \"benchmark dataset\" OR stemmed \"data availability\" OR stemmed \"data scarcity\" OR stemmed \"data sharing\" OR stemmed \"open dataset\" OR stemmed \"training data\" OR interoperability OR standardisation OR standardization)) in the title or abstract where type is ([article](article) or [review](review)) by year from 2020-01-01 through 2025-12-31",
+      "oqo": {
+        "get_rows": "works",
+        "filter_rows": [
+          {
+            "column_id": "from_publication_date",
+            "value": "2020-01-01"
+          },
+          {
+            "column_id": "title_and_abstract.search",
+            "value": "\"distributed acoustic sensing\"",
+            "operator": "has"
+          },
+          {
+            "column_id": "to_publication_date",
+            "value": "2025-12-31"
+          },
+          {
+            "join": "or",
+            "filters": [
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"benchmark dataset\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"data availability\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"data scarcity\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"data sharing\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"open dataset\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"training data\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "interoperability",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "standardisation",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "standardization",
+                "operator": "has"
+              }
+            ]
+          },
+          {
+            "join": "or",
+            "filters": [
+              {
+                "column_id": "type",
+                "value": "article"
+              },
+              {
+                "column_id": "type",
+                "value": "review"
+              }
+            ]
+          }
+        ],
+        "group_by": [
+          {
+            "column_id": "publication_year"
+          }
+        ]
+      },
+      "url": "/works?filter=from_publication_date:2020-01-01,title_and_abstract.search:%22distributed acoustic sensing%22,to_publication_date:2025-12-31,title_and_abstract.search:%22benchmark dataset%22|%22data availability%22|%22data scarcity%22|%22data sharing%22|%22open dataset%22|%22training data%22|interoperability|standardisation|standardization,type:article|review&group_by=publication_year&per_page=200"
+    },
+    "groups": [
+      {
+        "key": "2025",
+        "key_display_name": "2025",
+        "count": 13
+      },
+      {
+        "key": "2024",
+        "key_display_name": "2024",
+        "count": 9
+      },
+      {
+        "key": "2023",
+        "key_display_name": "2023",
+        "count": 7
+      },
+      {
+        "key": "2022",
+        "key_display_name": "2022",
+        "count": 5
+      },
+      {
+        "key": "2021",
+        "key_display_name": "2021",
+        "count": 4
+      },
+      {
+        "key": "2020",
+        "key_display_name": "2020",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "id": "das_need_sample",
+    "url": "https://api.openalex.org/works?filter=from_publication_date%3A2020-01-01%2Cto_publication_date%3A2025-12-31%2Ctype%3Aarticle%7Creview%2Ctitle_and_abstract.search%3A%28%22distributed+acoustic+sensing%22%29+AND+%28%22data+scarcity%22+OR+%22data+availability%22+OR+%22data+sharing%22+OR+%22open+dataset%22+OR+%22benchmark+dataset%22+OR+interoperability+OR+standardization+OR+standardisation+OR+%22training+data%22%29&per_page=6&sort=cited_by_count%3Adesc&select=id%2Cdoi%2Ctitle%2Cpublication_year%2Ccited_by_count%2Cabstract_inverted_index%2Cprimary_location%2Ctype",
+    "filter": "from_publication_date:2020-01-01,to_publication_date:2025-12-31,type:article|review,title_and_abstract.search:(\"distributed acoustic sensing\") AND (\"data scarcity\" OR \"data availability\" OR \"data sharing\" OR \"open dataset\" OR \"benchmark dataset\" OR interoperability OR standardization OR standardisation OR \"training data\")",
+    "raw_file": "das_need_sample.json",
+    "count": 41,
+    "x_query": {
+      "oql": "get works where published since 2020-01-01\n  and title-abstract has (stemmed \"distributed acoustic sensing\" AND (stemmed \"benchmark dataset\" OR stemmed \"data availability\" OR stemmed \"data scarcity\" OR stemmed \"data sharing\" OR stemmed \"open dataset\" OR stemmed \"training data\" OR interoperability OR standardisation OR standardization))\n  and published through 2025-12-31\n  and type is ([article](article) or [review](review))",
+      "x_new_oql": "get works from 2020-01-01 through 2025-12-31 with (stemmed \"distributed acoustic sensing\" AND (stemmed \"benchmark dataset\" OR stemmed \"data availability\" OR stemmed \"data scarcity\" OR stemmed \"data sharing\" OR stemmed \"open dataset\" OR stemmed \"training data\" OR interoperability OR standardisation OR standardization)) in the title or abstract where type is ([article](article) or [review](review)), most cited first",
+      "oqo": {
+        "get_rows": "works",
+        "filter_rows": [
+          {
+            "column_id": "from_publication_date",
+            "value": "2020-01-01"
+          },
+          {
+            "column_id": "title_and_abstract.search",
+            "value": "\"distributed acoustic sensing\"",
+            "operator": "has"
+          },
+          {
+            "column_id": "to_publication_date",
+            "value": "2025-12-31"
+          },
+          {
+            "join": "or",
+            "filters": [
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"benchmark dataset\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"data availability\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"data scarcity\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"data sharing\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"open dataset\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"training data\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "interoperability",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "standardisation",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "standardization",
+                "operator": "has"
+              }
+            ]
+          },
+          {
+            "join": "or",
+            "filters": [
+              {
+                "column_id": "type",
+                "value": "article"
+              },
+              {
+                "column_id": "type",
+                "value": "review"
+              }
+            ]
+          }
+        ],
+        "sort_by": [
+          {
+            "column_id": "cited_by_count",
+            "direction": "desc"
+          }
+        ]
+      },
+      "url": "/works?filter=from_publication_date:2020-01-01,title_and_abstract.search:%22distributed acoustic sensing%22,to_publication_date:2025-12-31,title_and_abstract.search:%22benchmark dataset%22|%22data availability%22|%22data scarcity%22|%22data sharing%22|%22open dataset%22|%22training data%22|interoperability|standardisation|standardization,type:article|review&sort=cited_by_count:desc&per_page=6"
+    },
+    "groups": []
+  },
+  {
+    "id": "earthquake_simulation_need_annual",
+    "url": "https://api.openalex.org/works?filter=from_publication_date%3A2020-01-01%2Cto_publication_date%3A2025-12-31%2Ctype%3Aarticle%7Creview%2Ctitle_and_abstract.search%3A%28earthquake+AND+%28%22rupture+simulation%22+OR+%22wavefield+simulation%22+OR+%22synthetic+seismograms%22%29%29+AND+%28%22data+scarcity%22+OR+%22data+availability%22+OR+%22data+sharing%22+OR+%22open+dataset%22+OR+%22benchmark+dataset%22+OR+interoperability+OR+standardization+OR+standardisation+OR+%22training+data%22%29&per_page=200&group_by=publication_year",
+    "filter": "from_publication_date:2020-01-01,to_publication_date:2025-12-31,type:article|review,title_and_abstract.search:(earthquake AND (\"rupture simulation\" OR \"wavefield simulation\" OR \"synthetic seismograms\")) AND (\"data scarcity\" OR \"data availability\" OR \"data sharing\" OR \"open dataset\" OR \"benchmark dataset\" OR interoperability OR standardization OR standardisation OR \"training data\")",
+    "raw_file": "earthquake_simulation_need_annual.json",
+    "count": 2,
+    "x_query": {
+      "oql": "get works where published since 2020-01-01\n  and title-abstract has (earthquake AND (stemmed \"benchmark dataset\" OR stemmed \"data availability\" OR stemmed \"data scarcity\" OR stemmed \"data sharing\" OR stemmed \"open dataset\" OR stemmed \"training data\" OR interoperability OR standardisation OR standardization) AND (stemmed \"rupture simulation\" OR stemmed \"synthetic seismograms\" OR stemmed \"wavefield simulation\"))\n  and published through 2025-12-31\n  and type is ([article](article) or [review](review));\nthen, group those works by year",
+      "x_new_oql": "get the count of works with (earthquake AND (stemmed \"benchmark dataset\" OR stemmed \"data availability\" OR stemmed \"data scarcity\" OR stemmed \"data sharing\" OR stemmed \"open dataset\" OR stemmed \"training data\" OR interoperability OR standardisation OR standardization) AND (stemmed \"rupture simulation\" OR stemmed \"synthetic seismograms\" OR stemmed \"wavefield simulation\")) in the title or abstract where type is ([article](article) or [review](review)) by year from 2020-01-01 through 2025-12-31",
+      "oqo": {
+        "get_rows": "works",
+        "filter_rows": [
+          {
+            "column_id": "from_publication_date",
+            "value": "2020-01-01"
+          },
+          {
+            "column_id": "title_and_abstract.search",
+            "value": "earthquake",
+            "operator": "has"
+          },
+          {
+            "column_id": "to_publication_date",
+            "value": "2025-12-31"
+          },
+          {
+            "join": "or",
+            "filters": [
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"benchmark dataset\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"data availability\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"data scarcity\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"data sharing\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"open dataset\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"training data\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "interoperability",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "standardisation",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "standardization",
+                "operator": "has"
+              }
+            ]
+          },
+          {
+            "join": "or",
+            "filters": [
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"rupture simulation\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"synthetic seismograms\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"wavefield simulation\"",
+                "operator": "has"
+              }
+            ]
+          },
+          {
+            "join": "or",
+            "filters": [
+              {
+                "column_id": "type",
+                "value": "article"
+              },
+              {
+                "column_id": "type",
+                "value": "review"
+              }
+            ]
+          }
+        ],
+        "group_by": [
+          {
+            "column_id": "publication_year"
+          }
+        ]
+      },
+      "url": "/works?filter=from_publication_date:2020-01-01,title_and_abstract.search:earthquake,to_publication_date:2025-12-31,title_and_abstract.search:%22benchmark dataset%22|%22data availability%22|%22data scarcity%22|%22data sharing%22|%22open dataset%22|%22training data%22|interoperability|standardisation|standardization,title_and_abstract.search:%22rupture simulation%22|%22synthetic seismograms%22|%22wavefield simulation%22,type:article|review&group_by=publication_year&per_page=200"
+    },
+    "groups": [
+      {
+        "key": "2025",
+        "key_display_name": "2025",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "id": "earthquake_simulation_need_sample",
+    "url": "https://api.openalex.org/works?filter=from_publication_date%3A2020-01-01%2Cto_publication_date%3A2025-12-31%2Ctype%3Aarticle%7Creview%2Ctitle_and_abstract.search%3A%28earthquake+AND+%28%22rupture+simulation%22+OR+%22wavefield+simulation%22+OR+%22synthetic+seismograms%22%29%29+AND+%28%22data+scarcity%22+OR+%22data+availability%22+OR+%22data+sharing%22+OR+%22open+dataset%22+OR+%22benchmark+dataset%22+OR+interoperability+OR+standardization+OR+standardisation+OR+%22training+data%22%29&per_page=6&sort=cited_by_count%3Adesc&select=id%2Cdoi%2Ctitle%2Cpublication_year%2Ccited_by_count%2Cabstract_inverted_index%2Cprimary_location%2Ctype",
+    "filter": "from_publication_date:2020-01-01,to_publication_date:2025-12-31,type:article|review,title_and_abstract.search:(earthquake AND (\"rupture simulation\" OR \"wavefield simulation\" OR \"synthetic seismograms\")) AND (\"data scarcity\" OR \"data availability\" OR \"data sharing\" OR \"open dataset\" OR \"benchmark dataset\" OR interoperability OR standardization OR standardisation OR \"training data\")",
+    "raw_file": "earthquake_simulation_need_sample.json",
+    "count": 2,
+    "x_query": {
+      "oql": "get works where published since 2020-01-01\n  and title-abstract has (earthquake AND (stemmed \"benchmark dataset\" OR stemmed \"data availability\" OR stemmed \"data scarcity\" OR stemmed \"data sharing\" OR stemmed \"open dataset\" OR stemmed \"training data\" OR interoperability OR standardisation OR standardization) AND (stemmed \"rupture simulation\" OR stemmed \"synthetic seismograms\" OR stemmed \"wavefield simulation\"))\n  and published through 2025-12-31\n  and type is ([article](article) or [review](review))",
+      "x_new_oql": "get works from 2020-01-01 through 2025-12-31 with (earthquake AND (stemmed \"benchmark dataset\" OR stemmed \"data availability\" OR stemmed \"data scarcity\" OR stemmed \"data sharing\" OR stemmed \"open dataset\" OR stemmed \"training data\" OR interoperability OR standardisation OR standardization) AND (stemmed \"rupture simulation\" OR stemmed \"synthetic seismograms\" OR stemmed \"wavefield simulation\")) in the title or abstract where type is ([article](article) or [review](review)), most cited first",
+      "oqo": {
+        "get_rows": "works",
+        "filter_rows": [
+          {
+            "column_id": "from_publication_date",
+            "value": "2020-01-01"
+          },
+          {
+            "column_id": "title_and_abstract.search",
+            "value": "earthquake",
+            "operator": "has"
+          },
+          {
+            "column_id": "to_publication_date",
+            "value": "2025-12-31"
+          },
+          {
+            "join": "or",
+            "filters": [
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"benchmark dataset\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"data availability\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"data scarcity\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"data sharing\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"open dataset\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"training data\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "interoperability",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "standardisation",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "standardization",
+                "operator": "has"
+              }
+            ]
+          },
+          {
+            "join": "or",
+            "filters": [
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"rupture simulation\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"synthetic seismograms\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"wavefield simulation\"",
+                "operator": "has"
+              }
+            ]
+          },
+          {
+            "join": "or",
+            "filters": [
+              {
+                "column_id": "type",
+                "value": "article"
+              },
+              {
+                "column_id": "type",
+                "value": "review"
+              }
+            ]
+          }
+        ],
+        "sort_by": [
+          {
+            "column_id": "cited_by_count",
+            "direction": "desc"
+          }
+        ]
+      },
+      "url": "/works?filter=from_publication_date:2020-01-01,title_and_abstract.search:earthquake,to_publication_date:2025-12-31,title_and_abstract.search:%22benchmark dataset%22|%22data availability%22|%22data scarcity%22|%22data sharing%22|%22open dataset%22|%22training data%22|interoperability|standardisation|standardization,title_and_abstract.search:%22rupture simulation%22|%22synthetic seismograms%22|%22wavefield simulation%22,type:article|review&sort=cited_by_count:desc&per_page=6"
+    },
+    "groups": []
+  },
+  {
+    "id": "geodesy_ml_need_annual",
+    "url": "https://api.openalex.org/works?filter=from_publication_date%3A2020-01-01%2Cto_publication_date%3A2025-12-31%2Ctype%3Aarticle%7Creview%2Ctitle_and_abstract.search%3A%28%28geodesy+OR+geodetic+OR+GNSS%29+AND+%28%22machine+learning%22+OR+%22deep+learning%22%29%29+AND+%28%22data+scarcity%22+OR+%22data+availability%22+OR+%22data+sharing%22+OR+%22open+dataset%22+OR+%22benchmark+dataset%22+OR+interoperability+OR+standardization+OR+standardisation+OR+%22training+data%22%29&per_page=200&group_by=publication_year",
+    "filter": "from_publication_date:2020-01-01,to_publication_date:2025-12-31,type:article|review,title_and_abstract.search:((geodesy OR geodetic OR GNSS) AND (\"machine learning\" OR \"deep learning\")) AND (\"data scarcity\" OR \"data availability\" OR \"data sharing\" OR \"open dataset\" OR \"benchmark dataset\" OR interoperability OR standardization OR standardisation OR \"training data\")",
+    "raw_file": "geodesy_ml_need_annual.json",
+    "count": 59,
+    "x_query": {
+      "oql": "get works where published from 2020-01-01 through 2025-12-31\n  and title-abstract has ((GNSS OR geodesy OR geodetic) AND (stemmed \"benchmark dataset\" OR stemmed \"data availability\" OR stemmed \"data scarcity\" OR stemmed \"data sharing\" OR stemmed \"open dataset\" OR stemmed \"training data\" OR interoperability OR standardisation OR standardization) AND (stemmed \"deep learning\" OR stemmed \"machine learning\"))\n  and type is ([article](article) or [review](review));\nthen, group those works by year",
+      "x_new_oql": "get the count of works with ((GNSS OR geodesy OR geodetic) AND (stemmed \"benchmark dataset\" OR stemmed \"data availability\" OR stemmed \"data scarcity\" OR stemmed \"data sharing\" OR stemmed \"open dataset\" OR stemmed \"training data\" OR interoperability OR standardisation OR standardization) AND (stemmed \"deep learning\" OR stemmed \"machine learning\")) in the title or abstract where type is ([article](article) or [review](review)) by year from 2020-01-01 through 2025-12-31",
+      "oqo": {
+        "get_rows": "works",
+        "filter_rows": [
+          {
+            "column_id": "from_publication_date",
+            "value": "2020-01-01"
+          },
+          {
+            "column_id": "to_publication_date",
+            "value": "2025-12-31"
+          },
+          {
+            "join": "or",
+            "filters": [
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "GNSS",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "geodesy",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "geodetic",
+                "operator": "has"
+              }
+            ]
+          },
+          {
+            "join": "or",
+            "filters": [
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"benchmark dataset\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"data availability\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"data scarcity\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"data sharing\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"open dataset\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"training data\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "interoperability",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "standardisation",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "standardization",
+                "operator": "has"
+              }
+            ]
+          },
+          {
+            "join": "or",
+            "filters": [
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"deep learning\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"machine learning\"",
+                "operator": "has"
+              }
+            ]
+          },
+          {
+            "join": "or",
+            "filters": [
+              {
+                "column_id": "type",
+                "value": "article"
+              },
+              {
+                "column_id": "type",
+                "value": "review"
+              }
+            ]
+          }
+        ],
+        "group_by": [
+          {
+            "column_id": "publication_year"
+          }
+        ]
+      },
+      "url": "/works?filter=from_publication_date:2020-01-01,to_publication_date:2025-12-31,title_and_abstract.search:GNSS|geodesy|geodetic,title_and_abstract.search:%22benchmark dataset%22|%22data availability%22|%22data scarcity%22|%22data sharing%22|%22open dataset%22|%22training data%22|interoperability|standardisation|standardization,title_and_abstract.search:%22deep learning%22|%22machine learning%22,type:article|review&group_by=publication_year&per_page=200"
+    },
+    "groups": [
+      {
+        "key": "2025",
+        "key_display_name": "2025",
+        "count": 25
+      },
+      {
+        "key": "2024",
+        "key_display_name": "2024",
+        "count": 14
+      },
+      {
+        "key": "2022",
+        "key_display_name": "2022",
+        "count": 8
+      },
+      {
+        "key": "2023",
+        "key_display_name": "2023",
+        "count": 6
+      },
+      {
+        "key": "2021",
+        "key_display_name": "2021",
+        "count": 4
+      },
+      {
+        "key": "2020",
+        "key_display_name": "2020",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "id": "geodesy_ml_need_sample",
+    "url": "https://api.openalex.org/works?filter=from_publication_date%3A2020-01-01%2Cto_publication_date%3A2025-12-31%2Ctype%3Aarticle%7Creview%2Ctitle_and_abstract.search%3A%28%28geodesy+OR+geodetic+OR+GNSS%29+AND+%28%22machine+learning%22+OR+%22deep+learning%22%29%29+AND+%28%22data+scarcity%22+OR+%22data+availability%22+OR+%22data+sharing%22+OR+%22open+dataset%22+OR+%22benchmark+dataset%22+OR+interoperability+OR+standardization+OR+standardisation+OR+%22training+data%22%29&per_page=6&sort=cited_by_count%3Adesc&select=id%2Cdoi%2Ctitle%2Cpublication_year%2Ccited_by_count%2Cabstract_inverted_index%2Cprimary_location%2Ctype",
+    "filter": "from_publication_date:2020-01-01,to_publication_date:2025-12-31,type:article|review,title_and_abstract.search:((geodesy OR geodetic OR GNSS) AND (\"machine learning\" OR \"deep learning\")) AND (\"data scarcity\" OR \"data availability\" OR \"data sharing\" OR \"open dataset\" OR \"benchmark dataset\" OR interoperability OR standardization OR standardisation OR \"training data\")",
+    "raw_file": "geodesy_ml_need_sample.json",
+    "count": 59,
+    "x_query": {
+      "oql": "get works where published from 2020-01-01 through 2025-12-31\n  and title-abstract has ((GNSS OR geodesy OR geodetic) AND (stemmed \"benchmark dataset\" OR stemmed \"data availability\" OR stemmed \"data scarcity\" OR stemmed \"data sharing\" OR stemmed \"open dataset\" OR stemmed \"training data\" OR interoperability OR standardisation OR standardization) AND (stemmed \"deep learning\" OR stemmed \"machine learning\"))\n  and type is ([article](article) or [review](review))",
+      "x_new_oql": "get works from 2020-01-01 through 2025-12-31 with ((GNSS OR geodesy OR geodetic) AND (stemmed \"benchmark dataset\" OR stemmed \"data availability\" OR stemmed \"data scarcity\" OR stemmed \"data sharing\" OR stemmed \"open dataset\" OR stemmed \"training data\" OR interoperability OR standardisation OR standardization) AND (stemmed \"deep learning\" OR stemmed \"machine learning\")) in the title or abstract where type is ([article](article) or [review](review)), most cited first",
+      "oqo": {
+        "get_rows": "works",
+        "filter_rows": [
+          {
+            "column_id": "from_publication_date",
+            "value": "2020-01-01"
+          },
+          {
+            "column_id": "to_publication_date",
+            "value": "2025-12-31"
+          },
+          {
+            "join": "or",
+            "filters": [
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "GNSS",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "geodesy",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "geodetic",
+                "operator": "has"
+              }
+            ]
+          },
+          {
+            "join": "or",
+            "filters": [
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"benchmark dataset\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"data availability\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"data scarcity\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"data sharing\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"open dataset\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"training data\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "interoperability",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "standardisation",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "standardization",
+                "operator": "has"
+              }
+            ]
+          },
+          {
+            "join": "or",
+            "filters": [
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"deep learning\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"machine learning\"",
+                "operator": "has"
+              }
+            ]
+          },
+          {
+            "join": "or",
+            "filters": [
+              {
+                "column_id": "type",
+                "value": "article"
+              },
+              {
+                "column_id": "type",
+                "value": "review"
+              }
+            ]
+          }
+        ],
+        "sort_by": [
+          {
+            "column_id": "cited_by_count",
+            "direction": "desc"
+          }
+        ]
+      },
+      "url": "/works?filter=from_publication_date:2020-01-01,to_publication_date:2025-12-31,title_and_abstract.search:GNSS|geodesy|geodetic,title_and_abstract.search:%22benchmark dataset%22|%22data availability%22|%22data scarcity%22|%22data sharing%22|%22open dataset%22|%22training data%22|interoperability|standardisation|standardization,title_and_abstract.search:%22deep learning%22|%22machine learning%22,type:article|review&sort=cited_by_count:desc&per_page=6"
+    },
+    "groups": []
+  },
+  {
+    "id": "hydrology_ml_need_annual",
+    "url": "https://api.openalex.org/works?filter=from_publication_date%3A2020-01-01%2Cto_publication_date%3A2025-12-31%2Ctype%3Aarticle%7Creview%2Ctitle_and_abstract.search%3A%28%28hydrology+OR+hydrological%29+AND+%28%22machine+learning%22+OR+%22deep+learning%22%29%29+AND+%28%22data+scarcity%22+OR+%22data+availability%22+OR+%22data+sharing%22+OR+%22open+dataset%22+OR+%22benchmark+dataset%22+OR+interoperability+OR+standardization+OR+standardisation+OR+%22training+data%22%29&per_page=200&group_by=publication_year",
+    "filter": "from_publication_date:2020-01-01,to_publication_date:2025-12-31,type:article|review,title_and_abstract.search:((hydrology OR hydrological) AND (\"machine learning\" OR \"deep learning\")) AND (\"data scarcity\" OR \"data availability\" OR \"data sharing\" OR \"open dataset\" OR \"benchmark dataset\" OR interoperability OR standardization OR standardisation OR \"training data\")",
+    "raw_file": "hydrology_ml_need_annual.json",
+    "count": 387,
+    "x_query": {
+      "oql": "get works where published from 2020-01-01 through 2025-12-31\n  and title-abstract has ((stemmed \"benchmark dataset\" OR stemmed \"data availability\" OR stemmed \"data scarcity\" OR stemmed \"data sharing\" OR stemmed \"open dataset\" OR stemmed \"training data\" OR interoperability OR standardisation OR standardization) AND (stemmed \"deep learning\" OR stemmed \"machine learning\") AND (hydrological OR hydrology))\n  and type is ([article](article) or [review](review));\nthen, group those works by year",
+      "x_new_oql": "get the count of works with ((stemmed \"benchmark dataset\" OR stemmed \"data availability\" OR stemmed \"data scarcity\" OR stemmed \"data sharing\" OR stemmed \"open dataset\" OR stemmed \"training data\" OR interoperability OR standardisation OR standardization) AND (stemmed \"deep learning\" OR stemmed \"machine learning\") AND (hydrological OR hydrology)) in the title or abstract where type is ([article](article) or [review](review)) by year from 2020-01-01 through 2025-12-31",
+      "oqo": {
+        "get_rows": "works",
+        "filter_rows": [
+          {
+            "column_id": "from_publication_date",
+            "value": "2020-01-01"
+          },
+          {
+            "column_id": "to_publication_date",
+            "value": "2025-12-31"
+          },
+          {
+            "join": "or",
+            "filters": [
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"benchmark dataset\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"data availability\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"data scarcity\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"data sharing\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"open dataset\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"training data\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "interoperability",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "standardisation",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "standardization",
+                "operator": "has"
+              }
+            ]
+          },
+          {
+            "join": "or",
+            "filters": [
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"deep learning\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"machine learning\"",
+                "operator": "has"
+              }
+            ]
+          },
+          {
+            "join": "or",
+            "filters": [
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "hydrological",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "hydrology",
+                "operator": "has"
+              }
+            ]
+          },
+          {
+            "join": "or",
+            "filters": [
+              {
+                "column_id": "type",
+                "value": "article"
+              },
+              {
+                "column_id": "type",
+                "value": "review"
+              }
+            ]
+          }
+        ],
+        "group_by": [
+          {
+            "column_id": "publication_year"
+          }
+        ]
+      },
+      "url": "/works?filter=from_publication_date:2020-01-01,to_publication_date:2025-12-31,title_and_abstract.search:%22benchmark dataset%22|%22data availability%22|%22data scarcity%22|%22data sharing%22|%22open dataset%22|%22training data%22|interoperability|standardisation|standardization,title_and_abstract.search:%22deep learning%22|%22machine learning%22,title_and_abstract.search:hydrological|hydrology,type:article|review&group_by=publication_year&per_page=200"
+    },
+    "groups": [
+      {
+        "key": "2025",
+        "key_display_name": "2025",
+        "count": 154
+      },
+      {
+        "key": "2024",
+        "key_display_name": "2024",
+        "count": 82
+      },
+      {
+        "key": "2023",
+        "key_display_name": "2023",
+        "count": 48
+      },
+      {
+        "key": "2022",
+        "key_display_name": "2022",
+        "count": 47
+      },
+      {
+        "key": "2021",
+        "key_display_name": "2021",
+        "count": 33
+      },
+      {
+        "key": "2020",
+        "key_display_name": "2020",
+        "count": 23
+      }
+    ]
+  },
+  {
+    "id": "hydrology_ml_need_sample",
+    "url": "https://api.openalex.org/works?filter=from_publication_date%3A2020-01-01%2Cto_publication_date%3A2025-12-31%2Ctype%3Aarticle%7Creview%2Ctitle_and_abstract.search%3A%28%28hydrology+OR+hydrological%29+AND+%28%22machine+learning%22+OR+%22deep+learning%22%29%29+AND+%28%22data+scarcity%22+OR+%22data+availability%22+OR+%22data+sharing%22+OR+%22open+dataset%22+OR+%22benchmark+dataset%22+OR+interoperability+OR+standardization+OR+standardisation+OR+%22training+data%22%29&per_page=6&sort=cited_by_count%3Adesc&select=id%2Cdoi%2Ctitle%2Cpublication_year%2Ccited_by_count%2Cabstract_inverted_index%2Cprimary_location%2Ctype",
+    "filter": "from_publication_date:2020-01-01,to_publication_date:2025-12-31,type:article|review,title_and_abstract.search:((hydrology OR hydrological) AND (\"machine learning\" OR \"deep learning\")) AND (\"data scarcity\" OR \"data availability\" OR \"data sharing\" OR \"open dataset\" OR \"benchmark dataset\" OR interoperability OR standardization OR standardisation OR \"training data\")",
+    "raw_file": "hydrology_ml_need_sample.json",
+    "count": 387,
+    "x_query": {
+      "oql": "get works where published from 2020-01-01 through 2025-12-31\n  and title-abstract has ((stemmed \"benchmark dataset\" OR stemmed \"data availability\" OR stemmed \"data scarcity\" OR stemmed \"data sharing\" OR stemmed \"open dataset\" OR stemmed \"training data\" OR interoperability OR standardisation OR standardization) AND (stemmed \"deep learning\" OR stemmed \"machine learning\") AND (hydrological OR hydrology))\n  and type is ([article](article) or [review](review))",
+      "x_new_oql": "get works from 2020-01-01 through 2025-12-31 with ((stemmed \"benchmark dataset\" OR stemmed \"data availability\" OR stemmed \"data scarcity\" OR stemmed \"data sharing\" OR stemmed \"open dataset\" OR stemmed \"training data\" OR interoperability OR standardisation OR standardization) AND (stemmed \"deep learning\" OR stemmed \"machine learning\") AND (hydrological OR hydrology)) in the title or abstract where type is ([article](article) or [review](review)), most cited first",
+      "oqo": {
+        "get_rows": "works",
+        "filter_rows": [
+          {
+            "column_id": "from_publication_date",
+            "value": "2020-01-01"
+          },
+          {
+            "column_id": "to_publication_date",
+            "value": "2025-12-31"
+          },
+          {
+            "join": "or",
+            "filters": [
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"benchmark dataset\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"data availability\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"data scarcity\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"data sharing\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"open dataset\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"training data\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "interoperability",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "standardisation",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "standardization",
+                "operator": "has"
+              }
+            ]
+          },
+          {
+            "join": "or",
+            "filters": [
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"deep learning\"",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "\"machine learning\"",
+                "operator": "has"
+              }
+            ]
+          },
+          {
+            "join": "or",
+            "filters": [
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "hydrological",
+                "operator": "has"
+              },
+              {
+                "column_id": "title_and_abstract.search",
+                "value": "hydrology",
+                "operator": "has"
+              }
+            ]
+          },
+          {
+            "join": "or",
+            "filters": [
+              {
+                "column_id": "type",
+                "value": "article"
+              },
+              {
+                "column_id": "type",
+                "value": "review"
+              }
+            ]
+          }
+        ],
+        "sort_by": [
+          {
+            "column_id": "cited_by_count",
+            "direction": "desc"
+          }
+        ]
+      },
+      "url": "/works?filter=from_publication_date:2020-01-01,to_publication_date:2025-12-31,title_and_abstract.search:%22benchmark dataset%22|%22data availability%22|%22data scarcity%22|%22data sharing%22|%22open dataset%22|%22training data%22|interoperability|standardisation|standardization,title_and_abstract.search:%22deep learning%22|%22machine learning%22,title_and_abstract.search:hydrological|hydrology,type:article|review&sort=cited_by_count:desc&per_page=6"
+    },
+    "groups": []
+  }
+]

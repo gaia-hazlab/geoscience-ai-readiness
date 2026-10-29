@@ -1,0 +1,16 @@
+name: Offline checks and reproduction
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  offline-checks:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: prefix-dev/setup-pixi@v0.8.1
+        with:
+          locked: true
+      - run: pixi run all

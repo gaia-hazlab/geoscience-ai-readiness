@@ -1,0 +1,839 @@
+{
+  "prepared_at_utc": "2026-10-29T18:07:45.605367+00:00",
+  "package_version": "0.3.0",
+  "source_paths_are_workspace_relative": true,
+  "files": [
+    {
+      "path": ".github/workflows/checks.yml",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/.github/workflows/checks.yml",
+      "source_sha256": "1c648d688b0559fdd64f3cc49e2c51c21cdee13e0fc445f1dc6d17862ee464ac",
+      "treatment": "intentional derivative: release metadata/guide/packaging/version update; analysis behavior retained",
+      "release_sha256": "076220fc5cdda5e2e2f3ac0089003c31e16d6d8a299723ad96ae0902d2f4e7a8"
+    },
+    {
+      "path": ".gitignore",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/.gitignore",
+      "source_sha256": "dee42c9b2ab88759f965323fc82ac08b1ce4143ebbcb031b2c2d8763ba3defd2",
+      "treatment": "intentional derivative: release metadata/guide/packaging/version update; analysis behavior retained",
+      "release_sha256": "89c037e5871c04b58558cb11ed4cc19ee897b990976830ec240a67f062d338e6"
+    },
+    {
+      "path": ".zenodo.json",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/.zenodo.json",
+      "source_sha256": "c1d3239f18df695245398724cef68c4c5ed24b6850270abdcdfd566417abe924",
+      "treatment": "intentional derivative: release metadata/guide/packaging/version update; analysis behavior retained",
+      "release_sha256": "8ac4c81519aff73466645af99ecec3c5921eb23e1f657ab936089af2131bf29b"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/CHANGELOG.md",
+      "source_sha256": "9c710b4d34ce0c949135ce38c4f3bbec81531f5ca56b430a339667050e6f0369",
+      "treatment": "intentional derivative: release metadata/guide/packaging/version update; analysis behavior retained",
+      "release_sha256": "81057242a1fd47678a9d7d3200a7fd8c8f7bba44bb4a8ac74294d575111ba131"
+    },
+    {
+      "path": "CITATION.cff",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/CITATION.cff",
+      "source_sha256": "295d618859569620e328dc5246a1df144fbde36e3ad996b5fa096c270b64a564",
+      "treatment": "intentional derivative: release metadata/guide/packaging/version update; analysis behavior retained",
+      "release_sha256": "1bbf4a8dd1799615212e0effa306378268e15a39085e44524ad164ed139240bc"
+    },
+    {
+      "path": "LICENSE",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/LICENSE",
+      "source_sha256": "d68961b2f45efa34e351a704660317934bac7be6dd7f7012709ab8bd83ae14c8",
+      "treatment": "unchanged copy",
+      "release_sha256": "d68961b2f45efa34e351a704660317934bac7be6dd7f7012709ab8bd83ae14c8"
+    },
+    {
+      "path": "README.md",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/README.md",
+      "source_sha256": "09b5d65870f3c6028296c8aff1de10dd4b2a6e0a95c86cffd94903d183cb2d00",
+      "treatment": "intentional derivative: release metadata/guide/packaging/version update; analysis behavior retained",
+      "release_sha256": "a8d14a093e26edcb04274bd162c983afdc7de153aa54a7ca320fc43dbc72d6d1"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/THIRD_PARTY_NOTICES.md",
+      "source_sha256": "6122e39383737839835b8763801a5067df63c0a05413cb6c9fe7ad2dd94ebc79",
+      "treatment": "intentional derivative: release metadata/guide/packaging/version update; analysis behavior retained",
+      "release_sha256": "bd82e74170edcd46eddbc49bef9550e1d16ba1adf5a2ae6abeb434c90374c051"
+    },
+    {
+      "path": "citation.bib",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/citation.bib",
+      "source_sha256": "ed503b0df556f3f7e2b463675585b478017affca73717aa0604f2a502e8520f7",
+      "treatment": "intentional derivative: release metadata/guide/packaging/version update; analysis behavior retained",
+      "release_sha256": "9780bde579528cbaefaa0f3ff2d94f2d27e2bae2a11cc79c6710a9675ed58efb"
+    },
+    {
+      "path": "data/openalex/2026-10-21/all_article_review.json",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/data/openalex/2026-10-21/all_article_review.json",
+      "source_sha256": "3f9ead2022efb5465a5f755f76a1b2e082135bf9f03be5a2564ffd5aef87fafd",
+      "treatment": "unchanged copy",
+      "release_sha256": "3f9ead2022efb5465a5f755f76a1b2e082135bf9f03be5a2564ffd5aef87fafd"
+    },
+    {
+      "path": "data/openalex/2026-10-21/das_article_review.json",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/data/openalex/2026-10-21/das_article_review.json",
+      "source_sha256": "af337906d852c4054ea2cb554614f4d3438d96cadedea82555a7cbeda8f7d72e",
+      "treatment": "unchanged copy",
+      "release_sha256": "af337906d852c4054ea2cb554614f4d3438d96cadedea82555a7cbeda8f7d72e"
+    },
+    {
+      "path": "data/openalex/2026-10-21/manifest.json",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/data/openalex/2026-10-21/manifest.json",
+      "source_sha256": "80c55ba156abbf6c0ffac679306652006f5f6ff28afcb9736bdcd8c87039349c",
+      "treatment": "unchanged copy",
+      "release_sha256": "80c55ba156abbf6c0ffac679306652006f5f6ff28afcb9736bdcd8c87039349c"
+    },
+    {
+      "path": "docs/provenance.md",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/docs/provenance.md",
+      "source_sha256": "8ee523c52d0a2d85c5dc1a58dd2051db9fbc7efb4616cc70aa09a584868d86f6",
+      "treatment": "intentional derivative: release metadata/guide/packaging/version update; analysis behavior retained",
+      "release_sha256": "8b9efa83a579cdc7634233d21f29b315ae9b2eddaaa8f2fdb5cbec9382d4e801"
+    },
+    {
+      "path": "provenance/ai_readiness_source_hashes.json",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/provenance/ai_readiness_source_hashes.json",
+      "source_sha256": "5ffcc8e088b3051f7932da489174addb84ece8c022aadaebb8b9127a6c09d670",
+      "treatment": "unchanged copy",
+      "release_sha256": "5ffcc8e088b3051f7932da489174addb84ece8c022aadaebb8b9127a6c09d670"
+    },
+    {
+      "path": "provenance/original_source_hashes.json",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/provenance/original_source_hashes.json",
+      "source_sha256": "24ddeb9129e07b0017f794dc9ac1b9079e4a273dd14676e3498d9c3d17c075f9",
+      "treatment": "unchanged copy",
+      "release_sha256": "24ddeb9129e07b0017f794dc9ac1b9079e4a273dd14676e3498d9c3d17c075f9"
+    },
+    {
+      "path": "provenance/v0.2.0_release_validation.json",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/provenance/release_validation.json",
+      "source_sha256": "a1af7dd67800037a54fa9321efcfbe3a336aabd5ab38982534cf23a027d08702",
+      "treatment": "unchanged historical receipt, renamed to identify version",
+      "release_sha256": "a1af7dd67800037a54fa9321efcfbe3a336aabd5ab38982534cf23a027d08702"
+    },
+    {
+      "path": "provenance/v0.1.0_release_validation.json",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/provenance/v0.1.0_release_validation.json",
+      "source_sha256": "3475c4db056f5bc7eb1d9f85c3f7a59169803dbbf7c02041821a246e3be8c0ff",
+      "treatment": "unchanged copy",
+      "release_sha256": "3475c4db056f5bc7eb1d9f85c3f7a59169803dbbf7c02041821a246e3be8c0ff"
+    },
+    {
+      "path": "provenance/v0.1.0_reproduction_comparison.json",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/provenance/v0.1.0_reproduction_comparison.json",
+      "source_sha256": "cbdca94c8f4dd023e4f42939ee453c461e9cb45db4546ed6ff97a0c54f5e26a1",
+      "treatment": "unchanged copy",
+      "release_sha256": "cbdca94c8f4dd023e4f42939ee453c461e9cb45db4546ed6ff97a0c54f5e26a1"
+    },
+    {
+      "path": "pyproject.toml",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/pyproject.toml",
+      "source_sha256": "067bb54b9347770bbcc57913aea6930fa67984449c3392a0fd4ac26438aa2f06",
+      "treatment": "intentional derivative: release metadata/guide/packaging/version update; analysis behavior retained",
+      "release_sha256": "e8100a5d576824adad4125dd1a581e1fb9e8523e1ac371f7a6c71eae0adb5974"
+    },
+    {
+      "path": "reference/2026-10-20/Figure_1_Event_Linked_Corpus_DRAFT_2026-10-20.pdf",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/reference/2026-10-20/Figure_1_Event_Linked_Corpus_DRAFT_2026-10-20.pdf",
+      "source_sha256": "3aa8a999f45691582ac1c78a39b57fe466bb6864dad67b5485fc960101b30bea",
+      "treatment": "unchanged copy",
+      "release_sha256": "3aa8a999f45691582ac1c78a39b57fe466bb6864dad67b5485fc960101b30bea"
+    },
+    {
+      "path": "reference/2026-10-20/Figure_1_Event_Linked_Corpus_DRAFT_2026-10-20.png",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/reference/2026-10-20/Figure_1_Event_Linked_Corpus_DRAFT_2026-10-20.png",
+      "source_sha256": "6fd68e7f10b9123f41ea1513c660a1398691852c38428c4fa6f4f8b9b11bb770",
+      "treatment": "unchanged copy",
+      "release_sha256": "6fd68e7f10b9123f41ea1513c660a1398691852c38428c4fa6f4f8b9b11bb770"
+    },
+    {
+      "path": "reference/2026-10-20/Figure_1_Event_Linked_Corpus_DRAFT_2026-10-20.svg",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/reference/2026-10-20/Figure_1_Event_Linked_Corpus_DRAFT_2026-10-20.svg",
+      "source_sha256": "cdeb065925c327d75adfae6a7acb15cec8e3cc7367e9d405b472bfd9153e641c",
+      "treatment": "unchanged copy",
+      "release_sha256": "cdeb065925c327d75adfae6a7acb15cec8e3cc7367e9d405b472bfd9153e641c"
+    },
+    {
+      "path": "reference/2026-10-20/Figure_1_Event_Linked_Corpus_DRAFT_2026-10-20_caption.txt",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/reference/2026-10-20/Figure_1_Event_Linked_Corpus_DRAFT_2026-10-20_caption.txt",
+      "source_sha256": "3094ea2ce9bcee98c8d33f59afe1ab7d6e71fdbf26cf736d37ef3afcfad5f72d",
+      "treatment": "unchanged copy",
+      "release_sha256": "3094ea2ce9bcee98c8d33f59afe1ab7d6e71fdbf26cf736d37ef3afcfad5f72d"
+    },
+    {
+      "path": "reference/2026-10-20/Figure_2_Readiness_Research_Design_DRAFT_2026-10-20.pdf",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/reference/2026-10-20/Figure_2_Readiness_Research_Design_DRAFT_2026-10-20.pdf",
+      "source_sha256": "a8ef167188dfc20e16dcfb91a9103169d003ebf93d14d7dc49d812e1a20b814c",
+      "treatment": "unchanged copy",
+      "release_sha256": "a8ef167188dfc20e16dcfb91a9103169d003ebf93d14d7dc49d812e1a20b814c"
+    },
+    {
+      "path": "reference/2026-10-20/Figure_2_Readiness_Research_Design_DRAFT_2026-10-20.png",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/reference/2026-10-20/Figure_2_Readiness_Research_Design_DRAFT_2026-10-20.png",
+      "source_sha256": "6d5cab9dde3e1f3f024510c064ba6d9b0b131523cf7ca7471dc5f35be4837acd",
+      "treatment": "unchanged copy",
+      "release_sha256": "6d5cab9dde3e1f3f024510c064ba6d9b0b131523cf7ca7471dc5f35be4837acd"
+    },
+    {
+      "path": "reference/2026-10-20/Figure_2_Readiness_Research_Design_DRAFT_2026-10-20.svg",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/reference/2026-10-20/Figure_2_Readiness_Research_Design_DRAFT_2026-10-20.svg",
+      "source_sha256": "f3fb28baf2b1bd75d646ef32b40fd5178d43bfe2915adba974cffbb993c8d9c4",
+      "treatment": "unchanged copy",
+      "release_sha256": "f3fb28baf2b1bd75d646ef32b40fd5178d43bfe2915adba974cffbb993c8d9c4"
+    },
+    {
+      "path": "reference/2026-10-20/Figure_2_Readiness_Research_Design_DRAFT_2026-10-20_caption.txt",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/reference/2026-10-20/Figure_2_Readiness_Research_Design_DRAFT_2026-10-20_caption.txt",
+      "source_sha256": "129a3b285a618261258df95807bd3ac3f10b6c24a12d9d1e2c9948461e0f5860",
+      "treatment": "unchanged copy",
+      "release_sha256": "129a3b285a618261258df95807bd3ac3f10b6c24a12d9d1e2c9948461e0f5860"
+    },
+    {
+      "path": "reference/2026-10-20/captions_and_alt_text.json",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/reference/2026-10-20/captions_and_alt_text.json",
+      "source_sha256": "b9eda00e838286b310eb39469e4406aad574a2869a3f72404c2040b68b5d497a",
+      "treatment": "unchanged copy",
+      "release_sha256": "b9eda00e838286b310eb39469e4406aad574a2869a3f72404c2040b68b5d497a"
+    },
+    {
+      "path": "reference/2026-10-21/Figure_2_DAS_Publication_Activity_2026-10-21.png",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/reference/2026-10-21/Figure_2_DAS_Publication_Activity_2026-10-21.png",
+      "source_sha256": "b255832a150a84d419ffa651704b34782d02a734eece1ad7dd76c49846f2bca8",
+      "treatment": "unchanged copy",
+      "release_sha256": "b255832a150a84d419ffa651704b34782d02a734eece1ad7dd76c49846f2bca8"
+    },
+    {
+      "path": "reference/2026-10-21/Figure_2_DAS_Publication_Activity_2026-10-21.svg",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/reference/2026-10-21/Figure_2_DAS_Publication_Activity_2026-10-21.svg",
+      "source_sha256": "a2be66534c9cf87f184d197bf1ac25f611a1058b78a8442ca1aeaca092a72bef",
+      "treatment": "unchanged copy",
+      "release_sha256": "a2be66534c9cf87f184d197bf1ac25f611a1058b78a8442ca1aeaca092a72bef"
+    },
+    {
+      "path": "reference/2026-10-21/Figure_2_DAS_Publication_Activity_Caption_2026-10-21.txt",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/reference/2026-10-21/Figure_2_DAS_Publication_Activity_Caption_2026-10-21.txt",
+      "source_sha256": "357d6369fddf03308548d7a5656b01d9339ca40b4a8dcaa05244b4f2abdcc75e",
+      "treatment": "unchanged copy",
+      "release_sha256": "357d6369fddf03308548d7a5656b01d9339ca40b4a8dcaa05244b4f2abdcc75e"
+    },
+    {
+      "path": "reference/2026-10-21/Figure_2_DAS_Publication_Activity_Data_2026-10-21.csv",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/reference/2026-10-21/Figure_2_DAS_Publication_Activity_Data_2026-10-21.csv",
+      "source_sha256": "febc6a667ce0b07b4968a491f5a94fc45e49e6210519080ee8edca1e950125b2",
+      "treatment": "unchanged copy",
+      "release_sha256": "febc6a667ce0b07b4968a491f5a94fc45e49e6210519080ee8edca1e950125b2"
+    },
+    {
+      "path": "reference/2026-10-23/DAS_Publication_Activity_2026-10-23_v2.pdf",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/reference/2026-10-23/DAS_Publication_Activity_2026-10-23_v2.pdf",
+      "source_sha256": "e70817c9cc50418284bbdad1f14ba3b195f838a926fdacd1a3aa28cd94b90221",
+      "treatment": "unchanged copy",
+      "release_sha256": "e70817c9cc50418284bbdad1f14ba3b195f838a926fdacd1a3aa28cd94b90221"
+    },
+    {
+      "path": "reference/2026-10-23/DAS_Publication_Activity_2026-10-23_v2.png",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/reference/2026-10-23/DAS_Publication_Activity_2026-10-23_v2.png",
+      "source_sha256": "0003a8518474a4a290a271b02b8513fe3c786380f072f95944b66f60dbeb0a03",
+      "treatment": "unchanged copy",
+      "release_sha256": "0003a8518474a4a290a271b02b8513fe3c786380f072f95944b66f60dbeb0a03"
+    },
+    {
+      "path": "reference/2026-10-23/DAS_Publication_Activity_2026-10-23_v2.svg",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/reference/2026-10-23/DAS_Publication_Activity_2026-10-23_v2.svg",
+      "source_sha256": "23a7d0b9900933707d2a6dbaa6a8ac8771e2d59f526695954d1f73c4e816a761",
+      "treatment": "unchanged copy",
+      "release_sha256": "23a7d0b9900933707d2a6dbaa6a8ac8771e2d59f526695954d1f73c4e816a761"
+    },
+    {
+      "path": "reference/2026-10-23/DAS_Publication_Activity_2026-10-23_v2_Caption.txt",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/reference/2026-10-23/DAS_Publication_Activity_2026-10-23_v2_Caption.txt",
+      "source_sha256": "efc0ebb3281e2b5316d72cb85a1aac9380df0ad744da3a015eb9648b591b9465",
+      "treatment": "unchanged copy",
+      "release_sha256": "efc0ebb3281e2b5316d72cb85a1aac9380df0ad744da3a015eb9648b591b9465"
+    },
+    {
+      "path": "reference/2026-10-23/DAS_Publication_Activity_2026-10-23_v2_Data.csv",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/reference/2026-10-23/DAS_Publication_Activity_2026-10-23_v2_Data.csv",
+      "source_sha256": "febc6a667ce0b07b4968a491f5a94fc45e49e6210519080ee8edca1e950125b2",
+      "treatment": "unchanged copy",
+      "release_sha256": "febc6a667ce0b07b4968a491f5a94fc45e49e6210519080ee8edca1e950125b2"
+    },
+    {
+      "path": "reference/2026-10-23/DAS_Publication_Activity_2026-10-23_v2_Provenance.json",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/reference/2026-10-23/DAS_Publication_Activity_2026-10-23_v2_Provenance.json",
+      "source_sha256": "0e79781e3ec785823ef8dd96e4c87f9f021a2d7ab3ea33bc167ed238cd639729",
+      "treatment": "unchanged copy",
+      "release_sha256": "0e79781e3ec785823ef8dd96e4c87f9f021a2d7ab3ea33bc167ed238cd639729"
+    },
+    {
+      "path": "requirements-tested.txt",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/requirements-tested.txt",
+      "source_sha256": "75b930a06743e1ab52f7ebf1663453688f29a5a0ec65a1476e5f86d245b0a348",
+      "treatment": "unchanged copy",
+      "release_sha256": "75b930a06743e1ab52f7ebf1663453688f29a5a0ec65a1476e5f86d245b0a348"
+    },
+    {
+      "path": "scripts/build_das_activity_figure.py",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/scripts/build_das_activity_figure.py",
+      "source_sha256": "3be15f2a896452cddb6a7521a41a675e9d825252a47a81811a2aba1a02396a4b",
+      "treatment": "unchanged copy",
+      "release_sha256": "3be15f2a896452cddb6a7521a41a675e9d825252a47a81811a2aba1a02396a4b"
+    },
+    {
+      "path": "scripts/build_figure_examples.py",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/scripts/build_figure_examples.py",
+      "source_sha256": "ca168462a90c452a2f346b5c5f2c93a6d37f2366582fad508bfdfe207490f21c",
+      "treatment": "unchanged copy",
+      "release_sha256": "ca168462a90c452a2f346b5c5f2c93a6d37f2366582fad508bfdfe207490f21c"
+    },
+    {
+      "path": "src/aidatasets_figures/__init__.py",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/src/aidatasets_figures/__init__.py",
+      "source_sha256": "523f691a0e07f9556f8fdb2fe4ebf5ef205ed849edc29f33d23c2671a4945891",
+      "treatment": "intentional derivative: release metadata/guide/packaging/version update; analysis behavior retained",
+      "release_sha256": "9a8e9b7eab2380799d340957f0f1154936714c90bdf917030372d6f597385678"
+    },
+    {
+      "path": "src/aidatasets_figures/__main__.py",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/src/aidatasets_figures/__main__.py",
+      "source_sha256": "82c055caf6234abcb5b627bffe67f537387aaed9bdd53072cb28329e3ea8fcda",
+      "treatment": "unchanged copy",
+      "release_sha256": "82c055caf6234abcb5b627bffe67f537387aaed9bdd53072cb28329e3ea8fcda"
+    },
+    {
+      "path": "src/aidatasets_figures/conceptual.py",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/src/aidatasets_figures/conceptual.py",
+      "source_sha256": "898ba177a4d20d96508e43c7caf8f979754789b00b4a3682adfddca55b89e96c",
+      "treatment": "unchanged copy",
+      "release_sha256": "898ba177a4d20d96508e43c7caf8f979754789b00b4a3682adfddca55b89e96c"
+    },
+    {
+      "path": "src/aidatasets_figures/das_activity.py",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/src/aidatasets_figures/das_activity.py",
+      "source_sha256": "5839eceaaf75e482f925572b939822eedd593020f165170f0c50286d1240e96e",
+      "treatment": "unchanged copy",
+      "release_sha256": "5839eceaaf75e482f925572b939822eedd593020f165170f0c50286d1240e96e"
+    },
+    {
+      "path": "src/aidatasets_figures/rendering.py",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/src/aidatasets_figures/rendering.py",
+      "source_sha256": "fff413c38a0fa9c17b34e8476c26516e451dcc2a1fd81d56000399893b1c294e",
+      "treatment": "unchanged copy",
+      "release_sha256": "fff413c38a0fa9c17b34e8476c26516e451dcc2a1fd81d56000399893b1c294e"
+    },
+    {
+      "path": "src/aidatasets_figures/snapshots/2026-10-21/all_article_review.json",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/src/aidatasets_figures/snapshots/2026-10-21/all_article_review.json",
+      "source_sha256": "3f9ead2022efb5465a5f755f76a1b2e082135bf9f03be5a2564ffd5aef87fafd",
+      "treatment": "unchanged copy",
+      "release_sha256": "3f9ead2022efb5465a5f755f76a1b2e082135bf9f03be5a2564ffd5aef87fafd"
+    },
+    {
+      "path": "src/aidatasets_figures/snapshots/2026-10-21/das_article_review.json",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/src/aidatasets_figures/snapshots/2026-10-21/das_article_review.json",
+      "source_sha256": "af337906d852c4054ea2cb554614f4d3438d96cadedea82555a7cbeda8f7d72e",
+      "treatment": "unchanged copy",
+      "release_sha256": "af337906d852c4054ea2cb554614f4d3438d96cadedea82555a7cbeda8f7d72e"
+    },
+    {
+      "path": "src/aidatasets_figures/snapshots/2026-10-21/manifest.json",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/src/aidatasets_figures/snapshots/2026-10-21/manifest.json",
+      "source_sha256": "80c55ba156abbf6c0ffac679306652006f5f6ff28afcb9736bdcd8c87039349c",
+      "treatment": "unchanged copy",
+      "release_sha256": "80c55ba156abbf6c0ffac679306652006f5f6ff28afcb9736bdcd8c87039349c"
+    },
+    {
+      "path": "src/aidatasets_figures/vector_drawing.py",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/src/aidatasets_figures/vector_drawing.py",
+      "source_sha256": "a2a2c590118dbcd3cb3f1d8759dfc11ef899eb6c4ea1e633d3166aeb2ec0fd02",
+      "treatment": "unchanged copy",
+      "release_sha256": "a2a2c590118dbcd3cb3f1d8759dfc11ef899eb6c4ea1e633d3166aeb2ec0fd02"
+    },
+    {
+      "path": "tests/test_das_activity.py",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/tests/test_das_activity.py",
+      "source_sha256": "b683d58e29321d9ffa23aeda53b5bd323fc9a0efcabe37db79365276f01af6e8",
+      "treatment": "unchanged copy",
+      "release_sha256": "b683d58e29321d9ffa23aeda53b5bd323fc9a0efcabe37db79365276f01af6e8"
+    },
+    {
+      "path": "tests/test_portability.py",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/tests/test_portability.py",
+      "source_sha256": "fa0345506f6e794f56910cce10226ce4b5aff05c886416fc4fca6827f45de638",
+      "treatment": "unchanged copy",
+      "release_sha256": "fa0345506f6e794f56910cce10226ce4b5aff05c886416fc4fca6827f45de638"
+    },
+    {
+      "path": "tools/ai_readiness/README.md",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/tools/ai_readiness/README.md",
+      "source_sha256": "d52d2a8e418e56e7d0212dc15ae14c8ce8594779d06b969de98adf627703d721",
+      "treatment": "unchanged copy",
+      "release_sha256": "d52d2a8e418e56e7d0212dc15ae14c8ce8594779d06b969de98adf627703d721"
+    },
+    {
+      "path": "tools/ai_readiness/__init__.py",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/tools/ai_readiness/__init__.py",
+      "source_sha256": "d50c544cda5304ec8635776e1f304b75e09f1045831e4c421e49652eac3ca80c",
+      "treatment": "unchanged copy",
+      "release_sha256": "d50c544cda5304ec8635776e1f304b75e09f1045831e4c421e49652eac3ca80c"
+    },
+    {
+      "path": "tools/ai_readiness/__main__.py",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/tools/ai_readiness/__main__.py",
+      "source_sha256": "d979d345002b2bf66652d5a2a4c15d71107cbd2ee38b2281de81405f40be14fb",
+      "treatment": "unchanged copy",
+      "release_sha256": "d979d345002b2bf66652d5a2a4c15d71107cbd2ee38b2281de81405f40be14fb"
+    },
+    {
+      "path": "tools/ai_readiness/adapter.py",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/tools/ai_readiness/adapter.py",
+      "source_sha256": "0dcb5cf8655dab05552a03ea3d7a7ee5f7fe96acf4bdbc92bca0e80e67b111e6",
+      "treatment": "unchanged copy",
+      "release_sha256": "0dcb5cf8655dab05552a03ea3d7a7ee5f7fe96acf4bdbc92bca0e80e67b111e6"
+    },
+    {
+      "path": "tools/ai_readiness/annotation.schema.json",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/tools/ai_readiness/annotation.schema.json",
+      "source_sha256": "5639b0bce71dcfd2ff074f89668a02e39c0791b84a47660c07a654147fb786eb",
+      "treatment": "unchanged copy",
+      "release_sha256": "5639b0bce71dcfd2ff074f89668a02e39c0791b84a47660c07a654147fb786eb"
+    },
+    {
+      "path": "tools/ai_readiness/cohort_protocol.example.json",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/tools/ai_readiness/cohort_protocol.example.json",
+      "source_sha256": "de4fec5744d24c7a8c541455eeb9c12bde51e633c17da8c46478656fa522ef10",
+      "treatment": "unchanged copy",
+      "release_sha256": "de4fec5744d24c7a8c541455eeb9c12bde51e633c17da8c46478656fa522ef10"
+    },
+    {
+      "path": "tools/ai_readiness/core.py",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/tools/ai_readiness/core.py",
+      "source_sha256": "d8ba823f0c1459d7c4175425601228708dac50f4979f65339e2e134f5ba9a333",
+      "treatment": "unchanged copy",
+      "release_sha256": "d8ba823f0c1459d7c4175425601228708dac50f4979f65339e2e134f5ba9a333"
+    },
+    {
+      "path": "tools/ai_readiness/endpoint_protocol.example.json",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/tools/ai_readiness/endpoint_protocol.example.json",
+      "source_sha256": "1afc67a9629c91673da1bbb148fc5ae0860e7800691733b936360f681d4e0cdf",
+      "treatment": "unchanged copy",
+      "release_sha256": "1afc67a9629c91673da1bbb148fc5ae0860e7800691733b936360f681d4e0cdf"
+    },
+    {
+      "path": "tools/ai_readiness/plot_report.py",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/tools/ai_readiness/plot_report.py",
+      "source_sha256": "1e1c8a87a8b99f02dfcb70611d28b7ecd23abf8cc4085fb691f397036633ad44",
+      "treatment": "unchanged copy",
+      "release_sha256": "1e1c8a87a8b99f02dfcb70611d28b7ecd23abf8cc4085fb691f397036633ad44"
+    },
+    {
+      "path": "tools/ai_readiness/tests/fixtures/works.jsonl",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/tools/ai_readiness/tests/fixtures/works.jsonl",
+      "source_sha256": "1ed403d552637426b1404e8cbf89cef379e018e5302d9d94ef5192a5ae73126c",
+      "treatment": "unchanged copy",
+      "release_sha256": "1ed403d552637426b1404e8cbf89cef379e018e5302d9d94ef5192a5ae73126c"
+    },
+    {
+      "path": "tools/ai_readiness/tests/test_adapter.py",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/tools/ai_readiness/tests/test_adapter.py",
+      "source_sha256": "7b9c608508ff166bed1512476feb61d6393a3b96529cd5de202872b291e78045",
+      "treatment": "unchanged copy",
+      "release_sha256": "7b9c608508ff166bed1512476feb61d6393a3b96529cd5de202872b291e78045"
+    },
+    {
+      "path": "tools/ai_readiness/tests/test_endpoint_changes.py",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/tools/ai_readiness/tests/test_endpoint_changes.py",
+      "source_sha256": "d1b522a2d366dbc41effd5e8705b0c9c9b9cda78684af5e5480d931ce030f602",
+      "treatment": "unchanged copy",
+      "release_sha256": "d1b522a2d366dbc41effd5e8705b0c9c9b9cda78684af5e5480d931ce030f602"
+    },
+    {
+      "path": "tools/ai_readiness/tests/test_pipeline.py",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/tools/ai_readiness/tests/test_pipeline.py",
+      "source_sha256": "0f5aede9641759dd325e3172cfb824a26ae27c8c8225310a71e2c9eb357096aa",
+      "treatment": "unchanged copy",
+      "release_sha256": "0f5aede9641759dd325e3172cfb824a26ae27c8c8225310a71e2c9eb357096aa"
+    },
+    {
+      "path": "tools/ai_readiness/tests/test_plot_report.py",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/tools/ai_readiness/tests/test_plot_report.py",
+      "source_sha256": "4f06db3a2d44c8058cb6ebc3a9a9c70c89e3bc8af023b6208f2b389e1229ed04",
+      "treatment": "unchanged copy",
+      "release_sha256": "4f06db3a2d44c8058cb6ebc3a9a9c70c89e3bc8af023b6208f2b389e1229ed04"
+    },
+    {
+      "path": "tools/ai_readiness/tests/test_sample_binding.py",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/tools/ai_readiness/tests/test_sample_binding.py",
+      "source_sha256": "3c7a4c28c6ea832d064c44328fc01aa8dded7b08695152d9177e0892e9a56846",
+      "treatment": "unchanged copy",
+      "release_sha256": "3c7a4c28c6ea832d064c44328fc01aa8dded7b08695152d9177e0892e9a56846"
+    },
+    {
+      "path": "tools/ai_readiness/tests/test_training_regimes.py",
+      "source": "analysis/2026-10-23/das_plot_remake/aidatasets-proposal-figures/tools/ai_readiness/tests/test_training_regimes.py",
+      "source_sha256": "3bfff403f5ccf58c9b27c4317afff515bf8f9dacb72df2c00cffd1bb7059d9aa",
+      "treatment": "unchanged copy",
+      "release_sha256": "3bfff403f5ccf58c9b27c4317afff515bf8f9dacb72df2c00cffd1bb7059d9aa"
+    },
+    {
+      "path": "standalone/literature_study.py",
+      "source": "analysis/2026-10-23/literature_study_update/literature_study.py",
+      "source_sha256": "25b229014018107668fee9eb6363170e7f8ccb8967893b0dd00e46e8a8696754",
+      "treatment": "unchanged copy",
+      "release_sha256": "25b229014018107668fee9eb6363170e7f8ccb8967893b0dd00e46e8a8696754"
+    },
+    {
+      "path": "standalone/README.md",
+      "source": "analysis/2026-10-23/literature_study_update/README.md",
+      "source_sha256": "2ae68358e0350f093466c9215aea22d58628701d878bea4aedc99dc1b5f0aa91",
+      "treatment": "unchanged copy",
+      "release_sha256": "2ae68358e0350f093466c9215aea22d58628701d878bea4aedc99dc1b5f0aa91"
+    },
+    {
+      "path": "standalone/config.example.json",
+      "source": "analysis/2026-10-23/literature_study_update/config.example.json",
+      "source_sha256": "b9d31cb4bfc2648e3f041aa73f03fe5fc8f99388a15be81e56e39bd4751d2fb2",
+      "treatment": "unchanged copy",
+      "release_sha256": "b9d31cb4bfc2648e3f041aa73f03fe5fc8f99388a15be81e56e39bd4751d2fb2"
+    },
+    {
+      "path": "standalone/annotation.schema.json",
+      "source": "analysis/2026-10-23/literature_study_update/annotation.schema.json",
+      "source_sha256": "a2e38b6ce4d68609515c3f1d88fd820e58f8aaa6fb436462843578f916515fd0",
+      "treatment": "unchanged copy",
+      "release_sha256": "a2e38b6ce4d68609515c3f1d88fd820e58f8aaa6fb436462843578f916515fd0"
+    },
+    {
+      "path": "standalone/tests/test_pipeline.py",
+      "source": "analysis/2026-10-23/literature_study_update/tests/test_pipeline.py",
+      "source_sha256": "16d2c24167a7953b2eebd635043c47dd9af103b24ccfa137e1ec27072c51cb58",
+      "treatment": "unchanged copy",
+      "release_sha256": "16d2c24167a7953b2eebd635043c47dd9af103b24ccfa137e1ec27072c51cb58"
+    },
+    {
+      "path": "standalone/tests/test_sample_binding.py",
+      "source": "analysis/2026-10-23/literature_study_update/tests/test_sample_binding.py",
+      "source_sha256": "d91c6558c62d8895087b04ba5c51c8eb921235c1e7c84def8e3cf57eda72bea8",
+      "treatment": "unchanged copy",
+      "release_sha256": "d91c6558c62d8895087b04ba5c51c8eb921235c1e7c84def8e3cf57eda72bea8"
+    },
+    {
+      "path": "standalone/tests/test_training_regimes.py",
+      "source": "analysis/2026-10-23/literature_study_update/tests/test_training_regimes.py",
+      "source_sha256": "1182240d387e5f07bb6a85644b8e3219ea0a65dd2c3adc2f0fb50881d34bb393",
+      "treatment": "unchanged copy",
+      "release_sha256": "1182240d387e5f07bb6a85644b8e3219ea0a65dd2c3adc2f0fb50881d34bb393"
+    },
+    {
+      "path": "instrument/build_readiness_instrument.py",
+      "source": "analysis/2026-10-23/community_readiness_revision/build_readiness_instrument.py",
+      "source_sha256": "2827d0bc21bce550185b951f110ab8f82c546690ca80320dfe1077caa044f64e",
+      "treatment": "unchanged copy",
+      "release_sha256": "2827d0bc21bce550185b951f110ab8f82c546690ca80320dfe1077caa044f64e"
+    },
+    {
+      "path": "instrument/Task_Conditioned_Data_Readiness_Review_2026-10-23.txt",
+      "source": "analysis/2026-10-23/community_readiness_revision/Task_Conditioned_Data_Readiness_Review_2026-10-23.txt",
+      "source_sha256": "9a6a02b875b8767d7c7d40e82ae19279ae408368dcd6ecb887cf3c5785e173af",
+      "treatment": "unchanged copy",
+      "release_sha256": "9a6a02b875b8767d7c7d40e82ae19279ae408368dcd6ecb887cf3c5785e173af"
+    },
+    {
+      "path": "instrument/Task_Conditioned_Data_Readiness_Review_2026-10-23.docx",
+      "source": "analysis/2026-10-23/community_readiness_revision/Task_Conditioned_Data_Readiness_Review_2026-10-23.docx",
+      "source_sha256": "db6ee624a136485e0a5eccd0a48b647851beb58d9048b809b77a1860d8e46967",
+      "treatment": "unchanged copy",
+      "release_sha256": "db6ee624a136485e0a5eccd0a48b647851beb58d9048b809b77a1860d8e46967"
+    },
+    {
+      "path": "protocols/Literature_Modality_Study_Protocol_2026-10-21.txt",
+      "source": "analysis/2026-10-21/geoscience-modalities-literature/docs/Literature_Modality_Study_Protocol_2026-10-21.txt",
+      "source_sha256": "3275d1bc948fd1c5ea7bed22d3b7e4632f8cc400d46b0107810e4b7affaf81f8",
+      "treatment": "unchanged copy",
+      "release_sha256": "3275d1bc948fd1c5ea7bed22d3b7e4632f8cc400d46b0107810e4b7affaf81f8"
+    },
+    {
+      "path": "protocols/Readiness_Claims_Verified_References_2026-10-21.json",
+      "source": "analysis/2026-10-21/geoscience-modalities-literature/docs/Readiness_Claims_Verified_References_2026-10-21.json",
+      "source_sha256": "e8bc22ffc6f59762bd60994c3665fee3911dfe1d7db26364c99af4b6453e7a6f",
+      "treatment": "unchanged copy",
+      "release_sha256": "e8bc22ffc6f59762bd60994c3665fee3911dfe1d7db26364c99af4b6453e7a6f"
+    },
+    {
+      "path": "protocols/modality_codebook_v0.1.json",
+      "source": "analysis/2026-10-21/geoscience-modalities-literature/docs/modality_codebook_v0.1.json",
+      "source_sha256": "ee87907b950466fe1144a266bf3d18fc8c5e3c4fbb9a18a303cd3816994c630c",
+      "treatment": "unchanged copy",
+      "release_sha256": "ee87907b950466fe1144a266bf3d18fc8c5e3c4fbb9a18a303cd3816994c630c"
+    },
+    {
+      "path": "protocols/study_design_config_v0.1.json",
+      "source": "analysis/2026-10-21/geoscience-modalities-literature/docs/study_design_config_v0.1.json",
+      "source_sha256": "c4ec1ceef66f782b4db8a1e119f05becbe79b2159420f69954ace30759c03e6f",
+      "treatment": "unchanged copy",
+      "release_sha256": "c4ec1ceef66f782b4db8a1e119f05becbe79b2159420f69954ace30759c03e6f"
+    },
+    {
+      "path": "legacy/community_demand/collect_openalex.py",
+      "source": "analysis/2026-10-21/community_demand/collect_openalex.py",
+      "source_sha256": "3478da2cffbcfb88c05116510b96d21a160d73f57808a0b1ffa2b2468c460648",
+      "treatment": "unchanged copy",
+      "release_sha256": "3478da2cffbcfb88c05116510b96d21a160d73f57808a0b1ffa2b2468c460648"
+    },
+    {
+      "path": "legacy/community_demand/assemble_analysis.py",
+      "source": "analysis/2026-10-21/community_demand/assemble_analysis.py",
+      "source_sha256": "bc0c7ee619b7eb399677d12f426db78a7753745208e644fdb749984ffd31fbae",
+      "treatment": "unchanged copy",
+      "release_sha256": "bc0c7ee619b7eb399677d12f426db78a7753745208e644fdb749984ffd31fbae"
+    },
+    {
+      "path": "legacy/community_demand/queries_primary.json",
+      "source": "analysis/2026-10-21/community_demand/queries_primary.json",
+      "source_sha256": "3dd67eb4d26b0d452e21d84068b30dd45c32183385b497107bd65eda4e356862",
+      "treatment": "unchanged copy",
+      "release_sha256": "3dd67eb4d26b0d452e21d84068b30dd45c32183385b497107bd65eda4e356862"
+    },
+    {
+      "path": "legacy/community_demand/queries_secondary.json",
+      "source": "analysis/2026-10-21/community_demand/queries_secondary.json",
+      "source_sha256": "ac5998a9621aaadb229a5707de78ce8cbfd0c4abfb18e6193d8bd49950621055",
+      "treatment": "unchanged copy",
+      "release_sha256": "ac5998a9621aaadb229a5707de78ce8cbfd0c4abfb18e6193d8bd49950621055"
+    },
+    {
+      "path": "legacy/community_demand/queries_need_and_sample.json",
+      "source": "analysis/2026-10-21/community_demand/queries_need_and_sample.json",
+      "source_sha256": "c691c84520047650f072c381d4194177bcf4d377d2b704c566a7a12d15aa48c4",
+      "treatment": "unchanged copy",
+      "release_sha256": "c691c84520047650f072c381d4194177bcf4d377d2b704c566a7a12d15aa48c4"
+    },
+    {
+      "path": "legacy/community_demand/all_article_review.json",
+      "source": "analysis/2026-10-21/community_demand/all_article_review.json",
+      "source_sha256": "3f9ead2022efb5465a5f755f76a1b2e082135bf9f03be5a2564ffd5aef87fafd",
+      "treatment": "unchanged copy",
+      "release_sha256": "3f9ead2022efb5465a5f755f76a1b2e082135bf9f03be5a2564ffd5aef87fafd"
+    },
+    {
+      "path": "legacy/community_demand/das_article_review.json",
+      "source": "analysis/2026-10-21/community_demand/das_article_review.json",
+      "source_sha256": "af337906d852c4054ea2cb554614f4d3438d96cadedea82555a7cbeda8f7d72e",
+      "treatment": "unchanged copy",
+      "release_sha256": "af337906d852c4054ea2cb554614f4d3438d96cadedea82555a7cbeda8f7d72e"
+    },
+    {
+      "path": "legacy/community_demand/das_ml_article_review.json",
+      "source": "analysis/2026-10-21/community_demand/das_ml_article_review.json",
+      "source_sha256": "ff6a8a973f41fbb088a0a043b88498fb065e9c4eb643469fa108b91b23bde84f",
+      "treatment": "unchanged copy",
+      "release_sha256": "ff6a8a973f41fbb088a0a043b88498fb065e9c4eb643469fa108b91b23bde84f"
+    },
+    {
+      "path": "legacy/community_demand/earthquake_simulation_article_review.json",
+      "source": "analysis/2026-10-21/community_demand/earthquake_simulation_article_review.json",
+      "source_sha256": "49bd1853ec4380a0a4a6597453acfcf459f1d29ad71966e6d536c0e1193ac38e",
+      "treatment": "unchanged copy",
+      "release_sha256": "49bd1853ec4380a0a4a6597453acfcf459f1d29ad71966e6d536c0e1193ac38e"
+    },
+    {
+      "path": "legacy/community_demand/geodesy_ml_article_review.json",
+      "source": "analysis/2026-10-21/community_demand/geodesy_ml_article_review.json",
+      "source_sha256": "b062367ee8bd943e5fdfaeacf0b293f1e8bae397d6b339b95868261b787e8f40",
+      "treatment": "unchanged copy",
+      "release_sha256": "b062367ee8bd943e5fdfaeacf0b293f1e8bae397d6b339b95868261b787e8f40"
+    },
+    {
+      "path": "legacy/community_demand/hydrology_ml_article_review.json",
+      "source": "analysis/2026-10-21/community_demand/hydrology_ml_article_review.json",
+      "source_sha256": "5bc02f1d03a7e88c09d7e9b89691011d91ec58b077d6499fde295b2eda699888",
+      "treatment": "unchanged copy",
+      "release_sha256": "5bc02f1d03a7e88c09d7e9b89691011d91ec58b077d6499fde295b2eda699888"
+    },
+    {
+      "path": "legacy/community_demand/geodetic_deformation_ml_article_review.json",
+      "source": "analysis/2026-10-21/community_demand/geodetic_deformation_ml_article_review.json",
+      "source_sha256": "aa66ea7dcc05b7505c30992d04893f68f0814a8996b3f537ae1340914b8bcfdc",
+      "treatment": "unchanged copy",
+      "release_sha256": "aa66ea7dcc05b7505c30992d04893f68f0814a8996b3f537ae1340914b8bcfdc"
+    },
+    {
+      "path": "legacy/community_demand/title_das.json",
+      "source": "analysis/2026-10-21/community_demand/title_das.json",
+      "source_sha256": "6d9c0592ee4f17d3bd2d6299229fde08b51131670e69fff6ea8f581b4566c730",
+      "treatment": "unchanged copy",
+      "release_sha256": "6d9c0592ee4f17d3bd2d6299229fde08b51131670e69fff6ea8f581b4566c730"
+    },
+    {
+      "path": "legacy/community_demand/abstract_das.json",
+      "source": "analysis/2026-10-21/community_demand/abstract_das.json",
+      "source_sha256": "160d2c5df6ad78cf763b94f969049bc213dc429fedf5278ff98a89a58248ecbd",
+      "treatment": "unchanged copy",
+      "release_sha256": "160d2c5df6ad78cf763b94f969049bc213dc429fedf5278ff98a89a58248ecbd"
+    },
+    {
+      "path": "legacy/community_demand/title_abstract_das.json",
+      "source": "analysis/2026-10-21/community_demand/title_abstract_das.json",
+      "source_sha256": "f4648ada7c354f80da1e7d289c6269082c25863d47f23352219dabd04d04b19d",
+      "treatment": "unchanged copy",
+      "release_sha256": "f4648ada7c354f80da1e7d289c6269082c25863d47f23352219dabd04d04b19d"
+    },
+    {
+      "path": "legacy/community_demand/openalex_das_pilot.json",
+      "source": "analysis/2026-10-21/community_demand/openalex_das_pilot.json",
+      "source_sha256": "7e5aa29b7c0bc836fa076c8de7b681860dcbc617458ee1e06bed8566ae739b4d",
+      "treatment": "unchanged copy",
+      "release_sha256": "7e5aa29b7c0bc836fa076c8de7b681860dcbc617458ee1e06bed8566ae739b4d"
+    },
+    {
+      "path": "legacy/community_demand/das_need_annual.json",
+      "source": "analysis/2026-10-21/community_demand/das_need_annual.json",
+      "source_sha256": "12763b6cd11fc77f03892173cc7496d30818b2bccdee6e6ef4a3d94f5867a112",
+      "treatment": "unchanged copy",
+      "release_sha256": "12763b6cd11fc77f03892173cc7496d30818b2bccdee6e6ef4a3d94f5867a112"
+    },
+    {
+      "path": "legacy/community_demand/earthquake_simulation_need_annual.json",
+      "source": "analysis/2026-10-21/community_demand/earthquake_simulation_need_annual.json",
+      "source_sha256": "38aa1ee16f36b4c5551170857e4cc5d4c67edf8f117ec567f2a16fa7a9c75f3d",
+      "treatment": "unchanged copy",
+      "release_sha256": "38aa1ee16f36b4c5551170857e4cc5d4c67edf8f117ec567f2a16fa7a9c75f3d"
+    },
+    {
+      "path": "legacy/community_demand/geodesy_ml_need_annual.json",
+      "source": "analysis/2026-10-21/community_demand/geodesy_ml_need_annual.json",
+      "source_sha256": "3ba68c974955661beca6e13a457bf9e1b6a7bac7304da7ab93e2d61a473efb72",
+      "treatment": "unchanged copy",
+      "release_sha256": "3ba68c974955661beca6e13a457bf9e1b6a7bac7304da7ab93e2d61a473efb72"
+    },
+    {
+      "path": "legacy/community_demand/hydrology_ml_need_annual.json",
+      "source": "analysis/2026-10-21/community_demand/hydrology_ml_need_annual.json",
+      "source_sha256": "b2d9bbda5ea427408d716b42c41c0c645eea3e24b183d2cd213c5d307e57cc57",
+      "treatment": "unchanged copy",
+      "release_sha256": "b2d9bbda5ea427408d716b42c41c0c645eea3e24b183d2cd213c5d307e57cc57"
+    },
+    {
+      "path": "legacy/community_demand/das_need_sample.json",
+      "source": "analysis/2026-10-21/community_demand/das_need_sample.json",
+      "source_sha256": "c4b6c7df47cccf0401eb8b60e6dbccc975e485c8457ec3459ea205902cfcf6b0",
+      "treatment": "unchanged copy",
+      "release_sha256": "c4b6c7df47cccf0401eb8b60e6dbccc975e485c8457ec3459ea205902cfcf6b0"
+    },
+    {
+      "path": "legacy/community_demand/earthquake_simulation_need_sample.json",
+      "source": "analysis/2026-10-21/community_demand/earthquake_simulation_need_sample.json",
+      "source_sha256": "04f56cf08bca28d8b929685da2e03bebe0e0ee75f49a5a559c764ddac06b03de",
+      "treatment": "unchanged copy",
+      "release_sha256": "04f56cf08bca28d8b929685da2e03bebe0e0ee75f49a5a559c764ddac06b03de"
+    },
+    {
+      "path": "legacy/community_demand/geodesy_ml_need_sample.json",
+      "source": "analysis/2026-10-21/community_demand/geodesy_ml_need_sample.json",
+      "source_sha256": "e4edb8de4011690e4b226d3d09e447b6b3fcb7d9fad2b46371ad72edb9fc5088",
+      "treatment": "unchanged copy",
+      "release_sha256": "e4edb8de4011690e4b226d3d09e447b6b3fcb7d9fad2b46371ad72edb9fc5088"
+    },
+    {
+      "path": "legacy/community_demand/hydrology_ml_need_sample.json",
+      "source": "analysis/2026-10-21/community_demand/hydrology_ml_need_sample.json",
+      "source_sha256": "5f1923ab175c6c57107ee2c9d560edbce2d5b483f0655799fed08bc453a6955b",
+      "treatment": "unchanged copy",
+      "release_sha256": "5f1923ab175c6c57107ee2c9d560edbce2d5b483f0655799fed08bc453a6955b"
+    },
+    {
+      "path": "legacy/community_demand/need_sample_20.json",
+      "source": "analysis/2026-10-21/community_demand/need_sample_20.json",
+      "source_sha256": "a5ae13aa7e018b246ff1ec15ae5ad19fa3a2b27f1024b16a44926860c749e201",
+      "treatment": "unchanged copy",
+      "release_sha256": "a5ae13aa7e018b246ff1ec15ae5ad19fa3a2b27f1024b16a44926860c749e201"
+    },
+    {
+      "path": "legacy/community_demand/need_sample_20.csv",
+      "source": "analysis/2026-10-21/community_demand/need_sample_20.csv",
+      "source_sha256": "d2382904110f96e3030bc5f8e503ea65d1fc15139740872e7131068ff446be76",
+      "treatment": "unchanged copy",
+      "release_sha256": "d2382904110f96e3030bc5f8e503ea65d1fc15139740872e7131068ff446be76"
+    },
+    {
+      "path": "legacy/community_demand/need_sample_20_coded.json",
+      "source": "analysis/2026-10-21/community_demand/need_sample_20_coded.json",
+      "source_sha256": "2b1fafe809d211941fd7c24a2067260f3841886e5b92694855a1cf9271e35060",
+      "treatment": "unchanged copy",
+      "release_sha256": "2b1fafe809d211941fd7c24a2067260f3841886e5b92694855a1cf9271e35060"
+    },
+    {
+      "path": "legacy/community_demand/need_sample_20_coded.csv",
+      "source": "analysis/2026-10-21/community_demand/need_sample_20_coded.csv",
+      "source_sha256": "e7834f1ad25aab33cdc6ec711a90506b99976a11eeb6538a40191186dc47fe3d",
+      "treatment": "unchanged copy",
+      "release_sha256": "e7834f1ad25aab33cdc6ec711a90506b99976a11eeb6538a40191186dc47fe3d"
+    },
+    {
+      "path": "legacy/community_demand/manual_screening_summary.json",
+      "source": "analysis/2026-10-21/community_demand/manual_screening_summary.json",
+      "source_sha256": "3fb17de74ee10561f95d287108ae144a95783a86c9a92931075a7b1fc1f54453",
+      "treatment": "unchanged copy",
+      "release_sha256": "3fb17de74ee10561f95d287108ae144a95783a86c9a92931075a7b1fc1f54453"
+    },
+    {
+      "path": "legacy/community_demand/annual_title_abstract_article_review_counts.csv",
+      "source": "analysis/2026-10-21/community_demand/annual_title_abstract_article_review_counts.csv",
+      "source_sha256": "494e5f3a16e256299efebc527976d2995d8978300eea1c06fb6e428d15b589a7",
+      "treatment": "unchanged copy",
+      "release_sha256": "494e5f3a16e256299efebc527976d2995d8978300eea1c06fb6e428d15b589a7"
+    },
+    {
+      "path": "legacy/community_demand/growth_metrics.json",
+      "source": "analysis/2026-10-21/community_demand/growth_metrics.json",
+      "source_sha256": "80961d3fbb45be6d598418feecb7f4c20378e2bb8f9c808e24c0d7a63255ef9c",
+      "treatment": "unchanged copy",
+      "release_sha256": "80961d3fbb45be6d598418feecb7f4c20378e2bb8f9c808e24c0d7a63255ef9c"
+    },
+    {
+      "path": "legacy/targeted_evidence/build_need_evidence.py",
+      "source": "analysis/2026-10-21/community_demand/build_need_evidence.py",
+      "source_sha256": "2e94424d7e7e0b6991f2c79b6d490cce98b60508c179f5a28f95600080278040",
+      "treatment": "unchanged copy",
+      "release_sha256": "2e94424d7e7e0b6991f2c79b6d490cce98b60508c179f5a28f95600080278040"
+    },
+    {
+      "path": "legacy/targeted_evidence/Community_Need_Evidence_2026-10-21.json",
+      "source": "analysis/2026-10-21/community_demand/Community_Need_Evidence_2026-10-21.json",
+      "source_sha256": "5e830523fc670df5ad5a5a64807e31e3e9f8412cbcec650d239adc68d86379c8",
+      "treatment": "unchanged copy",
+      "release_sha256": "5e830523fc670df5ad5a5a64807e31e3e9f8412cbcec650d239adc68d86379c8"
+    },
+    {
+      "path": "legacy/targeted_evidence/Community_Need_Evidence_2026-10-21.csv",
+      "source": "analysis/2026-10-21/community_demand/Community_Need_Evidence_2026-10-21.csv",
+      "source_sha256": "063868f60266883423c5e0257db293cc7a3f21abbf530c0f109060e8daa2dfb6",
+      "treatment": "unchanged copy",
+      "release_sha256": "063868f60266883423c5e0257db293cc7a3f21abbf530c0f109060e8daa2dfb6"
+    },
+    {
+      "path": "legacy/targeted_evidence/Community_Need_Recommended_New_References_2026-10-21.json",
+      "source": "analysis/2026-10-21/community_demand/Community_Need_Recommended_New_References_2026-10-21.json",
+      "source_sha256": "5cba3c427395b8a2fbeb67d15cfd02b6e884a30b74c062b6b11a5f3c2688ce4a",
+      "treatment": "unchanged copy",
+      "release_sha256": "5cba3c427395b8a2fbeb67d15cfd02b6e884a30b74c062b6b11a5f3c2688ce4a"
+    },
+    {
+      "path": "standalone/tests/fixtures/works.jsonl",
+      "source": "analysis/2026-10-23/literature_study_update/tests/fixtures/works.jsonl",
+      "source_sha256": "1ed403d552637426b1404e8cbf89cef379e018e5302d9d94ef5192a5ae73126c",
+      "release_sha256": "1ed403d552637426b1404e8cbf89cef379e018e5302d9d94ef5192a5ae73126c",
+      "treatment": "unchanged synthetic fixture"
+    }
+  ],
+  "metascience_support": "Separate source manifest inside integration/metascience_support/",
+  "notes": [
+    "Author proposal text, partner inventories, personnel and email records excluded.",
+    "No broad literature study is claimed; legacy ranked screening is not a prevalence sample.",
+    "Metadata, docs and packaging changes are recorded in CHANGELOG.md; source hashes refer to original files."
+  ]
+}

@@ -1,0 +1,141 @@
+Task conditioned data readiness review
+
+23 October 2026  |  Research instrument for author review
+
+Complete one profile for a holding, version and intended use. Analysis readiness makes data interpretable and usable; AI readiness adds evidence about learning and the claimed generalization. This instrument will be refined through research. It is not an NSF requirement or a validated universal standard.
+
+Declare the use case
+
+Holding and DOI or version [enter]    Reviewer and date [enter]
+
+Scientific question and intended user [enter]
+
+Inputs and their roles [enter]    Output or learning objective [enter]
+
+Learning regime [supervised / self-supervised / semi-supervised / pseudo-label self-training / other]
+
+Independent unit and native spatial or temporal support [enter]
+
+Intended use and setting [local inference new region physical regime cloud or edge]
+
+Acceptance criteria failure costs and uncertainty requirements [enter]
+
+For each criterion, record evidence and the next action. Documentation: 0 = a required element is confirmed missing; 1 = incomplete; 2 = another team can verify it; U = unassessed or insufficient evidence; N/A = inapplicable with a reason. Adequacy for this use: S = supported; C = conditional; N = not supported; U = unresolved. A documented limitation can score 2 and still make a use unsupported. Do not sum grades or impose a universal pass mark.
+
+Analysis prerequisites
+
+A1 Provenance and permission Identify source, version or retrieval date, citation, permitted access, learning use and redistribution. Trace derived records to processing and environment information. Rights or provenance that remain unknown must stay visible.
+
+Documentation [0 / 1 / 2 / U / N/A]    Adequacy [S / C / N / U]
+
+Evidence [file page measurement or link]    Action and owner [enter]
+
+A2 Homogenization and physical comparability Check units, time base, reference frame, response and instrument changes. Preserve native support and uncertainty; document transformations and observed, simulated or derived origin. A common shape does not establish equivalent measurements.
+
+Documentation [0 / 1 / 2 / U / N/A]    Adequacy [S / C / N / U]
+
+Evidence [file page measurement or link]    Action and owner [enter]
+
+A3 Quality and gaps Document quality flags, gaps, sentinels, censoring, detection limits, exclusions and their causes. Determine whether cleaning or selection changes the population or removes information needed for this use.
+
+Documentation [0 / 1 / 2 / U / N/A]    Adequacy [S / C / N / U]
+
+Evidence [file page measurement or link]    Action and owner [enter]
+
+A4 Structure and metadata Verify readable variables, axes, units, relationships and sample manifests, plus a reproducible loader or partial read. Metadata conformance and object storage support access; they do not alone establish scientific fitness.
+
+Documentation [0 / 1 / 2 / U / N/A]    Adequacy [S / C / N / U]
+
+Evidence [file page measurement or link]    Action and owner [enter]
+
+
+
+Learning and generalization
+
+Apply these criteria to the declared objective and model or learning method. Record measured quantities where possible. Unknown evidence remains U; explain any N/A. Preserve the scientific distinctions between measurement families, representations and source origins.
+
+B1 Diversity and independence Count independent events, sites, regions, years and simulation families alongside rows and bytes. Document dependence and exclusions. Assess coverage against the intended population or physical design space, rather than the archive alone.
+
+Documentation [0 / 1 / 2 / U / N/A]    Adequacy [S / C / N / U]
+
+Evidence [file page measurement or link]    Action and owner [enter]
+
+B2 Distribution Characterize inputs, targets where present, rare conditions, imbalance and missing modalities. State the reference population, sampling policy and known shifts. Separate natural frequencies from deliberate training reweighting.
+
+Documentation [0 / 1 / 2 / U / N/A]    Adequacy [S / C / N / U]
+
+Evidence [file page measurement or link]    Action and owner [enter]
+
+B3 Noise Distinguish instrument and processing uncertainty from physical variability. State which variability is signal for this question. Check whether filtering, compression or normalization suppresses information needed for the intended inference.
+
+Documentation [0 / 1 / 2 / U / N/A]    Adequacy [S / C / N / U]
+
+Evidence [file page measurement or link]    Action and owner [enter]
+
+B4 Augmentation Justify transformations, masking or perturbations using measurement physics and task semantics. Test preservation of relevant observables and targets. Validity depends on the sensor, phenomenon and question; standard augmentation recipes are not universally applicable.
+
+Documentation [0 / 1 / 2 / U / N/A]    Adequacy [S / C / N / U]
+
+Evidence [file page measurement or link]    Action and owner [enter]
+
+B5 Labels or learning structure Supervised tasks need defined targets, label provenance, consistency, uncertainty and suitable negatives. Self-supervised objectives need meaningful context, views, pairing and sampling; external training labels are optional, independent evaluation is not. Pseudo-label self-training requires separate teacher provenance and error checks.
+
+Documentation [0 / 1 / 2 / U / N/A]    Adequacy [S / C / N / U]
+
+Evidence [file page measurement or link]    Action and owner [enter]
+
+B6 Dimensionality State sample axes, shape, native resolution and independent samples relative to features. Test whether reduction retains task information, including rare behavior. Record bytes read, throughput, memory and compute at the tested scale; explained variance alone is insufficient.
+
+Documentation [0 / 1 / 2 / U / N/A]    Adequacy [S / C / N / U]
+
+Evidence [file page measurement or link]    Action and owner [enter]
+
+B7 Partitioning Use independent groups and protect final tests from tuning, preprocessing and related-record leakage. Match tests to claims: statistical distance from training support; spatiotemporal transfer to new places or times; physical transfer to new event size, process or physics. Report within-domain and transfer results separately, with uncertainty and failures.
+
+Documentation [0 / 1 / 2 / U / N/A]    Adequacy [S / C / N / U]
+
+Evidence [file page measurement or link]    Action and owner [enter]
+
+
+
+Use setting and review decision
+
+Deployment fit is conditional on the declared research workflow. Record the evidence below for cloud, laboratory or sensing-edge use, as applicable. Research demonstrations do not establish operational-service reliability.
+
+Access route permissions and available inputs [enter]
+
+Measured throughput memory latency and transfer or compute cost [enter]
+
+Instrument interfaces missing inputs and known shifts [enter]
+
+Monitoring and observation prediction discrepancy checks [enter]
+
+Response to mismatch [retrieve evidence qualify abstain or revise after review]
+
+Evidence source next action owner and review date [enter]
+
+Community maturity is a separate profile. Record maintained tools and releases, stewardship, support and independent reuse or replication, including dates and scope. Independently checkable documentation does not prove independent use, and adoption does not establish fitness for a task.
+
+Stewardship maintenance support and contribution route [enter]
+
+Independent use or replication and its evidence [enter]
+
+Review conclusion
+
+Supported use and boundary of the evidence [enter]
+
+Conditional or unsupported uses and why [enter]
+
+Unresolved evidence or prerequisites [enter]
+
+Priority actions owners and due dates [enter]
+
+Reviewer or steward confirmation [enter]
+
+Reassess when the dataset version, model, objective or intended use changes. An analysis-ready station record can support a local study while remaining insufficient to test transfer to another region. Unlabeled continuous DAS can support a self-supervised objective; supervised phase picking additionally needs trustworthy targets and task-appropriate evaluation. Neither example receives a readiness judgment without evidence.
+
+Basis and interpretation
+
+Adapted from Marine Denolle, MLGeo Session 10, AI-ready data, 23 October 2026, Book section 2.13. The lecture distinguishes A1–A4 analysis prerequisites and B1–B7 learning criteria. Its 0–2 course scale concerns documentation; this research adaptation adds explicit U and N/A, a separate task-adequacy judgment and the use-setting review.
+
+https://geo-smart.github.io/mlgeo-book/slides/2026/lec10_ai_ready_data.html

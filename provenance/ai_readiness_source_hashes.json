@@ -1,0 +1,22 @@
+{
+  "source": "metascience-and-AI/tools/ai_readiness",
+  "copied_unchanged": true,
+  "files": {
+    "README.md": "d52d2a8e418e56e7d0212dc15ae14c8ce8594779d06b969de98adf627703d721",
+    "__init__.py": "d50c544cda5304ec8635776e1f304b75e09f1045831e4c421e49652eac3ca80c",
+    "__main__.py": "d979d345002b2bf66652d5a2a4c15d71107cbd2ee38b2281de81405f40be14fb",
+    "adapter.py": "0dcb5cf8655dab05552a03ea3d7a7ee5f7fe96acf4bdbc92bca0e80e67b111e6",
+    "annotation.schema.json": "5639b0bce71dcfd2ff074f89668a02e39c0791b84a47660c07a654147fb786eb",
+    "cohort_protocol.example.json": "de4fec5744d24c7a8c541455eeb9c12bde51e633c17da8c46478656fa522ef10",
+    "core.py": "d8ba823f0c1459d7c4175425601228708dac50f4979f65339e2e134f5ba9a333",
+    "endpoint_protocol.example.json": "1afc67a9629c91673da1bbb148fc5ae0860e7800691733b936360f681d4e0cdf",
+    "plot_report.py": "1e1c8a87a8b99f02dfcb70611d28b7ecd23abf8cc4085fb691f397036633ad44",
+    "tests/fixtures/works.jsonl": "1ed403d552637426b1404e8cbf89cef379e018e5302d9d94ef5192a5ae73126c",
+    "tests/test_adapter.py": "7b9c608508ff166bed1512476feb61d6393a3b96529cd5de202872b291e78045",
+    "tests/test_endpoint_changes.py": "d1b522a2d366dbc41effd5e8705b0c9c9b9cda78684af5e5480d931ce030f602",
+    "tests/test_pipeline.py": "0f5aede9641759dd325e3172cfb824a26ae27c8c8225310a71e2c9eb357096aa",
+    "tests/test_plot_report.py": "4f06db3a2d44c8058cb6ebc3a9a9c70c89e3bc8af023b6208f2b389e1229ed04",
+    "tests/test_sample_binding.py": "3c7a4c28c6ea832d064c44328fc01aa8dded7b08695152d9177e0892e9a56846",
+    "tests/test_training_regimes.py": "3bfff403f5ccf58c9b27c4317afff515bf8f9dacb72df2c00cffd1bb7059d9aa"
+  }
+}

@@ -1,0 +1,19 @@
+cff-version: "1.2.0"
+message: "Cite this software; add the release DOI after archiving."
+type: software
+title: "Geoscience AI-readiness research toolkit"
+authors:
+  - family-names: "Denolle"
+    given-names: "Marine"
+    affiliation: "University of Washington"
+version: "0.3.0"
+date-released: "2026-10-29"
+license: "MIT"
+repository-code: "https://github.com/gaia-hazlab/geoscience-ai-readiness"
+keywords:
+  - "geoscience"
+  - "AI readiness"
+  - "multimodal research"
+  - "literature analysis"
+  - "reproducible figures"
+abstract: "Evidence-first literature analysis, a task-conditioned readiness instrument and reproducible frozen DAS publication-activity figures. Broader AI/multimodality adoption review has not been run on a reviewed corpus."

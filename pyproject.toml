@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "geoscience-ai-readiness"
+version = "0.3.0"
+description = "Evidence-first geoscience AI-readiness literature tools, rubric and reproducible figures"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+authors = [{name = "Marine Denolle"}]
+dependencies = ["numpy>=1.26,<3", "reportlab>=4.4,<5"]
+
+[project.optional-dependencies]
+study = ["matplotlib>=3.8,<4"]
+instrument = ["python-docx>=1.1,<2"]
+
+[project.scripts]
+aidatasets-figures = "aidatasets_figures.__main__:main"
+ai-readiness = "ai_readiness.__main__:main"
+
+[tool.setuptools]
+packages = ["aidatasets_figures", "ai_readiness"]
+package-dir = {aidatasets_figures = "src/aidatasets_figures", ai_readiness = "tools/ai_readiness"}
+
+[tool.setuptools.package-data]
+aidatasets_figures = ["snapshots/2026-10-21/*.json"]
+ai_readiness = ["*.json", "README.md"]

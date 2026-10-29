@@ -1,0 +1,145 @@
+{
+  "protocol_version": "0.1",
+  "date": "2026-10-21",
+  "status": "proposed_not_executed",
+  "execution_allowed": false,
+  "create_accounts_or_keys": false,
+  "pay_for_service": false,
+  "publish_repository": false,
+  "frame": {
+    "year_start": 2016,
+    "year_end": 2025,
+    "types": [
+      "article"
+    ],
+    "reviews_separate": true,
+    "preprints_excluded": true,
+    "keyword_filter_on_frame": false,
+    "freeze_source_ids_before_run": true,
+    "source_ids": [],
+    "source_ids_status": "must_resolve_ISSNs_and_verify_sources_before_execution",
+    "source_candidates": [
+      "Geophysical Research Letters",
+      "Journal of Geophysical Research: Solid Earth",
+      "Journal of Geophysical Research: Atmospheres",
+      "Journal of Geophysical Research: Earth Surface",
+      "Journal of Geophysical Research: Oceans",
+      "Water Resources Research",
+      "Hydrology and Earth System Sciences",
+      "Geoscientific Model Development",
+      "Earth System Science Data",
+      "Geophysical Journal International",
+      "Seismological Research Letters",
+      "Geophysics",
+      "Remote Sensing of Environment",
+      "IEEE Transactions on Geoscience and Remote Sensing"
+    ],
+    "subfield_strata": [
+      "solid_earth_geophysics",
+      "atmosphere_climate",
+      "hydrology_land",
+      "ocean_remote_sensing"
+    ],
+    "crossfield_assignment": "prespecify_one_primary_stratum_per_paper_after_source_resolution"
+  },
+  "retrieval": {
+    "api_base": "https://api.openalex.org",
+    "per_page": 100,
+    "default_execute": false,
+    "no_key_mode": "counts_or_limited_public_metadata_only; stop on auth_limit",
+    "cursor_after_first_page_requires_verified_key_as_documented": true,
+    "never_log_secret": true,
+    "rate_limit_rps_max_for_keyless": 10,
+    "request_delay_seconds_proposed": 0.5,
+    "candidate_search_param": "search.title_and_abstract",
+    "cache_raw_responses": true,
+    "response_hash": "sha256",
+    "deduplication_keys": [
+      "canonical_DOI",
+      "OpenAlex_ID",
+      "manual_title_author_version_review"
+    ]
+  },
+  "pilot": {
+    "calibration_n": 60,
+    "calibration_is_test_set": false,
+    "inference_n_target": 240,
+    "year_bands": [
+      [
+        2016,
+        2018
+      ],
+      [
+        2019,
+        2021
+      ],
+      [
+        2022,
+        2025
+      ]
+    ],
+    "screen_strata": [
+      "AI_lexical_positive",
+      "AI_lexical_negative_or_missing_abstract"
+    ],
+    "papers_per_subfield_yearband_screen_cell": 10,
+    "screen_missing_abstract_separate_audit_flag": true,
+    "random_seed": 20261021,
+    "weights": "N_h/n_h; census undersized strata with probability 1",
+    "double_human_annotation_fraction": 1.0,
+    "adjudication": "third_reader",
+    "pilot_report_time_unit": "year_band_not_annual",
+    "expansion_n_illustrative_range": [
+      1200,
+      2000
+    ],
+    "expansion_size_status": "choose_after_variance_precision_workload_review"
+  },
+  "estimation": {
+    "primary_denominator": "all_eligible_original_research_articles_in_frozen_frame",
+    "secondary_denominators": [
+      "data_using_articles",
+      "actual_ML_articles",
+      "actual_ML_and_multifamily_articles",
+      "accessible_fulltext_subset"
+    ],
+    "design_weights": true,
+    "unknown_as_negative": false,
+    "confidence_interval": "95% design_based_or_stratified_bootstrap_with_sampling_and_study_clusters",
+    "interval_replicates_if_bootstrap": 2000,
+    "missingness": "coverage_plus_all_negative_all_positive_bounds; assumption_based_nonresponse_weights_sensitivity_only",
+    "composition_standardization": "prespecified_fixed_subfield_weights",
+    "model_labels_allowed_in_reviewed_rates_without_validation": false,
+    "conditional_rates": [
+      "P(multifamily_actual_use | actual_ML)",
+      "P(actual_ML | multifamily_actual_use)",
+      "P(joint_ML_inputs | actual_ML)",
+      "P(joint_ML_inputs | actual_ML_and_multifamily_actual_use)"
+    ],
+    "ontology_sensitivity": [
+      "main_sensing_family",
+      "coarse_measured_phenomenon",
+      "fine_sensing_type"
+    ]
+  },
+  "evidence": {
+    "actual_use_requires_locator": true,
+    "allowed_sources": [
+      "licensed_open_publisher",
+      "licensed_repository",
+      "metadata",
+      "author_provided_permission"
+    ],
+    "avoid_access_bypass": true,
+    "fulltext_release": false,
+    "abstract_release": false,
+    "public_excerpt_words_total_per_work_max": 25
+  },
+  "official_docs_checked": [
+    "https://help.openalex.org/api/searching/",
+    "https://help.openalex.org/api/paging/",
+    "https://help.openalex.org/api/authentication/",
+    "https://help.openalex.org/access/fulltext/",
+    "https://help.openalex.org/data/works/attributes/"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-23",
+  "scripts": [
+    {
+      "source_path": "analysis/2026-10-20/figure_examples_2026-10-20/build_figure_examples.py",
+      "source_sha256": "e7a3292b78db21112abfcb728cf9200f08987d23400f5853adba9df83a0cd61b"
+    },
+    {
+      "source_path": "analysis/2026-10-20/figure_examples_2026-10-20/vector_drawing.py",
+      "source_sha256": "58d2d2573b8c2d349654f8b5f1d8a116b5a3fba8c0c434ee9f68e7a019fbdd18"
+    },
+    {
+      "source_path": "analysis/2026-10-21/literature_figure/build_das_activity_figure.py",
+      "source_sha256": "9330b8b292f01515c9fcd8f3b0c1b2bea11c83dad0203d21d94583eb1aff0118"
+    }
+  ],
+  "changes": [
+    "Packaged copies are refactored for a command-line interface and explicit output directories.",
+    "Machine-specific rendering paths replaced with PATH/PDFTOPPM discovery.",
+    "DAS numerator and denominator are derived from both hash-checked frozen responses.",
+    "Core ReportLab geometry, labels and conceptual content retained."
+  ],
+  "author_supplied_illustration": {
+    "included": false,
+    "python_source_found": false,
+    "source_sha256": "9f1b175236bb2744d22213cafebaac3ef2a974ab9fbc10e88ba4b59c13a4a6ae",
+    "reason": "Author-supplied concept illustration is not a Python-generated plot; no editable source or redistribution license was established."
+  }
+}

@@ -1,0 +1,3 @@
+DAS publication activity, 2020-2025. (A) Annual OpenAlex article/review counts for a title/abstract search of distributed acoustic sensing. (B) The same counts per 100,000 indexed articles/reviews worldwide in each year. Values are from the frozen October 21, 2026 snapshot; the 2025/2020 ratios are 3.59 for counts and 3.22 for normalized activity. Search and index coverage affect both panels. These are research-activity counts, not measures of multimodal AI use, dataset reuse or expressed demand.
+
+Source query: https://api.openalex.org/works?filter=from_publication_date%3A2020-01-01%2Cto_publication_date%3A2025-12-31%2Ctype%3Aarticle%7Creview%2Ctitle_and_abstract.search%3A%22distributed+acoustic+sensing%22&group_by=publication_year&per_page=200

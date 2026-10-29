@@ -1,0 +1,77 @@
+{
+  "snapshot_date": "2026-10-21",
+  "raw_sha256": {
+    "das_article_review.json": "af337906d852c4054ea2cb554614f4d3438d96cadedea82555a7cbeda8f7d72e",
+    "all_article_review.json": "3f9ead2022efb5465a5f755f76a1b2e082135bf9f03be5a2564ffd5aef87fafd"
+  },
+  "rows": [
+    {
+      "year": 2020,
+      "das_articles_reviews": 118,
+      "all_indexed_articles_reviews_worldwide": 6707768,
+      "das_per_100000_worldwide": 1.7591544609175511
+    },
+    {
+      "year": 2021,
+      "das_articles_reviews": 137,
+      "all_indexed_articles_reviews_worldwide": 6257963,
+      "das_per_100000_worldwide": 2.189210770341723
+    },
+    {
+      "year": 2022,
+      "das_articles_reviews": 194,
+      "all_indexed_articles_reviews_worldwide": 5805839,
+      "das_per_100000_worldwide": 3.3414636540903047
+    },
+    {
+      "year": 2023,
+      "das_articles_reviews": 238,
+      "all_indexed_articles_reviews_worldwide": 6050280,
+      "das_per_100000_worldwide": 3.9337022418797147
+    },
+    {
+      "year": 2024,
+      "das_articles_reviews": 311,
+      "all_indexed_articles_reviews_worldwide": 6495527,
+      "das_per_100000_worldwide": 4.787910203436919
+    },
+    {
+      "year": 2025,
+      "das_articles_reviews": 424,
+      "all_indexed_articles_reviews_worldwide": 7490116,
+      "das_per_100000_worldwide": 5.660793504399665
+    }
+  ],
+  "ratio_counts_2025_over_2020": 3.593220338983051,
+  "ratio_normalized_2025_over_2020": 3.2179058918152483,
+  "artwork_date": "2026-10-23",
+  "artwork_version": "0.2.0",
+  "source_files": [
+    "das_article_review.json",
+    "all_article_review.json"
+  ],
+  "source_query": "https://api.openalex.org/works?filter=from_publication_date%3A2020-01-01%2Cto_publication_date%3A2025-12-31%2Ctype%3Aarticle%7Creview%2Ctitle_and_abstract.search%3A%22distributed+acoustic+sensing%22&group_by=publication_year&per_page=200",
+  "interpretation": "Indexed activity across all fields; not a geoscience-wide adoption statistic.",
+  "uncertainty": "Database/search coverage uncertainty remains unquantified. No sampling confidence intervals are invented.",
+  "not_measured": [
+    "actual AI use",
+    "number of modalities used",
+    "joint multimodal training",
+    "independent dataset reuse",
+    "expressed demand"
+  ],
+  "design_changes": [
+    "Absolute counts shown as bars; normalized values as a line.",
+    "Compact shared title, explicit units, direct numeric labels and zero baselines.",
+    "Original frozen data and normalization retained."
+  ],
+  "caption": "DAS publication activity, 2020-2025. (A) Annual OpenAlex article/review counts for a title/abstract search of distributed acoustic sensing. (B) The same counts per 100,000 indexed articles/reviews worldwide in each year. Values are from the frozen October 21, 2026 snapshot; the 2025/2020 ratios are 3.59 for counts and 3.22 for normalized activity. Search and index coverage affect both panels. These are research-activity counts, not measures of multimodal AI use, dataset reuse or expressed demand.",
+  "outputs": {
+    "svg": "DAS_Publication_Activity_2026-10-23_v2.svg",
+    "pdf": "DAS_Publication_Activity_2026-10-23_v2.pdf",
+    "png": "DAS_Publication_Activity_2026-10-23_v2.png",
+    "csv": "DAS_Publication_Activity_2026-10-23_v2_Data.csv",
+    "caption": "DAS_Publication_Activity_2026-10-23_v2_Caption.txt",
+    "provenance": "DAS_Publication_Activity_2026-10-23_v2_Provenance.json"
+  }
+}

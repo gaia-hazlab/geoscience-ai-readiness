@@ -1,0 +1,98 @@
+{
+  "prepared_at_utc": "2026-10-29T18:13:43.224116+00:00",
+  "release": "0.3.0",
+  "study_status": "Broader AI/multimodality reviewed-corpus study not run; no field-wide readiness score.",
+  "core_suites": [
+    {
+      "suite": "figures and portability",
+      "tests_passed": 18
+    },
+    {
+      "suite": "preferred evidence-first workflow",
+      "tests_passed": 61
+    },
+    {
+      "suite": "standalone prototype",
+      "tests_passed": 32
+    }
+  ],
+  "total_core_tests_passed": 111,
+  "optional_support_acquisition_tests_passed": 70,
+  "optional_support_network_and_credentials": "Sockets blocked; key loader directed to nonexistent file.",
+  "python_and_rendering": {
+    "python": "3.12.14",
+    "packages": {
+      "numpy": "2.3.5",
+      "reportlab": "4.4.9",
+      "pillow": "12.3.0",
+      "python-docx": "1.2.0",
+      "matplotlib": null,
+      "setuptools": "84.2.1"
+    },
+    "network_used": false,
+    "installed_wheel_reproduction": "passed from unrelated working directory in isolated Python mode",
+    "figures": [
+      {
+        "file": "Figure_1_Event_Linked_Corpus_DRAFT_2026-10-20.png",
+        "size": [
+          1950,
+          990
+        ],
+        "rgb_sha256": "d0e193e9d51f31faff6c63d867df686ff0fe91832d3136b9b42a3d19971f12f8",
+        "matches_reference_pixels": true
+      },
+      {
+        "file": "Figure_2_Readiness_Research_Design_DRAFT_2026-10-20.png",
+        "size": [
+          1950,
+          990
+        ],
+        "rgb_sha256": "5e71f1950758c08dd0f31b90f5921576957d5c3d6d9a340473d7f22ed942d665",
+        "matches_reference_pixels": true
+      },
+      {
+        "file": "DAS_Publication_Activity_2026-10-23_v2.png",
+        "size": [
+          1950,
+          810
+        ],
+        "rgb_sha256": "c97f3f1a900a6efdf6af737039913329c17ab9d38430ee8b4814e21a128cc12c",
+        "matches_reference_pixels": true
+      }
+    ],
+    "das_csv_matches_reference": true,
+    "rendered_figure_count": 3,
+    "optional_reviewed_report_matplotlib_render": "not run: Matplotlib not installed, no reviewed real-data report supplied; extraction guards tested"
+  },
+  "standalone_dry_run": {
+    "mode": "dry_run",
+    "query_count": 0,
+    "unresolved_source_labels": [
+      "Journal of Geophysical Research: Solid Earth",
+      "Geophysical Journal International",
+      "Seismological Research Letters",
+      "Water Resources Research",
+      "Hydrology and Earth System Sciences",
+      "Remote Sensing of Environment",
+      "Journal of Advances in Modeling Earth Systems",
+      "Geoscientific Model Development"
+    ],
+    "years": {
+      "start": 2016,
+      "end": 2025
+    },
+    "max_pages_this_run": 1,
+    "parameters_contain_no_modality_or_AI_keywords": true,
+    "sample_public_urls": [],
+    "note": "No network request occurs unless --execute is given. Resolve and freeze every source ID first."
+  },
+  "wheel_build_and_install": "passed offline with --no-index --no-deps; isolated temporary venv used",
+  "installed_readiness_cli": "help passed from unrelated directory",
+  "source_repository": {
+    "commit": "dc19d45b0bfd2eb98ffb8ad4bbd26f2e87f2ba6f",
+    "working_tree_clean_after_packaging": true
+  },
+  "privacy_scope_review": "No private proposal text, budgets, personnel/email records, credentials, licensed full-text corpus or private partner inventories included.",
+  "intentional_documentation_edits": "Three optional source README directory examples generalized; source and release hashes preserved. Core analysis code unchanged.",
+  "statistical_limit": "Frozen DAS title/abstract counts are keyword activity, not actual AI use, multimodality, reuse, demand or causal adoption barriers."
+}

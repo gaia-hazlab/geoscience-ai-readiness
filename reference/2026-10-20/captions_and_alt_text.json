@@ -1,0 +1,10 @@
+{
+  "Figure_1": {
+    "caption": "Figure 1. Event-linked corpora connect physically distinct Earth records while preserving native support, uncertainty, provenance and rights. Scientific tests will evaluate which relationships and representations support useful cross-modal inference. The agent-task symbols depict a question, data evidence and a traceable answer or qualification. All views are illustrative; no empirical result or external partner commitment is shown.",
+    "alt_text": "Conceptual diagram of four distinct Earth-data views: observations, simulation meshes, exposure and impacts, and scientific-agent tasks. Arrows connect them to an event-linked corpus that retains event identity, space-time support and observed, derived or simulated quantity types. Shared goals are retaining physical meaning, making evidence traceable and testing scientific use."
+  },
+  "Figure_2": {
+    "caption": "Figure 2. AI readiness is tested using controlled variants of permitted holdings, fixed reference learning and tasks, and prespecified held-out events, regions or times. Independent evaluation measures performance and transfer, uncertainty and failure, and appropriate abstention. Results, including negative findings, will refine task-specific readiness profiles and corpus design. This schematic describes the proposed experiment and implies no measured outcome or universal readiness threshold.",
+    "alt_text": "Proposed three-stage experiment. First vary coverage, resolution or compression, and metadata or provenance in the same permitted holdings. Next use fixed reference learning and task definitions with held-out events, regions or times and protected partitions. Measure performance, transfer, uncertainty, failure and appropriate abstention. Use independent evidence to revise task-specific readiness hypotheses and corpus design."
+  }
+}

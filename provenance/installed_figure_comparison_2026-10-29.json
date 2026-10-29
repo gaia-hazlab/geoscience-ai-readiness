@@ -1,0 +1,45 @@
+{
+  "python": "3.12.14",
+  "packages": {
+    "numpy": "2.3.5",
+    "reportlab": "4.4.9",
+    "pillow": "12.3.0",
+    "python-docx": "1.2.0",
+    "matplotlib": null,
+    "setuptools": "84.2.1"
+  },
+  "network_used": false,
+  "installed_wheel_reproduction": "passed from unrelated working directory in isolated Python mode",
+  "figures": [
+    {
+      "file": "Figure_1_Event_Linked_Corpus_DRAFT_2026-10-20.png",
+      "size": [
+        1950,
+        990
+      ],
+      "rgb_sha256": "d0e193e9d51f31faff6c63d867df686ff0fe91832d3136b9b42a3d19971f12f8",
+      "matches_reference_pixels": true
+    },
+    {
+      "file": "Figure_2_Readiness_Research_Design_DRAFT_2026-10-20.png",
+      "size": [
+        1950,
+        990
+      ],
+      "rgb_sha256": "5e71f1950758c08dd0f31b90f5921576957d5c3d6d9a340473d7f22ed942d665",
+      "matches_reference_pixels": true
+    },
+    {
+      "file": "DAS_Publication_Activity_2026-10-23_v2.png",
+      "size": [
+        1950,
+        810
+      ],
+      "rgb_sha256": "c97f3f1a900a6efdf6af737039913329c17ab9d38430ee8b4814e21a128cc12c",
+      "matches_reference_pixels": true
+    }
+  ],
+  "das_csv_matches_reference": true,
+  "rendered_figure_count": 3,
+  "optional_reviewed_report_matplotlib_render": "not run: Matplotlib not installed, no reviewed real-data report supplied; extraction guards tested"
+}

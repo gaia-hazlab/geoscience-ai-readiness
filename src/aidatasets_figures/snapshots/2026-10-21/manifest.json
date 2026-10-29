@@ -1,0 +1,32 @@
+{
+  "snapshot_date": "2026-10-21",
+  "years": [
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "files": {
+    "das_article_review.json": "af337906d852c4054ea2cb554614f4d3438d96cadedea82555a7cbeda8f7d72e",
+    "all_article_review.json": "3f9ead2022efb5465a5f755f76a1b2e082135bf9f03be5a2564ffd5aef87fafd"
+  },
+  "queries": [
+    {
+      "id": "das_article_review",
+      "url": "https://api.openalex.org/works?filter=from_publication_date%3A2020-01-01%2Cto_publication_date%3A2025-12-31%2Ctype%3Aarticle%7Creview%2Ctitle_and_abstract.search%3A%22distributed+acoustic+sensing%22&group_by=publication_year&per_page=200",
+      "filter": "from_publication_date:2020-01-01,to_publication_date:2025-12-31,type:article|review,title_and_abstract.search:\"distributed acoustic sensing\"",
+      "raw_file": "das_article_review.json"
+    },
+    {
+      "id": "all_article_review",
+      "url": "https://api.openalex.org/works?filter=from_publication_date%3A2020-01-01%2Cto_publication_date%3A2025-12-31%2Ctype%3Aarticle%7Creview&group_by=publication_year&per_page=200",
+      "filter": "from_publication_date:2020-01-01,to_publication_date:2025-12-31,type:article|review",
+      "raw_file": "all_article_review.json"
+    }
+  ],
+  "license": "CC0-1.0",
+  "source": "OpenAlex Works API",
+  "interpretation": "Indexed article/review activity across all fields, not actual AI use, multimodal use, reuse or expressed demand."
+}

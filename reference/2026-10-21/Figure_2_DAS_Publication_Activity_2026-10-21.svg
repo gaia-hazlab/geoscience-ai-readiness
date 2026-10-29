@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="468" height="144" preserveAspectRatio="xMinYMin meet" viewBox="0 0 468 144" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="468" height="144"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-144)" style="clip-path: url(#clip)">
+		<g transform="">
+			<g transform="">
+				<g transform="">
+					<g transform="">
+						<path d="M 36,29 L 208,29 Z" style="stroke: rgb(8%,8%,8%); stroke-linecap: butt; stroke-width: 0.5;"/>
+					</g>
+					<g transform="">
+						<path d="M 36,29 L 36,26 Z" style="stroke: rgb(8%,8%,8%); stroke-linecap: butt; stroke-width: 0.5;"/>
+						<path d="M 70.4,29 L 70.4,26 Z" style="stroke: rgb(8%,8%,8%); stroke-linecap: butt; stroke-width: 0.5;"/>
+						<path d="M 104.8,29 L 104.8,26 Z" style="stroke: rgb(8%,8%,8%); stroke-linecap: butt; stroke-width: 0.5;"/>
+						<path d="M 139.2,29 L 139.2,26 Z" style="stroke: rgb(8%,8%,8%); stroke-linecap: butt; stroke-width: 0.5;"/>
+						<path d="M 173.6,29 L 173.6,26 Z" style="stroke: rgb(8%,8%,8%); stroke-linecap: butt; stroke-width: 0.5;"/>
+						<path d="M 208,29 L 208,26 Z" style="stroke: rgb(8%,8%,8%); stroke-linecap: butt; stroke-width: 0.5;"/>
+					</g>
+					<g transform="">
+						<g transform=" matrix(1,0,0,1,36,24)">
+							<text x="-9.452000000000002" y="-8.5" style="font-family: Helvetica; font-size: 8.5px;fill: rgb(8%,8%,8%); stroke:none;" transform="translate(0,-17) scale(1,-1)">2020</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,70.4,24)">
+							<text x="-9.452000000000002" y="-8.5" style="font-family: Helvetica; font-size: 8.5px;fill: rgb(8%,8%,8%); stroke:none;" transform="translate(0,-17) scale(1,-1)">2021</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,104.8,24)">
+							<text x="-9.452000000000002" y="-8.5" style="font-family: Helvetica; font-size: 8.5px;fill: rgb(8%,8%,8%); stroke:none;" transform="translate(0,-17) scale(1,-1)">2022</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,139.2,24)">
+							<text x="-9.452000000000002" y="-8.5" style="font-family: Helvetica; font-size: 8.5px;fill: rgb(8%,8%,8%); stroke:none;" transform="translate(0,-17) scale(1,-1)">2023</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,173.6,24)">
+							<text x="-9.452000000000002" y="-8.5" style="font-family: Helvetica; font-size: 8.5px;fill: rgb(8%,8%,8%); stroke:none;" transform="translate(0,-17) scale(1,-1)">2024</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,208,24)">
+							<text x="-9.452000000000002" y="-8.5" style="font-family: Helvetica; font-size: 8.5px;fill: rgb(8%,8%,8%); stroke:none;" transform="translate(0,-17) scale(1,-1)">2025</text>
+						</g>
+					</g>
+				</g>
+				<g transform="">
+					<g transform="">
+						<path d="M 36,29 L 36,113 Z" style="stroke: rgb(8%,8%,8%); stroke-linecap: butt; stroke-width: 0.5;"/>
+					</g>
+					<g transform="">
+						<path d="M 36,29 L 33,29 Z" style="stroke: rgb(8%,8%,8%); stroke-linecap: butt; stroke-width: 0.5;"/>
+						<path d="M 36,45.8 L 33,45.8 Z" style="stroke: rgb(8%,8%,8%); stroke-linecap: butt; stroke-width: 0.5;"/>
+						<path d="M 36,62.6 L 33,62.6 Z" style="stroke: rgb(8%,8%,8%); stroke-linecap: butt; stroke-width: 0.5;"/>
+						<path d="M 36,79.4 L 33,79.4 Z" style="stroke: rgb(8%,8%,8%); stroke-linecap: butt; stroke-width: 0.5;"/>
+						<path d="M 36,96.2 L 33,96.2 Z" style="stroke: rgb(8%,8%,8%); stroke-linecap: butt; stroke-width: 0.5;"/>
+						<path d="M 36,113 L 33,113 Z" style="stroke: rgb(8%,8%,8%); stroke-linecap: butt; stroke-width: 0.5;"/>
+					</g>
+					<g transform="">
+						<g transform=" matrix(1,0,0,1,31,29)">
+							<text x="-4.726000000000001" y="-3.4000000000000004" style="font-family: Helvetica; font-size: 8.5px;fill: rgb(8%,8%,8%); stroke:none;" transform="translate(0,-6) scale(1,-1)">0</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,31,45.8)">
+							<text x="-14.177999999999999" y="-3.4000000000000004" style="font-family: Helvetica; font-size: 8.5px;fill: rgb(8%,8%,8%); stroke:none;" transform="translate(0,-6) scale(1,-1)">100</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,31,62.6)">
+							<text x="-14.177999999999999" y="-3.4000000000000004" style="font-family: Helvetica; font-size: 8.5px;fill: rgb(8%,8%,8%); stroke:none;" transform="translate(0,-6) scale(1,-1)">200</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,31,79.4)">
+							<text x="-14.177999999999999" y="-3.4000000000000004" style="font-family: Helvetica; font-size: 8.5px;fill: rgb(8%,8%,8%); stroke:none;" transform="translate(0,-6) scale(1,-1)">300</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,31,96.2)">
+							<text x="-14.177999999999999" y="-3.4000000000000004" style="font-family: Helvetica; font-size: 8.5px;fill: rgb(8%,8%,8%); stroke:none;" transform="translate(0,-6) scale(1,-1)">400</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,31,113)">
+							<text x="-14.177999999999999" y="-3.4000000000000004" style="font-family: Helvetica; font-size: 8.5px;fill: rgb(8%,8%,8%); stroke:none;" transform="translate(0,-6) scale(1,-1)">500</text>
+						</g>
+					</g>
+				</g>
+				<path d="M 36,45.8 L 208,45.8 Z" style="stroke: rgb(85%,86%,88%); stroke-linecap: butt; stroke-width: 0.35;"/>
+				<path d="M 36,62.6 L 208,62.6 Z" style="stroke: rgb(85%,86%,88%); stroke-linecap: butt; stroke-width: 0.35;"/>
+				<path d="M 36,79.4 L 208,79.4 Z" style="stroke: rgb(85%,86%,88%); stroke-linecap: butt; stroke-width: 0.35;"/>
+				<path d="M 36,96.2 L 208,96.2 Z" style="stroke: rgb(85%,86%,88%); stroke-linecap: butt; stroke-width: 0.35;"/>
+				<path d="M 36,113 L 208,113 Z" style="stroke: rgb(85%,86%,88%); stroke-linecap: butt; stroke-width: 0.35;"/>
+				<g transform="">
+					<polyline points="36 48.824, 70.4 52.016, 104.8 61.592, 139.2 68.984, 173.6 81.248, 208 100.232" style="stroke: rgb(0%,44%,69%); stroke-linecap: round; stroke-width: 1.8; fill: None; fill-rule: evenodd;"/>
+					<circle cx="36.0" cy="48.824" r="1.75" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.1; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+					<circle cx="70.4" cy="52.016000000000005" r="1.75" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.1; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+					<circle cx="104.8" cy="61.592" r="1.75" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.1; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+					<circle cx="139.2" cy="68.98400000000001" r="1.75" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.1; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+					<circle cx="173.6" cy="81.248" r="1.75" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.1; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+					<circle cx="208.0" cy="100.232" r="1.75" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.1; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+				</g>
+			</g>
+			<text x="8" y="128" style="font-family: Helvetica-Bold; font-size: 10.5px;fill: rgb(8%,8%,8%); stroke:none;" transform="translate(0,256) scale(1,-1)">a</text>
+			<text x="22" y="128" style="font-family: Helvetica-Bold; font-size: 10px;fill: rgb(8%,8%,8%); stroke:none;" transform="translate(0,256) scale(1,-1)">DAS articles and reviews</text>
+			<text x="40" y="105" style="font-family: Helvetica-Bold; font-size: 9.5px;fill: rgb(0%,44%,69%); stroke:none;" transform="translate(0,210) scale(1,-1)">3.59× since 2020</text>
+			<text x="41.0" y="54.824" style="font-family: Helvetica; font-size: 8.5px;fill: rgb(8%,8%,8%); stroke:none;" transform="translate(0,109) scale(1,-1)">118</text>
+			<text x="63.31100000000001" y="58.016000000000005" style="font-family: Helvetica; font-size: 8.5px;fill: rgb(8%,8%,8%); stroke:none;" transform="translate(0,116) scale(1,-1)">137</text>
+			<text x="97.711" y="67.592" style="font-family: Helvetica; font-size: 8.5px;fill: rgb(8%,8%,8%); stroke:none;" transform="translate(0,135) scale(1,-1)">194</text>
+			<text x="132.111" y="74.984" style="font-family: Helvetica; font-size: 8.5px;fill: rgb(8%,8%,8%); stroke:none;" transform="translate(0,149) scale(1,-1)">238</text>
+			<text x="166.511" y="87.24799999999999" style="font-family: Helvetica; font-size: 8.5px;fill: rgb(8%,8%,8%); stroke:none;" transform="translate(0,174) scale(1,-1)">311</text>
+			<text x="200.911" y="106.232" style="font-family: Helvetica; font-size: 8.5px;fill: rgb(8%,8%,8%); stroke:none;" transform="translate(0,212) scale(1,-1)">424</text>
+			<g transform="">
+				<g transform="">
+					<g transform="">
+						<path d="M 278,29 L 450,29 Z" style="stroke: rgb(8%,8%,8%); stroke-linecap: butt; stroke-width: 0.5;"/>
+					</g>
+					<g transform="">
+						<path d="M 278,29 L 278,26 Z" style="stroke: rgb(8%,8%,8%); stroke-linecap: butt; stroke-width: 0.5;"/>
+						<path d="M 312.4,29 L 312.4,26 Z" style="stroke: rgb(8%,8%,8%); stroke-linecap: butt; stroke-width: 0.5;"/>
+						<path d="M 346.8,29 L 346.8,26 Z" style="stroke: rgb(8%,8%,8%); stroke-linecap: butt; stroke-width: 0.5;"/>
+						<path d="M 381.2,29 L 381.2,26 Z" style="stroke: rgb(8%,8%,8%); stroke-linecap: butt; stroke-width: 0.5;"/>
+						<path d="M 415.6,29 L 415.6,26 Z" style="stroke: rgb(8%,8%,8%); stroke-linecap: butt; stroke-width: 0.5;"/>
+						<path d="M 450,29 L 450,26 Z" style="stroke: rgb(8%,8%,8%); stroke-linecap: butt; stroke-width: 0.5;"/>
+					</g>
+					<g transform="">
+						<g transform=" matrix(1,0,0,1,278,24)">
+							<text x="-9.452000000000002" y="-8.5" style="font-family: Helvetica; font-size: 8.5px;fill: rgb(8%,8%,8%); stroke:none;" transform="translate(0,-17) scale(1,-1)">2020</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,312.4,24)">
+							<text x="-9.452000000000002" y="-8.5" style="font-family: Helvetica; font-size: 8.5px;fill: rgb(8%,8%,8%); stroke:none;" transform="translate(0,-17) scale(1,-1)">2021</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,346.8,24)">
+							<text x="-9.452000000000002" y="-8.5" style="font-family: Helvetica; font-size: 8.5px;fill: rgb(8%,8%,8%); stroke:none;" transform="translate(0,-17) scale(1,-1)">2022</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,381.2,24)">
+							<text x="-9.452000000000002" y="-8.5" style="font-family: Helvetica; font-size: 8.5px;fill: rgb(8%,8%,8%); stroke:none;" transform="translate(0,-17) scale(1,-1)">2023</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,415.6,24)">
+							<text x="-9.452000000000002" y="-8.5" style="font-family: Helvetica; font-size: 8.5px;fill: rgb(8%,8%,8%); stroke:none;" transform="translate(0,-17) scale(1,-1)">2024</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,450,24)">
+							<text x="-9.452000000000002" y="-8.5" style="font-family: Helvetica; font-size: 8.5px;fill: rgb(8%,8%,8%); stroke:none;" transform="translate(0,-17) scale(1,-1)">2025</text>
+						</g>
+					</g>
+				</g>
+				<g transform="">
+					<g transform="">
+						<path d="M 278,29 L 278,113 Z" style="stroke: rgb(8%,8%,8%); stroke-linecap: butt; stroke-width: 0.5;"/>
+					</g>
+					<g transform="">
+						<path d="M 278,29 L 275,29 Z" style="stroke: rgb(8%,8%,8%); stroke-linecap: butt; stroke-width: 0.5;"/>
+						<path d="M 278,57 L 275,57 Z" style="stroke: rgb(8%,8%,8%); stroke-linecap: butt; stroke-width: 0.5;"/>
+						<path d="M 278,85 L 275,85 Z" style="stroke: rgb(8%,8%,8%); stroke-linecap: butt; stroke-width: 0.5;"/>
+						<path d="M 278,113 L 275,113 Z" style="stroke: rgb(8%,8%,8%); stroke-linecap: butt; stroke-width: 0.5;"/>
+					</g>
+					<g transform="">
+						<g transform=" matrix(1,0,0,1,273,29)">
+							<text x="-4.726000000000001" y="-3.4000000000000004" style="font-family: Helvetica; font-size: 8.5px;fill: rgb(8%,8%,8%); stroke:none;" transform="translate(0,-6) scale(1,-1)">0</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,273,57)">
+							<text x="-4.726000000000001" y="-3.4000000000000004" style="font-family: Helvetica; font-size: 8.5px;fill: rgb(8%,8%,8%); stroke:none;" transform="translate(0,-6) scale(1,-1)">2</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,273,85)">
+							<text x="-4.726000000000001" y="-3.4000000000000004" style="font-family: Helvetica; font-size: 8.5px;fill: rgb(8%,8%,8%); stroke:none;" transform="translate(0,-6) scale(1,-1)">4</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,273,113)">
+							<text x="-4.726000000000001" y="-3.4000000000000004" style="font-family: Helvetica; font-size: 8.5px;fill: rgb(8%,8%,8%); stroke:none;" transform="translate(0,-6) scale(1,-1)">6</text>
+						</g>
+					</g>
+				</g>
+				<path d="M 278,57 L 450,57 Z" style="stroke: rgb(85%,86%,88%); stroke-linecap: butt; stroke-width: 0.35;"/>
+				<path d="M 278,85 L 450,85 Z" style="stroke: rgb(85%,86%,88%); stroke-linecap: butt; stroke-width: 0.35;"/>
+				<path d="M 278,113 L 450,113 Z" style="stroke: rgb(85%,86%,88%); stroke-linecap: butt; stroke-width: 0.35;"/>
+				<g transform="">
+					<polyline points="278 53.62816, 312.4 59.64895, 346.8 75.78049, 381.2 84.07183, 415.6 96.03074, 450 108.2511" style="stroke: rgb(0%,44%,69%); stroke-linecap: round; stroke-width: 1.8; fill: None; fill-rule: evenodd;"/>
+					<circle cx="278.0" cy="53.628162452845714" r="1.75" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.1; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+					<circle cx="312.4" cy="59.64895078478412" r="1.75" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.1; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+					<circle cx="346.8" cy="75.78049115726427" r="1.75" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.1; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+					<circle cx="381.2" cy="84.071831386316" r="1.75" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.1; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+					<circle cx="415.6" cy="96.03074284811686" r="1.75" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.1; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+					<circle cx="450.0" cy="108.25110906159532" r="1.75" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 0.1; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+				</g>
+			</g>
+			<text x="250" y="128" style="font-family: Helvetica-Bold; font-size: 10.5px;fill: rgb(8%,8%,8%); stroke:none;" transform="translate(0,256) scale(1,-1)">b</text>
+			<text x="264" y="128" style="font-family: Helvetica-Bold; font-size: 10px;fill: rgb(8%,8%,8%); stroke:none;" transform="translate(0,256) scale(1,-1)">Per 100,000 articles and reviews</text>
+			<text x="282" y="105" style="font-family: Helvetica-Bold; font-size: 9.5px;fill: rgb(0%,44%,69%); stroke:none;" transform="translate(0,210) scale(1,-1)">3.22× since 2020</text>
+			<text x="283.0" y="59.628162452845714" style="font-family: Helvetica; font-size: 8.5px;fill: rgb(8%,8%,8%); stroke:none;" transform="translate(0,119) scale(1,-1)">1.76</text>
+			<text x="304.12949999999995" y="65.64895078478412" style="font-family: Helvetica; font-size: 8.5px;fill: rgb(8%,8%,8%); stroke:none;" transform="translate(0,131) scale(1,-1)">2.19</text>
+			<text x="338.5295" y="81.78049115726427" style="font-family: Helvetica; font-size: 8.5px;fill: rgb(8%,8%,8%); stroke:none;" transform="translate(0,163) scale(1,-1)">3.34</text>
+			<text x="372.92949999999996" y="90.071831386316" style="font-family: Helvetica; font-size: 8.5px;fill: rgb(8%,8%,8%); stroke:none;" transform="translate(0,180) scale(1,-1)">3.93</text>
+			<text x="407.3295" y="102.03074284811686" style="font-family: Helvetica; font-size: 8.5px;fill: rgb(8%,8%,8%); stroke:none;" transform="translate(0,204) scale(1,-1)">4.79</text>
+			<text x="441.7295" y="114.25110906159532" style="font-family: Helvetica; font-size: 8.5px;fill: rgb(8%,8%,8%); stroke:none;" transform="translate(0,228) scale(1,-1)">5.66</text>
+			<text x="96.97999999999999" y="2" style="font-family: Helvetica; font-size: 8px;fill: rgb(8%,8%,8%); stroke:none;" transform="translate(0,4) scale(1,-1)">OpenAlex snapshot 21 October 2026 • Indexed research activity across fields</text>
+		</g>
+	</g>
+</svg>

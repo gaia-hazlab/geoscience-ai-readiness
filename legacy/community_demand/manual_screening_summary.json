@@ -1,0 +1,21 @@
+{
+  "n": 20,
+  "sampling": "Six most-cited matches per topic, except earthquake_simulation has onlytwo matches; not a random or prevalence sample. Ties sorted by API default. Citation counts are at query snapshot.",
+  "counts": {
+    "method_or_result_not_request": 5,
+    "empirical_or_conditional_data_need": 4,
+    "explicit_earth_data_or_benchmark_gap": 2,
+    "outside_target_earth_science_scope": 4,
+    "unassessable_abstract_missing": 3,
+    "lexical_false_positive": 1,
+    "broader_integration_need_not_ai_standard": 1
+  },
+  "interpretation": "Do not divide category counts by20 to estimate prevalence in the literature. Three abstracts are missing. No papers are manually confirmed to request this exact consortium\u2019s holdings.",
+  "limitations": [
+    "Single reviewer preliminary coding",
+    "Search limited to indexed title/abstract",
+    "No systematic discussion-section/full-text search",
+    "No citation/reuse disambiguation",
+    "Topic and article-type classification/coverage may change"
+  ]
+}

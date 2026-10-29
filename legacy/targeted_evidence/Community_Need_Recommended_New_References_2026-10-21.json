@@ -1,0 +1,85 @@
+[
+  {
+    "key": "Aderhold2022",
+    "authors": [
+      "Kasey Aderhold",
+      "Scott Tyler",
+      "Danica Roth"
+    ],
+    "year": 2022,
+    "title": "Distributed Acoustic Sensing Community Resources",
+    "venue": "DAS Research Coordination Network white paper",
+    "date": "May 5, 2022",
+    "doi": null,
+    "url": "https://web-archive-2022.iris.edu/hq/files/initiatives/das_rcn/Distributed_Acoustic_Sensing_Community_Resources_White_Paper.pdf",
+    "verified_full_author_list": true,
+    "citation": "Kasey Aderhold, Scott Tyler, and Danica Roth (2022). Distributed Acoustic Sensing Community Resources. DAS Research Coordination Network white paper, May 5, 2022. "
+  },
+  {
+    "key": "Lai2024",
+    "authors": [
+      "Voon Hui Lai",
+      "Kathleen M. Hodgkinson",
+      "Robert W. Porritt",
+      "Robert Mellors"
+    ],
+    "year": 2024,
+    "title": "Toward a Metadata Standard for Distributed Acoustic Sensing (DAS) Data Collection",
+    "venue": "Seismological Research Letters",
+    "volume": "95",
+    "issue": "3",
+    "pages": "1986–1999",
+    "doi": "10.1785/0220230325",
+    "url": "https://doi.org/10.1785/0220230325",
+    "verified_full_author_list": true,
+    "citation": "Voon Hui Lai, Kathleen M. Hodgkinson, Robert W. Porritt, and Robert Mellors (2024). Toward a Metadata Standard for Distributed Acoustic Sensing (DAS) Data Collection. Seismological Research Letters, 95(3), 1986–1999. "
+  },
+  {
+    "key": "Kratzert2023",
+    "authors": [
+      "Frederik Kratzert",
+      "Grey Nearing",
+      "Nans Addor",
+      "Tyler Erickson",
+      "Martin Gauch",
+      "Oren Gilon",
+      "Lukas Gudmundsson",
+      "Avinatan Hassidim",
+      "Daniel Klotz",
+      "Sella Nevo",
+      "Guy Shalev",
+      "Yossi Matias"
+    ],
+    "year": 2023,
+    "title": "Caravan - A global community dataset for large-sample hydrology",
+    "venue": "Scientific Data",
+    "volume": "10",
+    "article_number": "61",
+    "doi": "10.1038/s41597-023-01975-w",
+    "url": "https://doi.org/10.1038/s41597-023-01975-w",
+    "verified_full_author_list": true,
+    "citation": "Frederik Kratzert, Grey Nearing, Nans Addor, Tyler Erickson, Martin Gauch, Oren Gilon, Lukas Gudmundsson, Avinatan Hassidim, Daniel Klotz, Sella Nevo, Guy Shalev, and Yossi Matias (2023). Caravan - A global community dataset for large-sample hydrology. Scientific Data, 10, 61. "
+  },
+  {
+    "key": "Deng2022",
+    "authors": [
+      "Chengyuan Deng",
+      "Shihang Feng",
+      "Hanchen Wang",
+      "Xitong Zhang",
+      "Peng Jin",
+      "Yinan Feng",
+      "Qili Zeng",
+      "Yinpeng Chen",
+      "Youzuo Lin"
+    ],
+    "year": 2022,
+    "title": "OpenFWI: Large-scale Multi-structural Benchmark Datasets for Full Waveform Inversion",
+    "venue": "Advances in Neural Information Processing Systems",
+    "volume": "35",
+    "doi": "10.52202/068431-0435",
+    "url": "https://doi.org/10.52202/068431-0435",
+    "verified_full_author_list": true,
+    "citation": "Chengyuan Deng, Shihang Feng, Hanchen Wang, Xitong Zhang, Peng Jin, Yinan Feng, Qili Zeng, Yinpeng Chen, and Youzuo Lin (2022). OpenFWI: Large-scale Multi-structural Benchmark Datasets for Full Waveform Inversion. Advances in Neural Information Processing Systems, 35, Datasets and Benchmarks Track. "
+  }
+]

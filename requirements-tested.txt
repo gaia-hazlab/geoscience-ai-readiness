@@ -1,0 +1,6 @@
+# Core plotting environment verified for this prepared release on Python 3.12.
+numpy==2.3.5
+reportlab==4.4.9
+pillow==12.3.0
+# Poppler's pdftoppm is a separate system dependency, not a pip package.
+# Optional ai_readiness rendering uses the [study] extra (Matplotlib).

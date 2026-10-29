@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-23",
+  "checks": [
+    {
+      "figure": "Figure_1_Event_Linked_Corpus_DRAFT_2026-10-20",
+      "pixels_identical": true,
+      "size": [
+        1950,
+        990
+      ],
+      "rgb_sha256": "d0e193e9d51f31faff6c63d867df686ff0fe91832d3136b9b42a3d19971f12f8"
+    },
+    {
+      "figure": "Figure_2_Readiness_Research_Design_DRAFT_2026-10-20",
+      "pixels_identical": true,
+      "size": [
+        1950,
+        990
+      ],
+      "rgb_sha256": "5e71f1950758c08dd0f31b90f5921576957d5c3d6d9a340473d7f22ed942d665"
+    },
+    {
+      "figure": "DAS publication activity",
+      "svg_identical": true,
+      "svg_sha256": "a2be66534c9cf87f184d197bf1ac25f611a1058b78a8442ca1aeaca092a72bef"
+    }
+  ]
+}

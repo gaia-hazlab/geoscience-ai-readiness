@@ -1,0 +1,12 @@
+{
+  "check_time_utc": "2026-10-29T18:08:17+00:00",
+  "python_version": "3.12.14",
+  "check": "Four included acquisition test modules; synthetic/mocked responses",
+  "network": "Socket connection attempts blocked during test run",
+  "credentials": "METASCIENCE_KEYS set to a nonexistent path; actual credential files not read",
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "......................................................................\n----------------------------------------------------------------------\nRan 70 tests in 0.346s\n\nOK\n",
+  "source_modules_imported": "Only modules imported by these four test modules; code_papers, corpus, fetch_pdfs and roadmap support were not imported",
+  "ast_parse": "All 33 copied Python sources parsed successfully without module execution."
+}

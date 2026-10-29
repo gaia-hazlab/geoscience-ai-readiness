@@ -1,0 +1,19 @@
+{
+  "title": "Geoscience AI-readiness research toolkit",
+  "upload_type": "software",
+  "description": "Evidence-first literature-study tools, task-conditioned instrument, frozen DAS publication-activity analysis and reproducible figures. The broad reviewed-corpus study is not yet run.",
+  "creators": [
+    {
+      "name": "Denolle, Marine",
+      "affiliation": "University of Washington"
+    }
+  ],
+  "version": "0.3.0",
+  "license": "mit",
+  "keywords": [
+    "geoscience",
+    "AI readiness",
+    "multimodal research",
+    "literature analysis"
+  ]
+}

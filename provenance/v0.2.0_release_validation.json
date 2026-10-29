@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-23",
+  "version": "0.2.0",
+  "figure": "DAS_Publication_Activity_2026-10-23_v2",
+  "data_identical_to_v0_1": true,
+  "snapshot": "2026-10-21",
+  "redesigned": [
+    "absolute counts as bars",
+    "normalized activity as line",
+    "explicit units and direct numeric labels",
+    "compact aligned panels with zero baselines"
+  ],
+  "core_integrity_tests": 13,
+  "portability_checks_passed": 5,
+  "prior_61_unchanged_study_tests": "passed in v0.1.0; files unchanged",
+  "pdf_pages": 1,
+  "pdf_size_pt": [
+    468,
+    194.4
+  ],
+  "png_size_px": [
+    1950,
+    810
+  ],
+  "visual_QA": "PASS: inspected full 300 dpi PNG; no overlap or clipping",
+  "proposal_or_portal_changed": false
+}

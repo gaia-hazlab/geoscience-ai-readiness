@@ -1,0 +1,290 @@
+{
+  "protocol_version": "0.1",
+  "date": "2026-10-21",
+  "status": "draft_not_executed",
+  "unit": "published research article; one paper can have multiple actual-use data sources",
+  "principle": "Count physical measurement families from actually analyzed inputs or evaluation targets, not introductory mentions, platforms, tensor ranks, or alternative transforms of the same signal.",
+  "label_states": [
+    "yes",
+    "no",
+    "uncertain",
+    "not_assessed",
+    "not_applicable"
+  ],
+  "evidence_levels": [
+    "title_abstract",
+    "full_text",
+    "supplement",
+    "code_data_record"
+  ],
+  "families": {
+    "seismic_elastic": {
+      "description": "Elastic ground motion or strain, including conventional seismic and DAS; distinguish sensing types.",
+      "fine_examples": [
+        "seismometer_displacement_velocity_acceleration",
+        "DAS_axial_strain_or_strain_rate",
+        "strong_motion",
+        "active_source_seismic"
+      ]
+    },
+    "geodetic_position_displacement": {
+      "description": "Direct positioning or local displacement/strain instrumentation, separately from radar-derived deformation.",
+      "fine_examples": [
+        "GNSS",
+        "leveling",
+        "tiltmeter",
+        "strainmeter",
+        "extensometer"
+      ]
+    },
+    "radar_backscatter_interferometry": {
+      "description": "Active microwave radar amplitude, phase or polarimetry, including InSAR; not optical because it is an image.",
+      "fine_examples": [
+        "SAR_backscatter",
+        "InSAR_phase_displacement",
+        "radar_altimetry",
+        "weather_radar"
+      ]
+    },
+    "optical_reflectance": {
+      "description": "Passive visible/near-infrared/shortwave-infrared reflectance and derived products.",
+      "fine_examples": [
+        "multispectral",
+        "hyperspectral",
+        "RGB",
+        "photogrammetry"
+      ]
+    },
+    "passive_microwave": {
+      "description": "Passive microwave radiometry.",
+      "fine_examples": [
+        "brightness_temperature",
+        "microwave_soil_moisture"
+      ]
+    },
+    "thermal_radiance": {
+      "description": "Thermal infrared or other emitted thermal radiometry, distinct from reflected optical bands.",
+      "fine_examples": [
+        "land_surface_temperature",
+        "thermal_infrared_radiance"
+      ]
+    },
+    "atmospheric_in_situ": {
+      "description": "Atmospheric state and composition from local sensors.",
+      "fine_examples": [
+        "temperature_pressure_humidity",
+        "radiosonde",
+        "wind",
+        "precipitation_gauge",
+        "gas_aerosol_sensor"
+      ]
+    },
+    "hydrologic_in_situ": {
+      "description": "Water, soil and groundwater state/flux observations.",
+      "fine_examples": [
+        "streamflow_gauge",
+        "water_level",
+        "soil_moisture",
+        "groundwater_pressure",
+        "water_quality"
+      ]
+    },
+    "oceanographic_in_situ": {
+      "description": "Marine state/flux observations other than seismic motion.",
+      "fine_examples": [
+        "CTD",
+        "ADCP_currents",
+        "buoy_wave_height",
+        "ocean_chemistry"
+      ]
+    },
+    "gravity_potential": {
+      "description": "Gravitational field or potential measurements and derived gravity products.",
+      "fine_examples": [
+        "gravimeter",
+        "satellite_gravimetry"
+      ]
+    },
+    "electromagnetic_electrical": {
+      "description": "Non-radar electromagnetic, electrical or magnetic geophysical measurements.",
+      "fine_examples": [
+        "magnetotelluric",
+        "resistivity",
+        "magnetometer",
+        "controlled_source_EM"
+      ]
+    },
+    "geochemical_biological": {
+      "description": "Material composition, isotope and biological/ecological assays; separate fine types when scientifically needed.",
+      "fine_examples": [
+        "isotope",
+        "geochemical_assay",
+        "genomics",
+        "biodiversity_survey"
+      ]
+    },
+    "human_system_records": {
+      "description": "Trade, infrastructure, agricultural, demographic or other human-system records.",
+      "fine_examples": [
+        "commodity_flow",
+        "port_network",
+        "crop_yield",
+        "infrastructure_graph",
+        "economic_record"
+      ]
+    },
+    "other": {
+      "description": "Specify a justified additional measurement family, including lidar or acoustic ocean measurements pending ontology review; do not force these into optical or seismic.",
+      "fine_examples": []
+    }
+  },
+  "platforms_separate_from_family": [
+    "satellite",
+    "aircraft",
+    "UAV",
+    "fixed_station",
+    "mobile_instrument",
+    "fiber_cable",
+    "laboratory",
+    "numerical_simulator",
+    "administrative_record",
+    "other"
+  ],
+  "data_origins": [
+    "observed",
+    "simulated",
+    "reanalysis_or_assimilated",
+    "derived_from_observations",
+    "mixed",
+    "uncertain"
+  ],
+  "representations": [
+    "scalar_or_table",
+    "regular_time_series",
+    "irregular_time_series",
+    "waveform",
+    "image_or_raster",
+    "point_cloud",
+    "graph_or_network",
+    "vector_feature",
+    "3D_or_4D_field",
+    "text",
+    "other"
+  ],
+  "source_roles": [
+    "model_input",
+    "training_target",
+    "evaluation_target",
+    "physical_inversion_input",
+    "contextual_analysis",
+    "background_mention_only"
+  ],
+  "ml_roles": [
+    "actual_model_training",
+    "actual_pretrained_inference",
+    "actual_empirical_evaluation",
+    "mention_only",
+    "no_ml_after_assessment",
+    "uncertain",
+    "not_assessed"
+  ],
+  "ml_method_families": [
+    "classical_ml",
+    "deep_learning",
+    "foundation_model",
+    "generative_model",
+    "agent_or_llm",
+    "other",
+    "uncertain"
+  ],
+  "integration_relations_multilabel": {
+    "co_used_only": "Distinct families actually analyzed in the same paper but no integrated estimator or common learned model evidenced.",
+    "joint_non_ml_inversion": "Distinct families jointly constrain a non-ML estimator/inversion or physically based assimilation.",
+    "late_output_fusion": "Separately computed predictions or embeddings are combined downstream; record whether fusion itself is learned.",
+    "joint_ml_inputs": "A learned predictor consumes at least two actual measurement families; record whether concatenation or shared training.",
+    "cross_modal_representation_learning": "A learned representation explicitly couples distinct families, for example paired/contrastive/masked cross-family objectives.",
+    "cross_modal_transfer_test": "A prespecified empirical test evaluates transfer or prediction between families or robustness to held-out/missing modalities, not merely within-family temporal transfer."
+  },
+  "foundation_model_assessment": "Record authors' use of term and assessor's task/scale/pretraining evidence separately; architecture name or buzzword is insufficient.",
+  "dimensions_to_record": [
+    "native_axis_names",
+    "native_spatial_support",
+    "native_temporal_support",
+    "native_units",
+    "model_input_representation",
+    "resampling_or_alignment",
+    "missing_modalities",
+    "paired_or_unpaired_training",
+    "training_volume_as_reported",
+    "train_test_split_unit"
+  ],
+  "readiness_profile_axes": [
+    "persistent_identifiers_discovery",
+    "license_and_access",
+    "semantics_calibration_metadata",
+    "reproducible_training",
+    "leakage_aware_evaluation",
+    "demonstrated_scale",
+    "independent_replication_reuse",
+    "stewardship_governance"
+  ],
+  "edge_cases": [
+    "A waveform and its spectrogram count as one source family.",
+    "Multiple channels or variables from one instrument do not automatically create multiple families.",
+    "DAS and seismometers share a broad elastic family but retain different fine sensing type labels.",
+    "GNSS and InSAR can measure a related deformation field while remaining different sensing families.",
+    "Radar and optical may both be raster images yet count as distinct families.",
+    "Simulated and observed examples of the same waveform family differ in origin, not necessarily modality count.",
+    "Reanalysis is not evidence that the paper directly consumes each underlying assimilated sensor family.",
+    "Training targets count toward source-family co-use but a target family alone does not prove that both families were used as joint model inputs.",
+    "Image plus acquisition timestamp or coordinates is not automatically cross-modal training; annotate metadata/context separately.",
+    "Independent papers using the same archive do not prove replication of the same method or access at the archive's full scale.",
+    "Absence from a title or abstract is unknown unless full evidence was assessed.",
+    "Three components of a seismic station remain one elastic family; GNSS and InSAR are two sensing families in this protocol but can map to one coarse deformation phenomenon."
+  ],
+  "public_release": {
+    "full_text": false,
+    "abstract_text": false,
+    "verbatim_excerpt_words_total_per_source_work_max": 25,
+    "release": [
+      "identifiers",
+      "legal_access_urls",
+      "labels",
+      "locators",
+      "short_paraphrases",
+      "derived_aggregates",
+      "code"
+    ]
+  },
+  "counting_resolutions": {
+    "main": "prespecified sensing_family ontology",
+    "sensitivity": "coarser measured_phenomenon and finer sensing_type counts",
+    "requirement": "publish mapping and report sensitivity rather than asserting a universal modality count"
+  },
+  "needs": {
+    "source_sections": [
+      "Methods",
+      "Data",
+      "Discussion",
+      "Conclusion",
+      "Other"
+    ],
+    "claim_origin": [
+      "explicit_author_request",
+      "assessor_inference",
+      "not_assessed"
+    ],
+    "tags": [
+      "spatial_temporal_coverage",
+      "label_quality_control",
+      "additional_simulations",
+      "metadata_semantics",
+      "access_licensing",
+      "benchmark_evaluation",
+      "transfer_generalization",
+      "scale_cost",
+      "other"
+    ],
+    "rule": "Publish expressed requests separately from inferred needs, and never treat use prevalence as desire for the proposed project."
+  }
+}

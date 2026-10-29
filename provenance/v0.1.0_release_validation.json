@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-23",
+  "version": "0.1.0",
+  "python_tested": "3.12.14",
+  "tests": {
+    "figure_integrity_portability": 18,
+    "existing_literature_study": 61,
+    "total": 79,
+    "failures": 0
+  },
+  "reproduced_figures": 3,
+  "conceptual_pixels_match_original": true,
+  "das_svg_byte_matches_original": true,
+  "visual_review": "all three regenerated PNGs inspected",
+  "installed_wheel_reproduction": "PASS from outside source tree, without PYTHONPATH",
+  "citation_metadata": "YAML parsed; required fields present; DOI and repository URL intentionally absent until publication",
+  "broad_literature_study_run": false,
+  "public_repository_created": false,
+  "proposal_documents_or_emails_changed": false,
+  "distribution_scope": "plotting code, public aggregate snapshots, reference figures, source hashes, synthetic tests and release metadata"
+}

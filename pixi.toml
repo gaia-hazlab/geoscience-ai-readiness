@@ -1,0 +1,41 @@
+[workspace]
+name = "geoscience-ai-readiness"
+version = "0.3.0"
+description = "Evidence-first geoscience AI-readiness literature tools, rubric and reproducible figures"
+authors = ["Marine Denolle <mdenolle@uw.edu>"]
+channels = ["conda-forge"]
+platforms = ["osx-arm64", "osx-64", "linux-64", "linux-aarch64"]
+# Static conda-to-PyPI name mapping, so solving works behind firewalls that block conda-mapping.prefix.dev.
+conda-pypi-map = { "conda-forge" = "https://raw.githubusercontent.com/prefix-dev/parselmouth/main/files/compressed_mapping.json" }
+
+[dependencies]
+python = "3.12.*"
+numpy = ">=1.26,<3"
+reportlab = ">=4.4,<5"
+pillow = "*"
+# Poppler supplies pdftoppm, used for PNG export of the figures.
+poppler = "*"
+pip = "*"
+setuptools = ">=68"
+
+[pypi-dependencies]
+geoscience-ai-readiness = { path = ".", editable = true }
+
+[feature.study.dependencies]
+matplotlib = ">=3.8,<4"
+
+[feature.instrument.dependencies]
+python-docx = ">=1.1,<2"
+
+[environments]
+default = { features = ["study", "instrument"], solve-group = "default" }
+core = { features = [], solve-group = "default" }
+
+[tasks]
+check = { cmd = "python scripts/check_offline.py", description = "Run the figure, preferred-analysis and standalone test suites offline" }
+verify = { cmd = "python scripts/verify_release.py", description = "Check release-file SHA-256 hashes" }
+figures = { cmd = "python -m aidatasets_figures --out build/figures", description = "Rebuild the DAS activity figure and conceptual schematics" }
+readiness-help = "ai-readiness --help"
+instrument = { cmd = "python instrument/build_readiness_instrument.py", description = "Rebuild the task-conditioned readiness forms (overwrites dated examples)" }
+dry-run = { cmd = "python standalone/literature_study.py harvest --config standalone/config.example.json --dry-run", description = "Standalone harvester dry run (no network)" }
+all = { depends-on = ["verify", "check", "figures", "readiness-help"] }

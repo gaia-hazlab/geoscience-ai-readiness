@@ -1,0 +1,462 @@
+{
+  "snapshot_time_utc": "2026-10-29T18:07:26+00:00",
+  "source_repository": "https://github.com/Denolle-Lab/metascience-and-AI",
+  "source_commit": "dc19d45b0bfd2eb98ffb8ad4bbd26f2e87f2ba6f",
+  "source_worktree_clean": true,
+  "scope": "Optional public acquisition/semantic support code; no private corpus, credentials, article full text, generated scientific results or .git directory. Python sources unchanged; three historical README directory examples generalized, with original and release hashes retained.",
+  "copied_file_count": 56,
+  "files": [
+    {
+      "source_path": "LICENSE",
+      "package_path": "LICENSE",
+      "bytes": 3051,
+      "sha256": "7c4a66eee49c54e4efc5914ca5ca3cc698a21f8d03613a5782d5d666854ec5c5",
+      "copied_unchanged": true,
+      "release_sha256": "7c4a66eee49c54e4efc5914ca5ca3cc698a21f8d03613a5782d5d666854ec5c5"
+    },
+    {
+      "source_path": "templates/nature-dataset.example.json",
+      "package_path": "templates/nature-dataset.example.json",
+      "bytes": 465,
+      "sha256": "a56b9e5923e71b3df99cfc6c79effd01fde3e8ca14cb4cb09256528bb7d3a4b9",
+      "copied_unchanged": true,
+      "release_sha256": "a56b9e5923e71b3df99cfc6c79effd01fde3e8ca14cb4cb09256528bb7d3a4b9"
+    },
+    {
+      "source_path": "tools/select_dois.py",
+      "package_path": "tools/select_dois.py",
+      "bytes": 32803,
+      "sha256": "0212d72732397cd8f0c1ac55df72c4ecf53bb79dfecdb805a1ced71ae83d4aa7",
+      "copied_unchanged": true,
+      "release_sha256": "0212d72732397cd8f0c1ac55df72c4ecf53bb79dfecdb805a1ced71ae83d4aa7"
+    },
+    {
+      "source_path": "tools/nature_dataset.py",
+      "package_path": "tools/nature_dataset.py",
+      "bytes": 21721,
+      "sha256": "69dc677285cda5d615c30f5499a19aa690e702765468467af5ad4516cc31add1",
+      "copied_unchanged": true,
+      "release_sha256": "69dc677285cda5d615c30f5499a19aa690e702765468467af5ad4516cc31add1"
+    },
+    {
+      "source_path": "tools/download_nature.py",
+      "package_path": "tools/download_nature.py",
+      "bytes": 16163,
+      "sha256": "1dac8d2ee14b833915a737a208eb70fc7cb4bc3c16a9fbfdc9ecd2f7724edfca",
+      "copied_unchanged": true,
+      "release_sha256": "1dac8d2ee14b833915a737a208eb70fc7cb4bc3c16a9fbfdc9ecd2f7724edfca"
+    },
+    {
+      "source_path": "tools/download_wiley.py",
+      "package_path": "tools/download_wiley.py",
+      "bytes": 12139,
+      "sha256": "9ade63cecc7ebcd5e4d0e46928974e6f70698d7305bb74ed51162b7522df450a",
+      "copied_unchanged": true,
+      "release_sha256": "9ade63cecc7ebcd5e4d0e46928974e6f70698d7305bb74ed51162b7522df450a"
+    },
+    {
+      "source_path": "tools/corpus.py",
+      "package_path": "tools/corpus.py",
+      "bytes": 7475,
+      "sha256": "7dbed17dd71177b96201659fedc6034392a08ae90e3ce85c18e926069df572c1",
+      "copied_unchanged": true,
+      "release_sha256": "7dbed17dd71177b96201659fedc6034392a08ae90e3ce85c18e926069df572c1"
+    },
+    {
+      "source_path": "tools/keys.py",
+      "package_path": "tools/keys.py",
+      "bytes": 936,
+      "sha256": "01d744a1d98b423d60f72670e9ed0e9ac30929c798e6a5fea6575e9f36ac455d",
+      "copied_unchanged": true,
+      "release_sha256": "01d744a1d98b423d60f72670e9ed0e9ac30929c798e6a5fea6575e9f36ac455d"
+    },
+    {
+      "source_path": "tools/jats_text.py",
+      "package_path": "tools/jats_text.py",
+      "bytes": 9957,
+      "sha256": "cca865e379213b7272dfa9f439edd1fad5ff140e3876271c4ea04940729e0bfe",
+      "copied_unchanged": true,
+      "release_sha256": "cca865e379213b7272dfa9f439edd1fad5ff140e3876271c4ea04940729e0bfe"
+    },
+    {
+      "source_path": "tools/code_papers.py",
+      "package_path": "tools/code_papers.py",
+      "bytes": 73057,
+      "sha256": "2e42214a14980f8a0dbae937eee0668c22b7c143ec143fce0ae26150ce57efd3",
+      "copied_unchanged": true,
+      "release_sha256": "2e42214a14980f8a0dbae937eee0668c22b7c143ec143fce0ae26150ce57efd3"
+    },
+    {
+      "source_path": "tools/check_coding.py",
+      "package_path": "tools/check_coding.py",
+      "bytes": 14247,
+      "sha256": "68eb90e8e69f3479605f60e7c6618418365a765612a489e221239ec742cb5864",
+      "copied_unchanged": true,
+      "release_sha256": "68eb90e8e69f3479605f60e7c6618418365a765612a489e221239ec742cb5864"
+    },
+    {
+      "source_path": "tools/check_coding_nature.py",
+      "package_path": "tools/check_coding_nature.py",
+      "bytes": 6439,
+      "sha256": "ff84f417c62a6fefbe9bafa25f770bec1fc08d260edd76db104933998257203e",
+      "copied_unchanged": true,
+      "release_sha256": "ff84f417c62a6fefbe9bafa25f770bec1fc08d260edd76db104933998257203e"
+    },
+    {
+      "source_path": "tools/check_advance.py",
+      "package_path": "tools/check_advance.py",
+      "bytes": 36440,
+      "sha256": "81f600c257a2b80e4232ca83095870ff67185a29f7f807f5dbe8e1d3648437ff",
+      "copied_unchanged": true,
+      "release_sha256": "81f600c257a2b80e4232ca83095870ff67185a29f7f807f5dbe8e1d3648437ff"
+    },
+    {
+      "source_path": "tools/blind_text.py",
+      "package_path": "tools/blind_text.py",
+      "bytes": 58488,
+      "sha256": "91dba23b0386d776579221ccff9c65f2f95b40dfdce24b49282ba76e5a230982",
+      "copied_unchanged": true,
+      "release_sha256": "91dba23b0386d776579221ccff9c65f2f95b40dfdce24b49282ba76e5a230982"
+    },
+    {
+      "source_path": "tools/fetch_pdfs.py",
+      "package_path": "tools/fetch_pdfs.py",
+      "bytes": 20705,
+      "sha256": "8ccd7a0e0e5f4a582a3170b464b0c12d6903f2c5c8cf16d4c3a7fb19d2f907b0",
+      "copied_unchanged": true,
+      "release_sha256": "8ccd7a0e0e5f4a582a3170b464b0c12d6903f2c5c8cf16d4c3a7fb19d2f907b0"
+    },
+    {
+      "source_path": "tools/apa.py",
+      "package_path": "tools/apa.py",
+      "bytes": 3961,
+      "sha256": "bf500baf03b92ee3c94aa4cdbb14f6b4ffeedb20c9d948425e9591361964a5d0",
+      "copied_unchanged": true,
+      "release_sha256": "bf500baf03b92ee3c94aa4cdbb14f6b4ffeedb20c9d948425e9591361964a5d0"
+    },
+    {
+      "source_path": "tools/aggregate_codings.py",
+      "package_path": "tools/aggregate_codings.py",
+      "bytes": 6385,
+      "sha256": "f90902de8447adf131f7233e0dbd28c937faccb9503299589c761b4189c59698",
+      "copied_unchanged": true,
+      "release_sha256": "f90902de8447adf131f7233e0dbd28c937faccb9503299589c761b4189c59698"
+    },
+    {
+      "source_path": "tools/select_dois_README.txt",
+      "package_path": "tools/select_dois_README.txt",
+      "bytes": 9850,
+      "sha256": "47408878b1569362d264b6226dc4c13b2d6e1c951ca6056eab1ca82942ff15b0",
+      "copied_unchanged": false,
+      "change": "Replaced machine-specific example directory with /path/to/metascience-and-AI; no code change.",
+      "release_sha256": "36b100e9bdcf822c97c9c57f8d5938a683cfb8962248bcae65d05c117b5661e6"
+    },
+    {
+      "source_path": "tools/nature_dataset_README.txt",
+      "package_path": "tools/nature_dataset_README.txt",
+      "bytes": 10314,
+      "sha256": "f228a4d354aaf8b22233136425f46e5f2950f91362f90502a6de569f6955a1ee",
+      "copied_unchanged": false,
+      "change": "Replaced machine-specific example directory with /path/to/metascience-and-AI; no code change.",
+      "release_sha256": "0031e37448253982030ac4438c3b16e58e28592e6b69f6062d824971216988ca"
+    },
+    {
+      "source_path": "tools/nature_workflow_README.txt",
+      "package_path": "tools/nature_workflow_README.txt",
+      "bytes": 12932,
+      "sha256": "a829ee9ce29e45384a3b13b2440284a51d0962438bb34ed00df6be32254d467f",
+      "copied_unchanged": false,
+      "change": "Replaced machine-specific example directory with /path/to/metascience-and-AI; no code change.",
+      "release_sha256": "e734b7f3bee7c4ecde768dd4bc89de990e4b57d218240b07123c8f4fc8c092cf"
+    },
+    {
+      "source_path": "tools/test_select_dois.py",
+      "package_path": "tools/test_select_dois.py",
+      "bytes": 18779,
+      "sha256": "f22c5784fcc061026bae2550f43e379357415779d259b40953069e3ab27f0c22",
+      "copied_unchanged": true,
+      "release_sha256": "f22c5784fcc061026bae2550f43e379357415779d259b40953069e3ab27f0c22"
+    },
+    {
+      "source_path": "tools/test_nature_dataset.py",
+      "package_path": "tools/test_nature_dataset.py",
+      "bytes": 12790,
+      "sha256": "696d8e54143d32f1f04563272961a591d9fe3074ea6fee37047070b688339c1b",
+      "copied_unchanged": true,
+      "release_sha256": "696d8e54143d32f1f04563272961a591d9fe3074ea6fee37047070b688339c1b"
+    },
+    {
+      "source_path": "tools/test_download_nature.py",
+      "package_path": "tools/test_download_nature.py",
+      "bytes": 10529,
+      "sha256": "3e60588886792c15de182bb0f2b9f2f5d2fb459f86ced67b1e58fa307fcba9d2",
+      "copied_unchanged": true,
+      "release_sha256": "3e60588886792c15de182bb0f2b9f2f5d2fb459f86ced67b1e58fa307fcba9d2"
+    },
+    {
+      "source_path": "tools/test_download_wiley.py",
+      "package_path": "tools/test_download_wiley.py",
+      "bytes": 8452,
+      "sha256": "4640cbe82963dea3c8d3fe8f73f738d2976c733ca279483acd9f077cdaa683a4",
+      "copied_unchanged": true,
+      "release_sha256": "4640cbe82963dea3c8d3fe8f73f738d2976c733ca279483acd9f077cdaa683a4"
+    },
+    {
+      "source_path": "tools/roadmap/common.py",
+      "package_path": "tools/roadmap/common.py",
+      "bytes": 7984,
+      "sha256": "7fdcd950f0f1d337889a577e0fe7fa72dbe4aa7cd8fdfcaac8ab5e5d90617991",
+      "copied_unchanged": true,
+      "release_sha256": "7fdcd950f0f1d337889a577e0fe7fa72dbe4aa7cd8fdfcaac8ab5e5d90617991"
+    },
+    {
+      "source_path": "tools/roadmap/g27_author_responses.py",
+      "package_path": "tools/roadmap/g27_author_responses.py",
+      "bytes": 24959,
+      "sha256": "ce1ffbb7ed3cf212d4c0702b93c6fe4a4a65d0786ea553ba93ec0485cedcd61e",
+      "copied_unchanged": true,
+      "release_sha256": "ce1ffbb7ed3cf212d4c0702b93c6fe4a4a65d0786ea553ba93ec0485cedcd61e"
+    },
+    {
+      "source_path": "tools/roadmap/g27_nature_units.py",
+      "package_path": "tools/roadmap/g27_nature_units.py",
+      "bytes": 29192,
+      "sha256": "79acd945554c050718bb075b2723778d859bc54c4ebe2103537257a363f9ab77",
+      "copied_unchanged": true,
+      "release_sha256": "79acd945554c050718bb075b2723778d859bc54c4ebe2103537257a363f9ab77"
+    },
+    {
+      "source_path": "agents/coder/CODEBOOK.md",
+      "package_path": "agents/coder/CODEBOOK.md",
+      "bytes": 19442,
+      "sha256": "ade1d0c5749d381dfe07218c89c451a17ae94347890fb2cb110d10fe9e2b05cf",
+      "copied_unchanged": true,
+      "release_sha256": "ade1d0c5749d381dfe07218c89c451a17ae94347890fb2cb110d10fe9e2b05cf"
+    },
+    {
+      "source_path": "agents/coder/RUNBOOK.md",
+      "package_path": "agents/coder/RUNBOOK.md",
+      "bytes": 6819,
+      "sha256": "1fbfafd63d61c6a34b9a0dd67c25dbf8a2c5305a5b62b4218fd2dd08dccc4d92",
+      "copied_unchanged": true,
+      "release_sha256": "1fbfafd63d61c6a34b9a0dd67c25dbf8a2c5305a5b62b4218fd2dd08dccc4d92"
+    },
+    {
+      "source_path": "agents/coder/REVIEW_ADDENDUM.md",
+      "package_path": "agents/coder/REVIEW_ADDENDUM.md",
+      "bytes": 6826,
+      "sha256": "ed51ceb31cf32dbac87c8c55cc6fa77047f1cdc74c2c69942085f1950388dd78",
+      "copied_unchanged": true,
+      "release_sha256": "ed51ceb31cf32dbac87c8c55cc6fa77047f1cdc74c2c69942085f1950388dd78"
+    },
+    {
+      "source_path": "agents/coder/REVIEW_ADDENDUM_NATURE.md",
+      "package_path": "agents/coder/REVIEW_ADDENDUM_NATURE.md",
+      "bytes": 4402,
+      "sha256": "b1475fc15ebc3eaf85730bdf39f2cdf4656bbfe359721f947eea5809b8a37ec6",
+      "copied_unchanged": true,
+      "release_sha256": "b1475fc15ebc3eaf85730bdf39f2cdf4656bbfe359721f947eea5809b8a37ec6"
+    },
+    {
+      "source_path": "agents/coder/coding.schema.json",
+      "package_path": "agents/coder/coding.schema.json",
+      "bytes": 9911,
+      "sha256": "171b00fa6aa95792da21cf7da56e1b56202bcd7eeeb9a7fd5d926b78ef9a93ea",
+      "copied_unchanged": true,
+      "release_sha256": "171b00fa6aa95792da21cf7da56e1b56202bcd7eeeb9a7fd5d926b78ef9a93ea"
+    },
+    {
+      "source_path": "agents/coder/review_addendum.schema.json",
+      "package_path": "agents/coder/review_addendum.schema.json",
+      "bytes": 2238,
+      "sha256": "c5fadd7d048edec3d022672b577ee26ed6f9477d6c419c5e3cc5d220de93e91c",
+      "copied_unchanged": true,
+      "release_sha256": "c5fadd7d048edec3d022672b577ee26ed6f9477d6c419c5e3cc5d220de93e91c"
+    },
+    {
+      "source_path": "agents/coder/review_addendum_nature.schema.json",
+      "package_path": "agents/coder/review_addendum_nature.schema.json",
+      "bytes": 835,
+      "sha256": "8fc3d1f4bc1e26cc3c13de5969fae292d973a3a7e0cbc5a9b5fb76e779b9e001",
+      "copied_unchanged": true,
+      "release_sha256": "8fc3d1f4bc1e26cc3c13de5969fae292d973a3a7e0cbc5a9b5fb76e779b9e001"
+    },
+    {
+      "source_path": "agents/coder/ratings.schema.json",
+      "package_path": "agents/coder/ratings.schema.json",
+      "bytes": 11188,
+      "sha256": "fdb19c0154358304385005d107f02844011d7a7552c2e8f56ce089020c0b989a",
+      "copied_unchanged": true,
+      "release_sha256": "fdb19c0154358304385005d107f02844011d7a7552c2e8f56ce089020c0b989a"
+    },
+    {
+      "source_path": "agents/coder/definitions.json",
+      "package_path": "agents/coder/definitions.json",
+      "bytes": 18154,
+      "sha256": "250d184cd561e97a84dab25c5b91f20f622d462ba96498ad47c9aeda4ef43bb8",
+      "copied_unchanged": true,
+      "release_sha256": "250d184cd561e97a84dab25c5b91f20f622d462ba96498ad47c9aeda4ef43bb8"
+    },
+    {
+      "source_path": "agents/advance/RUBRIC.md",
+      "package_path": "agents/advance/RUBRIC.md",
+      "bytes": 36180,
+      "sha256": "9b303003d11d61afdf9db9e620e7612b442e12db4613354f2129fbee1eb60456",
+      "copied_unchanged": true,
+      "release_sha256": "9b303003d11d61afdf9db9e620e7612b442e12db4613354f2129fbee1eb60456"
+    },
+    {
+      "source_path": "agents/advance/advance.schema.json",
+      "package_path": "agents/advance/advance.schema.json",
+      "bytes": 17372,
+      "sha256": "4b66d3ffd1ae431ce2cdc1cfa2a5cb4412f781ddc856871514a543fbc48330a4",
+      "copied_unchanged": true,
+      "release_sha256": "4b66d3ffd1ae431ce2cdc1cfa2a5cb4412f781ddc856871514a543fbc48330a4"
+    },
+    {
+      "source_path": "agents/advance/archive/RUBRIC.1.0.1.md",
+      "package_path": "agents/advance/archive/RUBRIC.1.0.1.md",
+      "bytes": 29158,
+      "sha256": "6dc24b83feadf99ab762b1d64975607f04a089cc0a33ef7dcfa4c6f4c361565f",
+      "copied_unchanged": true,
+      "release_sha256": "6dc24b83feadf99ab762b1d64975607f04a089cc0a33ef7dcfa4c6f4c361565f"
+    },
+    {
+      "source_path": "agents/advance/archive/advance.schema.1.0.1.json",
+      "package_path": "agents/advance/archive/advance.schema.1.0.1.json",
+      "bytes": 12822,
+      "sha256": "6d0d2caad4961da04873080b67f056819a77759686de831b5777a8fc7f5372ea",
+      "copied_unchanged": true,
+      "release_sha256": "6d0d2caad4961da04873080b67f056819a77759686de831b5777a8fc7f5372ea"
+    },
+    {
+      "source_path": "tools/ai_readiness/README.md",
+      "package_path": "tools/ai_readiness/README.md",
+      "bytes": 12254,
+      "sha256": "d52d2a8e418e56e7d0212dc15ae14c8ce8594779d06b969de98adf627703d721",
+      "copied_unchanged": true,
+      "release_sha256": "d52d2a8e418e56e7d0212dc15ae14c8ce8594779d06b969de98adf627703d721"
+    },
+    {
+      "source_path": "tools/ai_readiness/__init__.py",
+      "package_path": "tools/ai_readiness/__init__.py",
+      "bytes": 78,
+      "sha256": "d50c544cda5304ec8635776e1f304b75e09f1045831e4c421e49652eac3ca80c",
+      "copied_unchanged": true,
+      "release_sha256": "d50c544cda5304ec8635776e1f304b75e09f1045831e4c421e49652eac3ca80c"
+    },
+    {
+      "source_path": "tools/ai_readiness/__main__.py",
+      "package_path": "tools/ai_readiness/__main__.py",
+      "bytes": 5055,
+      "sha256": "d979d345002b2bf66652d5a2a4c15d71107cbd2ee38b2281de81405f40be14fb",
+      "copied_unchanged": true,
+      "release_sha256": "d979d345002b2bf66652d5a2a4c15d71107cbd2ee38b2281de81405f40be14fb"
+    },
+    {
+      "source_path": "tools/ai_readiness/adapter.py",
+      "package_path": "tools/ai_readiness/adapter.py",
+      "bytes": 16765,
+      "sha256": "0dcb5cf8655dab05552a03ea3d7a7ee5f7fe96acf4bdbc92bca0e80e67b111e6",
+      "copied_unchanged": true,
+      "release_sha256": "0dcb5cf8655dab05552a03ea3d7a7ee5f7fe96acf4bdbc92bca0e80e67b111e6"
+    },
+    {
+      "source_path": "tools/ai_readiness/annotation.schema.json",
+      "package_path": "tools/ai_readiness/annotation.schema.json",
+      "bytes": 12493,
+      "sha256": "5639b0bce71dcfd2ff074f89668a02e39c0791b84a47660c07a654147fb786eb",
+      "copied_unchanged": true,
+      "release_sha256": "5639b0bce71dcfd2ff074f89668a02e39c0791b84a47660c07a654147fb786eb"
+    },
+    {
+      "source_path": "tools/ai_readiness/cohort_protocol.example.json",
+      "package_path": "tools/ai_readiness/cohort_protocol.example.json",
+      "bytes": 2063,
+      "sha256": "de4fec5744d24c7a8c541455eeb9c12bde51e633c17da8c46478656fa522ef10",
+      "copied_unchanged": true,
+      "release_sha256": "de4fec5744d24c7a8c541455eeb9c12bde51e633c17da8c46478656fa522ef10"
+    },
+    {
+      "source_path": "tools/ai_readiness/core.py",
+      "package_path": "tools/ai_readiness/core.py",
+      "bytes": 36427,
+      "sha256": "d8ba823f0c1459d7c4175425601228708dac50f4979f65339e2e134f5ba9a333",
+      "copied_unchanged": true,
+      "release_sha256": "d8ba823f0c1459d7c4175425601228708dac50f4979f65339e2e134f5ba9a333"
+    },
+    {
+      "source_path": "tools/ai_readiness/endpoint_protocol.example.json",
+      "package_path": "tools/ai_readiness/endpoint_protocol.example.json",
+      "bytes": 720,
+      "sha256": "1afc67a9629c91673da1bbb148fc5ae0860e7800691733b936360f681d4e0cdf",
+      "copied_unchanged": true,
+      "release_sha256": "1afc67a9629c91673da1bbb148fc5ae0860e7800691733b936360f681d4e0cdf"
+    },
+    {
+      "source_path": "tools/ai_readiness/plot_report.py",
+      "package_path": "tools/ai_readiness/plot_report.py",
+      "bytes": 12489,
+      "sha256": "1e1c8a87a8b99f02dfcb70611d28b7ecd23abf8cc4085fb691f397036633ad44",
+      "copied_unchanged": true,
+      "release_sha256": "1e1c8a87a8b99f02dfcb70611d28b7ecd23abf8cc4085fb691f397036633ad44"
+    },
+    {
+      "source_path": "tools/ai_readiness/tests/fixtures/works.jsonl",
+      "package_path": "tools/ai_readiness/tests/fixtures/works.jsonl",
+      "bytes": 921,
+      "sha256": "1ed403d552637426b1404e8cbf89cef379e018e5302d9d94ef5192a5ae73126c",
+      "copied_unchanged": true,
+      "release_sha256": "1ed403d552637426b1404e8cbf89cef379e018e5302d9d94ef5192a5ae73126c"
+    },
+    {
+      "source_path": "tools/ai_readiness/tests/test_adapter.py",
+      "package_path": "tools/ai_readiness/tests/test_adapter.py",
+      "bytes": 15142,
+      "sha256": "7b9c608508ff166bed1512476feb61d6393a3b96529cd5de202872b291e78045",
+      "copied_unchanged": true,
+      "release_sha256": "7b9c608508ff166bed1512476feb61d6393a3b96529cd5de202872b291e78045"
+    },
+    {
+      "source_path": "tools/ai_readiness/tests/test_endpoint_changes.py",
+      "package_path": "tools/ai_readiness/tests/test_endpoint_changes.py",
+      "bytes": 1982,
+      "sha256": "d1b522a2d366dbc41effd5e8705b0c9c9b9cda78684af5e5480d931ce030f602",
+      "copied_unchanged": true,
+      "release_sha256": "d1b522a2d366dbc41effd5e8705b0c9c9b9cda78684af5e5480d931ce030f602"
+    },
+    {
+      "source_path": "tools/ai_readiness/tests/test_pipeline.py",
+      "package_path": "tools/ai_readiness/tests/test_pipeline.py",
+      "bytes": 10581,
+      "sha256": "0f5aede9641759dd325e3172cfb824a26ae27c8c8225310a71e2c9eb357096aa",
+      "copied_unchanged": true,
+      "release_sha256": "0f5aede9641759dd325e3172cfb824a26ae27c8c8225310a71e2c9eb357096aa"
+    },
+    {
+      "source_path": "tools/ai_readiness/tests/test_plot_report.py",
+      "package_path": "tools/ai_readiness/tests/test_plot_report.py",
+      "bytes": 4756,
+      "sha256": "4f06db3a2d44c8058cb6ebc3a9a9c70c89e3bc8af023b6208f2b389e1229ed04",
+      "copied_unchanged": true,
+      "release_sha256": "4f06db3a2d44c8058cb6ebc3a9a9c70c89e3bc8af023b6208f2b389e1229ed04"
+    },
+    {
+      "source_path": "tools/ai_readiness/tests/test_sample_binding.py",
+      "package_path": "tools/ai_readiness/tests/test_sample_binding.py",
+      "bytes": 1877,
+      "sha256": "3c7a4c28c6ea832d064c44328fc01aa8dded7b08695152d9177e0892e9a56846",
+      "copied_unchanged": true,
+      "release_sha256": "3c7a4c28c6ea832d064c44328fc01aa8dded7b08695152d9177e0892e9a56846"
+    },
+    {
+      "source_path": "tools/ai_readiness/tests/test_training_regimes.py",
+      "package_path": "tools/ai_readiness/tests/test_training_regimes.py",
+      "bytes": 2105,
+      "sha256": "3bfff403f5ccf58c9b27c4317afff515bf8f9dacb72df2c00cffd1bb7059d9aa",
+      "copied_unchanged": true,
+      "release_sha256": "3bfff403f5ccf58c9b27c4317afff515bf8f9dacb72df2c00cffd1bb7059d9aa"
+    }
+  ],
+  "ast_parse": "PASS for every copied Python source; no modules imported."
+}

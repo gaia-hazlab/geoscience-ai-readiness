@@ -1,0 +1,23 @@
+{
+  "study_id": "geoscience_multimodal_readiness_pilot_2026-10-21",
+  "years": {"start": 2016, "end": 2025},
+  "frame": {
+    "definition": "Candidate journal frame, requiring bibliographic verification and a recorded coverage decision before retrieval. Primary analysis includes research articles; reviews require a separate frame/run.",
+    "language": null,
+    "sources": [
+      {"label": "Journal of Geophysical Research: Solid Earth", "openalex_source_id": null},
+      {"label": "Geophysical Journal International", "openalex_source_id": null},
+      {"label": "Seismological Research Letters", "openalex_source_id": null},
+      {"label": "Water Resources Research", "openalex_source_id": null},
+      {"label": "Hydrology and Earth System Sciences", "openalex_source_id": null},
+      {"label": "Remote Sensing of Environment", "openalex_source_id": null},
+      {"label": "Journal of Advances in Modeling Earth Systems", "openalex_source_id": null},
+      {"label": "Geoscientific Model Development", "openalex_source_id": null}
+    ]
+  },
+  "per_page": 100,
+  "api_key_env": "OPENALEX_API_KEY",
+  "minimum_request_interval_seconds": 1.0,
+  "credential_note": "Optional existing user-provided verified key only. Never create keys/accounts. OpenAlex may require a key to follow cursor pagination beyond the first page.",
+  "coverage_note": "A fixed journal frame estimates only that frame, not all geoscience. Add oceanography, atmospheric, food-system and interdisciplinary journals through a preregistered expansion if those communities are in scope. Do not select papers using AI or modality keywords for the denominator."
+}
