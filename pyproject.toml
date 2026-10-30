@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "geoscience-ai-readiness"
-version = "0.3.0"
+version = "0.4.0"
 description = "Evidence-first geoscience AI-readiness literature tools, rubric and reproducible figures"
 readme = "README.md"
 requires-python = ">=3.10"

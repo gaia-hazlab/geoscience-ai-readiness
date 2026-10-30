@@ -7,7 +7,7 @@ the gitignored run by ai_readiness.semantic_screen collect) and the frozen keywo
 legacy/community_demand/, and writes explore_1..4 PNG/SVG into build/das_semantic/.
 Every figure is labeled as an unvalidated draft until the human validation set is coded.
 """
-import csv, json, math, sys, textwrap
+import csv, json, math, sys
 from collections import Counter, defaultdict
 from pathlib import Path
 import matplotlib
@@ -20,7 +20,7 @@ OUT = ROOT / "build/das_semantic"
 OUT.mkdir(parents=True, exist_ok=True)
 YEARS = list(range(2020, 2026))
 from figure_style import (OCEAN as S1, OCHRE as S2, MOSS as S3, GOLD as S4,
-                          PLUM as S5, INK, MUTED as INK2, GRID, STONE as NEUTRAL,
+                          PLUM as S5, INK, STONE as NEUTRAL,
                           apply_style, finish_figure)
 NOTE = "Unvalidated draft: Claude Opus 5.5 labels from title and abstract (batch msgbatch_01HdBu5onQdhwxu6adW2ZjqL, codebook v0.1), OpenAlex DAS topic frame 2020-2025."
 

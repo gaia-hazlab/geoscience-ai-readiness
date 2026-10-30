@@ -1,4 +1,10 @@
-# Unreleased — 2026-10-29
+# 0.4.0 — 2026-10-30 (prepared; not yet published)
+
+- Restyled all eleven report figures for Earth scientists, with larger typography,
+  shared ocean/ochre/moss palette, vector PDF exports and clearer evidence headings.
+- Figure 9 retains `n =` annotations; its source note explicitly defines the counts
+  as metadata saying AI-ready/ML-ready, not the denominator of the ML percentage.
+- Prepared version metadata, reproducible release packaging and refreshed checksums.
 
 - Standalone harvester 0.3.0: `frame.kind: "topic"` harvests a quoted
   title/abstract phrase per year (AI/ML terms refused in the phrase); manifests,

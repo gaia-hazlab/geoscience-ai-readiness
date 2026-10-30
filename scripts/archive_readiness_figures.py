@@ -18,7 +18,6 @@ import argparse
 import csv
 import json
 import sys
-import textwrap
 from pathlib import Path
 
 import matplotlib
@@ -186,7 +185,7 @@ def fig_platforms(out, counts):
         ax.grid(axis="y", visible=False)
     fig.suptitle("Where do Earth science datasets surface?", x=0.01, ha="left", fontsize=10, color=INK)
     finish(fig, out, "fig4_platform_datasets", "Retrieved 2026-10-30. A: DataCite dataset DOIs whose metadata match the discipline clause; share also "
-           "matching 'machine learning', 'deep learning' or 'neural network'; 'AI-ready' counts metadata saying AI-ready or ML-ready. "
+           "matching 'machine learning', 'deep learning' or 'neural network'; n counts datasets whose metadata say AI-ready or ML-ready; it is not the denominator of the ML percentage. "
            "B: Hugging Face dataset ids containing discipline terms (upper bound; hydrology is mostly 'flood'; geodesy counts 'insar' and 'gnss' only). "
            "Queries in platform_counts.json.")
 
