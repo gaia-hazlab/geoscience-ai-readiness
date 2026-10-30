@@ -19,14 +19,12 @@ SCREEN = ROOT / "data/semantic_screen/das_topic_2026-10-29/screen_semantic.jsonl
 OUT = ROOT / "build/das_semantic"
 OUT.mkdir(parents=True, exist_ok=True)
 YEARS = list(range(2020, 2026))
-# reference palette, light mode (dataviz skill references/palette.md), fixed slot order
-S1, S2, S3, S4, S5 = "#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4"
-INK, INK2, GRID, NEUTRAL = "#0b0b0b", "#52514e", "#e4e3df", "#b9b8b2"
+from figure_style import (OCEAN as S1, OCHRE as S2, MOSS as S3, GOLD as S4,
+                          PLUM as S5, INK, MUTED as INK2, GRID, STONE as NEUTRAL,
+                          apply_style, finish_figure)
 NOTE = "Unvalidated draft: Claude Opus 5.5 labels from title and abstract (batch msgbatch_01HdBu5onQdhwxu6adW2ZjqL, codebook v0.1), OpenAlex DAS topic frame 2020-2025."
 
-plt.rcParams.update({"font.size": 9, "axes.edgecolor": INK2, "axes.labelcolor": INK2, "xtick.color": INK2, "ytick.color": INK2,
-                     "axes.spines.top": False, "axes.spines.right": False, "axes.grid": True, "grid.color": GRID, "grid.linewidth": 0.6,
-                     "axes.axisbelow": True, "axes.titlelocation": "left", "axes.titlesize": 10, "axes.titlecolor": INK})
+apply_style()
 
 rows = [json.loads(l) for l in open(SCREEN)]
 lab = [r for r in rows if r["status"] == "labeled"]
@@ -41,12 +39,7 @@ def wilson(k, n, z=1.96):
 
 
 def finish(fig, name, note=NOTE):
-    width = int(fig.get_figwidth() * 17)   # about 17 characters per inch at 6.5 pt
-    wrapped = "\n".join(textwrap.fill(part, width) for part in note.split("\n"))
-    fig.text(0.01, 0.01, wrapped, fontsize=6.5, color=INK2, ha="left", va="bottom")
-    for ext in ("png", "svg"):
-        fig.savefig(OUT / f"{name}.{ext}", dpi=200)
-    plt.close(fig)
+    finish_figure(fig, OUT, name, note)
 
 
 # 1. keyword co-occurrence share vs semantic AI-as-method share
@@ -71,7 +64,7 @@ ax.text(2025.12, ys[-1], "Semantic screen:\nAI as a method", color=INK, fontsize
 ax.text(2025.12, 100 * kw_share[2025], "Keyword: 'machine\nlearning' or 'deep\nlearning' present", color=INK, fontsize=8, va="center")
 ax.set_xlim(2019.6, 2025.1); ax.set_ylim(0, 40); ax.set_xticks(YEARS)
 ax.set_ylabel("Percent of DAS papers")
-ax.set_title("Keyword counts understate AI use in DAS papers")
+ax.set_title("Two lenses on AI in DAS papers")
 ax.legend(frameon=False, loc="upper left", fontsize=8)
 finish(fig, "explore_1_keyword_vs_semantic",
        NOTE + "\nBoth series cover the DAS topic frame. Keyword: frozen 2026-10-21 snapshot, share of all DAS works. Semantic: share of labeled abstracts with a non-unclear AI role, including the few that do not analyze DAS. Band: Wilson 95% (label sampling only, not classifier error).")
@@ -113,7 +106,7 @@ for y, text in ends:
     ax.text(2025.12, y, text, color=INK, fontsize=8, va="center")
 totals = [sum(r["year"] == y for r in aim) for y in YEARS]
 ax.set_xlim(2019.6, 2025.1); ax.set_xticks(YEARS); ax.set_ylabel("DAS papers using AI as a method")
-ax.set_title(f"Deep learning carries DAS AI adoption (n = {sum(totals)} papers)")
+ax.set_title(f"Deep learning dominates the draft DAS screen (n = {sum(totals)} papers)")
 ax.legend(frameon=False, loc="upper left", fontsize=8)
 finish(fig, "explore_3_ai_method_families", NOTE + "\nOne paper can name several families; lines are not additive. Totals per year: "
        + ", ".join(f"{y}: {t}" for y, t in zip(YEARS, totals)) + ".")
