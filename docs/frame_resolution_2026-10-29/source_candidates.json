@@ -1,0 +1,495 @@
+{
+  "retrieved_utc": "2026-10-29T18:38:29+00:00",
+  "note": "Read-only candidate lookups; not a frozen frame. Verify ISSN and coverage before freezing.",
+  "lookups": [
+    {
+      "label": "Journal of Geophysical Research: Solid Earth",
+      "url": "https://api.openalex.org/sources?search=Journal+of+Geophysical+Research%3A+Solid+Earth&per_page=5&select=id%2Cdisplay_name%2Cissn_l%2Cissn%2Ctype%2Chost_organization_name%2Cworks_count%2Cis_oa%2Csummary_stats",
+      "sha256": "d544e3c292fbcf594454e21911e6dd51cd53bed98be97763e4f37a5fc5485253",
+      "hits": [
+        {
+          "id": "https://openalex.org/S4210228715",
+          "display_name": "Journal of Geophysical Research Solid Earth",
+          "issn_l": "2169-9313",
+          "issn": [
+            "2169-9313",
+            "2169-9356"
+          ],
+          "type": "journal",
+          "host_organization_name": "Wiley",
+          "works_count": 8262
+        }
+      ],
+      "meta_count": 1
+    },
+    {
+      "label": "Geophysical Journal International",
+      "url": "https://api.openalex.org/sources?search=Geophysical+Journal+International&per_page=5&select=id%2Cdisplay_name%2Cissn_l%2Cissn%2Ctype%2Chost_organization_name%2Cworks_count%2Cis_oa%2Csummary_stats",
+      "sha256": "a4b1f49bd19bf8855f87d1cee43002cc73bd2586a0ee5139f37af548a0d1328a",
+      "hits": [
+        {
+          "id": "https://openalex.org/S108821158",
+          "display_name": "Geophysical Journal International",
+          "issn_l": "0956-540X",
+          "issn": [
+            "0956-540X",
+            "1365-246X"
+          ],
+          "type": "journal",
+          "host_organization_name": "Oxford University Press",
+          "works_count": 20469
+        },
+        {
+          "id": "https://openalex.org/S2764950074",
+          "display_name": "World Academy of Science, Engineering and Technology, International Journal of Environmental, Chemical, Ecological, Geological and Geophysical Engineering",
+          "issn_l": null,
+          "issn": null,
+          "type": "journal",
+          "host_organization_name": "World Academy of Science, Engineering and Technology",
+          "works_count": 20
+        }
+      ],
+      "meta_count": 2
+    },
+    {
+      "label": "Seismological Research Letters",
+      "url": "https://api.openalex.org/sources?search=Seismological+Research+Letters&per_page=5&select=id%2Cdisplay_name%2Cissn_l%2Cissn%2Ctype%2Chost_organization_name%2Cworks_count%2Cis_oa%2Csummary_stats",
+      "sha256": "e4e9ca8f8d58710e37bddb24215f4b8e7200e5b553b341c109e78ee420dfd7bd",
+      "hits": [
+        {
+          "id": "https://openalex.org/S183957208",
+          "display_name": "Seismological Research Letters",
+          "issn_l": "0895-0695",
+          "issn": [
+            "0895-0695",
+            "1938-2057"
+          ],
+          "type": "journal",
+          "host_organization_name": "Seismological Society of America",
+          "works_count": 7260
+        }
+      ],
+      "meta_count": 1
+    },
+    {
+      "label": "Water Resources Research",
+      "url": "https://api.openalex.org/sources?search=Water+Resources+Research&per_page=5&select=id%2Cdisplay_name%2Cissn_l%2Cissn%2Ctype%2Chost_organization_name%2Cworks_count%2Cis_oa%2Csummary_stats",
+      "sha256": "f2f552cd9a744e78529fe8f67ef13e81780ea7486c96ef643ad384e140c90146",
+      "hits": [
+        {
+          "id": "https://openalex.org/S204847658",
+          "display_name": "Water Resources Research",
+          "issn_l": "0043-1397",
+          "issn": [
+            "0043-1397",
+            "1944-7973"
+          ],
+          "type": "journal",
+          "host_organization_name": "Wiley",
+          "works_count": 23574
+        },
+        {
+          "id": "https://openalex.org/S2764836148",
+          "display_name": "Journal of Water Resources Research",
+          "issn_l": "2166-5982",
+          "issn": [
+            "2166-5982",
+            "2166-6024"
+          ],
+          "type": "journal",
+          "host_organization_name": null,
+          "works_count": 1154
+        },
+        {
+          "id": "https://openalex.org/S4306468204",
+          "display_name": "Corvallis, Or. : Water Resources Research Institute, Oregon State University eBooks",
+          "issn_l": null,
+          "issn": null,
+          "type": "ebook platform",
+          "host_organization_name": null,
+          "works_count": 32
+        },
+        {
+          "id": "https://openalex.org/S2764598050",
+          "display_name": "Water Resources Research Center. The University of Arizona",
+          "issn_l": null,
+          "issn": null,
+          "type": "journal",
+          "host_organization_name": null,
+          "works_count": 3
+        },
+        {
+          "id": "https://openalex.org/S2765061250",
+          "display_name": "Journal of China Institute of Water Resources and Hydropower Research",
+          "issn_l": "2097-096X",
+          "issn": [
+            "2097-096X"
+          ],
+          "type": "journal",
+          "host_organization_name": null,
+          "works_count": 371
+        }
+      ],
+      "meta_count": 9
+    },
+    {
+      "label": "Hydrology and Earth System Sciences",
+      "url": "https://api.openalex.org/sources?search=Hydrology+and+Earth+System+Sciences&per_page=5&select=id%2Cdisplay_name%2Cissn_l%2Cissn%2Ctype%2Chost_organization_name%2Cworks_count%2Cis_oa%2Csummary_stats",
+      "sha256": "4d3426c56a5ec870ad6633c066b4e289f07fb0f7b77ace3642a6051602d06bdf",
+      "hits": [
+        {
+          "id": "https://openalex.org/S93121129",
+          "display_name": "Hydrology and earth system sciences",
+          "issn_l": "1027-5606",
+          "issn": [
+            "1027-5606",
+            "1607-7938"
+          ],
+          "type": "journal",
+          "host_organization_name": "Copernicus Publications",
+          "works_count": 19658
+        },
+        {
+          "id": "https://openalex.org/S4210176412",
+          "display_name": "Hydrology and Earth System Sciences Discussions",
+          "issn_l": "1812-2116",
+          "issn": [
+            "1812-2116"
+          ],
+          "type": "journal",
+          "host_organization_name": "Copernicus Publications",
+          "works_count": 332
+        }
+      ],
+      "meta_count": 2
+    },
+    {
+      "label": "Remote Sensing of Environment",
+      "url": "https://api.openalex.org/sources?search=Remote+Sensing+of+Environment&per_page=5&select=id%2Cdisplay_name%2Cissn_l%2Cissn%2Ctype%2Chost_organization_name%2Cworks_count%2Cis_oa%2Csummary_stats",
+      "sha256": "0a406c32cbb47eb9e47f86a3a498c65c340b828c41c1f65bd40a9a563c0468b4",
+      "hits": [
+        {
+          "id": "https://openalex.org/S141808269",
+          "display_name": "Remote Sensing of Environment",
+          "issn_l": "0034-4257",
+          "issn": [
+            "0034-4257",
+            "1879-0704"
+          ],
+          "type": "journal",
+          "host_organization_name": "Elsevier BV",
+          "works_count": 12112
+        },
+        {
+          "id": "https://openalex.org/S4306514177",
+          "display_name": "International Symposium on Remote Sensing of Environment",
+          "issn_l": null,
+          "issn": null,
+          "type": "journal",
+          "host_organization_name": null,
+          "works_count": 188
+        },
+        {
+          "id": "https://openalex.org/S7407088393",
+          "display_name": "Specialist Meeting on Microwave Radiometry and Remote Sensing of the Environment (MicroRad)",
+          "issn_l": null,
+          "issn": null,
+          "type": "conference",
+          "host_organization_name": null,
+          "works_count": 379
+        },
+        {
+          "id": "https://openalex.org/S7407086178",
+          "display_name": "International Conference on Remote Sensing and Geoinformation of the Environment (RSCy)",
+          "issn_l": null,
+          "issn": null,
+          "type": "conference",
+          "host_organization_name": null,
+          "works_count": 486
+        },
+        {
+          "id": "https://openalex.org/S7407055576",
+          "display_name": "Journal of Remote Sensing and Environment",
+          "issn_l": "1560-201X",
+          "issn": [
+            "1560-201X"
+          ],
+          "type": "journal",
+          "host_organization_name": null,
+          "works_count": 6
+        }
+      ],
+      "meta_count": 9
+    },
+    {
+      "label": "Journal of Advances in Modeling Earth Systems",
+      "url": "https://api.openalex.org/sources?search=Journal+of+Advances+in+Modeling+Earth+Systems&per_page=5&select=id%2Cdisplay_name%2Cissn_l%2Cissn%2Ctype%2Chost_organization_name%2Cworks_count%2Cis_oa%2Csummary_stats",
+      "sha256": "a0eaf15477b5367729d891bbdd54a5e7511bef4961f1ca0467a3c338a6166caa",
+      "hits": [
+        {
+          "id": "https://openalex.org/S185824406",
+          "display_name": "Journal of Advances in Modeling Earth Systems",
+          "issn_l": "1942-2466",
+          "issn": [
+            "1942-2466"
+          ],
+          "type": "journal",
+          "host_organization_name": "Wiley",
+          "works_count": 2903
+        }
+      ],
+      "meta_count": 1
+    },
+    {
+      "label": "Geoscientific Model Development",
+      "url": "https://api.openalex.org/sources?search=Geoscientific+Model+Development&per_page=5&select=id%2Cdisplay_name%2Cissn_l%2Cissn%2Ctype%2Chost_organization_name%2Cworks_count%2Cis_oa%2Csummary_stats",
+      "sha256": "ccc33deb465e7213afe9c134b4141e121b39f200cd79e942156d885a42a4e2e1",
+      "hits": [
+        {
+          "id": "https://openalex.org/S60406085",
+          "display_name": "Geoscientific model development",
+          "issn_l": "1991-959X",
+          "issn": [
+            "1991-959X",
+            "1991-9603"
+          ],
+          "type": "journal",
+          "host_organization_name": "Copernicus Publications",
+          "works_count": 16334
+        },
+        {
+          "id": "https://openalex.org/S53740810",
+          "display_name": "Geoscientific Model Development Discussions",
+          "issn_l": "1991-962X",
+          "issn": [
+            "1991-962X"
+          ],
+          "type": "journal",
+          "host_organization_name": null,
+          "works_count": 115
+        }
+      ],
+      "meta_count": 2
+    },
+    {
+      "label": "Geophysical Research Letters",
+      "url": "https://api.openalex.org/sources?search=Geophysical+Research+Letters&per_page=5&select=id%2Cdisplay_name%2Cissn_l%2Cissn%2Ctype%2Chost_organization_name%2Cworks_count%2Cis_oa%2Csummary_stats",
+      "sha256": "a690d04716e98769694be8f790ba940e13555e8f95c9f3cd002fe296bca78755",
+      "hits": [
+        {
+          "id": "https://openalex.org/S36624081",
+          "display_name": "Geophysical Research Letters",
+          "issn_l": "0094-8276",
+          "issn": [
+            "0094-8276",
+            "1944-8007"
+          ],
+          "type": "journal",
+          "host_organization_name": "American Geophysical Union",
+          "works_count": 53741
+        }
+      ],
+      "meta_count": 1
+    },
+    {
+      "label": "Journal of Geophysical Research: Atmospheres",
+      "url": "https://api.openalex.org/sources?search=Journal+of+Geophysical+Research%3A+Atmospheres&per_page=5&select=id%2Cdisplay_name%2Cissn_l%2Cissn%2Ctype%2Chost_organization_name%2Cworks_count%2Cis_oa%2Csummary_stats",
+      "sha256": "a2ec904511a9b0e125d94f5019cd8e601144bafed4f6fe90592007a38ce7e3b3",
+      "hits": [
+        {
+          "id": "https://openalex.org/S207178839",
+          "display_name": "Journal of Geophysical Research Atmospheres",
+          "issn_l": "0148-0227",
+          "issn": [
+            "0148-0227",
+            "2156-2202",
+            "2169-897X",
+            "2169-8996"
+          ],
+          "type": "journal",
+          "host_organization_name": "American Geophysical Union",
+          "works_count": 99335
+        }
+      ],
+      "meta_count": 1
+    },
+    {
+      "label": "Journal of Geophysical Research: Earth Surface",
+      "url": "https://api.openalex.org/sources?search=Journal+of+Geophysical+Research%3A+Earth+Surface&per_page=5&select=id%2Cdisplay_name%2Cissn_l%2Cissn%2Ctype%2Chost_organization_name%2Cworks_count%2Cis_oa%2Csummary_stats",
+      "sha256": "8486b4487ace2b99c24bf907b841d6774b38536f105aa2d8bc6956bb4a2b5b04",
+      "hits": [
+        {
+          "id": "https://openalex.org/S4210168721",
+          "display_name": "Journal of Geophysical Research Earth Surface",
+          "issn_l": "2169-9003",
+          "issn": [
+            "2169-9003",
+            "2169-9011"
+          ],
+          "type": "journal",
+          "host_organization_name": "Wiley",
+          "works_count": 2547
+        }
+      ],
+      "meta_count": 1
+    },
+    {
+      "label": "Journal of Geophysical Research: Oceans",
+      "url": "https://api.openalex.org/sources?search=Journal+of+Geophysical+Research%3A+Oceans&per_page=5&select=id%2Cdisplay_name%2Cissn_l%2Cissn%2Ctype%2Chost_organization_name%2Cworks_count%2Cis_oa%2Csummary_stats",
+      "sha256": "0ddcfadc599c2422758285d96bf91ab27705bc025e0aa367b36a3f9f79dc3fb3",
+      "hits": [
+        {
+          "id": "https://openalex.org/S4210200322",
+          "display_name": "Journal of Geophysical Research Oceans",
+          "issn_l": "2169-9275",
+          "issn": [
+            "2169-9275",
+            "2169-9291"
+          ],
+          "type": "journal",
+          "host_organization_name": "Wiley",
+          "works_count": 7252
+        }
+      ],
+      "meta_count": 1
+    },
+    {
+      "label": "Earth System Science Data",
+      "url": "https://api.openalex.org/sources?search=Earth+System+Science+Data&per_page=5&select=id%2Cdisplay_name%2Cissn_l%2Cissn%2Ctype%2Chost_organization_name%2Cworks_count%2Cis_oa%2Csummary_stats",
+      "sha256": "2873ca0277eebebc5f3399035d17e3ab9942b3adb98198d1b219ada896417b4a",
+      "hits": [
+        {
+          "id": "https://openalex.org/S106909380",
+          "display_name": "Earth system science data",
+          "issn_l": "1866-3508",
+          "issn": [
+            "1866-3508",
+            "1866-3516"
+          ],
+          "type": "journal",
+          "host_organization_name": "Copernicus Publications",
+          "works_count": 13296
+        },
+        {
+          "id": "https://openalex.org/S2210937",
+          "display_name": "Earth System Science Data Discussions",
+          "issn_l": "1866-3591",
+          "issn": [
+            "1866-3591"
+          ],
+          "type": "journal",
+          "host_organization_name": null,
+          "works_count": 1782
+        },
+        {
+          "id": "https://openalex.org/S4306400698",
+          "display_name": "Earth System Science Data (International Experts for Research Enrichment and Knowledge Exchange)",
+          "issn_l": null,
+          "issn": null,
+          "type": "repository",
+          "host_organization_name": null,
+          "works_count": 3
+        },
+        {
+          "id": "https://openalex.org/S4306513535",
+          "display_name": "In supplement to: Stickler, Alexander; Br\u00f6nnimann, Stefan; Jourdain, Sylvie; Roucaute, Em\u00e9line; Sterin, Alexander M; Nikolaev, Dmitrii; Valente, Maria Ant\u00f3nia; Wartenburger, Richard; Hersbach, Hans; Ramella Pralungo, Lorenzo; Dee, Dick P (2014): Description of the ERA-CLIM historical upper-air data. Earth System Science Data, 6(1), 29-48, https://doi.org/10.5194/essd-6-29-2014",
+          "issn_l": null,
+          "issn": null,
+          "type": "journal",
+          "host_organization_name": null,
+          "works_count": 0
+        }
+      ],
+      "meta_count": 4
+    },
+    {
+      "label": "Geophysics",
+      "url": "https://api.openalex.org/sources?search=Geophysics&per_page=5&select=id%2Cdisplay_name%2Cissn_l%2Cissn%2Ctype%2Chost_organization_name%2Cworks_count%2Cis_oa%2Csummary_stats",
+      "sha256": "808cc58a841f757fc70fc936da808bc20d9f4e3eca8dcbe28e9675b35ff48c31",
+      "hits": [
+        {
+          "id": "https://openalex.org/S106174089",
+          "display_name": "Geophysics",
+          "issn_l": "0016-8033",
+          "issn": [
+            "0016-8033",
+            "1942-2156"
+          ],
+          "type": "journal",
+          "host_organization_name": "Society of Exploration Geophysicists",
+          "works_count": 15593
+        },
+        {
+          "id": "https://openalex.org/S129102366",
+          "display_name": "Reviews of Geophysics",
+          "issn_l": "0096-1043",
+          "issn": [
+            "0096-1043",
+            "1944-9208",
+            "8755-1209"
+          ],
+          "type": "journal",
+          "host_organization_name": "Wiley",
+          "works_count": 2732
+        },
+        {
+          "id": "https://openalex.org/S14326618",
+          "display_name": "Geochemistry Geophysics Geosystems",
+          "issn_l": "1525-2027",
+          "issn": [
+            "1525-2027"
+          ],
+          "type": "journal",
+          "host_organization_name": "Wiley",
+          "works_count": 6773
+        },
+        {
+          "id": "https://openalex.org/S78180602",
+          "display_name": "Pure and Applied Geophysics",
+          "issn_l": "0033-4533",
+          "issn": [
+            "0033-4533",
+            "0033-4553",
+            "1420-9136"
+          ],
+          "type": "journal",
+          "host_organization_name": "Birkh\u00e4user",
+          "works_count": 8985
+        },
+        {
+          "id": "https://openalex.org/S100607112",
+          "display_name": "Journal of Applied Geophysics",
+          "issn_l": "0926-9851",
+          "issn": [
+            "0926-9851",
+            "1879-1859"
+          ],
+          "type": "journal",
+          "host_organization_name": "Elsevier BV",
+          "works_count": 5479
+        }
+      ],
+      "meta_count": 106
+    },
+    {
+      "label": "IEEE Transactions on Geoscience and Remote Sensing",
+      "url": "https://api.openalex.org/sources?search=IEEE+Transactions+on+Geoscience+and+Remote+Sensing&per_page=5&select=id%2Cdisplay_name%2Cissn_l%2Cissn%2Ctype%2Chost_organization_name%2Cworks_count%2Cis_oa%2Csummary_stats",
+      "sha256": "8d714d512d5db407fe052c231eea42590c15ebd5fecfed5ca1108bc56e5700f8",
+      "hits": [
+        {
+          "id": "https://openalex.org/S111326731",
+          "display_name": "IEEE Transactions on Geoscience and Remote Sensing",
+          "issn_l": "0196-2892",
+          "issn": [
+            "0196-2892",
+            "1558-0644"
+          ],
+          "type": "journal",
+          "host_organization_name": "Institute of Electrical and Electronics Engineers",
+          "works_count": 27813
+        }
+      ],
+      "meta_count": 1
+    }
+  ]
+}

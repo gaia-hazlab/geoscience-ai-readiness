@@ -1,0 +1,128 @@
+{
+  "created_at": "2026-10-29T20:59:59.067606+00:00",
+  "tool_version": "0.3.0",
+  "frame_kind": "topic",
+  "frame_note": "Topic frame: works whose title or abstract matches a phrase. The phrase may name a modality (DAS); AI/ML terms are refused. Counts measure indexed activity on the topic, not actual use or users.",
+  "topic_search": "\"distributed acoustic sensing\"",
+  "frame_complete": true,
+  "query_count": 6,
+  "unique_works": 1423,
+  "works_jsonl_sha256": "23e760cc34497be0190029d25d9e93bb45a114e7b9ca7215067968ad3d9b52bd",
+  "paper_ids_sha256": "89d3da5938692ed11b137079c3101917c93849ba10799e88a633f2ad3a9b714f",
+  "pages_this_run": 17,
+  "stop_reason": null,
+  "config_sha256": "412cb37c055c39139eed506dc50d0142e3935b3ef0df4879f18cafde5a6aa9b9",
+  "raw_pages": [
+    {
+      "path": "raw/topic_distributed_acoustic_sensing_2020_page_00001.json",
+      "sha256": "6176e2fb3754b06ac1a3f0f97d3de67f1e62552f0727e63c102a0c0e5c188a36",
+      "retrieved_at": "2026-10-29T20:26:01.025333+00:00",
+      "public_url": "https://api.openalex.org/works?filter=from_publication_date%3A2020-01-01%2Cto_publication_date%3A2020-12-31%2Ctype%3Aarticle%7Creview%2Ctitle_and_abstract.search%3A%22distributed+acoustic+sensing%22&per_page=100&sort=publication_date%3Aasc&cursor=%2A"
+    },
+    {
+      "path": "raw/topic_distributed_acoustic_sensing_2020_page_00002.json",
+      "sha256": "2dcd6c1b7e06b8103114ecd2c63bd8ef5ae36f1e34505522fe72ea506210c464",
+      "retrieved_at": "2026-10-29T20:59:15.758223+00:00",
+      "public_url": "https://api.openalex.org/works?filter=from_publication_date%3A2020-01-01%2Cto_publication_date%3A2020-12-31%2Ctype%3Aarticle%7Creview%2Ctitle_and_abstract.search%3A%22distributed+acoustic+sensing%22&per_page=100&sort=publication_date%3Aasc&cursor=IlsxNjA0ODgwMDAwMDAwLCA5OS4wLCAzMSwgJ2h0dHBzOi8vb3BlbmFsZXgub3JnL1czMTEyOTM5MDA2J10i"
+    },
+    {
+      "path": "raw/topic_distributed_acoustic_sensing_2021_page_00001.json",
+      "sha256": "42a455cbc0cc1e4a7cf883de00a1ed0d7fbed5df2d9b0e05320a0cfbc60be5a1",
+      "retrieved_at": "2026-10-29T20:59:18.357622+00:00",
+      "public_url": "https://api.openalex.org/works?filter=from_publication_date%3A2021-01-01%2Cto_publication_date%3A2021-12-31%2Ctype%3Aarticle%7Creview%2Ctitle_and_abstract.search%3A%22distributed+acoustic+sensing%22&per_page=100&sort=publication_date%3Aasc&cursor=%2A"
+    },
+    {
+      "path": "raw/topic_distributed_acoustic_sensing_2021_page_00002.json",
+      "sha256": "1bec1d8c40a9fe7060bdf74fe9378ef878a9d702b85232e0c3fee380bd3f4785",
+      "retrieved_at": "2026-10-29T20:59:20.203959+00:00",
+      "public_url": "https://api.openalex.org/works?filter=from_publication_date%3A2021-01-01%2Cto_publication_date%3A2021-12-31%2Ctype%3Aarticle%7Creview%2Ctitle_and_abstract.search%3A%22distributed+acoustic+sensing%22&per_page=100&sort=publication_date%3Aasc&cursor=IlsxNjMyOTYwMDAwMDAwLCA5NC4wLCAxLCAnaHR0cHM6Ly9vcGVuYWxleC5vcmcvVzMyMDMyOTIxMjQnXSI%3D"
+    },
+    {
+      "path": "raw/topic_distributed_acoustic_sensing_2022_page_00001.json",
+      "sha256": "fec0cf62db391e8eb1a3e3cc4b3cfc4af47e24ac3809f2c2611da4000cfec608",
+      "retrieved_at": "2026-10-29T20:59:22.686857+00:00",
+      "public_url": "https://api.openalex.org/works?filter=from_publication_date%3A2022-01-01%2Cto_publication_date%3A2022-12-31%2Ctype%3Aarticle%7Creview%2Ctitle_and_abstract.search%3A%22distributed+acoustic+sensing%22&per_page=100&sort=publication_date%3Aasc&cursor=%2A"
+    },
+    {
+      "path": "raw/topic_distributed_acoustic_sensing_2022_page_00002.json",
+      "sha256": "1c2c78ba0e4a90c6bb80a889f7cfe3245d00fe26cc5c1376e79af4eab394bf56",
+      "retrieved_at": "2026-10-29T20:59:25.205275+00:00",
+      "public_url": "https://api.openalex.org/works?filter=from_publication_date%3A2022-01-01%2Cto_publication_date%3A2022-12-31%2Ctype%3Aarticle%7Creview%2Ctitle_and_abstract.search%3A%22distributed+acoustic+sensing%22&per_page=100&sort=publication_date%3Aasc&cursor=IlsxNjU2NjMzNjAwMDAwLCAnLUluZmluaXR5JywgMCwgJ2h0dHBzOi8vb3BlbmFsZXgub3JnL1c0MjkzODMyNjI5J10i"
+    },
+    {
+      "path": "raw/topic_distributed_acoustic_sensing_2023_page_00001.json",
+      "sha256": "8ce9b11b637c0252de223e2f057276db34afe4fb20f69e8ce8a82da668c74524",
+      "retrieved_at": "2026-10-29T20:59:27.918064+00:00",
+      "public_url": "https://api.openalex.org/works?filter=from_publication_date%3A2023-01-01%2Cto_publication_date%3A2023-12-31%2Ctype%3Aarticle%7Creview%2Ctitle_and_abstract.search%3A%22distributed+acoustic+sensing%22&per_page=100&sort=publication_date%3Aasc&cursor=%2A"
+    },
+    {
+      "path": "raw/topic_distributed_acoustic_sensing_2023_page_00002.json",
+      "sha256": "baf3e32fba9b8e3cd51c90f005c2731c69e7fa867dca9ce8fec76ac50b743ca9",
+      "retrieved_at": "2026-10-29T20:59:30.610457+00:00",
+      "public_url": "https://api.openalex.org/works?filter=from_publication_date%3A2023-01-01%2Cto_publication_date%3A2023-12-31%2Ctype%3Aarticle%7Creview%2Ctitle_and_abstract.search%3A%22distributed+acoustic+sensing%22&per_page=100&sort=publication_date%3Aasc&cursor=IlsxNjg3MTMyODAwMDAwLCA5OS4wLCAxOCwgJ2h0dHBzOi8vb3BlbmFsZXgub3JnL1c0MzgxNDM1MDYzJ10i"
+    },
+    {
+      "path": "raw/topic_distributed_acoustic_sensing_2023_page_00003.json",
+      "sha256": "ad15462f3b9e7ad11f9f59fae3bb61326c875c52ad77ed9c7ab9246dba21fb86",
+      "retrieved_at": "2026-10-29T20:59:32.644769+00:00",
+      "public_url": "https://api.openalex.org/works?filter=from_publication_date%3A2023-01-01%2Cto_publication_date%3A2023-12-31%2Ctype%3Aarticle%7Creview%2Ctitle_and_abstract.search%3A%22distributed+acoustic+sensing%22&per_page=100&sort=publication_date%3Aasc&cursor=IlsxNjk4NzEwNDAwMDAwLCA5OS4wLCAxNywgJ2h0dHBzOi8vb3BlbmFsZXgub3JnL1c0Mzg4MDgyNTI5J10i"
+    },
+    {
+      "path": "raw/topic_distributed_acoustic_sensing_2024_page_00001.json",
+      "sha256": "a9895f000d31f6246f50ea93467c1f26e7010f8e6b09be1fe94f84c040b42487",
+      "retrieved_at": "2026-10-29T20:59:35.764896+00:00",
+      "public_url": "https://api.openalex.org/works?filter=from_publication_date%3A2024-01-01%2Cto_publication_date%3A2024-12-31%2Ctype%3Aarticle%7Creview%2Ctitle_and_abstract.search%3A%22distributed+acoustic+sensing%22&per_page=100&sort=publication_date%3Aasc&cursor=%2A"
+    },
+    {
+      "path": "raw/topic_distributed_acoustic_sensing_2024_page_00002.json",
+      "sha256": "0ba85bbd02127b248b006d1e59602fdc6e4c25b2ae8da013c333065d4c372b2d",
+      "retrieved_at": "2026-10-29T20:59:38.749147+00:00",
+      "public_url": "https://api.openalex.org/works?filter=from_publication_date%3A2024-01-01%2Cto_publication_date%3A2024-12-31%2Ctype%3Aarticle%7Creview%2Ctitle_and_abstract.search%3A%22distributed+acoustic+sensing%22&per_page=100&sort=publication_date%3Aasc&cursor=IlsxNzA5NzY5NjAwMDAwLCA5Ny4wLCAzLCAnaHR0cHM6Ly9vcGVuYWxleC5vcmcvVzQzOTI5Njg4ODknXSI%3D"
+    },
+    {
+      "path": "raw/topic_distributed_acoustic_sensing_2024_page_00003.json",
+      "sha256": "884050c650afeb5adc0db6cf463b6efd7c2f5d8fe80f6a1ab898008dd1b51761",
+      "retrieved_at": "2026-10-29T20:59:42.136611+00:00",
+      "public_url": "https://api.openalex.org/works?filter=from_publication_date%3A2024-01-01%2Cto_publication_date%3A2024-12-31%2Ctype%3Aarticle%7Creview%2Ctitle_and_abstract.search%3A%22distributed+acoustic+sensing%22&per_page=100&sort=publication_date%3Aasc&cursor=IlsxNzI0NjMwNDAwMDAwLCA5OS4wLCAxNCwgJ2h0dHBzOi8vb3BlbmFsZXgub3JnL1c0NDAxOTI1NTAwJ10i"
+    },
+    {
+      "path": "raw/topic_distributed_acoustic_sensing_2024_page_00004.json",
+      "sha256": "b76a117849396a120966b4610ed2a64a1491bc8d39af0ddc1c2e207477f17b4f",
+      "retrieved_at": "2026-10-29T20:59:43.858090+00:00",
+      "public_url": "https://api.openalex.org/works?filter=from_publication_date%3A2024-01-01%2Cto_publication_date%3A2024-12-31%2Ctype%3Aarticle%7Creview%2Ctitle_and_abstract.search%3A%22distributed+acoustic+sensing%22&per_page=100&sort=publication_date%3Aasc&cursor=IlsxNzM0MzkzNjAwMDAwLCA5OS4wLCA3LCAnaHR0cHM6Ly9vcGVuYWxleC5vcmcvVzQ0MDU0OTI1MTknXSI%3D"
+    },
+    {
+      "path": "raw/topic_distributed_acoustic_sensing_2025_page_00001.json",
+      "sha256": "6322817198f7093865be482497664f3ea7ddbd77e8e0e01df07abed2cebc9306",
+      "retrieved_at": "2026-10-29T20:59:46.239804+00:00",
+      "public_url": "https://api.openalex.org/works?filter=from_publication_date%3A2025-01-01%2Cto_publication_date%3A2025-12-31%2Ctype%3Aarticle%7Creview%2Ctitle_and_abstract.search%3A%22distributed+acoustic+sensing%22&per_page=100&sort=publication_date%3Aasc&cursor=%2A"
+    },
+    {
+      "path": "raw/topic_distributed_acoustic_sensing_2025_page_00002.json",
+      "sha256": "4e42e0891e38cb7cf5bd8d8b9b1f27945b9d650fcfaf947b5c83645e0ba9fae8",
+      "retrieved_at": "2026-10-29T20:59:49.464623+00:00",
+      "public_url": "https://api.openalex.org/works?filter=from_publication_date%3A2025-01-01%2Cto_publication_date%3A2025-12-31%2Ctype%3Aarticle%7Creview%2Ctitle_and_abstract.search%3A%22distributed+acoustic+sensing%22&per_page=100&sort=publication_date%3Aasc&cursor=IlsxNzQwOTYwMDAwMDAwLCA5OS4wLCAxMiwgJ2h0dHBzOi8vb3BlbmFsZXgub3JnL1c0NDA4MTA4Nzg1J10i"
+    },
+    {
+      "path": "raw/topic_distributed_acoustic_sensing_2025_page_00003.json",
+      "sha256": "9aa9ece9bbcc143fbeb35ba4c3eecd159bce4773150d0fe5245a78f9ce9bd514",
+      "retrieved_at": "2026-10-29T20:59:52.926262+00:00",
+      "public_url": "https://api.openalex.org/works?filter=from_publication_date%3A2025-01-01%2Cto_publication_date%3A2025-12-31%2Ctype%3Aarticle%7Creview%2Ctitle_and_abstract.search%3A%22distributed+acoustic+sensing%22&per_page=100&sort=publication_date%3Aasc&cursor=IlsxNzUwMjA0ODAwMDAwLCA5OS4wLCA3LCAnaHR0cHM6Ly9vcGVuYWxleC5vcmcvVzQ0MTE0MDc3MDknXSI%3D"
+    },
+    {
+      "path": "raw/topic_distributed_acoustic_sensing_2025_page_00004.json",
+      "sha256": "522f55837c8d98a6e50b39e4b7d247c3444d76a70de6b45035a29ec04b179c6f",
+      "retrieved_at": "2026-10-29T20:59:55.684142+00:00",
+      "public_url": "https://api.openalex.org/works?filter=from_publication_date%3A2025-01-01%2Cto_publication_date%3A2025-12-31%2Ctype%3Aarticle%7Creview%2Ctitle_and_abstract.search%3A%22distributed+acoustic+sensing%22&per_page=100&sort=publication_date%3Aasc&cursor=IlsxNzU5MTA0MDAwMDAwLCA5Ni4wLCAxLCAnaHR0cHM6Ly9vcGVuYWxleC5vcmcvVzQ0MTQ1OTQ2NTgnXSI%3D"
+    },
+    {
+      "path": "raw/topic_distributed_acoustic_sensing_2025_page_00005.json",
+      "sha256": "e96abc33290fc64bba3a5069c6e446ece161a2522cc43d9bbd1d35e73d194b81",
+      "retrieved_at": "2026-10-29T20:59:57.430862+00:00",
+      "public_url": "https://api.openalex.org/works?filter=from_publication_date%3A2025-01-01%2Cto_publication_date%3A2025-12-31%2Ctype%3Aarticle%7Creview%2Ctitle_and_abstract.search%3A%22distributed+acoustic+sensing%22&per_page=100&sort=publication_date%3Aasc&cursor=IlsxNzY1NDk3NjAwMDAwLCA5OS4wLCA4LCAnaHR0cHM6Ly9vcGVuYWxleC5vcmcvVzcxMTQ5MjA2NDYnXSI%3D"
+    }
+  ],
+  "credentials_saved": false,
+  "population_claim_allowed": true,
+  "population": "works matching the topic phrase in title or abstract at retrieval time; not a journal census and not all literature on the topic"
+}

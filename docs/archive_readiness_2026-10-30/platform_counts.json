@@ -1,0 +1,944 @@
+{
+  "retrieved_utc": "2026-10-30T11:49:02+00:00",
+  "queries": {
+    "ai_ready": "(\"AI-ready\" OR \"AI ready\" OR \"ML-ready\" OR \"ML ready\" OR \"machine learning ready\" OR \"machine-learning-ready\")",
+    "ml": "(\"machine learning\" OR \"deep learning\" OR \"neural network\")",
+    "earth_fos": "subjects.subject:\"FOS: Earth and related environmental sciences\"",
+    "disciplines_datacite": {
+      "seismology": "(seismic OR seismology OR earthquake OR \"distributed acoustic sensing\")",
+      "geodesy_sar": "(InSAR OR GNSS OR geodetic OR \"synthetic aperture radar\")",
+      "optical_remote_sensing": "(\"remote sensing\" OR Landsat OR \"Sentinel-2\" OR multispectral OR hyperspectral)",
+      "weather_climate": "(weather OR climate OR reanalysis OR ERA5 OR CMIP6)",
+      "hydrology": "(hydrology OR streamflow OR groundwater OR \"soil moisture\")",
+      "ocean": "(oceanography OR \"sea surface\" OR Argo OR \"ocean model\")",
+      "biomedicine": "(clinical OR medical OR patient OR genomics)",
+      "materials_chemistry": "(materials OR molecule OR \"crystal structure\")"
+    },
+    "terms_hf": {
+      "seismology": [
+        "seismic",
+        "seismo",
+        "earthquake",
+        "quake"
+      ],
+      "geodesy_sar": [
+        "insar",
+        "gnss",
+        "sar-",
+        "geodes"
+      ],
+      "optical_remote_sensing": [
+        "satellite",
+        "sentinel",
+        "landsat",
+        "remote-sensing",
+        "remote_sensing",
+        "remotesensing"
+      ],
+      "weather_climate": [
+        "weather",
+        "climate",
+        "era5",
+        "cmip"
+      ],
+      "hydrology": [
+        "hydro",
+        "streamflow",
+        "flood"
+      ],
+      "ocean": [
+        "ocean",
+        "marine"
+      ],
+      "biomedicine": [
+        "medical",
+        "clinical",
+        "radiology"
+      ],
+      "materials_chemistry": [
+        "molecul",
+        "chemistry",
+        "materials"
+      ]
+    },
+    "openalex_fields": {
+      "earth_planetary": "fields/19",
+      "environmental": "fields/23"
+    }
+  },
+  "datacite": {
+    "all_datasets": 78241222,
+    "earth_fos_datasets": 200070,
+    "ai_ready_all": 707,
+    "ai_ready_earth_fos": 3,
+    "ml_all": 666883,
+    "ml_earth_fos": 914,
+    "disciplines": {
+      "seismology": {
+        "datasets": 43477,
+        "mention_ml": 1126,
+        "mention_ai_ready": 12
+      },
+      "geodesy_sar": {
+        "datasets": 52497,
+        "mention_ml": 768,
+        "mention_ai_ready": 7
+      },
+      "optical_remote_sensing": {
+        "datasets": 82789,
+        "mention_ml": 8552,
+        "mention_ai_ready": 81
+      },
+      "weather_climate": {
+        "datasets": 322903,
+        "mention_ml": 7167,
+        "mention_ai_ready": 69
+      },
+      "hydrology": {
+        "datasets": 54846,
+        "mention_ml": 2089,
+        "mention_ai_ready": 12
+      },
+      "ocean": {
+        "datasets": 148653,
+        "mention_ml": 1120,
+        "mention_ai_ready": 10
+      },
+      "biomedicine": {
+        "datasets": 453674,
+        "mention_ml": 12551,
+        "mention_ai_ready": 90
+      },
+      "materials_chemistry": {
+        "datasets": 1811379,
+        "mention_ml": 8504,
+        "mention_ai_ready": 85
+      }
+    },
+    "ai_ready_all_by_year": {
+      "2016": 0,
+      "2017": 0,
+      "2018": 0,
+      "2019": 0,
+      "2020": 5,
+      "2021": 0,
+      "2022": 13,
+      "2023": 27,
+      "2024": 50,
+      "2025": 156
+    },
+    "ai_ready_earth_fos_by_year": {
+      "2016": 0,
+      "2017": 0,
+      "2018": 0,
+      "2019": 0,
+      "2020": 0,
+      "2021": 0,
+      "2022": 0,
+      "2023": 0,
+      "2024": 0,
+      "2025": 3
+    }
+  },
+  "hf": {
+    "seismology": {
+      "datasets": 393,
+      "downloads_30d": 32828,
+      "per_term": {
+        "seismic": 51,
+        "seismo": 4,
+        "earthquake": 317,
+        "quake": 22
+      },
+      "truncated": false,
+      "top_by_downloads": [
+        [
+          "HeXingChen/Seismic-AI-Data",
+          6390
+        ],
+        [
+          "mnemoraorg/usgs-global-earthquake-catalog",
+          5298
+        ],
+        [
+          "AI4EPS/quakeflow_das",
+          4727
+        ],
+        [
+          "cangyeone/SeismicX-Cont",
+          2134
+        ],
+        [
+          "AI4EPS/quakeflow_nc",
+          1596
+        ],
+        [
+          "YinghaoXu/SeisMIC-Init",
+          1080
+        ],
+        [
+          "LeoBorai/chile-seismological-records",
+          1019
+        ],
+        [
+          "linhvo46576/seismic",
+          672
+        ],
+        [
+          "tuskanny/seismic-msmarco-splade",
+          559
+        ],
+        [
+          "cangyeone/SeismicX-Cont-mini",
+          399
+        ]
+      ]
+    },
+    "geodesy_sar": {
+      "datasets": 2477,
+      "downloads_30d": 362731,
+      "per_term": {
+        "insar": 4,
+        "gnss": 21,
+        "sar-": 2325,
+        "geodes": 127
+      },
+      "truncated": false,
+      "top_by_downloads": [
+        [
+          "NMontanaBrown/saramis_amos",
+          72579
+        ],
+        [
+          "NMontanaBrown/saramis_abdomen",
+          72515
+        ],
+        [
+          "sarahcen/llm-election-data-2024",
+          13902
+        ],
+        [
+          "sarniihosuud/copyright-video-dataset",
+          11903
+        ],
+        [
+          "sarulab-speech/yodas2_sidon",
+          11527
+        ],
+        [
+          "XinRan-Tang/Optical-SAR-Infrared",
+          11363
+        ],
+        [
+          "geodesic-research/pa-warm-start-sft-xl-50b-mix",
+          11073
+        ],
+        [
+          "SARWARFX/stream-vault",
+          10318
+        ],
+        [
+          "riotu-lab/SARD",
+          8300
+        ],
+        [
+          "ONERA/SARLO-80",
+          4048
+        ]
+      ]
+    },
+    "optical_remote_sensing": {
+      "datasets": 554,
+      "downloads_30d": 62410,
+      "per_term": {
+        "satellite": 330,
+        "sentinel": 161,
+        "landsat": 26,
+        "remote-sensing": 42,
+        "remote_sensing": 42,
+        "remotesensing": 33
+      },
+      "truncated": false,
+      "top_by_downloads": [
+        [
+          "JesseGuerrero/LandsatTemperature",
+          9019
+        ],
+        [
+          "patrickfleith/GOCE-satellite-telemtry",
+          3820
+        ],
+        [
+          "satellite-image-deep-learning/LEVIR-CD",
+          3176
+        ],
+        [
+          "zerria/Sentinel_Agri_China",
+          2427
+        ],
+        [
+          "kalyan1729/sentineledgedataset",
+          2051
+        ],
+        [
+          "sunnydubey1111/agent-trajectory-sentinel",
+          1684
+        ],
+        [
+          "FraDra/GEO_satellite_maneuvers",
+          1597
+        ],
+        [
+          "imageomics/sentinel-beetles",
+          1505
+        ],
+        [
+          "Alfaxad/wildlife-sentinel",
+          1328
+        ],
+        [
+          "Qingyun/remote-sensing-sft-data",
+          1287
+        ]
+      ]
+    },
+    "weather_climate": {
+      "datasets": 1399,
+      "downloads_30d": 632664,
+      "per_term": {
+        "weather": 493,
+        "climate": 737,
+        "era5": 166,
+        "cmip": 15
+      },
+      "truncated": false,
+      "top_by_downloads": [
+        [
+          "nmasi/era5",
+          456702
+        ],
+        [
+          "climate-analytics-lab/jax-gcm-data",
+          18701
+        ],
+        [
+          "GilgameshYX/WeatherSynthetic",
+          10464
+        ],
+        [
+          "deepguess/wrf-250m-severe-weather",
+          10003
+        ],
+        [
+          "mteb/ClimateFEVER_test_top_250_only_w_correct-v2",
+          6809
+        ],
+        [
+          "1yunyi/weather",
+          5828
+        ],
+        [
+          "jniimi/weather_forecast_japan",
+          5055
+        ],
+        [
+          "Malavnaik/dublin-bikes-weather-raw",
+          4700
+        ],
+        [
+          "deepguess/wrf-250m-severe-weather-overlays",
+          3395
+        ],
+        [
+          "mteb/climate-fever",
+          3154
+        ]
+      ]
+    },
+    "hydrology": {
+      "datasets": 1109,
+      "downloads_30d": 81120,
+      "per_term": {
+        "hydro": 195,
+        "streamflow": 4,
+        "flood": 910
+      },
+      "truncated": false,
+      "top_by_downloads": [
+        [
+          "ai-for-good-lab/ai4g-flood-dataset",
+          14218
+        ],
+        [
+          "dynamicslab/HydroGym-environments",
+          7135
+        ],
+        [
+          "mohabeldokla/mass-flood-watch-tiles",
+          7107
+        ],
+        [
+          "thanhle45119/hydro",
+          3574
+        ],
+        [
+          "torchgeo/floodnet",
+          3324
+        ],
+        [
+          "links-ads/geoid-flood",
+          3317
+        ],
+        [
+          "chrimerss/hydro_cali_agent_example",
+          3067
+        ],
+        [
+          "blanchon/ETCI-2021-Flood-Detection",
+          2444
+        ],
+        [
+          "chrimerss/FloodSimBench",
+          2096
+        ],
+        [
+          "ChidiAbajue/flood_infrastructure_mapping",
+          1852
+        ]
+      ]
+    },
+    "ocean": {
+      "datasets": 510,
+      "downloads_30d": 245240,
+      "per_term": {
+        "ocean": 388,
+        "marine": 125
+      },
+      "truncated": false,
+      "top_by_downloads": [
+        [
+          "ESA-philab/OceanDepths",
+          116948
+        ],
+        [
+          "DeepSeekOracle/lattice-marines-wins",
+          58884
+        ],
+        [
+          "nilsleh/OceanTACO",
+          18908
+        ],
+        [
+          "binhngo21217/ocean",
+          5316
+        ],
+        [
+          "farahseddik/Instagram-Profiles-OCEAN-Personality-traits",
+          3443
+        ],
+        [
+          "binhle74029/ocean",
+          3193
+        ],
+        [
+          "jingwei-sjtu/OceanVerse",
+          2856
+        ],
+        [
+          "WongYukKwan/MarineEval",
+          2452
+        ],
+        [
+          "oceanicdayi/eew_hermes_dashboard",
+          2441
+        ],
+        [
+          "marinero4972/Open-o3-Video",
+          2249
+        ]
+      ]
+    },
+    "biomedicine": {
+      "datasets": 4624,
+      "downloads_30d": 412724,
+      "per_term": {
+        "medical": 3229,
+        "clinical": 1310,
+        "radiology": 92
+      },
+      "truncated": false,
+      "top_by_downloads": [
+        [
+          "Parexel/clinical-trials-protocols",
+          25283
+        ],
+        [
+          "FreedomIntelligence/medical-o1-reasoning-SFT",
+          21367
+        ],
+        [
+          "General-Medical-AI/SlideChat",
+          9125
+        ],
+        [
+          "meoconxinhxan/Medical-Eval-HumanityLastExam",
+          6040
+        ],
+        [
+          "keivalya/MedQuad-MedicalQnADataset",
+          5654
+        ],
+        [
+          "lavita/medical-qa-datasets",
+          5606
+        ],
+        [
+          "OpenMed/Medical-Reasoning-SFT-Baichuan-M3-235B",
+          5559
+        ],
+        [
+          "BlueZeros/ClinicalAgentBench",
+          4835
+        ],
+        [
+          "medalpaca/medical_meadow_medical_flashcards",
+          4780
+        ],
+        [
+          "OpenMed/Medical-Reasoning-SFT-GPT-OSS-120B",
+          4004
+        ]
+      ]
+    },
+    "materials_chemistry": {
+      "datasets": 871,
+      "downloads_30d": 112837,
+      "per_term": {
+        "molecul": 357,
+        "chemistry": 327,
+        "materials": 188
+      },
+      "truncated": false,
+      "top_by_downloads": [
+        [
+          "camel-ai/chemistry",
+          10401
+        ],
+        [
+          "VoiceOfML/Japanese-Materials",
+          4194
+        ],
+        [
+          "marianna13/handbook-chemistry-physics-tables",
+          2831
+        ],
+        [
+          "haitengzhao/molecule_property_instruction",
+          2797
+        ],
+        [
+          "marianna13/libgen_chemistry",
+          2228
+        ],
+        [
+          "chao1224/MoleculeSTM",
+          2071
+        ],
+        [
+          "scikit-fingerprints/MoleculeNet_BACE",
+          1995
+        ],
+        [
+          "hails/agieval-gaokao-chemistry",
+          1769
+        ],
+        [
+          "scikit-fingerprints/MoleculeNet_BBBP",
+          1745
+        ],
+        [
+          "scikit-fingerprints/MoleculeNet_Tox21",
+          1724
+        ]
+      ]
+    }
+  },
+  "openalex": {
+    "ai_ready_works_all_by_year": {
+      "2025": {
+        "name": "2025",
+        "count": 165
+      },
+      "2024": {
+        "name": "2024",
+        "count": 50
+      },
+      "2023": {
+        "name": "2023",
+        "count": 37
+      },
+      "2022": {
+        "name": "2022",
+        "count": 20
+      },
+      "2020": {
+        "name": "2020",
+        "count": 11
+      },
+      "2021": {
+        "name": "2021",
+        "count": 9
+      },
+      "2019": {
+        "name": "2019",
+        "count": 7
+      },
+      "2017": {
+        "name": "2017",
+        "count": 1
+      }
+    },
+    "ai_ready_works_earth_env_by_year": {
+      "2025": {
+        "name": "2025",
+        "count": 7
+      },
+      "2023": {
+        "name": "2023",
+        "count": 4
+      },
+      "2024": {
+        "name": "2024",
+        "count": 2
+      },
+      "2021": {
+        "name": "2021",
+        "count": 1
+      }
+    },
+    "works_all_by_year": {
+      "2025": {
+        "name": "2025",
+        "count": 7172668
+      },
+      "2020": {
+        "name": "2020",
+        "count": 6426598
+      },
+      "2016": {
+        "name": "2016",
+        "count": 6356228
+      },
+      "2024": {
+        "name": "2024",
+        "count": 6204408
+      },
+      "2019": {
+        "name": "2019",
+        "count": 6145030
+      },
+      "2017": {
+        "name": "2017",
+        "count": 6015168
+      },
+      "2021": {
+        "name": "2021",
+        "count": 5961451
+      },
+      "2018": {
+        "name": "2018",
+        "count": 5897387
+      },
+      "2023": {
+        "name": "2023",
+        "count": 5766766
+      },
+      "2022": {
+        "name": "2022",
+        "count": 5521397
+      }
+    },
+    "works_earth_env_by_year": {
+      "2025": {
+        "name": "2025",
+        "count": 397794
+      },
+      "2016": {
+        "name": "2016",
+        "count": 367157
+      },
+      "2024": {
+        "name": "2024",
+        "count": 351719
+      },
+      "2020": {
+        "name": "2020",
+        "count": 349579
+      },
+      "2019": {
+        "name": "2019",
+        "count": 345159
+      },
+      "2017": {
+        "name": "2017",
+        "count": 342548
+      },
+      "2018": {
+        "name": "2018",
+        "count": 339678
+      },
+      "2021": {
+        "name": "2021",
+        "count": 335304
+      },
+      "2023": {
+        "name": "2023",
+        "count": 320699
+      },
+      "2022": {
+        "name": "2022",
+        "count": 313462
+      }
+    },
+    "ml_works_all_by_year": {
+      "2025": {
+        "name": "2025",
+        "count": 279004
+      },
+      "2024": {
+        "name": "2024",
+        "count": 212194
+      },
+      "2023": {
+        "name": "2023",
+        "count": 165437
+      },
+      "2022": {
+        "name": "2022",
+        "count": 140223
+      },
+      "2021": {
+        "name": "2021",
+        "count": 117006
+      },
+      "2020": {
+        "name": "2020",
+        "count": 91405
+      },
+      "2019": {
+        "name": "2019",
+        "count": 65791
+      },
+      "2018": {
+        "name": "2018",
+        "count": 43856
+      },
+      "2017": {
+        "name": "2017",
+        "count": 28790
+      },
+      "2016": {
+        "name": "2016",
+        "count": 22255
+      }
+    },
+    "ml_works_earth_env_by_year": {
+      "2025": {
+        "name": "2025",
+        "count": 20316
+      },
+      "2024": {
+        "name": "2024",
+        "count": 14391
+      },
+      "2023": {
+        "name": "2023",
+        "count": 10852
+      },
+      "2022": {
+        "name": "2022",
+        "count": 9070
+      },
+      "2021": {
+        "name": "2021",
+        "count": 7235
+      },
+      "2020": {
+        "name": "2020",
+        "count": 5443
+      },
+      "2019": {
+        "name": "2019",
+        "count": 3790
+      },
+      "2018": {
+        "name": "2018",
+        "count": 2604
+      },
+      "2017": {
+        "name": "2017",
+        "count": 1888
+      },
+      "2016": {
+        "name": "2016",
+        "count": 1549
+      }
+    },
+    "subfield_works_2023_2025": {
+      "2306": {
+        "name": "Global and Planetary Change",
+        "count": 131827
+      },
+      "2303": {
+        "name": "Ecology",
+        "count": 128172
+      },
+      "2312": {
+        "name": "Water Science and Technology",
+        "count": 127867
+      },
+      "2308": {
+        "name": "Management, Monitoring, Policy and Law",
+        "count": 90352
+      },
+      "2305": {
+        "name": "Environmental Engineering",
+        "count": 85992
+      },
+      "2310": {
+        "name": "Pollution",
+        "count": 77095
+      },
+      "2307": {
+        "name": "Health, Toxicology and Mutagenesis",
+        "count": 76241
+      },
+      "1902": {
+        "name": "Atmospheric Science",
+        "count": 53464
+      },
+      "1908": {
+        "name": "Geophysics",
+        "count": 50441
+      },
+      "2311": {
+        "name": "Waste Management and Disposal",
+        "count": 49493
+      },
+      "2309": {
+        "name": "Nature and Landscape Conservation",
+        "count": 36753
+      },
+      "1910": {
+        "name": "Oceanography",
+        "count": 36431
+      },
+      "2304": {
+        "name": "Environmental Chemistry",
+        "count": 34796
+      },
+      "1911": {
+        "name": "Paleontology",
+        "count": 25697
+      },
+      "1904": {
+        "name": "Earth-Surface Processes",
+        "count": 22115
+      },
+      "1907": {
+        "name": "Geology",
+        "count": 18120
+      },
+      "1906": {
+        "name": "Geochemistry and Petrology",
+        "count": 13962
+      },
+      "2302": {
+        "name": "Ecological Modeling",
+        "count": 9902
+      },
+      "1912": {
+        "name": "Space and Planetary Science",
+        "count": 1492
+      }
+    },
+    "subfield_ml_works_2023_2025": {
+      "2305": {
+        "name": "Environmental Engineering",
+        "count": 12766
+      },
+      "2306": {
+        "name": "Global and Planetary Change",
+        "count": 5745
+      },
+      "2303": {
+        "name": "Ecology",
+        "count": 4556
+      },
+      "2312": {
+        "name": "Water Science and Technology",
+        "count": 4128
+      },
+      "1902": {
+        "name": "Atmospheric Science",
+        "count": 3680
+      },
+      "1908": {
+        "name": "Geophysics",
+        "count": 2438
+      },
+      "1910": {
+        "name": "Oceanography",
+        "count": 2239
+      },
+      "2308": {
+        "name": "Management, Monitoring, Policy and Law",
+        "count": 2206
+      },
+      "2310": {
+        "name": "Pollution",
+        "count": 1650
+      },
+      "2307": {
+        "name": "Health, Toxicology and Mutagenesis",
+        "count": 1426
+      },
+      "2311": {
+        "name": "Waste Management and Disposal",
+        "count": 1169
+      },
+      "2304": {
+        "name": "Environmental Chemistry",
+        "count": 856
+      },
+      "1904": {
+        "name": "Earth-Surface Processes",
+        "count": 721
+      },
+      "1907": {
+        "name": "Geology",
+        "count": 538
+      },
+      "2302": {
+        "name": "Ecological Modeling",
+        "count": 495
+      },
+      "2309": {
+        "name": "Nature and Landscape Conservation",
+        "count": 387
+      },
+      "1906": {
+        "name": "Geochemistry and Petrology",
+        "count": 359
+      },
+      "1911": {
+        "name": "Paleontology",
+        "count": 105
+      },
+      "1912": {
+        "name": "Space and Planetary Science",
+        "count": 95
+      }
+    }
+  }
+}

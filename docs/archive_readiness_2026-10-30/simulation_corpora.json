@@ -1,0 +1,23 @@
+{
+ "retrieved": "2026-10-30",
+ "method": "Subagent web research: project pages, papers, Zenodo/DaRUS/Syngine APIs and HTTP headers; nothing downloaded. 'computed': true marks totals summed from API or HTTP file sizes that no source states.",
+ "rows": [
+  {"name":"CyberShake Study 22.12, archived","side":"simulation archive","domain":"solid_earth","bytes":75e12,"stated":"75 TB transferred to long-term storage (ORNL: 70 TB)","as_of":"2023-04","computed":false,"source_url":"https://strike.scec.org/scecpedia/CyberShake_Study_22.12"},
+  {"name":"CyberShake Study 22.12, managed during run","side":"simulation generated","domain":"solid_earth","bytes":2.5e15,"stated":"2.5 PB of data managed","as_of":"2023-04","computed":false,"source_url":"https://strike.scec.org/scecpedia/CyberShake_Study_22.12"},
+  {"name":"CyberShake Study 24.8, archived","side":"simulation archive","domain":"solid_earth","bytes":36e12,"stated":"36 TB, about 9 million files","as_of":"2024-11","computed":false,"source_url":"https://strike.scec.org/scecpedia/CyberShake_Study_24.8"},
+  {"name":"CyberShake Study 24.8, managed during run","side":"simulation generated","domain":"solid_earth","bytes":1e15,"stated":"about 1 PB managed","as_of":"2024-11","computed":false,"source_url":"https://strike.scec.org/scecpedia/CyberShake_Study_24.8"},
+  {"name":"Syngine/Instaseis, one 2 s database","side":"simulation archive","domain":"solid_earth","bytes":1e12,"stated":"about 1 TB per 2 s 3-component database; 10 models served, no total","as_of":"2015","computed":false,"source_url":"https://se.copernicus.org/articles/6/701/2015/"},
+  {"name":"OpenFWI","side":"ML-ready simulation corpus","domain":"solid_earth","bytes":2.1e12,"stated":"12 datasets, 2.1 TB","as_of":"2023","computed":false,"source_url":"https://arxiv.org/abs/2111.02926"},
+  {"name":"HEMEW-3D","side":"ML-ready simulation corpus","domain":"solid_earth","bytes":369.9e9,"stated":"369.9 GB velocity fields, 30,000 simulations","as_of":"2024-03","computed":false,"source_url":"https://github.com/lehmannfa/HEMEW3D"},
+  {"name":"EQGNS rupture GNN","side":"ML-ready simulation corpus","domain":"solid_earth","bytes":7.71e9,"stated":"sum of Zenodo file sizes","as_of":"2025-09","computed":true,"source_url":"https://zenodo.org/records/17095311"},
+  {"name":"RuptureNet2D","side":"ML-ready simulation corpus","domain":"solid_earth","bytes":0.944e9,"stated":"datasets.rar, Zenodo file size","as_of":"2024-04","computed":true,"source_url":"https://zenodo.org/records/15187742"},
+  {"name":"DrivAerNet++","side":"ML-ready simulation corpus","domain":"general_physics","bytes":39e12,"stated":"more than 39 TB","as_of":"2025-02","computed":false,"source_url":"https://arxiv.org/abs/2406.09624"},
+  {"name":"The Well","side":"ML-ready simulation corpus","domain":"general_physics","bytes":15e12,"stated":"15 TB across 16 datasets","as_of":"2025-02","computed":false,"source_url":"https://arxiv.org/abs/2412.00568"},
+  {"name":"PDEBench","side":"ML-ready simulation corpus","domain":"general_physics","bytes":3.9e12,"stated":"sum of 336 DaRUS file sizes","as_of":"2024-02","computed":true,"source_url":"https://darus.uni-stuttgart.de/dataset.xhtml?persistentId=doi:10.18419/darus-2986"},
+  {"name":"BLASTNet 2.0","side":"ML-ready simulation corpus","domain":"general_physics","bytes":2.2e12,"stated":"2.2 TB, 744 samples","as_of":"2023","computed":false,"source_url":"https://papers.NeurIPS.cc/paper_files/paper/2023/hash/f458af2455b1e12608c2a16c308d663d-Abstract-Datasets_and_Benchmarks.html"},
+  {"name":"WaveBench","side":"ML-ready simulation corpus","domain":"general_physics","bytes":147.7e9,"stated":"Zenodo zip size","as_of":"2024","computed":true,"source_url":"https://zenodo.org/records/10629581"},
+  {"name":"AirfRANS","side":"ML-ready simulation corpus","domain":"general_physics","bytes":10.03e9,"stated":"HTTP Content-Length of Dataset.zip","as_of":"2022-08","computed":true,"source_url":"https://airfrans.readthedocs.io/en/latest/notes/dataset.html"},
+  {"name":"ClimSim high-res","side":"ML-ready simulation corpus","domain":"atmosphere","bytes":41.2e12,"stated":"41.2 TB (HF card 35.8 TB)","as_of":"2023","computed":false,"source_url":"https://leap-stc.github.io/ClimSim/dataset.html"}
+ ],
+ "gaps": ["No cumulative CyberShake, Syngine, SCEC Broadband Platform or EQSIM archive volume found", "EQSIM 3 PB per run only in a 2025 trade article, excluded", "No public ML-ready geodynamics or reservoir simulation dataset with a stated size found", "E-FWI sizes ambiguous (per dataset or per family), excluded"]
+}

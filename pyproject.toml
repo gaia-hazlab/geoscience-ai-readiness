@@ -15,6 +15,7 @@ dependencies = ["numpy>=1.26,<3", "reportlab>=4.4,<5"]
 [project.optional-dependencies]
 study = ["matplotlib>=3.8,<4"]
 instrument = ["python-docx>=1.1,<2"]
+semantic = ["anthropic>=1,<2"]
 
 [project.scripts]
 aidatasets-figures = "aidatasets_figures.__main__:main"
@@ -26,4 +27,4 @@ package-dir = {aidatasets_figures = "src/aidatasets_figures", ai_readiness = "to
 
 [tool.setuptools.package-data]
 aidatasets_figures = ["snapshots/2026-10-21/*.json"]
-ai_readiness = ["*.json", "README.md"]
+ai_readiness = ["*.json", "*.md"]

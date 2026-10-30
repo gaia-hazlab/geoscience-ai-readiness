@@ -1,0 +1,22 @@
+{
+  "study_id": "das_topic_adoption_2020-2025_frozen_2026-10-29",
+  "years": {
+    "start": 2020,
+    "end": 2025
+  },
+  "frame": {
+    "kind": "topic",
+    "definition": "Topic frame for the DAS adoption quantity of proposal Comment 4: every OpenAlex work typed article or review whose title or abstract matches the quoted phrase, 2020-2025. Same filter as the frozen 2026-10-21 group_by snapshot in data/openalex/2026-10-21/manifest.json, retrieved as records instead of counts.",
+    "topic_search": "\"distributed acoustic sensing\"",
+    "types": [
+      "article",
+      "review"
+    ],
+    "language": null
+  },
+  "per_page": 100,
+  "api_key_env": "OPENALEX_API_KEY",
+  "minimum_request_interval_seconds": 1.0,
+  "credential_note": "Optional existing user-provided verified key only. Never create keys/accounts. Cursor pagination beyond the first page of each year stops without a key.",
+  "coverage_note": "A topic frame counts indexed works that name the phrase; it is not a journal census, not all DAS research, and says nothing about actual use or users. The AI-as-method share from the semantic screen uses this AI-free denominator."
+}

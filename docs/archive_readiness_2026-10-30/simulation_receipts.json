@@ -1,0 +1,74 @@
+[
+ {
+  "name": "openalex_field_all",
+  "url": "https://api.openalex.org/works?filter=from_publication_date%3A2023-01-01%2Cto_publication_date%3A2025-12-31%2Ctype%3Aarticle&group_by=primary_topic.field.id&per_page=200",
+  "status": 200,
+  "file": "raw/openalex_field_all.json",
+  "sha256": "9a1639131e76963883e1e3daf305aff507005c674a99a7eaa5cb431517f92d39",
+  "retrieved_utc": "2026-10-30T12:18:29+00:00"
+ },
+ {
+  "name": "openalex_field_sim",
+  "url": "https://api.openalex.org/works?filter=from_publication_date%3A2023-01-01%2Cto_publication_date%3A2025-12-31%2Ctype%3Aarticle%2Ctitle_and_abstract.search%3A%28%22numerical+simulation%22+OR+%22finite+element%22+OR+%22finite+difference%22+OR+%22spectral+element%22+OR+%22finite+volume%22%29&group_by=primary_topic.field.id&per_page=200",
+  "status": 200,
+  "file": "raw/openalex_field_sim.json",
+  "sha256": "32763bba732f6eca06a2af2ad884dfe5739d2c4d8b72e090e91eaab2a830a5f3",
+  "retrieved_utc": "2026-10-30T12:18:30+00:00"
+ },
+ {
+  "name": "openalex_field_surr",
+  "url": "https://api.openalex.org/works?filter=from_publication_date%3A2023-01-01%2Cto_publication_date%3A2025-12-31%2Ctype%3Aarticle%2Ctitle_and_abstract.search%3A%28%22physics-informed+neural+network%22+OR+%22neural+operator%22+OR+DeepONet+OR+%28%28%22surrogate+model%22+OR+emulator%29+AND+%28%22machine+learning%22+OR+%22deep+learning%22+OR+%22neural+network%22%29%29%29&group_by=primary_topic.field.id&per_page=200",
+  "status": 200,
+  "file": "raw/openalex_field_surr.json",
+  "sha256": "3bc76dd43783a88435a550c66d3fbb54c11b843982bfeded8efcad12ce072baa",
+  "retrieved_utc": "2026-10-30T12:18:32+00:00"
+ },
+ {
+  "name": "openalex_subfield_sim",
+  "url": "https://api.openalex.org/works?filter=from_publication_date%3A2023-01-01%2Cto_publication_date%3A2025-12-31%2Ctype%3Aarticle%2Cprimary_topic.field.id%3Afields%2F19%7Cfields%2F23%2Ctitle_and_abstract.search%3A%28%22numerical+simulation%22+OR+%22finite+element%22+OR+%22finite+difference%22+OR+%22spectral+element%22+OR+%22finite+volume%22%29&group_by=primary_topic.subfield.id&per_page=200",
+  "status": 200,
+  "file": "raw/openalex_subfield_sim.json",
+  "sha256": "cc0f0698120f4231665954a92514a9de54777b609f0e5c85e89dbd0d39fb9952",
+  "retrieved_utc": "2026-10-30T12:18:33+00:00"
+ },
+ {
+  "name": "openalex_subfield_surr",
+  "url": "https://api.openalex.org/works?filter=from_publication_date%3A2023-01-01%2Cto_publication_date%3A2025-12-31%2Ctype%3Aarticle%2Cprimary_topic.field.id%3Afields%2F19%7Cfields%2F23%2Ctitle_and_abstract.search%3A%28%22physics-informed+neural+network%22+OR+%22neural+operator%22+OR+DeepONet+OR+%28%28%22surrogate+model%22+OR+emulator%29+AND+%28%22machine+learning%22+OR+%22deep+learning%22+OR+%22neural+network%22%29%29%29&group_by=primary_topic.subfield.id&per_page=200",
+  "status": 200,
+  "file": "raw/openalex_subfield_surr.json",
+  "sha256": "15066ab859b4ec27777495de7377254238cada76ebd1dd0b5efd681d4e4f5c65",
+  "retrieved_utc": "2026-10-30T12:18:34+00:00"
+ },
+ {
+  "name": "openalex_surr_all_year",
+  "url": "https://api.openalex.org/works?filter=from_publication_date%3A2016-01-01%2Cto_publication_date%3A2025-12-31%2Ctype%3Aarticle%2Ctitle_and_abstract.search%3A%28%22physics-informed+neural+network%22+OR+%22neural+operator%22+OR+DeepONet+OR+%28%28%22surrogate+model%22+OR+emulator%29+AND+%28%22machine+learning%22+OR+%22deep+learning%22+OR+%22neural+network%22%29%29%29&group_by=publication_year&per_page=200",
+  "status": 200,
+  "file": "raw/openalex_surr_all_year.json",
+  "sha256": "6739d84464d217d01e0add0f69f6e0b95c0c9e0c074878784d657fb12fc20d5a",
+  "retrieved_utc": "2026-10-30T12:18:35+00:00"
+ },
+ {
+  "name": "openalex_surr_earth_year",
+  "url": "https://api.openalex.org/works?filter=from_publication_date%3A2016-01-01%2Cto_publication_date%3A2025-12-31%2Ctype%3Aarticle%2Cprimary_topic.field.id%3Afields%2F19%7Cfields%2F23%2Ctitle_and_abstract.search%3A%28%22physics-informed+neural+network%22+OR+%22neural+operator%22+OR+DeepONet+OR+%28%28%22surrogate+model%22+OR+emulator%29+AND+%28%22machine+learning%22+OR+%22deep+learning%22+OR+%22neural+network%22%29%29%29&group_by=publication_year&per_page=200",
+  "status": 200,
+  "file": "raw/openalex_surr_earth_year.json",
+  "sha256": "81d58065010d36f47b281a1d07f6b0df7f832ebedf0d7fe6efa78810a5502e48",
+  "retrieved_utc": "2026-10-30T12:18:37+00:00"
+ },
+ {
+  "name": "openalex_sim_all_year",
+  "url": "https://api.openalex.org/works?filter=from_publication_date%3A2016-01-01%2Cto_publication_date%3A2025-12-31%2Ctype%3Aarticle%2Ctitle_and_abstract.search%3A%28%22numerical+simulation%22+OR+%22finite+element%22+OR+%22finite+difference%22+OR+%22spectral+element%22+OR+%22finite+volume%22%29&group_by=publication_year&per_page=200",
+  "status": 200,
+  "file": "raw/openalex_sim_all_year.json",
+  "sha256": "ec305503fe41ae548b6141db3cfde3bbf4b82d250acc534f3f21296c168c1c51",
+  "retrieved_utc": "2026-10-30T12:18:38+00:00"
+ },
+ {
+  "name": "openalex_sim_earth_year",
+  "url": "https://api.openalex.org/works?filter=from_publication_date%3A2016-01-01%2Cto_publication_date%3A2025-12-31%2Ctype%3Aarticle%2Cprimary_topic.field.id%3Afields%2F19%7Cfields%2F23%2Ctitle_and_abstract.search%3A%28%22numerical+simulation%22+OR+%22finite+element%22+OR+%22finite+difference%22+OR+%22spectral+element%22+OR+%22finite+volume%22%29&group_by=publication_year&per_page=200",
+  "status": 200,
+  "file": "raw/openalex_sim_earth_year.json",
+  "sha256": "d25ce38f76a383a2824aec801f51ebd945b8e2e9dad2ed93b0c47e7f9e97a64a",
+  "retrieved_utc": "2026-10-30T12:18:39+00:00"
+ }
+]

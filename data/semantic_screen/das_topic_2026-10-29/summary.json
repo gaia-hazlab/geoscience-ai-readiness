@@ -1,0 +1,610 @@
+{
+  "created_at": "2026-10-29T21:16:36.496490+00:00",
+  "tool_version": "0.1.0",
+  "codebook_version": "0.1.0",
+  "prompt_sha256": "fea5a7ace5f4c907777f65c098a1504b003934299ef8efb8fa13199f29ba16cf",
+  "models_that_answered": [
+    "claude-opus-5-5"
+  ],
+  "rows": 1423,
+  "screen_semantic_sha256": "1323610c9d75055edc688a8662d2c4b0c951baabafff864973d5d3b517ff150f",
+  "validation": null,
+  "validated": false,
+  "interpretation": "Abstract-level classifier output on a topic or journal frame. Shares are among rows the model labeled with a non-unclear value; unclear, unlabeled and missing-abstract rows are counted beside them and never treated as negatives. Wilson intervals cover label sampling noise only, not classifier error: attach validation metrics before reporting.",
+  "years": [
+    {
+      "year": 2020,
+      "works": 118,
+      "abstract_available": 100,
+      "abstract_missing": 18,
+      "labeled": 100,
+      "not_labeled": 18,
+      "ai_role_counts": {
+        "ai_as_method": 15,
+        "ai_as_subject": 3,
+        "none": 81,
+        "unclear": 1
+      },
+      "ai_as_method": {
+        "count": 15,
+        "denominator": 99,
+        "share": 0.15151515151515152,
+        "wilson95": [
+          0.09402325244184671,
+          0.2350411074842148
+        ]
+      },
+      "ai_as_method_or_subject": {
+        "count": 18,
+        "denominator": 99,
+        "share": 0.18181818181818182,
+        "wilson95": [
+          0.11821864674176526,
+          0.26918794275594315
+        ]
+      },
+      "deep_learning_among_ai_as_method": {
+        "count": 12,
+        "denominator": 15,
+        "share": 0.8,
+        "wilson95": [
+          0.5481455128483065,
+          0.9295245065301844
+        ]
+      },
+      "foundation_model_among_ai_as_method": {
+        "count": 0,
+        "denominator": 15,
+        "share": 0.0,
+        "wilson95": [
+          0.0,
+          0.20388330103584862
+        ]
+      },
+      "das_used_counts": {
+        "yes": 85,
+        "no": 7,
+        "unclear": 8
+      },
+      "das_used": {
+        "count": 85,
+        "denominator": 92,
+        "share": 0.9239130434782609,
+        "wilson95": [
+          0.8511875992283273,
+          0.9626564402903846
+        ]
+      },
+      "ai_as_method_among_das_confirmed": {
+        "count": 13,
+        "denominator": 85,
+        "share": 0.15294117647058825,
+        "wilson95": [
+          0.09161380494530419,
+          0.2442818367609198
+        ]
+      },
+      "multimodal_two_or_more_families": {
+        "count": 14,
+        "denominator": 94,
+        "share": 0.14893617021276595,
+        "wilson95": [
+          0.0908404795865941,
+          0.2345988505755543
+        ]
+      },
+      "families_unstated": 6,
+      "family_counts": {
+        "seismic_elastic": 90,
+        "geodetic_position_displacement": 0,
+        "radar_backscatter_interferometry": 0,
+        "optical_reflectance": 2,
+        "passive_microwave": 0,
+        "thermal_radiance": 0,
+        "atmospheric_in_situ": 0,
+        "hydrologic_in_situ": 0,
+        "oceanographic_in_situ": 0,
+        "gravity_potential": 0,
+        "electromagnetic_electrical": 0,
+        "geochemical_biological": 1,
+        "human_system_records": 2,
+        "other": 14
+      }
+    },
+    {
+      "year": 2021,
+      "works": 137,
+      "abstract_available": 127,
+      "abstract_missing": 10,
+      "labeled": 127,
+      "not_labeled": 10,
+      "ai_role_counts": {
+        "ai_as_method": 18,
+        "ai_as_subject": 2,
+        "none": 107,
+        "unclear": 0
+      },
+      "ai_as_method": {
+        "count": 18,
+        "denominator": 127,
+        "share": 0.14173228346456693,
+        "wilson95": [
+          0.09157080873697535,
+          0.2129309843475323
+        ]
+      },
+      "ai_as_method_or_subject": {
+        "count": 20,
+        "denominator": 127,
+        "share": 0.15748031496062992,
+        "wilson95": [
+          0.10431811033073023,
+          0.23075503250830454
+        ]
+      },
+      "deep_learning_among_ai_as_method": {
+        "count": 14,
+        "denominator": 18,
+        "share": 0.7777777777777778,
+        "wilson95": [
+          0.5478541568378739,
+          0.9099907189139831
+        ]
+      },
+      "foundation_model_among_ai_as_method": {
+        "count": 0,
+        "denominator": 18,
+        "share": 0.0,
+        "wilson95": [
+          0.0,
+          0.17587922364665765
+        ]
+      },
+      "das_used_counts": {
+        "yes": 98,
+        "no": 17,
+        "unclear": 12
+      },
+      "das_used": {
+        "count": 98,
+        "denominator": 115,
+        "share": 0.8521739130434782,
+        "wilson95": [
+          0.775970508393773,
+          0.9056098155419282
+        ]
+      },
+      "ai_as_method_among_das_confirmed": {
+        "count": 16,
+        "denominator": 98,
+        "share": 0.16326530612244897,
+        "wilson95": [
+          0.10306803521803501,
+          0.24886583568023965
+        ]
+      },
+      "multimodal_two_or_more_families": {
+        "count": 14,
+        "denominator": 121,
+        "share": 0.11570247933884298,
+        "wilson95": [
+          0.07018519124349673,
+          0.1848699732946477
+        ]
+      },
+      "families_unstated": 6,
+      "family_counts": {
+        "seismic_elastic": 118,
+        "geodetic_position_displacement": 0,
+        "radar_backscatter_interferometry": 0,
+        "optical_reflectance": 0,
+        "passive_microwave": 0,
+        "thermal_radiance": 0,
+        "atmospheric_in_situ": 1,
+        "hydrologic_in_situ": 1,
+        "oceanographic_in_situ": 2,
+        "gravity_potential": 0,
+        "electromagnetic_electrical": 1,
+        "geochemical_biological": 0,
+        "human_system_records": 2,
+        "other": 11
+      }
+    },
+    {
+      "year": 2022,
+      "works": 193,
+      "abstract_available": 176,
+      "abstract_missing": 17,
+      "labeled": 176,
+      "not_labeled": 17,
+      "ai_role_counts": {
+        "ai_as_method": 28,
+        "ai_as_subject": 4,
+        "none": 143,
+        "unclear": 1
+      },
+      "ai_as_method": {
+        "count": 28,
+        "denominator": 175,
+        "share": 0.16,
+        "wilson95": [
+          0.11307943399181343,
+          0.22152675416666595
+        ]
+      },
+      "ai_as_method_or_subject": {
+        "count": 32,
+        "denominator": 175,
+        "share": 0.18285714285714286,
+        "wilson95": [
+          0.13260870016222262,
+          0.24672984509484638
+        ]
+      },
+      "deep_learning_among_ai_as_method": {
+        "count": 23,
+        "denominator": 28,
+        "share": 0.8214285714285714,
+        "wilson95": [
+          0.6440857521065705,
+          0.9212149805439572
+        ]
+      },
+      "foundation_model_among_ai_as_method": {
+        "count": 0,
+        "denominator": 28,
+        "share": 0.0,
+        "wilson95": [
+          1.3877787807814457e-17,
+          0.12064330476584563
+        ]
+      },
+      "das_used_counts": {
+        "yes": 142,
+        "no": 16,
+        "unclear": 18
+      },
+      "das_used": {
+        "count": 142,
+        "denominator": 158,
+        "share": 0.8987341772151899,
+        "wilson95": [
+          0.8418377243447033,
+          0.9367019707256234
+        ]
+      },
+      "ai_as_method_among_das_confirmed": {
+        "count": 26,
+        "denominator": 142,
+        "share": 0.18309859154929578,
+        "wilson95": [
+          0.12812565706492757,
+          0.2547658696123311
+        ]
+      },
+      "multimodal_two_or_more_families": {
+        "count": 21,
+        "denominator": 160,
+        "share": 0.13125,
+        "wilson95": [
+          0.08747283759654537,
+          0.19231873134243974
+        ]
+      },
+      "families_unstated": 16,
+      "family_counts": {
+        "seismic_elastic": 154,
+        "geodetic_position_displacement": 1,
+        "radar_backscatter_interferometry": 0,
+        "optical_reflectance": 1,
+        "passive_microwave": 0,
+        "thermal_radiance": 0,
+        "atmospheric_in_situ": 1,
+        "hydrologic_in_situ": 2,
+        "oceanographic_in_situ": 1,
+        "gravity_potential": 0,
+        "electromagnetic_electrical": 1,
+        "geochemical_biological": 0,
+        "human_system_records": 2,
+        "other": 20
+      }
+    },
+    {
+      "year": 2023,
+      "works": 238,
+      "abstract_available": 213,
+      "abstract_missing": 25,
+      "labeled": 211,
+      "not_labeled": 27,
+      "ai_role_counts": {
+        "ai_as_method": 43,
+        "ai_as_subject": 4,
+        "none": 161,
+        "unclear": 3
+      },
+      "ai_as_method": {
+        "count": 43,
+        "denominator": 208,
+        "share": 0.20673076923076922,
+        "wilson95": [
+          0.15725760650693432,
+          0.26684001499187404
+        ]
+      },
+      "ai_as_method_or_subject": {
+        "count": 47,
+        "denominator": 208,
+        "share": 0.22596153846153846,
+        "wilson95": [
+          0.1743948281409241,
+          0.28746688375140506
+        ]
+      },
+      "deep_learning_among_ai_as_method": {
+        "count": 34,
+        "denominator": 43,
+        "share": 0.7906976744186046,
+        "wilson95": [
+          0.6479435728926356,
+          0.885771657790044
+        ]
+      },
+      "foundation_model_among_ai_as_method": {
+        "count": 0,
+        "denominator": 43,
+        "share": 0.0,
+        "wilson95": [
+          0.0,
+          0.08200980322579117
+        ]
+      },
+      "das_used_counts": {
+        "yes": 188,
+        "no": 13,
+        "unclear": 10
+      },
+      "das_used": {
+        "count": 188,
+        "denominator": 201,
+        "share": 0.9353233830845771,
+        "wilson95": [
+          0.8925026977559214,
+          0.961816545074625
+        ]
+      },
+      "ai_as_method_among_das_confirmed": {
+        "count": 42,
+        "denominator": 186,
+        "share": 0.22580645161290322,
+        "wilson95": [
+          0.1716200379314472,
+          0.29108952702011937
+        ]
+      },
+      "multimodal_two_or_more_families": {
+        "count": 34,
+        "denominator": 205,
+        "share": 0.16585365853658537,
+        "wilson95": [
+          0.12118132426601284,
+          0.22281866130378408
+        ]
+      },
+      "families_unstated": 6,
+      "family_counts": {
+        "seismic_elastic": 198,
+        "geodetic_position_displacement": 1,
+        "radar_backscatter_interferometry": 0,
+        "optical_reflectance": 0,
+        "passive_microwave": 0,
+        "thermal_radiance": 0,
+        "atmospheric_in_situ": 2,
+        "hydrologic_in_situ": 2,
+        "oceanographic_in_situ": 4,
+        "gravity_potential": 0,
+        "electromagnetic_electrical": 1,
+        "geochemical_biological": 0,
+        "human_system_records": 1,
+        "other": 32
+      }
+    },
+    {
+      "year": 2024,
+      "works": 312,
+      "abstract_available": 278,
+      "abstract_missing": 34,
+      "labeled": 278,
+      "not_labeled": 34,
+      "ai_role_counts": {
+        "ai_as_method": 60,
+        "ai_as_subject": 5,
+        "none": 210,
+        "unclear": 3
+      },
+      "ai_as_method": {
+        "count": 60,
+        "denominator": 275,
+        "share": 0.21818181818181817,
+        "wilson95": [
+          0.17343252559543057,
+          0.27069604604688374
+        ]
+      },
+      "ai_as_method_or_subject": {
+        "count": 65,
+        "denominator": 275,
+        "share": 0.23636363636363636,
+        "wilson95": [
+          0.1899976993016131,
+          0.2899935451379713
+        ]
+      },
+      "deep_learning_among_ai_as_method": {
+        "count": 49,
+        "denominator": 60,
+        "share": 0.8166666666666667,
+        "wilson95": [
+          0.7008024625353194,
+          0.8944220311080237
+        ]
+      },
+      "foundation_model_among_ai_as_method": {
+        "count": 1,
+        "denominator": 60,
+        "share": 0.016666666666666666,
+        "wilson95": [
+          0.0029481597947862495,
+          0.08855129727590061
+        ]
+      },
+      "das_used_counts": {
+        "yes": 244,
+        "no": 16,
+        "unclear": 18
+      },
+      "das_used": {
+        "count": 244,
+        "denominator": 260,
+        "share": 0.9384615384615385,
+        "wilson95": [
+          0.9023859180305984,
+          0.9617694009215609
+        ]
+      },
+      "ai_as_method_among_das_confirmed": {
+        "count": 59,
+        "denominator": 243,
+        "share": 0.24279835390946503,
+        "wilson95": [
+          0.19316209364412182,
+          0.30043999168952495
+        ]
+      },
+      "multimodal_two_or_more_families": {
+        "count": 51,
+        "denominator": 264,
+        "share": 0.19318181818181818,
+        "wilson95": [
+          0.1500976609575809,
+          0.24506692366913832
+        ]
+      },
+      "families_unstated": 14,
+      "family_counts": {
+        "seismic_elastic": 256,
+        "geodetic_position_displacement": 3,
+        "radar_backscatter_interferometry": 2,
+        "optical_reflectance": 2,
+        "passive_microwave": 0,
+        "thermal_radiance": 0,
+        "atmospheric_in_situ": 5,
+        "hydrologic_in_situ": 4,
+        "oceanographic_in_situ": 8,
+        "gravity_potential": 0,
+        "electromagnetic_electrical": 4,
+        "geochemical_biological": 0,
+        "human_system_records": 3,
+        "other": 38
+      }
+    },
+    {
+      "year": 2025,
+      "works": 425,
+      "abstract_available": 370,
+      "abstract_missing": 55,
+      "labeled": 370,
+      "not_labeled": 55,
+      "ai_role_counts": {
+        "ai_as_method": 96,
+        "ai_as_subject": 15,
+        "none": 259,
+        "unclear": 0
+      },
+      "ai_as_method": {
+        "count": 96,
+        "denominator": 370,
+        "share": 0.2594594594594595,
+        "wilson95": [
+          0.21742866521839116,
+          0.30643366786389475
+        ]
+      },
+      "ai_as_method_or_subject": {
+        "count": 111,
+        "denominator": 370,
+        "share": 0.3,
+        "wilson95": [
+          0.255556663323798,
+          0.3485535911491138
+        ]
+      },
+      "deep_learning_among_ai_as_method": {
+        "count": 75,
+        "denominator": 96,
+        "share": 0.78125,
+        "wilson95": [
+          0.688620932638833,
+          0.8522365491912246
+        ]
+      },
+      "foundation_model_among_ai_as_method": {
+        "count": 2,
+        "denominator": 96,
+        "share": 0.020833333333333332,
+        "wilson95": [
+          0.005731969852430421,
+          0.07280713517784211
+        ]
+      },
+      "das_used_counts": {
+        "yes": 325,
+        "no": 26,
+        "unclear": 19
+      },
+      "das_used": {
+        "count": 325,
+        "denominator": 351,
+        "share": 0.9259259259259259,
+        "wilson95": [
+          0.8936784415999268,
+          0.9489513936896652
+        ]
+      },
+      "ai_as_method_among_das_confirmed": {
+        "count": 93,
+        "denominator": 325,
+        "share": 0.28615384615384615,
+        "wilson95": [
+          0.23973898032943447,
+          0.3375649262446088
+        ]
+      },
+      "multimodal_two_or_more_families": {
+        "count": 63,
+        "denominator": 352,
+        "share": 0.17897727272727273,
+        "wilson95": [
+          0.1424636395159864,
+          0.22242205775775453
+        ]
+      },
+      "families_unstated": 18,
+      "family_counts": {
+        "seismic_elastic": 344,
+        "geodetic_position_displacement": 5,
+        "radar_backscatter_interferometry": 2,
+        "optical_reflectance": 4,
+        "passive_microwave": 0,
+        "thermal_radiance": 0,
+        "atmospheric_in_situ": 6,
+        "hydrologic_in_situ": 3,
+        "oceanographic_in_situ": 3,
+        "gravity_potential": 1,
+        "electromagnetic_electrical": 1,
+        "geochemical_biological": 3,
+        "human_system_records": 4,
+        "other": 48
+      }
+    }
+  ]
+}

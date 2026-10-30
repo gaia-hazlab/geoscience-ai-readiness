@@ -1,3 +1,21 @@
+# Topic-frame mode, 29 October 2026 (version 0.3.0)
+
+`frame.kind: "topic"` harvests every work whose title or abstract matches a
+quoted phrase, one query per year, with the listed `types`. It exists for the
+DAS adoption quantity of the proposal's Comment 4; `config.das_topic.json` is
+that frame (2020-2025, articles and reviews, the same filter as the frozen
+2026-10-21 counts in `data/openalex/2026-10-21/`). A topic frame is a
+query-conditioned corpus: the manifest and the sample design are labeled
+`frame_kind: topic`, `parameters_contain_no_modality_or_AI_keywords` is false in
+the plan, the phrase may name a modality but is refused when it contains AI or
+ML terms, and the population statement says it is not a journal census. The
+sampler stratifies a topic frame by year and AI screen only. Journal frames are
+unchanged. Dry run:
+
+```sh
+python3 literature_study.py harvest --config config.das_topic.json --dry-run
+```
+
 # Literature study update 23 October 2026
 
 The October 21 scaffold exists and passed its 20 offline tests. It has **not produced a broad multimodal, deep-learning or foundation-model prevalence result**. The separate October 21 DAS title/abstract counts are a keyword activity series and cannot answer this study's broader questions.
