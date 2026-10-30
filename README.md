@@ -1,6 +1,6 @@
 # Geoscience AI-readiness research toolkit
 
-**Version 0.3.0 · October 29, 2026** · Marine Denolle, University of Washington.
+**Version 0.4.0 · October 30, 2026** · Marine Denolle, University of Washington.
 
 Collected code used or prepared for the proposal's investigation of data
 readiness, multimodal research and AI adoption. Includes the metascience analysis
@@ -146,7 +146,7 @@ python -m aidatasets_figures --out build/figures
 The first runs the figure, preferred-analysis and standalone suites, without
 retrieval or model execution. The second checks release-file hashes; use it before
 editing. Current checks are recorded in
-`provenance/release_validation_2026-10-29.json`; earlier receipts are historical.
+`provenance/release_validation_2026-10-30.json`; earlier receipts are historical.
 Optional Matplotlib rendering status is recorded separately.
 
 ## GitHub and citation
@@ -157,10 +157,10 @@ metadata are under version control. The ignore file excludes environments,
 credentials, working corpora and generated outputs. No emails, budgets, personnel disclosures, author proposal text,
 private partner inventories or article PDFs are included.
 
-`CITATION.cff`, `citation.bib` and `.zenodo.json` describe version 0.3.0. Tag a
+`CITATION.cff`, `citation.bib` and `.zenodo.json` describe version 0.4.0. Tag a
 release and archive it on Zenodo if a DOI is wanted; no DOI has been registered.
 
-> Denolle, M. (2026). *Geoscience AI-readiness research toolkit* (Version 0.3.0)
+> Denolle, M. (2026). *Geoscience AI-readiness research toolkit* (Version 0.4.0)
 > [Computer software].
 
 Append the real repository URL or release DOI once available. Cite OpenAlex

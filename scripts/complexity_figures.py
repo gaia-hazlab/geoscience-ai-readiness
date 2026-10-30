@@ -237,7 +237,7 @@ def fig_profile(out, profile, cells):
         face, ink = STATUS_STYLE[c["status"]]
         ax.add_patch(FancyBboxPatch((x + 0.04, y + 0.08), 0.92, 0.84, boxstyle="round,pad=0,rounding_size=0.08",
                                     fc=face, ec="none", mutation_aspect=1 / 2.2))
-        ax.text(x + 0.5, y + 0.5, c["label"] or c["status"], ha="center", va="center", fontsize=7.2, color=ink,
+        ax.text(x + 0.5, y + 0.5, "\n".join(textwrap.fill(line, 14) for line in (c["label"] or c["status"]).splitlines()), ha="center", va="center", fontsize=7.2, color=ink,
                 fontweight="bold" if c["status"] == "measured" and c["label"].endswith("%") else "normal")
     ax.set_xlim(0, len(cols)); ax.set_ylim(0, len(discs))
     ax.set_xticks([i + 0.5 for i in range(len(cols))], [textwrap.fill(c, 15) for c in cols], fontsize=8, color=fs.INK2)

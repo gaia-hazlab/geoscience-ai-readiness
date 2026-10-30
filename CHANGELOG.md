@@ -1,15 +1,11 @@
-# Unreleased — 2026-10-30
+# 0.4.0 — 2026-10-30 (prepared; not yet published)
 
-- Figures: one shared style (`scripts/figure_style.py`) for all report figures.
-  It has the validated reference palette, with colour carrying one meaning
-  across figures (blue = the geoscience series in focus, grey = comparisons
-  and references, orange = a second series only), a system sans, bold titles
-  with a units subtitle, thin bars with a rounded data end, 2 px lines with end
-  dots, solid hairline references and muted source notes.
-  `archive_readiness_figures.py`, `explore_das_semantic.py` and
-  `complexity_figures.py` now draw through it. Data, values and file names are
-  unchanged; per-bar article counts moved out of the labels and into the JSON
-  inputs the notes cite. The report and notebooks 01 to 04 were rebuilt.
+- Restyled all eleven report figures for Earth scientists, with larger typography,
+  shared ocean/ochre/moss palette, vector PDF exports and clearer evidence headings.
+- Figure 9 retains `n =` annotations; its source note explicitly defines the counts
+  as metadata saying AI-ready/ML-ready, not the denominator of the ML percentage.
+- Prepared version metadata, reproducible release packaging and refreshed checksums.
+
 - Added `docs/complexity_2026-10-30/`: a scoping note and four sourced tables on
   how complex the geosciences are (power-law exponents and tests, data
   dimensionality, minimal coupled PDE counts, unobserved drivers of outcomes).
@@ -26,7 +22,6 @@
   Limitations renumbered to 7 to 9 and extended. New notebook
   `notebooks/04_complexity_and_readiness.ipynb`.
 
-# Unreleased — 2026-10-29
 
 - Standalone harvester 0.3.0: `frame.kind: "topic"` harvests a quoted
   title/abstract phrase per year (AI/ML terms refused in the phrase); manifests,

@@ -1,0 +1,18 @@
+{
+  "release": "0.4.0",
+  "prepared_date": "2026-10-30",
+  "published": false,
+  "offline_suite_tests_passed": [
+    35,
+    84,
+    40
+  ],
+  "total_tests_passed": 159,
+  "report_build": "passed; frozen snapshot hash checks passed",
+  "review_fixes": [
+    "Figure 9 n explicitly defined in source note",
+    "unused plotting imports removed"
+  ],
+  "evidence_status": "DAS semantic screen unvalidated; keyword mentions do not measure adoption.",
+  "integration": "Preserves main complexity section and three extra figures; combined report rebuilt."
+}
