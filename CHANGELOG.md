@@ -1,3 +1,31 @@
+# Unreleased — 2026-10-30
+
+- Figures: one shared style (`scripts/figure_style.py`) for all report figures.
+  It has the validated reference palette, with colour carrying one meaning
+  across figures (blue = the geoscience series in focus, grey = comparisons
+  and references, orange = a second series only), a system sans, bold titles
+  with a units subtitle, thin bars with a rounded data end, 2 px lines with end
+  dots, solid hairline references and muted source notes.
+  `archive_readiness_figures.py`, `explore_das_semantic.py` and
+  `complexity_figures.py` now draw through it. Data, values and file names are
+  unchanged; per-bar article counts moved out of the labels and into the JSON
+  inputs the notes cite. The report and notebooks 01 to 04 were rebuilt.
+- Added `docs/complexity_2026-10-30/`: a scoping note and four sourced tables on
+  how complex the geosciences are (power-law exponents and tests, data
+  dimensionality, minimal coupled PDE counts, unobserved drivers of outcomes).
+- Added `scripts/complexity_tables.py` (offline validator of the sourcing rules),
+  `scripts/complexity_figures.py` (two figures) and
+  `tests/test_complexity_tables.py`. SHA256SUMS extended to the new files.
+- Added `ai_evidence.json` (AI successes and limitations along the four complexity
+  axes), `readiness_profile.json` (per-discipline profile citing row ids, never
+  summed), `eos_guidelines.json` and `eos_evidence_brief.md` (a fact sheet, not a
+  draft: Eos bars AI-written proposals and articles). The validator checks the
+  profile; `complexity_figures.py` adds figure 3, the profile.
+- Report: new section 6 "Why the geosciences are hard, and why that suits AI"
+  (figures 10 to 12, AI-evidence table, profile); Methods, Reproducibility and
+  Limitations renumbered to 7 to 9 and extended. New notebook
+  `notebooks/04_complexity_and_readiness.ipynb`.
+
 # Unreleased — 2026-10-29
 
 - Standalone harvester 0.3.0: `frame.kind: "topic"` harvests a quoted

@@ -1,0 +1,70 @@
+{
+ "retrieved": "2026-10-30",
+ "method": "Readiness profile by discipline. Each cell has a status and the evidence it rests on: row ids in this folder's tables (pl-, dim-, uo-, ai-) or a row of the archive-pair table in scripts/archive_readiness_figures.py (pair:<row>). No number is typed here; figures and the report read values from the cited rows. Status rule: 'measured' = at least one cited row with a value read in the source text that applies to this discipline directly; 'partial' = only proxy, secondary, small-sample or qualitative evidence; 'not found' = searched on 2026-10-30 and recorded as not found; 'not assessed' = no search made for this cell. Cells are never summed or weighted into a score. For the 'Published AI results' column, measured = at least one sourced success and one sourced limitation; partial = one side only.",
+ "statuses": ["measured", "partial", "not found", "not assessed"],
+ "columns": [
+  {"key": "ml_ready", "label": "ML-ready share of archive", "question": "How much of the raw archive exists as ML-ready benchmarks?"},
+  {"key": "ai_results", "label": "Published AI results", "question": "Is there a sourced AI success, and a sourced limitation, for a core task?"},
+  {"key": "effective_dim", "label": "Effective dimension known", "question": "Has the intrinsic or effective dimension of the native data been estimated?"},
+  {"key": "tails", "label": "Tail form tested", "question": "Has the heavy-tailed size distribution been tested against alternatives?"},
+  {"key": "unobserved", "label": "Unobserved drivers quantified", "question": "Is there a sourced number on what drives outcomes but is not observed?"}
+ ],
+ "rows": [
+  {
+   "discipline": "Seismology",
+   "ml_ready": {"status": "measured", "evidence": ["pair:Seismology"], "note": "upper bound; benchmarks also draw on non-EarthScope archives"},
+   "ai_results": {"status": "measured", "evidence": ["ai-02", "ai-03", "ai-27", "ai-20", "ai-28", "ai-22", "ai-30", "ai-31"], "note": "deep-learning pickers and catalogs; magnitude saturation and cross-domain transfer limits"},
+   "effective_dim": {"status": "partial", "evidence": ["dim-17", "dim-18"], "note": "only a secondary tremor embedding dimension; none for seismogram archives"},
+   "tails": {"status": "measured", "evidence": ["pl-02", "pl-03", "pl-04", "pl-05", "pl-08"], "note": "moment and magnitude tested; verdicts split"},
+   "unobserved": {"status": "measured", "evidence": ["uo-10", "uo-12", "uo-06"], "note": "off-fault moment and missing slip rates in California"}},
+  {
+   "discipline": "Distributed acoustic sensing",
+   "ml_ready": {"status": "partial", "evidence": ["pair:DAS"], "note": "benchmarks exist; no archive volume to compare"},
+   "ai_results": {"status": "partial", "evidence": ["ai-07"], "note": "success only; no sourced limitation found"},
+   "effective_dim": {"status": "partial", "evidence": ["dim-13"], "note": "SVD compression only; singular values close to uniform"},
+   "tails": {"status": "not assessed", "evidence": [], "note": ""},
+   "unobserved": {"status": "not assessed", "evidence": [], "note": ""}},
+  {
+   "discipline": "Geodesy (GNSS)",
+   "ml_ready": {"status": "not found", "evidence": ["pair:Geodesy: GNSS"], "note": "no released ML-ready benchmark found"},
+   "ai_results": {"status": "not assessed", "evidence": [], "note": ""},
+   "effective_dim": {"status": "measured", "evidence": ["dim-24", "dim-25"], "note": "common-mode error PCA, one network"},
+   "tails": {"status": "not assessed", "evidence": [], "note": ""},
+   "unobserved": {"status": "not assessed", "evidence": [], "note": ""}},
+  {
+   "discipline": "Radar (SAR and InSAR)",
+   "ml_ready": {"status": "measured", "evidence": ["pair:SAR: Sentinel-1"], "note": "archive volume from a secondary source"},
+   "ai_results": {"status": "partial", "evidence": ["ai-08"], "note": "success only; no sourced limitation found"},
+   "effective_dim": {"status": "partial", "evidence": ["dim-21", "dim-22"], "note": "component counts chosen by authors for single volcanic stacks"},
+   "tails": {"status": "not assessed", "evidence": [], "note": ""},
+   "unobserved": {"status": "not assessed", "evidence": [], "note": ""}},
+  {
+   "discipline": "Weather and climate",
+   "ml_ready": {"status": "measured", "evidence": ["pair:Reanalysis: ERA5", "pair:Climate projections: CMIP6"], "note": "ERA5 is the packaged exception"},
+   "ai_results": {"status": "measured", "evidence": ["ai-04", "ai-05", "ai-06", "ai-09", "ai-10", "ai-11", "ai-12", "ai-13", "ai-14", "ai-17", "ai-18", "ai-19"], "note": "forecast skill beats physics baselines; resolution, out-of-distribution and extremes limits"},
+   "effective_dim": {"status": "measured", "evidence": ["dim-26", "dim-27", "dim-28", "dim-31", "dim-32", "dim-33", "dim-05"], "note": "estimator-dependent; none for ERA5 itself"},
+   "tails": {"status": "measured", "evidence": ["pl-26"], "note": "tropical cyclone power dissipation only"},
+   "unobserved": {"status": "partial", "evidence": ["uo-01", "uo-02"], "note": "loss trends attributed to exposure, qualitative"}},
+  {
+   "discipline": "Hydrology and floods",
+   "ml_ready": {"status": "partial", "evidence": ["pair:Hydrology: gauges"], "note": "benchmarks exist; archive published as site counts, not bytes"},
+   "ai_results": {"status": "not assessed", "evidence": [], "note": ""},
+   "effective_dim": {"status": "partial", "evidence": ["dim-29"], "note": "one station precipitation set"},
+   "tails": {"status": "partial", "evidence": ["pl-14"], "note": "flood scaling stated, not tested"},
+   "unobserved": {"status": "measured", "evidence": ["uo-26", "uo-16", "uo-27", "uo-22"], "note": "gauge and well counts; exposure layer spread"}},
+  {
+   "discipline": "Landslides and wildfire",
+   "ml_ready": {"status": "not assessed", "evidence": [], "note": ""},
+   "ai_results": {"status": "not assessed", "evidence": [], "note": ""},
+   "effective_dim": {"status": "not assessed", "evidence": [], "note": ""},
+   "tails": {"status": "measured", "evidence": ["pl-10", "pl-11", "pl-12", "pl-22", "pl-23", "pl-24"], "note": "landslide areas mostly untested; wildfire tests favor alternatives"},
+   "unobserved": {"status": "measured", "evidence": ["uo-25"], "note": "fatal landslides undercounted in EM-DAT"}},
+  {
+   "discipline": "Hazard outcomes (loss, exposure)",
+   "ml_ready": {"status": "not assessed", "evidence": [], "note": ""},
+   "ai_results": {"status": "measured", "evidence": ["ai-23", "ai-24", "ai-25", "ai-26"], "note": "building footprints from imagery; coverage and recall gaps in Africa"},
+   "effective_dim": {"status": "not assessed", "evidence": [], "note": ""},
+   "tails": {"status": "not assessed", "evidence": [], "note": ""},
+   "unobserved": {"status": "measured", "evidence": ["uo-23", "uo-24", "uo-19", "uo-05", "uo-03", "uo-04"], "note": "loss labels missing; exposure incomplete; no variance split"}}
+ ]
+}

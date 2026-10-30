@@ -17,20 +17,16 @@ from __future__ import annotations
 import argparse
 import csv
 import json
-import textwrap
+import sys
 from pathlib import Path
 
-import matplotlib
-matplotlib.use("Agg")
-import matplotlib.pyplot as plt
+import matplotlib.ticker
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import figure_style as fs   # noqa: E402  shared look of every report figure
 
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs" / "archive_readiness_2026-10-30"
-S1, S2, S3 = "#2a78d6", "#eb6834", "#1baf7a"   # reference palette slots 1-3 (dataviz skill)
-INK, INK2, GRID, NEUTRAL = "#0b0b0b", "#52514e", "#e4e3df", "#b9b8b2"
-plt.rcParams.update({"font.size": 9, "axes.edgecolor": INK2, "axes.labelcolor": INK2, "xtick.color": INK2, "ytick.color": INK2,
-                     "axes.spines.top": False, "axes.spines.right": False, "axes.grid": True, "grid.color": GRID,
-                     "grid.linewidth": 0.6, "axes.axisbelow": True, "axes.titlelocation": "left", "axes.titlesize": 10})
 
 # (row label, archive name in archives.json or None, benchmark names in benchmarks.json, caveat)
 PAIRS = [
@@ -53,19 +49,7 @@ NOTE = ("Sources: docs/archive_readiness_2026-10-30 (archives.json, benchmarks.j
         "each source; benchmark totals sum the listed datasets with a stated size.")
 
 
-def human(n):
-    for unit, scale in (("PB", 1e15), ("TB", 1e12), ("GB", 1e9), ("MB", 1e6)):
-        if n >= scale:
-            return f"{n / scale:.3g} {unit}"
-    return f"{n:.3g} B"
-
-
-def finish(fig, out, name, note):
-    width = int(fig.get_figwidth() * 17)
-    fig.text(0.01, 0.01, "\n".join(textwrap.fill(p, width) for p in note.split("\n")), fontsize=6.5, color=INK2, va="bottom")
-    for ext in ("png", "svg"):
-        fig.savefig(out / f"{name}.{ext}", dpi=200)
-    plt.close(fig)
+human = fs.human
 
 
 def pairs_table():
@@ -85,36 +69,34 @@ def pairs_table():
 
 
 def fig_archive_vs_packaged(out, rows):
-    fig, ax = plt.subplots(figsize=(8.4, 5.4))
-    fig.subplots_adjust(left=0.24, right=0.97, top=0.90, bottom=0.17)
-    labels = [r["row"] for r in rows][::-1]
-    y = range(len(labels))
-    for i, r in enumerate(rows[::-1]):
+    note = NOTE + (" Caveats per row are in archive_pairs.csv. A benchmark is a designed subsample, so a small share is not by "
+                   "itself a deficit; it bounds what can be trained without new curation.")
+    fig, ax = fs.figure(7.6, 0.56 * len(rows), note, left=1.75, right=0.3)
+    fs.header(fig, "Only reanalysis has packaged a large share of its archive for ML",
+              "Raw archive volume against the ML-ready benchmarks drawn from it, bytes on a log scale")
+    labels = [r["row"] for r in rows]
+    fs.bar_axes(ax, labels, log=True)
+    ax.set_xlim(1e9, 1e19)
+    n = len(rows)
+    for i, r in enumerate(rows):
+        y = n - 1 - i
         if r["archive_bytes"]:
-            ax.barh(i + 0.19, r["archive_bytes"], height=0.36, color=S1, label="Raw archive" if i == 0 else None)
+            fs.hbar(ax, y + 0.17, r["archive_bytes"], fs.CONTEXT, x0=1e9, height=0.3)
             prefix = "more than " if r["archive_lower_bound"] else ""
-            ax.text(r["archive_bytes"] * 1.25, i + 0.19, prefix + human(r["archive_bytes"]) + f" ({r['archive_as_of']})",
-                    va="center", fontsize=7.5, color=INK)
+            fs.tip(ax, r["archive_bytes"], y + 0.17, f"{prefix}{fs.human(r['archive_bytes'])} ({r['archive_as_of']})", color=fs.INK2, size=7)
         else:
-            ax.text(2e9, i + 0.19, "archive volume not published", va="center", fontsize=7.5, color=INK2, style="italic")
+            fs.tip(ax, 1e9, y + 0.17, "archive volume not published", color=fs.MUTED, size=7, style="italic", dx=2)
         if r["packaged_bytes"]:
-            ax.barh(i - 0.19, r["packaged_bytes"], height=0.36, color=S2, label="ML-ready packaged" if i == 0 else None)
+            fs.hbar(ax, y - 0.17, r["packaged_bytes"], fs.FOCUS, x0=1e9, height=0.3)
             pct = r["share_percent"]
-            share = "" if not pct else ("  (below 0.001% of archive)" if pct < 0.001 else f"  ({pct:.2g}% of archive)")
-            ax.text(r["packaged_bytes"] * 1.25, i - 0.19, human(r["packaged_bytes"]) + share, va="center", fontsize=7.5, color=INK)
+            share = "" if not pct else ("   below 0.001% of archive" if pct < 0.001 else f"   {pct:.2g}% of archive")
+            fs.tip(ax, r["packaged_bytes"], y - 0.17, fs.human(r["packaged_bytes"]) + share, size=7.5, weight="bold" if share else "normal")
         else:
-            ax.text(2e9, i - 0.19, "no ML-ready benchmark found", va="center", fontsize=7.5, color=INK2, style="italic")
-    ax.set_xscale("log")
-    ax.set_xlim(1e9, 1e20)
+            fs.tip(ax, 1e9, y - 0.17, "no ML-ready benchmark found", color=fs.MUTED, size=7, style="italic", dx=2)
     ax.set_xticks([1e9, 1e12, 1e15, 1e18], ["1 GB", "1 TB", "1 PB", "1 EB"])
-    ax.set_yticks(list(y), labels)
-    ax.set_xlabel("Bytes (log scale)")
-    ax.grid(axis="y", visible=False)
-    handles = [plt.Rectangle((0, 0), 1, 1, color=S1), plt.Rectangle((0, 0), 1, 1, color=S2)]
-    ax.legend(handles, ["Raw archive", "ML-ready benchmarks drawn from it"], frameon=False, loc="lower right", fontsize=8)
-    fig.suptitle("Only reanalysis has packaged a large share of its archive for ML", x=0.01, ha="left", fontsize=10, color=INK)
-    finish(fig, out, "fig1_archive_vs_ml_ready", NOTE + " Caveats per row are in archive_pairs.csv. A benchmark is a designed "
-           "subsample, so a small share is not by itself a deficit; it bounds what can be trained without new curation.")
+    ax.xaxis.set_minor_locator(matplotlib.ticker.NullLocator())
+    fs.swatch_legend(ax, [("Raw archive", fs.CONTEXT), ("ML-ready benchmarks drawn from it", fs.FOCUS)], loc="lower right")
+    fs.finish(fig, out, "fig1_archive_vs_ml_ready")
 
 
 def fig_ml_share_years(out, counts):
@@ -122,41 +104,48 @@ def fig_ml_share_years(out, counts):
     years = sorted(o["works_all_by_year"])
     share = lambda k: [100 * o[f"ml_works_{k}_by_year"][y]["count"] / o[f"works_{k}_by_year"][y]["count"] for y in years]
     xs = [int(y) for y in years]
-    fig, ax = plt.subplots(figsize=(6.4, 3.8))
-    fig.subplots_adjust(left=0.10, right=0.74, top=0.88, bottom=0.22)
+    note = ("OpenAlex articles 2016-2025, retrieved 2026-10-30; keyword co-occurrence of 'machine learning', 'deep learning' or "
+            "'neural network' in title or abstract, not actual use. Earth and environmental sciences = OpenAlex fields 19 and 23 "
+            "by primary topic.")
+    fig, ax = fs.figure(7.2, 2.9, note, left=0.65, right=2.0)
+    fs.header(fig, "Geoscience papers mention ML at least as often as the average field",
+              "Share of articles whose title or abstract mentions machine learning, by year")
     a, e = share("all"), share("earth_env")
-    ax.plot(xs, e, color=S1, lw=2, marker="o", ms=4.5, label="Earth and environmental sciences")
-    ax.plot(xs, a, color=S2, lw=2, marker="o", ms=4.5, label="All fields")
-    ax.text(xs[-1] + 0.15, e[-1], f"Earth and environmental\nsciences {e[-1]:.1f}%", va="center", fontsize=8, color=INK)
-    ax.text(xs[-1] + 0.15, a[-1], f"All fields {a[-1]:.1f}%", va="center", fontsize=8, color=INK)
-    ax.set_xticks(xs[::2]); ax.set_ylim(0, None); ax.set_ylabel("Articles mentioning ML (%)")
-    ax.legend(frameon=False, loc="upper left", fontsize=8)
-    ax.set_title("Geoscience papers mention ML at least as often as the average field")
-    finish(fig, out, "fig2_ml_share_by_year", "OpenAlex articles 2016-2025, retrieved 2026-10-30; keyword co-occurrence of 'machine learning', "
-           "'deep learning' or 'neural network' in title or abstract, not actual use. Earth and environmental sciences = OpenAlex "
-           "fields 19 and 23 by primary topic.")
+    fs.series(ax, xs, a, fs.CONTEXT, "All fields")
+    fs.series(ax, xs, e, fs.FOCUS, "Earth and environmental sciences")
+    fs.tip(ax, xs[-1], e[-1], f"Earth and environmental sciences  {e[-1]:.1f}%", dx=8)
+    fs.tip(ax, xs[-1], a[-1], f"All fields  {a[-1]:.1f}%", dx=8, color=fs.INK2)
+    ax.set_xticks(xs[::3]); ax.set_xlim(xs[0] - 0.3, xs[-1] + 0.3); ax.set_ylim(0, None)
+    ax.yaxis.set_major_formatter(matplotlib.ticker.FuncFormatter(lambda v, _: f"{v:.0f}%"))
+    ax.grid(axis="x", visible=False); ax.spines["left"].set_visible(False)
+    fs.swatch_legend(ax, [("Earth and environmental sciences", fs.FOCUS), ("All fields", fs.CONTEXT)],
+                     loc="upper left", marker="line")
+    fs.finish(fig, out, "fig2_ml_share_by_year")
 
 
 def fig_ml_share_subfield(out, counts):
     o = counts["openalex"]
     allw, mlw = o["subfield_works_2023_2025"], o["subfield_ml_works_2023_2025"]
     rows = sorted(((v["name"], v["count"], mlw.get(k, {}).get("count", 0)) for k, v in allw.items() if v["count"] >= 5000),
-                  key=lambda r: r[2] / r[1])
+                  key=lambda r: -r[2] / r[1])
     base_w = sum(o["works_all_by_year"][y]["count"] for y in ("2023", "2024", "2025"))
     base_m = sum(o["ml_works_all_by_year"][y]["count"] for y in ("2023", "2024", "2025"))
-    fig, ax = plt.subplots(figsize=(6.8, 5.0))
-    fig.subplots_adjust(left=0.40, right=0.95, top=0.90, bottom=0.17)
+    note = ("OpenAlex articles 2023-2025 by primary-topic subfield within fields 19 and 23, subfields with at least 5,000 "
+            "articles; keyword co-occurrence, not actual use. Remote sensing papers are mostly filed under other fields. "
+            "Article counts per subfield are in platform_counts.json.")
+    fig, ax = fs.figure(7.2, 0.27 * len(rows), note, left=2.75, right=0.4)
+    fs.header(fig, "ML mention rate by Earth and environmental subfield",
+              "Articles mentioning machine learning, 2023 to 2025, against the all-field rate")
+    fs.bar_axes(ax, [r[0] for r in rows])
     vals = [100 * m / n for _, n, m in rows]
-    ax.barh([r[0] for r in rows], vals, color=S1, height=0.62)
-    for i, ((_, n, m), v) in enumerate(zip(rows, vals)):
-        ax.text(v + 0.2, i, f"{v:.1f}%  ({m:,} of {n:,})", va="center", fontsize=7, color=INK)
-    ax.axvline(100 * base_m / base_w, color=INK2, lw=1, ls="--")
-    ax.text(100 * base_m / base_w + 0.2, len(rows) - 0.4, f"all fields {100 * base_m / base_w:.1f}%", fontsize=7.5, color=INK2)
-    ax.set_xlim(0, max(vals) * 1.45); ax.set_xlabel("Articles mentioning ML, 2023-2025 (%)")
-    ax.grid(axis="y", visible=False)
-    fig.suptitle("ML mention rate by Earth and environmental subfield", x=0.01, ha="left", fontsize=10, color=INK)
-    finish(fig, out, "fig3_ml_share_by_subfield", "OpenAlex articles 2023-2025 by primary-topic subfield within fields 19 and 23, subfields with "
-           "at least 5,000 articles; keyword co-occurrence, not actual use. Remote sensing papers are mostly filed under other fields.")
+    for i, v in enumerate(vals):
+        y = len(rows) - 1 - i
+        fs.hbar(ax, y, v, fs.FOCUS, height=0.56)
+        fs.tip(ax, v, y, f"{v:.1f}%")
+    ax.set_xlim(0, max(vals) * 1.15)
+    ax.xaxis.set_major_formatter(matplotlib.ticker.FuncFormatter(lambda v, _: f"{v:.0f}%"))
+    fs.reference(ax, 100 * base_m / base_w, f"All fields {100 * base_m / base_w:.1f}%")
+    fs.finish(fig, out, "fig3_ml_share_by_subfield")
 
 
 def fig_platforms(out, counts):
@@ -164,37 +153,46 @@ def fig_platforms(out, counts):
     order = ["seismology", "geodesy_sar", "optical_remote_sensing", "weather_climate", "hydrology", "ocean", "biomedicine", "materials_chemistry"]
     names = {"seismology": "Seismology", "geodesy_sar": "Geodesy, SAR", "optical_remote_sensing": "Optical remote sensing",
              "weather_climate": "Weather, climate", "hydrology": "Hydrology", "ocean": "Ocean",
-             "biomedicine": "Biomedicine (comparison)", "materials_chemistry": "Materials (comparison)"}
+             "biomedicine": "Biomedicine", "materials_chemistry": "Materials"}
+    comparison = ("biomedicine", "materials_chemistry")
     hf_geo_sar = 25   # insar + gnss id matches only; "sar-" and "geodes" matches were unrelated repositories
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(9.6, 4.4), sharey=True)
-    fig.subplots_adjust(left=0.22, right=0.97, top=0.84, bottom=0.22, wspace=0.12)
-    labels = [names[k] for k in order][::-1]
-    shares = [100 * d[k]["mention_ml"] / d[k]["datasets"] for k in order][::-1]
-    colors = [S3 if k in ("biomedicine", "materials_chemistry") else S1 for k in order][::-1]
-    ax1.barh(labels, shares, color=colors, height=0.62)
-    for i, k in enumerate(order[::-1]):
-        ax1.text(shares[i] + 0.15, i, f"{shares[i]:.1f}%  AI-ready: {d[k]['mention_ai_ready']}", va="center", fontsize=7, color=INK)
-    ax1.set_xlim(0, max(shares) * 1.7); ax1.set_xlabel("DataCite datasets mentioning ML (%)")
-    ax1.set_title("A. Registered datasets (DataCite DOIs)")
-    hf_n = [hf_geo_sar if k == "geodesy_sar" else h[k]["datasets"] for k in order][::-1]
-    ax2.barh(labels, hf_n, color=colors, height=0.62)
-    for i, v in enumerate(hf_n):
-        ax2.text(v + 40, i, f"{v:,}", va="center", fontsize=7, color=INK)
-    ax2.set_xlim(0, max(hf_n) * 1.2); ax2.set_xlabel("Hugging Face dataset repositories (name match)")
-    ax2.set_title("B. AI-native hub (Hugging Face)")
-    for ax in (ax1, ax2):
-        ax.grid(axis="y", visible=False)
-    fig.suptitle("Geoscience datasets on platforms, against two comparison domains", x=0.01, ha="left", fontsize=10, color=INK)
-    finish(fig, out, "fig4_platform_datasets", "Retrieved 2026-10-30. A: DataCite dataset DOIs whose metadata match the discipline clause; share also "
-           "matching 'machine learning', 'deep learning' or 'neural network'; 'AI-ready' counts metadata saying AI-ready or ML-ready. "
-           "B: Hugging Face dataset ids containing discipline terms (upper bound; hydrology is mostly 'flood'; geodesy counts 'insar' and 'gnss' only). "
-           "Queries in platform_counts.json.")
+    note = ("Retrieved 2026-10-30. A: DataCite dataset DOIs whose metadata match the discipline clause; share also matching "
+            "'machine learning', 'deep learning' or 'neural network'; the count after the share is datasets saying AI-ready or "
+            "ML-ready. B: Hugging Face dataset ids containing discipline terms (upper bound; hydrology is mostly 'flood'; geodesy "
+            "counts 'insar' and 'gnss' only). Queries in platform_counts.json.")
+    fig, (ax1, ax2) = fs.figure(8.6, 0.34 * len(order), note, left=1.55, right=0.35, ncols=2, wspace=0.28, sharey=True)
+    fs.header(fig, "Geoscience datasets on platforms, against two comparison domains",
+              "Blue: geoscience disciplines. Grey: biomedicine and materials, for comparison")
+    labels = [names[k] for k in order]
+    fs.bar_axes(ax1, labels)
+    n = len(order)
+    shares = [100 * d[k]["mention_ml"] / d[k]["datasets"] for k in order]
+    hf_n = [hf_geo_sar if k == "geodesy_sar" else h[k]["datasets"] for k in order]
+    for i, k in enumerate(order):
+        y = n - 1 - i
+        col = fs.CONTEXT if k in comparison else fs.FOCUS
+        fs.hbar(ax1, y, shares[i], col)
+        fs.tip(ax1, shares[i], y, f"{shares[i]:.1f}%")
+        fs.tip(ax1, shares[i], y, f"{d[k]['mention_ai_ready']} AI-ready", color=fs.MUTED, size=6.8,
+               dx=10 + fs.text_width_pt(f"{shares[i]:.1f}%"))
+        fs.hbar(ax2, y, hf_n[i], col)
+        fs.tip(ax2, hf_n[i], y, f"{hf_n[i]:,}")
+    ax1.set_xlim(0, max(shares) * 1.55)
+    ax1.xaxis.set_major_formatter(matplotlib.ticker.FuncFormatter(lambda v, _: f"{v:.0f}%"))
+    ax2.set_xlim(0, max(hf_n) * 1.18)
+    ax2.xaxis.set_major_formatter(matplotlib.ticker.FuncFormatter(lambda v, _: f"{v / 1000:.0f}K" if v else "0"))
+    ax2.spines["bottom"].set_visible(False); ax2.grid(axis="y", visible=False)
+    ax1.set_title("A. DataCite datasets mentioning ML")
+    ax2.set_title("B. Hugging Face dataset repositories")
+    ax1.axhline(1.5, color=fs.AXIS, lw=0.6); ax2.axhline(1.5, color=fs.AXIS, lw=0.6)
+    fs.finish(fig, out, "fig4_platform_datasets")
 
 
-SURR_NOTE = ("OpenAlex articles 2023-2025, retrieved 2026-10-30. Index = articles naming an ML surrogate (physics-informed neural "
+SURR_NOTE = ("OpenAlex articles, retrieved 2026-10-30. Index = articles naming an ML surrogate (physics-informed neural "
              "network, neural operator, DeepONet, or a surrogate model or emulator together with an ML term) per 100 articles naming a "
              "numerical method (finite element, finite difference, spectral element, finite volume, numerical simulation). Keyword "
-             "co-occurrence by primary topic; an index, not the share of simulation papers that use surrogates.")
+             "co-occurrence by primary topic; an index, not the share of simulation papers that use surrogates. Counts behind each "
+             "index are in simulation_counts.json.")
 
 
 def surrogate_index(surr, sim, key):
@@ -206,20 +204,19 @@ def fig_surrogate_fields(out, sim_counts):
     s = sim_counts["simulation"]
     sim, surr = s["field_sim_2023_2025"], s["field_surr_ml_2023_2025"]
     keys = [k for k in sim if sim[k]["count"] >= 2000]
-    rows = sorted(((sim[k]["name"], *surrogate_index(surr, sim, k)) for k in keys), key=lambda r: r[1])
+    rows = sorted(((sim[k]["name"], *surrogate_index(surr, sim, k)) for k in keys), key=lambda r: -r[1])
     earth = {"Earth and Planetary Sciences", "Environmental Science"}
-    fig, ax = plt.subplots(figsize=(6.8, 4.2))
-    fig.subplots_adjust(left=0.34, right=0.95, top=0.88, bottom=0.25)
-    ax.barh([r[0] for r in rows], [r[1] for r in rows], color=[S1 if r[0] in earth else NEUTRAL for r in rows], height=0.62)
-    for i, (_, v, m, n) in enumerate(rows):
-        ax.text(v + 0.4, i, f"{v:.1f}  ({m:,} of {n:,})", va="center", fontsize=7, color=INK)
-    ax.set_xlim(0, max(r[1] for r in rows) * 1.35)
-    ax.set_xlabel("ML-surrogate articles per 100 simulation articles")
-    ax.grid(axis="y", visible=False)
-    handles = [plt.Rectangle((0, 0), 1, 1, color=S1), plt.Rectangle((0, 0), 1, 1, color=NEUTRAL)]
-    ax.legend(handles, ["Earth and environmental fields", "Other fields"], frameon=False, loc="lower right", fontsize=8)
-    fig.suptitle("Physics leads in ML surrogates; Earth sciences sit mid-table", x=0.01, ha="left", fontsize=10, color=INK)
-    finish(fig, out, "fig5_surrogate_index_by_field", SURR_NOTE + " Fields with at least 2,000 simulation articles.")
+    fig, ax = fs.figure(7.2, 0.3 * len(rows), SURR_NOTE + " Fields with at least 2,000 simulation articles, 2023 to 2025.",
+                        left=2.1, right=0.4)
+    fs.header(fig, "Physics leads in ML surrogates; Earth sciences sit mid-table",
+              "ML-surrogate articles per 100 simulation articles, 2023 to 2025. Blue: Earth and environmental fields")
+    fs.bar_axes(ax, [r[0] for r in rows])
+    for i, (name, v, _, _) in enumerate(rows):
+        y = len(rows) - 1 - i
+        fs.hbar(ax, y, v, fs.FOCUS if name in earth else fs.CONTEXT)
+        fs.tip(ax, v, y, f"{v:.1f}")
+    ax.set_xlim(0, max(r[1] for r in rows) * 1.12)
+    fs.finish(fig, out, "fig5_surrogate_index_by_field")
 
 
 def fig_surrogate_earth(out, sim_counts):
@@ -227,66 +224,68 @@ def fig_surrogate_earth(out, sim_counts):
     sim, surr = s["subfield_sim_2023_2025"], s["subfield_surr_ml_2023_2025"]
     keys = [k for k in sim if sim[k]["count"] >= 500]
     short = {"Management, Monitoring, Policy and Law": "Environmental management, policy"}
-    rows = sorted(((short.get(sim[k]["name"], sim[k]["name"]), *surrogate_index(surr, sim, k)) for k in keys), key=lambda r: r[1])
+    rows = sorted(((short.get(sim[k]["name"], sim[k]["name"]), *surrogate_index(surr, sim, k)) for k in keys), key=lambda r: -r[1])
     solid = {"Geophysics", "Earth-Surface Processes", "Geology", "Geochemistry and Petrology"}
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10.2, 4.2))
-    fig.subplots_adjust(left=0.23, right=0.86, top=0.84, bottom=0.25, wspace=0.55)
-    ax1.barh([r[0] for r in rows], [r[1] for r in rows], color=[S2 if r[0] in solid else S1 for r in rows], height=0.62)
-    for i, (_, v, m, n) in enumerate(rows):
-        ax1.text(v + 0.3, i, f"{v:.1f}  ({m} of {n:,})", va="center", fontsize=7, color=INK)
-    ax1.set_xlim(0, max(r[1] for r in rows) * 1.6)
-    ax1.set_xlabel("ML-surrogate per 100 simulation articles, 2023-2025")
-    ax1.grid(axis="y", visible=False)
-    ax1.set_title("A. By subfield (orange = solid earth)")
+    fig, (ax1, ax2) = fs.figure(9.2, 2.6, SURR_NOTE + " Panel A: subfields of OpenAlex fields 19 and 23 with at least 500 "
+                                "simulation articles, 2023 to 2025. Panel B: all years 2016 to 2025.",
+                                left=2.15, right=1.75, ncols=2, wspace=0.55)
+    fs.header(fig, "Solid-earth simulation communities adopt ML surrogates more slowly",
+              "ML-surrogate articles per 100 simulation articles")
+    fs.bar_axes(ax1, [r[0] for r in rows])
+    for i, (name, v, _, _) in enumerate(rows):
+        y = len(rows) - 1 - i
+        fs.hbar(ax1, y, v, fs.FOCUS if name in solid else fs.CONTEXT)
+        fs.tip(ax1, v, y, f"{v:.1f}")
+    ax1.set_xlim(0, max(r[1] for r in rows) * 1.18)
+    ax1.set_title("A. By subfield, 2023 to 2025 (blue: solid earth)")
     years = sorted(s["sim_all_by_year"])
     xs = [int(y) for y in years]
-    for key, label, color in (("earth_env", "Earth and environmental", S1), ("all", "All fields", INK2)):
+    for key, label, color in (("all", "All fields", fs.CONTEXT), ("earth_env", "Earth and environmental", fs.FOCUS)):
         a, b = s[f"surr_ml_{key}_by_year"], s[f"sim_{key}_by_year"]
         ys = [100 * a.get(y, {"count": 0})["count"] / b[y]["count"] for y in years]
-        ax2.plot(xs, ys, color=color, lw=2, marker="o", ms=4.5, label=label)
-        ax2.text(xs[-1] + 0.2, ys[-1], f"{label}\n{ys[-1]:.1f}", va="center", fontsize=8, color=INK)
-    ax2.set_xticks(xs[::3]); ax2.set_ylim(0, None)
-    ax2.set_ylabel("ML-surrogate per 100 simulation articles")
-    ax2.legend(frameon=False, loc="upper left", fontsize=8)
-    ax2.set_title("B. By year, 2016-2025")
-    fig.suptitle("Solid-earth simulation communities adopt ML surrogates more slowly", x=0.01, ha="left", fontsize=10, color=INK)
-    finish(fig, out, "fig6_surrogate_earth_subfields", SURR_NOTE + " Panel A: subfields of OpenAlex fields 19 and 23 with at least 500 "
-           "simulation articles. Panel B uses all years 2016-2025.")
+        fs.series(ax2, xs, ys, color, label)
+        fs.tip(ax2, xs[-1], ys[-1], f"{label}  {ys[-1]:.1f}", dx=8, color=fs.INK if key == "earth_env" else fs.INK2)
+    ax2.set_xticks(xs[::3]); ax2.set_xlim(xs[0] - 0.3, xs[-1] + 0.3); ax2.set_ylim(0, None)
+    ax2.grid(axis="x", visible=False); ax2.spines["left"].set_visible(False)
+    ax2.set_title("B. By year, Earth and environmental against all fields")
+    fs.swatch_legend(ax2, [("Earth and environmental", fs.FOCUS), ("All fields", fs.CONTEXT)], loc="upper left", marker="line")
+    fs.finish(fig, out, "fig6_surrogate_earth_subfields")
 
 
 def fig_simulation_corpora(out):
     data = json.loads((DOCS / "simulation_corpora.json").read_text())["rows"]
-    groups = [("simulation generated", "Solid earth: generated during one CyberShake study", INK2),
-              ("simulation archive", "Solid earth: kept in archives", S1),
-              ("ML-ready simulation corpus", None, None)]
-    order = []
-    for side, _, _ in groups[:2]:
-        order += sorted([r for r in data if r["side"] == side], key=lambda r: r["bytes"])
-    ml = [r for r in data if r["side"] == "ML-ready simulation corpus"]
-    order += sorted([r for r in ml if r["domain"] == "solid_earth"], key=lambda r: r["bytes"])
-    order += sorted([r for r in ml if r["domain"] != "solid_earth"], key=lambda r: r["bytes"])
-    color = lambda r: (INK2 if r["side"] == "simulation generated" else S1 if r["side"] == "simulation archive"
-                       else S2 if r["domain"] == "solid_earth" else NEUTRAL)
-    order = order[::-1]
-    fig, ax = plt.subplots(figsize=(8.0, 6.0))
-    fig.subplots_adjust(left=0.30, right=0.97, top=0.91, bottom=0.17)
+    group_of = lambda r: (0 if r["side"] == "simulation generated" else 1 if r["side"] == "simulation archive"
+                          else 2 if r["domain"] == "solid_earth" else 3)
+    groups = [("Solid earth, handled during one run", fs.FOCUS_LIGHT), ("Solid earth, output kept", fs.FOCUS),
+              ("Solid earth, ML-ready corpora", fs.SECOND), ("Other physics, ML-ready corpora", fs.CONTEXT)]
     short = lambda n: n.replace("CyberShake Study ", "CyberShake ").replace(", managed during run", ", handled in run")
-    labels = [short(r["name"]) + (" *" if r["computed"] else "") for r in order]
-    ax.barh(labels, [r["bytes"] for r in order], color=[color(r) for r in order], height=0.62)
-    for i, r in enumerate(order):
-        ax.text(r["bytes"] * 1.3, i, human(r["bytes"]), va="center", fontsize=7.5, color=INK)
-    ax.set_xscale("log"); ax.set_xlim(5e8, 1e18)
+    rows = []
+    for g in range(4):
+        rows += sorted([r for r in data if group_of(r) == g], key=lambda r: -r["bytes"])
+    note = ("Sources: docs/archive_readiness_2026-10-30/simulation_corpora.json, retrieved 2026-10-30. * total summed from "
+            "repository file sizes, not stated by the source. 'Handled during one run' is data the CyberShake workflow managed, "
+            "not data kept. No cumulative CyberShake, Syngine or EQSIM archive volume is published.")
+    gap = 0.7
+    ypos, y = [], 0.0
+    for i, r in enumerate(rows):
+        if i and group_of(r) != group_of(rows[i - 1]):
+            y += gap
+        ypos.append(y); y += 1
+    fig, ax = fs.figure(7.6, 0.27 * y, note, left=2.25, right=0.3)
+    fs.header(fig, "One CyberShake study keeps more data than all solid-earth ML-ready simulation corpora",
+              "Bytes on a log scale, by what the data are")
+    top = ypos[-1]
+    for r, yy in zip(rows, ypos):
+        fs.hbar(ax, top - yy, r["bytes"], groups[group_of(r)][1], x0=1e8, height=0.6)
+        fs.tip(ax, r["bytes"], top - yy, fs.human(r["bytes"]))
+    ax.set_xscale("log"); ax.set_xlim(1e8, 1e17)
+    ax.set_ylim(-0.7, top + 0.7)
+    ax.set_yticks([top - yy for yy in ypos], [short(r["name"]) + (" *" if r["computed"] else "") for r in rows])
     ax.set_xticks([1e9, 1e12, 1e15], ["1 GB", "1 TB", "1 PB"])
-    ax.grid(axis="y", visible=False)
-    handles = [plt.Rectangle((0, 0), 1, 1, color=c) for c in (INK2, S1, S2, NEUTRAL)]
-    ax.legend(handles, ["Solid earth, handled in one run", "Solid earth, output kept",
-                        "Solid earth, ML-ready", "Other physics, ML-ready"],
-              frameon=False, loc="center right", bbox_to_anchor=(1.0, 0.56), fontsize=7.5)
-    fig.suptitle("One CyberShake study keeps more data than all solid-earth ML-ready simulation corpora combined",
-                 x=0.01, ha="left", fontsize=10, color=INK)
-    finish(fig, out, "fig7_simulation_corpora", "Sources: docs/archive_readiness_2026-10-30/simulation_corpora.json, retrieved 2026-10-30. "
-           "* total summed from repository file sizes, not stated by the source. 'Handled during one run' is data the CyberShake "
-           "workflow managed, not data kept. No cumulative CyberShake, Syngine or EQSIM archive volume is published.")
+    ax.xaxis.set_minor_locator(matplotlib.ticker.NullLocator())
+    ax.grid(axis="y", visible=False); ax.spines["bottom"].set_visible(False)
+    fs.swatch_legend(ax, groups, loc="lower right")
+    fs.finish(fig, out, "fig7_simulation_corpora")
 
 
 def main():

@@ -25,6 +25,8 @@ DOCS = ROOT / "docs/archive_readiness_2026-10-30"
 SCREEN = ROOT / "data/semantic_screen/das_topic_2026-10-29"
 FIG = ROOT / "build/archive_readiness"
 DASFIG = ROOT / "build/das_semantic"
+CXDOCS = ROOT / "docs/complexity_2026-10-30"
+CXFIG = ROOT / "build/complexity"
 
 
 def load(name, path):
@@ -125,7 +127,99 @@ def compute():
     n["queries"] = {**counts["queries"], "simulation": sim_queries["simulation"], "surrogate_ml": sim_queries["surrogate_ml"]}
     rq = load("rq", ROOT / "scripts/requery_check.py")
     n["hashes"] = rq.check_hashes()
+    n["cx"] = compute_complexity()
     return n
+
+
+def compute_complexity():
+    """Numbers for the complexity section, from the validated tables in docs/complexity_2026-10-30."""
+    ct = load("ct", ROOT / "scripts/complexity_tables.py")
+    tables = ct.load(CXDOCS)
+    rows = {r["id"]: r for t in tables.values() for r in t["rows"]}
+    valued = lambda r: any(r[k] is not None for k in ("value", "value_min", "value_max"))
+    geo = [r for r in tables["power_laws.json"]["rows"] if r["domain"] == "geoscience" and valued(r)]
+    tested = [r for r in geo if r["tested_vs_alternatives"].startswith("tested")]
+    pdes = [r for r in tables["coupled_pdes.json"]["rows"] if r["value"] is not None]
+    geo_pde = [r["value"] for r in pdes if "(comparison)" not in r["item"]]
+    comp_pde = [r["value"] for r in pdes if "(comparison)" in r["item"]]
+    ai = [r for r in tables["ai_evidence.json"]["rows"] if valued(r)]
+    by_axis = {ax: (sum(r["axis"] == ax and r["evidence_type"] == "success" for r in ai),
+                    sum(r["axis"] == ax and r["evidence_type"] == "limitation" for r in ai))
+               for ax in ("dimensionality", "closures", "tails", "unobserved")}
+    profile = json.loads((CXDOCS / "readiness_profile.json").read_text())
+    cf = load("cf", ROOT / "scripts/complexity_figures.py")
+    arf = load("arf2", ROOT / "scripts/archive_readiness_figures.py")
+    return {"rows": rows, "summaries": ct.summary(tables).splitlines(), "pl_geo": len(geo), "pl_tested": len(tested),
+            "pl_favored": sum(r["tested_vs_alternatives"] == "tested, power law favored" for r in tested),
+            "pde_geo": (min(geo_pde), max(geo_pde)), "pde_comp": (min(comp_pde), max(comp_pde)),
+            "ai": ai, "ai_by_axis": by_axis, "profile": profile, "cells": cf.profile_cells(profile, tables, arf.pairs_table())}
+
+
+def complexity_section(cx):
+    """Section 6: four complexity axes, the AI evidence along each, and the readiness profile."""
+    r = cx["rows"]
+    rng = lambda row: f"{row['value_min']:g} to {row['value_max']:g}"
+    p = ["<h2>6. Why the geosciences are hard, and why that suits AI</h2>"]
+    p.append("<p>Complexity is measured along four axes, each with its own units, and the axes are never added into one score. "
+             "Every value below comes from the sourced tables in <code>docs/complexity_2026-10-30/</code>, where each row carries a "
+             "source, an as-of date, a quote and a flag saying whether the number was read in the source text.</p>")
+    plural = lambda k, word: f"{k} {word}" + ("" if k == 1 else ("es" if word.endswith("s") else "s"))
+    sl = lambda ax: plural(cx["ai_by_axis"][ax][0], "success") + ", " + plural(cx["ai_by_axis"][ax][1], "limitation")
+    p.append(table(["Axis", "What the tables show", "Why it suits AI", "Work that remains", "AI evidence rows"], [
+        ["Dimensionality",
+         f"Native data are large: {r['dim-08']['value']:,} channels on one DAS array, {r['dim-14']['value']:,} seismic stations in one "
+         f"study. Published effective dimensions of climate fields are {r['dim-26']['value']} to {r['dim-31']['value_max']}; image "
+         f"benchmarks give {r['dim-40']['value_min']:g} to {r['dim-38']['value_max']:g} (MLE).",
+         "Learning cost scales with intrinsic, not nominal, dimension; large data over modest structure is where learned "
+         "representations outperform hand-built features.",
+         "No published effective dimension for seismogram archives, DAS or ERA5; one DAS study finds near-uniform singular values.",
+         sl("dimensionality")],
+        ["Coupled physics",
+         f"Minimal coupled models need {cx['pde_geo'][0]} to {cx['pde_geo'][1]} scalar balance equations; Navier-Stokes, Maxwell and "
+         f"magnetohydrodynamics need {cx['pde_comp'][0]} to {cx['pde_comp'][1]}.",
+         "The laws are few and known; the uncertainty sits in empirical closures (friction, permeability, rheology), which hybrid "
+         "models can learn while keeping the balance laws.",
+         f"Learned closures fail out of distribution (+{r['ai-12']['value']:g} K warming in two climate studies); no sourced learned "
+         "friction or rheology closure was found.", sl("closures")],
+        ["Heavy tails",
+         f"{cx['pl_geo']} geoscience power-law rows report an exponent; {cx['pl_tested']} were tested against alternatives and "
+         f"{cx['pl_favored']} favored a pure power law.",
+         "Learned models can pool events across regions and catalogs, beyond what a single parametric fit uses.",
+         f"AI forecasts degrade on record-breaking extremes; magnitude estimates saturate near M{r['ai-20']['value_min']:.1f} to "
+         f"{r['ai-20']['value_max']:.1f}; tail-aware evaluation is missing.", sl("tails")],
+        ["Unobserved drivers",
+         f"EM-DAT lacks total damage for {r['uo-23']['value']}% of natural-hazard events (1990 to 2020); {r['uo-19']['value']}% of the "
+         f"urban population lives in cities with more than 80% complete OpenStreetMap buildings; {rng(r['uo-10'])}% of California's "
+         "moment rate is off modeled faults.",
+         "Proxies can be learned: building footprints from imagery, dense catalogs that light up unmapped structures.",
+         f"Building recall is {r['ai-26']['value']}% in Africa; regional pickers transfer poorly (AUC at most {r['ai-28']['value']}). "
+         "Without outcome labels, supervised evaluation is not possible.", sl("unobserved")],
+    ]))
+    p.append(figure(CXFIG / "fig1_power_law_exponents.png", 10, "Density exponents of heavy-tailed geoscience observables and "
+                    "non-geoscience comparisons, colored by whether the source tested the power law against alternatives. Only "
+                    "exponents stated in the density convention are drawn."))
+    p.append(figure(CXFIG / "fig2_coupled_pde_counts.png", 11, "Scalar balance equations and per-point ODE state variables in "
+                    "minimal coupled models, counted by one rule from one cited source per system."))
+    p.append("<h3>AI evidence along the four axes</h3>")
+    p.append("<p>Successes and limitations were both sought. Counts reflect what was collected, not how often AI succeeds.</p>")
+    order = {"dimensionality": 0, "closures": 1, "tails": 2, "unobserved": 3}
+    p.append(table(["Axis", "Type", "Task", "Result as stated", "Baseline", "Source"],
+                   [[a["axis"], a["evidence_type"], a["task"], a["value_text"], a["baseline"] or "", a["source"]]
+                    for a in sorted(cx["ai"], key=lambda a: (order[a["axis"]], a["evidence_type"] != "success", a["id"]))]))
+    p.append("<h3>Readiness profile by discipline</h3>")
+    p.append(figure(CXFIG / "fig3_readiness_profile.png", 12, "AI-readiness profile: each column is a separate measure with its own "
+                    "evidence; cells are colored by status and never summed."))
+    cols = [c["label"] for c in cx["profile"]["columns"]]
+    grid = {}
+    for c in cx["cells"]:
+        grid.setdefault(c["discipline"], {})[c["column"]] = c["status"] + (f": {c['label']}" if c["label"] else "")
+    p.append(table(["Discipline"] + cols, [[d] + [grid[d][c] for c in cols] for d in grid]))
+    p.append("<p>The profile reads as a work plan. Seismology and weather and climate are each measured on four of five columns, "
+             "and they miss different things: seismology has no effective dimension for its archive, and weather and climate has "
+             "only qualitative evidence on unobserved drivers. DAS and radar have sourced AI successes but no sourced limitation; "
+             "geodesy was not assessed for AI results. None of the three has tail tests or unobserved-driver numbers in these tables. "
+             "Cells marked not assessed were not searched and say nothing about the discipline.</p>")
+    return p
 
 
 CSS = """
@@ -138,7 +232,7 @@ h3{font-size:1.05rem;margin:1.6rem 0 .4rem}.meta{color:var(--muted);font-size:.9
 .tw{overflow-x:auto;margin:.8rem 0}table{border-collapse:collapse;font-size:.88rem;width:100%}th,td{border-bottom:1px solid var(--rule);padding:.35rem .5rem;text-align:left;vertical-align:top}
 th{color:var(--muted);font-weight:600}figure{margin:1.2rem 0}figure img{max-width:100%;height:auto;background:#fff;border-radius:4px}
 figcaption{color:var(--muted);font-size:.86rem;margin-top:.3rem}code{font-size:.86em;background:var(--card);padding:.05rem .3rem;border-radius:3px}
-pre{background:var(--card);padding:.7rem .9rem;overflow-x:auto;font-size:.82rem;border-radius:4px}li{margin:.2rem 0}
+a{color:var(--accent)}pre{background:var(--card);padding:.7rem .9rem;overflow-x:auto;font-size:.82rem;border-radius:4px}li{margin:.2rem 0}
 """
 
 
@@ -146,7 +240,9 @@ def build(n):
     p = []
     p.append("<h1>Measuring the AI readiness of the geosciences: a solid-earth perspective</h1>")
     p.append('<p class="meta">Technical report, 30 October 2026. Analysis package <code>geoscience-ai-readiness</code>, branch '
-             "<code>das-semantic-screen</code>. Contact: Marine Denolle, University of Washington.</p>")
+             '<code>main</code>; source, data and notebooks at '
+             '<a href="https://github.com/gaia-hazlab/geoscience-ai-readiness">github.com/gaia-hazlab/geoscience-ai-readiness</a>. '
+             "Contact: Marine Denolle, University of Washington.</p>")
     p.append('<div class="goal"><b>Goal.</b> Measure the AI readiness of the geosciences, from a solid-earth perspective. We treat readiness as '
              "three measurable things: how often research papers use machine learning (ML), how much of the data a community holds "
              "exists in ML-ready form, and how visible that data is on the platforms where ML practitioners look. Solid earth here means "
@@ -174,7 +270,13 @@ def build(n):
              f"{n['das_dl']} of {n['das_aim']} such papers use deep learning and {n['das_fm']} a foundation model.</li>")
     p.append(f"<li><b>The AI-ready label is rare everywhere.</b> {n['datacite_ai_ready']} of {n['datacite_all']:,} DataCite datasets use it. "
              f"Geoscience datasets are not underrepresented on Hugging Face by repository count ({n['hf_geo']:,} against "
-             f"{n['hf_bio']:,} biomedical, name matching).</li></ul>")
+             f"{n['hf_bio']:,} biomedical, name matching).</li>")
+    cx, r = n["cx"], n["cx"]["rows"]
+    p.append(f"<li><b>Complexity favors AI and also limits it.</b> Native data are large ({r['dim-08']['value']:,} DAS channels on one "
+             f"array) while measured effective dimensions of climate fields are tens ({r['dim-26']['value']} to {r['dim-31']['value_max']}), "
+             f"close to image benchmarks. Minimal coupled models need {cx['pde_geo'][0]} to {cx['pde_geo'][1]} balance equations, so the "
+             f"unknowns sit in closures. Heavy tails are untested or unresolved: {cx['pl_favored']} of {cx['pl_tested']} tested fits favor a "
+             f"pure power law. Outcome labels are thin: EM-DAT lacks total damage for {r['uo-23']['value']}% of natural-hazard events.</li></ul>")
 
     p.append("<h2>1. Do geoscientists use ML?</h2>")
     p.append(figure(FIG / "fig2_ml_share_by_year.png", 1, "Share of OpenAlex articles mentioning ML in title or abstract, Earth and environmental "
@@ -233,7 +335,9 @@ def build(n):
              f"{n['ai_ready_by_year']['2023']} in 2023 and {n['ai_ready_by_year']['2025']} in 2025. Platform counts do not show a geoscience "
              "lag; the gap sits in the volume packaged, not in the label or the hub.</p>")
 
-    p.append("<h2>6. Methods</h2>")
+    p.extend(complexity_section(n["cx"]))
+
+    p.append("<h2>7. Methods</h2>")
     q = n["queries"]
     p.append(table(["Measure", "Source", "Query or protocol"], [
         ["ML mention rate", "OpenAlex works API, articles, group_by year or subfield", q["ml"]],
@@ -248,12 +352,16 @@ def build(n):
          f"codebook {n['prep']['codebook_version']}, prompt hash {n['prep']['prompt_sha256'][:12]}..., structured JSON output"],
         ["Archive and benchmark volumes", "agency pages, reports, papers, repository APIs",
          "values as stated, with source URL, date, quote and a checked-in-text flag; projections flagged"],
+        ["Complexity and AI-evidence tables", "papers, textbooks, benchmark specifications, agency pages",
+         "values as stated with units, DOI or URL, as-of date, quote and read-in-text flag; checked by scripts/complexity_tables.py"],
+        ["Coupled-equation counts", "one cited source per system", "balance laws, vectors expanded to scalars in the stated dimensionality; closures listed, not counted"],
+        ["Readiness profile", "readiness_profile.json", "status per discipline and measure, citing row ids; never summed"],
     ]))
     p.append("<p>All paper counts are keyword co-occurrence in titles and abstracts and never establish actual use. The semantic screen labels "
              "the abstract only; a missing abstract or a failed answer stays unclear, never negative. Benchmarks are paired only with the archive "
              "they were drawn from.</p>")
 
-    p.append("<h2>7. Reproducibility assessment</h2>")
+    p.append("<h2>8. Reproducibility assessment</h2>")
     rq = n["requery"]
     hashes_ok = sum(h["ok"] for h in n["hashes"])
     das = rq["das_series"]
@@ -273,24 +381,29 @@ def build(n):
          f"needs OpenAlex key and Claude credentials; about ${n['coll']['usd_total']:.2f}; prompt hash pins the classifier"],
         ["Archive and benchmark volumes", "archives.json, benchmarks.json, simulation_corpora.json", "manual: follow source_url",
          "not machine re-queryable; rows not checked in the source text are flagged"],
+        ["Complexity tables and profile", "docs/complexity_2026-10-30", "python scripts/complexity_tables.py",
+         "; ".join(n["cx"]["summaries"][:1]) + " (and four more tables; all pass)"],
         ["Figures and this report", "all of the above", "pixi run -e report report", "offline, deterministic"],
         ["Notebooks", "all of the above", "pixi run -e report notebooks (READINESS_LIVE=1 to re-query)", "executed offline without errors"],
     ]))
     p.append("<pre>pixi run all                         # release hashes, offline tests, original figures\n"
              "pixi run -e report requery-offline   # frozen-snapshot hashes\n"
              "pixi run -e report requery-live      # re-query OpenAlex, DataCite and the DAS series, compare\n"
-             "pixi run -e report notebooks         # execute notebooks/01-03\n"
+             "pixi run -e report notebooks         # execute notebooks/01-04\n"
              "pixi run -e report report           # rebuild figures and this HTML</pre>")
     p.append("<p>Notebooks: <code>notebooks/01_das_semantic_screen.ipynb</code>, <code>02_papers_and_platforms.ipynb</code>, "
-             "<code>03_archives_simulations_surrogates.ipynb</code>.</p>")
+             "<code>03_archives_simulations_surrogates.ipynb</code>, <code>04_complexity_and_readiness.ipynb</code>.</p>")
 
-    p.append("<h2>8. Limitations</h2><ul>"
+    p.append("<h2>9. Limitations</h2><ul>"
              "<li>Keyword co-occurrence measures attention, not use. OpenAlex field labels are content-based and move AI-heavy papers into Computer Science.</li>"
              "<li>The DAS screen is unvalidated; a 130-abstract blind validation sample is drawn and awaits two coders.</li>"
              "<li>Archive volumes mix definitions and dates (2020 to 2026). No cumulative volume is published for DAS experiments, USGS NWIS, "
              "CyberShake, Syngine or EQSIM.</li>"
              "<li>Hugging Face counts match repository names and are upper bounds.</li>"
-             "<li>Small packaged shares bound what can be trained without curation; they do not show that more packaging is needed for every task.</li></ul>")
+             "<li>Small packaged shares bound what can be trained without curation; they do not show that more packaging is needed for every task.</li>"
+             "<li>The complexity and AI-evidence tables are purposive samples of the literature, not a census; successes and limitations "
+             "were both sought, but their counts do not measure how often AI succeeds.</li>"
+             "<li>Equation counts depend on the source and dimensionality chosen; they measure model size, not difficulty.</li></ul>")
     return ('<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
             "<title>Geoscience AI Readiness</title><style>" + CSS + "</style></head><body>" + "\n".join(p) + "</body></html>\n")
 
@@ -299,7 +412,7 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--out", default=str(ROOT / "docs/report/ai_readiness_solid_earth.html"))
     args = parser.parse_args(argv)
-    for script in ("archive_readiness_figures.py", "explore_das_semantic.py"):
+    for script in ("archive_readiness_figures.py", "explore_das_semantic.py", "complexity_figures.py"):
         subprocess.run([sys.executable, str(ROOT / "scripts" / script)], check=True, cwd=ROOT, capture_output=True)
     n = compute()
     if not all(h["ok"] for h in n["hashes"]):
