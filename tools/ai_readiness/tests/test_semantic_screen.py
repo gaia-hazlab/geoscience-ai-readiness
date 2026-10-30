@@ -261,6 +261,7 @@ class SemanticScreenTests(unittest.TestCase):
             summary = core.read_json(out / "summary.json")
             self.assertFalse(summary["validated"])
             self.assertEqual(len(summary["years"]), 2)
+            self.assertNotIn(b"\r", (out / "summary.csv").read_bytes())
             header, first = (out / "summary.csv").read_text().splitlines()[:2]
             self.assertEqual(first.split(",")[:5], ["2020", "4", "3", "3", "1"])
             self.assertEqual(dict(zip(header.split(","), first.split(",")))["das_confirmed"], "1")

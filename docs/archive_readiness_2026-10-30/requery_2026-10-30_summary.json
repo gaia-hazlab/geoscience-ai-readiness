@@ -1,0 +1,44 @@
+{
+  "run_utc": "2026-10-30T12:19:58+00:00",
+  "hashes_ok": 12,
+  "hashes_total": 12,
+  "das_series": {
+    "frozen_2026_10_21": {
+      "2025": 424,
+      "2024": 311,
+      "2023": 238,
+      "2022": 194,
+      "2021": 137,
+      "2020": 118
+    },
+    "live": {
+      "2025": 425,
+      "2024": 312,
+      "2023": 238,
+      "2022": 194,
+      "2021": 137,
+      "2020": 118
+    }
+  },
+  "errors": [],
+  "comparisons": {
+    "openalex": {
+      "metrics_compared": 90,
+      "within_1_percent": 90,
+      "within_5_percent": 90,
+      "within_20_percent": 90
+    },
+    "simulation": {
+      "metrics_compared": 148,
+      "within_1_percent": 148,
+      "within_5_percent": 148,
+      "within_20_percent": 148
+    },
+    "datacite": {
+      "metrics_compared": 36,
+      "within_1_percent": 36,
+      "within_5_percent": 36,
+      "within_20_percent": 36
+    }
+  }
+}

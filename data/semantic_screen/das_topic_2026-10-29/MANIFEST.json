@@ -1,0 +1,23 @@
+{
+  "created_utc": "2026-10-30",
+  "source_run": "runs/das_topic_2026-10-29",
+  "description": "Frozen outputs of the DAS topic-frame harvest (2026-10-29) and the abstract-level semantic screen batch msgbatch_01HdBu5onQdhwxu6adW2ZjqL. Unvalidated model labels.",
+  "excluded": {
+    "works.jsonl": "full OpenAlex records with inverted-index abstracts (30.8 MB); regenerate with pixi run -e semantic das-harvest",
+    "requests.jsonl": "batch requests containing abstract text; regenerate with das-screen-prepare",
+    "validation_template.jsonl, validation_coder_*.csv": "contain abstracts; regenerate with validation-sample and the same seed"
+  },
+  "works_jsonl_sha256": "23e760cc34497be0190029d25d9e93bb45a114e7b9ca7215067968ad3d9b52bd",
+  "files": {
+    "batch.json": "987dbd407181333ca6ae278b7347832283feecc25a52b62e98452112d9e62ba7",
+    "collect_manifest.json": "0aada4bc9ed59fd080df58b9098a4cda89d69c873f0f4bb8a68304a6fa62e249",
+    "harvest_config.json": "c149964453bd7226e26714119be9d819e08a37f2c1c393ead827dba73505aaa4",
+    "harvest_manifest.json": "41c3960368c477c03ffaba35ebbcdc626309ec875fbd75fe72ff8b17cf4679ab",
+    "prepare_manifest.json": "40c64cc15dfc55184d2659b6ed254a4762c89b89749b02d2b52adb685e2666d2",
+    "screen_semantic.jsonl": "1323610c9d75055edc688a8662d2c4b0c951baabafff864973d5d3b517ff150f",
+    "summary.csv": "0734e69d75e73647422de68c71d6cbf3103a712a0dffc2f2664c0a8adddb98b2",
+    "summary.json": "5149692ad60d088b2cdaa28da4058653ec12161d3ae05d9405c8f5928809fd8d",
+    "validation_design.json": "bdf4d463b85d0d3120ff2a9b5a2721a8004ffe1e8059467ed364a96380c2f9eb",
+    "works_index.jsonl": "2e240f2b13e26b0d76962074de9afc487e2388e402936ee3a84f9aa929fd8af5"
+  }
+}

@@ -101,6 +101,12 @@ before any figure) see the semantic screen section of the same guide and
 `standalone/config.das_topic.json`; `pixi run -e semantic das-harvest` and the
 `das-screen-*` tasks run it once `OPENALEX_API_KEY` and Claude credentials exist.
 
+A domain-level assessment, framed from a solid-earth perspective, is in
+[docs/report/ai_readiness_solid_earth.html](docs/report/ai_readiness_solid_earth.html)
+with its data and method notes in `docs/archive_readiness_2026-10-30/` and the analysis
+notebooks in `notebooks/`. Rebuild and check it with `pixi run -e report report`,
+`pixi run -e report notebooks` and `pixi run -e report requery-live`.
+
 Start with [the preferred workflow guide](tools/ai_readiness/README.md):
 
 ```sh

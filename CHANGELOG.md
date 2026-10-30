@@ -20,6 +20,17 @@
   precision and recall.
 - Added `scripts/explore_das_semantic.py`, four exploratory draft plots of the
   DAS screen.
+- Domain-level AI-readiness assessment (2026-10-30): `scripts/platform_readiness_counts.py`
+  (DataCite, Hugging Face, OpenAlex; ML, AI-ready, simulation and ML-surrogate counts),
+  sourced archive, benchmark and simulation-corpus volumes in
+  `docs/archive_readiness_2026-10-30/`, and `scripts/archive_readiness_figures.py` (seven figures).
+- Reproducibility: `scripts/requery_check.py` verifies frozen-snapshot hashes offline and
+  re-queries OpenAlex, DataCite and the DAS series live against the frozen counts.
+  The DAS screen outputs are frozen in `data/semantic_screen/das_topic_2026-10-29/`
+  (no abstracts); `scripts/explore_das_semantic.py` now reads them there.
+- Notebooks `notebooks/01`-`03` and the HTML technical report
+  `docs/report/ai_readiness_solid_earth.html` (`scripts/build_report.py`), with an
+  opt-in pixi `report` environment (nbclient, nbformat, ipykernel).
 - Added a pixi environment (`pixi.toml`, `pixi.lock`) for macOS and Linux with
   tasks for verification, the offline test suites, figures, the instrument
   builder and the standalone dry run. Poppler is now provided by the environment.

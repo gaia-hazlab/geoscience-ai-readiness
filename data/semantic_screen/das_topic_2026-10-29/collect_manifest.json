@@ -1,0 +1,22 @@
+{
+  "collected_at": "2026-10-29T21:16:27.261309+00:00",
+  "batch_id": "msgbatch_01HdBu5onQdhwxu6adW2ZjqL",
+  "rows": 1423,
+  "statuses": {
+    "missing_abstract": 159,
+    "labeled": 1262,
+    "rationale_too_long_or_missing": 2
+  },
+  "usage_total": {
+    "input_tokens": 720627,
+    "output_tokens": 251220,
+    "cache_creation_input_tokens": 29208,
+    "cache_read_input_tokens": 4585656
+  },
+  "usd_total": 4.4849,
+  "screen_semantic_sha256": "1323610c9d75055edc688a8662d2c4b0c951baabafff864973d5d3b517ff150f",
+  "paper_ids_sha256": "89d3da5938692ed11b137079c3101917c93849ba10799e88a633f2ad3a9b714f",
+  "works_jsonl_sha256": "23e760cc34497be0190029d25d9e93bb45a114e7b9ca7215067968ad3d9b52bd",
+  "model": "claude-opus-5-5",
+  "prompt_sha256": "fea5a7ace5f4c907777f65c098a1504b003934299ef8efb8fa13199f29ba16cf"
+}

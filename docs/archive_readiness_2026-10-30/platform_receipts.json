@@ -1,0 +1,746 @@
+[
+ {
+  "name": "datacite_all",
+  "url": "https://api.datacite.org/dois?resource-type-id=dataset&page%5Bsize%5D=0",
+  "status": 200,
+  "file": "raw/datacite_all.json",
+  "sha256": "d8a49d9c9ff8ef09218be92720a1eee3c2b63a87dba8a0660311796688885fe3",
+  "retrieved_utc": "2026-10-30T11:49:03+00:00"
+ },
+ {
+  "name": "datacite_earth_fos",
+  "url": "https://api.datacite.org/dois?resource-type-id=dataset&page%5Bsize%5D=0&query=subjects.subject%3A%22FOS%3A+Earth+and+related+environmental+sciences%22",
+  "status": 200,
+  "file": "raw/datacite_earth_fos.json",
+  "sha256": "64d03c171b95716e0f70f3b7e27887470898048da3a41de268952becdfd71846",
+  "retrieved_utc": "2026-10-30T11:49:05+00:00"
+ },
+ {
+  "name": "datacite_ai_ready_all",
+  "url": "https://api.datacite.org/dois?resource-type-id=dataset&page%5Bsize%5D=0&query=%28%22AI-ready%22+OR+%22AI+ready%22+OR+%22ML-ready%22+OR+%22ML+ready%22+OR+%22machine+learning+ready%22+OR+%22machine-learning-ready%22%29",
+  "status": 200,
+  "file": "raw/datacite_ai_ready_all.json",
+  "sha256": "2aba6824977cc5c6a54c9ebdb76378f3945a5d8acd3f7c6135021a4381cb36f5",
+  "retrieved_utc": "2026-10-30T11:49:06+00:00"
+ },
+ {
+  "name": "datacite_ai_ready_earth_fos",
+  "url": "https://api.datacite.org/dois?resource-type-id=dataset&page%5Bsize%5D=0&query=%28%22AI-ready%22+OR+%22AI+ready%22+OR+%22ML-ready%22+OR+%22ML+ready%22+OR+%22machine+learning+ready%22+OR+%22machine-learning-ready%22%29+AND+subjects.subject%3A%22FOS%3A+Earth+and+related+environmental+sciences%22",
+  "status": 200,
+  "file": "raw/datacite_ai_ready_earth_fos.json",
+  "sha256": "d8d08479dd8f7bbeaecb01053f190d93249d9fd6485d632631397f6d45589350",
+  "retrieved_utc": "2026-10-30T11:49:07+00:00"
+ },
+ {
+  "name": "datacite_ml_all",
+  "url": "https://api.datacite.org/dois?resource-type-id=dataset&page%5Bsize%5D=0&query=%28%22machine+learning%22+OR+%22deep+learning%22+OR+%22neural+network%22%29",
+  "status": 200,
+  "file": "raw/datacite_ml_all.json",
+  "sha256": "7ec2a04c1b432adacf36bb1b41b43415897e82f4a0c326873d80cb6ecf8e4d05",
+  "retrieved_utc": "2026-10-30T11:49:09+00:00"
+ },
+ {
+  "name": "datacite_ml_earth_fos",
+  "url": "https://api.datacite.org/dois?resource-type-id=dataset&page%5Bsize%5D=0&query=%28%22machine+learning%22+OR+%22deep+learning%22+OR+%22neural+network%22%29+AND+subjects.subject%3A%22FOS%3A+Earth+and+related+environmental+sciences%22",
+  "status": 200,
+  "file": "raw/datacite_ml_earth_fos.json",
+  "sha256": "825c3025f211413eb5c2e96ff282e4077f3a0e7b6833ff8b85e282dd651beba0",
+  "retrieved_utc": "2026-10-30T11:49:10+00:00"
+ },
+ {
+  "name": "datacite_disc_seismology",
+  "url": "https://api.datacite.org/dois?resource-type-id=dataset&page%5Bsize%5D=0&query=%28seismic+OR+seismology+OR+earthquake+OR+%22distributed+acoustic+sensing%22%29",
+  "status": 200,
+  "file": "raw/datacite_disc_seismology.json",
+  "sha256": "7d19c61833cae6b3c9230679976f658874be31f9cef18909ed23494be21a7e4c",
+  "retrieved_utc": "2026-10-30T11:49:11+00:00"
+ },
+ {
+  "name": "datacite_disc_seismology_ml",
+  "url": "https://api.datacite.org/dois?resource-type-id=dataset&page%5Bsize%5D=0&query=%28seismic+OR+seismology+OR+earthquake+OR+%22distributed+acoustic+sensing%22%29+AND+%28%22machine+learning%22+OR+%22deep+learning%22+OR+%22neural+network%22%29",
+  "status": 200,
+  "file": "raw/datacite_disc_seismology_ml.json",
+  "sha256": "3b87bf86c6a3346cf0c92e7f9f78dea875295585585e4ea5b8e8a65edb3b5780",
+  "retrieved_utc": "2026-10-30T11:49:13+00:00"
+ },
+ {
+  "name": "datacite_disc_seismology_aiready",
+  "url": "https://api.datacite.org/dois?resource-type-id=dataset&page%5Bsize%5D=0&query=%28seismic+OR+seismology+OR+earthquake+OR+%22distributed+acoustic+sensing%22%29+AND+%28%22AI-ready%22+OR+%22AI+ready%22+OR+%22ML-ready%22+OR+%22ML+ready%22+OR+%22machine+learning+ready%22+OR+%22machine-learning-ready%22%29",
+  "status": 200,
+  "file": "raw/datacite_disc_seismology_aiready.json",
+  "sha256": "c13f39ee5fb06bb2b552b0884aaed8bf9ef4fc100c6bddcd813691aa22f65c96",
+  "retrieved_utc": "2026-10-30T11:49:14+00:00"
+ },
+ {
+  "name": "datacite_disc_geodesy_sar",
+  "url": "https://api.datacite.org/dois?resource-type-id=dataset&page%5Bsize%5D=0&query=%28InSAR+OR+GNSS+OR+geodetic+OR+%22synthetic+aperture+radar%22%29",
+  "status": 200,
+  "file": "raw/datacite_disc_geodesy_sar.json",
+  "sha256": "720e828f4a3709463bd7b7258e4d506070af1edc54c612460b28ba9bc51fa524",
+  "retrieved_utc": "2026-10-30T11:49:15+00:00"
+ },
+ {
+  "name": "datacite_disc_geodesy_sar_ml",
+  "url": "https://api.datacite.org/dois?resource-type-id=dataset&page%5Bsize%5D=0&query=%28InSAR+OR+GNSS+OR+geodetic+OR+%22synthetic+aperture+radar%22%29+AND+%28%22machine+learning%22+OR+%22deep+learning%22+OR+%22neural+network%22%29",
+  "status": 200,
+  "file": "raw/datacite_disc_geodesy_sar_ml.json",
+  "sha256": "3271c1474ef81872e77d30ce202a3edb50b23f2fa0e941c0a4acfb91ac404b4a",
+  "retrieved_utc": "2026-10-30T11:49:16+00:00"
+ },
+ {
+  "name": "datacite_disc_geodesy_sar_aiready",
+  "url": "https://api.datacite.org/dois?resource-type-id=dataset&page%5Bsize%5D=0&query=%28InSAR+OR+GNSS+OR+geodetic+OR+%22synthetic+aperture+radar%22%29+AND+%28%22AI-ready%22+OR+%22AI+ready%22+OR+%22ML-ready%22+OR+%22ML+ready%22+OR+%22machine+learning+ready%22+OR+%22machine-learning-ready%22%29",
+  "status": 200,
+  "file": "raw/datacite_disc_geodesy_sar_aiready.json",
+  "sha256": "452b68398d46adf902f45263a4d3bf320b3caf266b44fa77881535590dc0ed7b",
+  "retrieved_utc": "2026-10-30T11:49:17+00:00"
+ },
+ {
+  "name": "datacite_disc_optical_remote_sensing",
+  "url": "https://api.datacite.org/dois?resource-type-id=dataset&page%5Bsize%5D=0&query=%28%22remote+sensing%22+OR+Landsat+OR+%22Sentinel-2%22+OR+multispectral+OR+hyperspectral%29",
+  "status": 200,
+  "file": "raw/datacite_disc_optical_remote_sensing.json",
+  "sha256": "f2ff03740380abd1a905e37be7f9f94727e4a08ef9e96a780e1a0abb3cb76621",
+  "retrieved_utc": "2026-10-30T11:49:19+00:00"
+ },
+ {
+  "name": "datacite_disc_optical_remote_sensing_ml",
+  "url": "https://api.datacite.org/dois?resource-type-id=dataset&page%5Bsize%5D=0&query=%28%22remote+sensing%22+OR+Landsat+OR+%22Sentinel-2%22+OR+multispectral+OR+hyperspectral%29+AND+%28%22machine+learning%22+OR+%22deep+learning%22+OR+%22neural+network%22%29",
+  "status": 200,
+  "file": "raw/datacite_disc_optical_remote_sensing_ml.json",
+  "sha256": "5fb69f516b0968283e0a263935b41e8c51c47600726599aef4dc9be0cb66e298",
+  "retrieved_utc": "2026-10-30T11:49:20+00:00"
+ },
+ {
+  "name": "datacite_disc_optical_remote_sensing_aiready",
+  "url": "https://api.datacite.org/dois?resource-type-id=dataset&page%5Bsize%5D=0&query=%28%22remote+sensing%22+OR+Landsat+OR+%22Sentinel-2%22+OR+multispectral+OR+hyperspectral%29+AND+%28%22AI-ready%22+OR+%22AI+ready%22+OR+%22ML-ready%22+OR+%22ML+ready%22+OR+%22machine+learning+ready%22+OR+%22machine-learning-ready%22%29",
+  "status": 200,
+  "file": "raw/datacite_disc_optical_remote_sensing_aiready.json",
+  "sha256": "0fe52d403cb90a6240ac5e619a31ff516192f2b1dccf3ac3d7cc169015651b2d",
+  "retrieved_utc": "2026-10-30T11:49:21+00:00"
+ },
+ {
+  "name": "datacite_disc_weather_climate",
+  "url": "https://api.datacite.org/dois?resource-type-id=dataset&page%5Bsize%5D=0&query=%28weather+OR+climate+OR+reanalysis+OR+ERA5+OR+CMIP6%29",
+  "status": 200,
+  "file": "raw/datacite_disc_weather_climate.json",
+  "sha256": "062b6b3807a706843c04976361e24d4e5a296d40af0af417022080b7a55d620d",
+  "retrieved_utc": "2026-10-30T11:49:22+00:00"
+ },
+ {
+  "name": "datacite_disc_weather_climate_ml",
+  "url": "https://api.datacite.org/dois?resource-type-id=dataset&page%5Bsize%5D=0&query=%28weather+OR+climate+OR+reanalysis+OR+ERA5+OR+CMIP6%29+AND+%28%22machine+learning%22+OR+%22deep+learning%22+OR+%22neural+network%22%29",
+  "status": 200,
+  "file": "raw/datacite_disc_weather_climate_ml.json",
+  "sha256": "497c1508023c1857090aaeb1ff8a3a701d4c4d6f13728832b46c73b7b5e954cc",
+  "retrieved_utc": "2026-10-30T11:49:24+00:00"
+ },
+ {
+  "name": "datacite_disc_weather_climate_aiready",
+  "url": "https://api.datacite.org/dois?resource-type-id=dataset&page%5Bsize%5D=0&query=%28weather+OR+climate+OR+reanalysis+OR+ERA5+OR+CMIP6%29+AND+%28%22AI-ready%22+OR+%22AI+ready%22+OR+%22ML-ready%22+OR+%22ML+ready%22+OR+%22machine+learning+ready%22+OR+%22machine-learning-ready%22%29",
+  "status": 200,
+  "file": "raw/datacite_disc_weather_climate_aiready.json",
+  "sha256": "d762ef69520c8367db04187888befe6b211dc7bc6161ee1c19ab65264346b642",
+  "retrieved_utc": "2026-10-30T11:49:25+00:00"
+ },
+ {
+  "name": "datacite_disc_hydrology",
+  "url": "https://api.datacite.org/dois?resource-type-id=dataset&page%5Bsize%5D=0&query=%28hydrology+OR+streamflow+OR+groundwater+OR+%22soil+moisture%22%29",
+  "status": 200,
+  "file": "raw/datacite_disc_hydrology.json",
+  "sha256": "2d1d0b51b46f00f267d72d0e0a02f39ca9617d0fdba5ff72404baa0f3db7427e",
+  "retrieved_utc": "2026-10-30T11:49:26+00:00"
+ },
+ {
+  "name": "datacite_disc_hydrology_ml",
+  "url": "https://api.datacite.org/dois?resource-type-id=dataset&page%5Bsize%5D=0&query=%28hydrology+OR+streamflow+OR+groundwater+OR+%22soil+moisture%22%29+AND+%28%22machine+learning%22+OR+%22deep+learning%22+OR+%22neural+network%22%29",
+  "status": 200,
+  "file": "raw/datacite_disc_hydrology_ml.json",
+  "sha256": "66e01510c2c2f23ba6bdea14d96cd4ffd8f57418850ae6987fc7d2280fdf1771",
+  "retrieved_utc": "2026-10-30T11:49:27+00:00"
+ },
+ {
+  "name": "datacite_disc_hydrology_aiready",
+  "url": "https://api.datacite.org/dois?resource-type-id=dataset&page%5Bsize%5D=0&query=%28hydrology+OR+streamflow+OR+groundwater+OR+%22soil+moisture%22%29+AND+%28%22AI-ready%22+OR+%22AI+ready%22+OR+%22ML-ready%22+OR+%22ML+ready%22+OR+%22machine+learning+ready%22+OR+%22machine-learning-ready%22%29",
+  "status": 200,
+  "file": "raw/datacite_disc_hydrology_aiready.json",
+  "sha256": "1403fd61acc3f392e357b41dfa6f9f6d89ed590b7d7efd46ef2c4207a63697b5",
+  "retrieved_utc": "2026-10-30T11:49:28+00:00"
+ },
+ {
+  "name": "datacite_disc_ocean",
+  "url": "https://api.datacite.org/dois?resource-type-id=dataset&page%5Bsize%5D=0&query=%28oceanography+OR+%22sea+surface%22+OR+Argo+OR+%22ocean+model%22%29",
+  "status": 200,
+  "file": "raw/datacite_disc_ocean.json",
+  "sha256": "b284793be9e24a0446c6eb803827f0d47deb522fad83425deff405f8141c0712",
+  "retrieved_utc": "2026-10-30T11:49:29+00:00"
+ },
+ {
+  "name": "datacite_disc_ocean_ml",
+  "url": "https://api.datacite.org/dois?resource-type-id=dataset&page%5Bsize%5D=0&query=%28oceanography+OR+%22sea+surface%22+OR+Argo+OR+%22ocean+model%22%29+AND+%28%22machine+learning%22+OR+%22deep+learning%22+OR+%22neural+network%22%29",
+  "status": 200,
+  "file": "raw/datacite_disc_ocean_ml.json",
+  "sha256": "2ec1508869bce1c88394e6ee9c7c224e881241a4cec1f69818646f6f704b9ae6",
+  "retrieved_utc": "2026-10-30T11:49:31+00:00"
+ },
+ {
+  "name": "datacite_disc_ocean_aiready",
+  "url": "https://api.datacite.org/dois?resource-type-id=dataset&page%5Bsize%5D=0&query=%28oceanography+OR+%22sea+surface%22+OR+Argo+OR+%22ocean+model%22%29+AND+%28%22AI-ready%22+OR+%22AI+ready%22+OR+%22ML-ready%22+OR+%22ML+ready%22+OR+%22machine+learning+ready%22+OR+%22machine-learning-ready%22%29",
+  "status": 200,
+  "file": "raw/datacite_disc_ocean_aiready.json",
+  "sha256": "94d039f2718cc674c2fb8b3c16df81fb8d6a46f7e3ad9e7b80ee225a5dcb0943",
+  "retrieved_utc": "2026-10-30T11:49:32+00:00"
+ },
+ {
+  "name": "datacite_disc_biomedicine",
+  "url": "https://api.datacite.org/dois?resource-type-id=dataset&page%5Bsize%5D=0&query=%28clinical+OR+medical+OR+patient+OR+genomics%29",
+  "status": 200,
+  "file": "raw/datacite_disc_biomedicine.json",
+  "sha256": "12bfd0d26375cce5068808713437e7c02f74029e5b857e830e95138df180d5a6",
+  "retrieved_utc": "2026-10-30T11:49:33+00:00"
+ },
+ {
+  "name": "datacite_disc_biomedicine_ml",
+  "url": "https://api.datacite.org/dois?resource-type-id=dataset&page%5Bsize%5D=0&query=%28clinical+OR+medical+OR+patient+OR+genomics%29+AND+%28%22machine+learning%22+OR+%22deep+learning%22+OR+%22neural+network%22%29",
+  "status": 200,
+  "file": "raw/datacite_disc_biomedicine_ml.json",
+  "sha256": "c45ad05c3e5e54952ddeafdf63f89a512d1e3e00f655fbc3a413f6a4fa0b1759",
+  "retrieved_utc": "2026-10-30T11:49:34+00:00"
+ },
+ {
+  "name": "datacite_disc_biomedicine_aiready",
+  "url": "https://api.datacite.org/dois?resource-type-id=dataset&page%5Bsize%5D=0&query=%28clinical+OR+medical+OR+patient+OR+genomics%29+AND+%28%22AI-ready%22+OR+%22AI+ready%22+OR+%22ML-ready%22+OR+%22ML+ready%22+OR+%22machine+learning+ready%22+OR+%22machine-learning-ready%22%29",
+  "status": 200,
+  "file": "raw/datacite_disc_biomedicine_aiready.json",
+  "sha256": "54753226a92186c83f3c9c4b2d7ee73205c2bf899547a6c36edeea78f1c0ce48",
+  "retrieved_utc": "2026-10-30T11:49:35+00:00"
+ },
+ {
+  "name": "datacite_disc_materials_chemistry",
+  "url": "https://api.datacite.org/dois?resource-type-id=dataset&page%5Bsize%5D=0&query=%28materials+OR+molecule+OR+%22crystal+structure%22%29",
+  "status": 200,
+  "file": "raw/datacite_disc_materials_chemistry.json",
+  "sha256": "6e54bcb744d6fd49bac5a624a28b25ee748bf158b122b098295e75db5b9d4c80",
+  "retrieved_utc": "2026-10-30T11:49:36+00:00"
+ },
+ {
+  "name": "datacite_disc_materials_chemistry_ml",
+  "url": "https://api.datacite.org/dois?resource-type-id=dataset&page%5Bsize%5D=0&query=%28materials+OR+molecule+OR+%22crystal+structure%22%29+AND+%28%22machine+learning%22+OR+%22deep+learning%22+OR+%22neural+network%22%29",
+  "status": 200,
+  "file": "raw/datacite_disc_materials_chemistry_ml.json",
+  "sha256": "2b2c5f72a4497fd5ad45e289f76e1c7c94bb3a5c10388e03fcfe46b5de1f1c43",
+  "retrieved_utc": "2026-10-30T11:49:38+00:00"
+ },
+ {
+  "name": "datacite_disc_materials_chemistry_aiready",
+  "url": "https://api.datacite.org/dois?resource-type-id=dataset&page%5Bsize%5D=0&query=%28materials+OR+molecule+OR+%22crystal+structure%22%29+AND+%28%22AI-ready%22+OR+%22AI+ready%22+OR+%22ML-ready%22+OR+%22ML+ready%22+OR+%22machine+learning+ready%22+OR+%22machine-learning-ready%22%29",
+  "status": 200,
+  "file": "raw/datacite_disc_materials_chemistry_aiready.json",
+  "sha256": "d8f72654563b05f0f4c467699e414b2df71524b5a41536efde45fe14e0afd558",
+  "retrieved_utc": "2026-10-30T11:49:39+00:00"
+ },
+ {
+  "name": "datacite_ai_ready_all_2016",
+  "url": "https://api.datacite.org/dois?resource-type-id=dataset&page%5Bsize%5D=0&query=%28%28%22AI-ready%22+OR+%22AI+ready%22+OR+%22ML-ready%22+OR+%22ML+ready%22+OR+%22machine+learning+ready%22+OR+%22machine-learning-ready%22%29%29+AND+publicationYear%3A2016",
+  "status": 200,
+  "file": "raw/datacite_ai_ready_all_2016.json",
+  "sha256": "a39050ff4423ff7c1aa4de1ce3d138e4230a1321c263f321e5e8cb2e8e43db50",
+  "retrieved_utc": "2026-10-30T11:49:40+00:00"
+ },
+ {
+  "name": "datacite_ai_ready_all_2017",
+  "url": "https://api.datacite.org/dois?resource-type-id=dataset&page%5Bsize%5D=0&query=%28%28%22AI-ready%22+OR+%22AI+ready%22+OR+%22ML-ready%22+OR+%22ML+ready%22+OR+%22machine+learning+ready%22+OR+%22machine-learning-ready%22%29%29+AND+publicationYear%3A2017",
+  "status": 200,
+  "file": "raw/datacite_ai_ready_all_2017.json",
+  "sha256": "afcfdb5be9860b40749f87534fb3b9e3475a0ade9f09b392073fc59f68c0bf51",
+  "retrieved_utc": "2026-10-30T11:49:41+00:00"
+ },
+ {
+  "name": "datacite_ai_ready_all_2018",
+  "url": "https://api.datacite.org/dois?resource-type-id=dataset&page%5Bsize%5D=0&query=%28%28%22AI-ready%22+OR+%22AI+ready%22+OR+%22ML-ready%22+OR+%22ML+ready%22+OR+%22machine+learning+ready%22+OR+%22machine-learning-ready%22%29%29+AND+publicationYear%3A2018",
+  "status": 200,
+  "file": "raw/datacite_ai_ready_all_2018.json",
+  "sha256": "ad4d7520af9079ab78cb4e91b7172b0f8ca30a3a63a632530f4974550e01357c",
+  "retrieved_utc": "2026-10-30T11:49:42+00:00"
+ },
+ {
+  "name": "datacite_ai_ready_all_2019",
+  "url": "https://api.datacite.org/dois?resource-type-id=dataset&page%5Bsize%5D=0&query=%28%28%22AI-ready%22+OR+%22AI+ready%22+OR+%22ML-ready%22+OR+%22ML+ready%22+OR+%22machine+learning+ready%22+OR+%22machine-learning-ready%22%29%29+AND+publicationYear%3A2019",
+  "status": 200,
+  "file": "raw/datacite_ai_ready_all_2019.json",
+  "sha256": "d418744051f3616e10d042b1e6f3e2462c224a59a2122f0684f116d353a3b5ab",
+  "retrieved_utc": "2026-10-30T11:49:43+00:00"
+ },
+ {
+  "name": "datacite_ai_ready_all_2020",
+  "url": "https://api.datacite.org/dois?resource-type-id=dataset&page%5Bsize%5D=0&query=%28%28%22AI-ready%22+OR+%22AI+ready%22+OR+%22ML-ready%22+OR+%22ML+ready%22+OR+%22machine+learning+ready%22+OR+%22machine-learning-ready%22%29%29+AND+publicationYear%3A2020",
+  "status": 200,
+  "file": "raw/datacite_ai_ready_all_2020.json",
+  "sha256": "cfbc242161cd0ff2bf73c4a173b2acb4f460215e759f442661d8d261f8948b8a",
+  "retrieved_utc": "2026-10-30T11:49:44+00:00"
+ },
+ {
+  "name": "datacite_ai_ready_all_2021",
+  "url": "https://api.datacite.org/dois?resource-type-id=dataset&page%5Bsize%5D=0&query=%28%28%22AI-ready%22+OR+%22AI+ready%22+OR+%22ML-ready%22+OR+%22ML+ready%22+OR+%22machine+learning+ready%22+OR+%22machine-learning-ready%22%29%29+AND+publicationYear%3A2021",
+  "status": 200,
+  "file": "raw/datacite_ai_ready_all_2021.json",
+  "sha256": "73435a713740663cf7d2820e3e65a32423d98f7c491fee040d50fb118f952e3e",
+  "retrieved_utc": "2026-10-30T11:49:46+00:00"
+ },
+ {
+  "name": "datacite_ai_ready_all_2022",
+  "url": "https://api.datacite.org/dois?resource-type-id=dataset&page%5Bsize%5D=0&query=%28%28%22AI-ready%22+OR+%22AI+ready%22+OR+%22ML-ready%22+OR+%22ML+ready%22+OR+%22machine+learning+ready%22+OR+%22machine-learning-ready%22%29%29+AND+publicationYear%3A2022",
+  "status": 200,
+  "file": "raw/datacite_ai_ready_all_2022.json",
+  "sha256": "2c54f3ff5b6bd774b0ff4fe1f2f5a7d22b3a7dbca623d959932754e27b72978e",
+  "retrieved_utc": "2026-10-30T11:49:47+00:00"
+ },
+ {
+  "name": "datacite_ai_ready_all_2023",
+  "url": "https://api.datacite.org/dois?resource-type-id=dataset&page%5Bsize%5D=0&query=%28%28%22AI-ready%22+OR+%22AI+ready%22+OR+%22ML-ready%22+OR+%22ML+ready%22+OR+%22machine+learning+ready%22+OR+%22machine-learning-ready%22%29%29+AND+publicationYear%3A2023",
+  "status": 200,
+  "file": "raw/datacite_ai_ready_all_2023.json",
+  "sha256": "c8902416dc303f304f76a32d37d70cdd8df720b0d36393612d688be1de5e9b8f",
+  "retrieved_utc": "2026-10-30T11:49:48+00:00"
+ },
+ {
+  "name": "datacite_ai_ready_all_2024",
+  "url": "https://api.datacite.org/dois?resource-type-id=dataset&page%5Bsize%5D=0&query=%28%28%22AI-ready%22+OR+%22AI+ready%22+OR+%22ML-ready%22+OR+%22ML+ready%22+OR+%22machine+learning+ready%22+OR+%22machine-learning-ready%22%29%29+AND+publicationYear%3A2024",
+  "status": 200,
+  "file": "raw/datacite_ai_ready_all_2024.json",
+  "sha256": "51781b02dc1009d612bcc160245c66210bf1eaf83b86adf636e885e1b1309c21",
+  "retrieved_utc": "2026-10-30T11:49:49+00:00"
+ },
+ {
+  "name": "datacite_ai_ready_all_2025",
+  "url": "https://api.datacite.org/dois?resource-type-id=dataset&page%5Bsize%5D=0&query=%28%28%22AI-ready%22+OR+%22AI+ready%22+OR+%22ML-ready%22+OR+%22ML+ready%22+OR+%22machine+learning+ready%22+OR+%22machine-learning-ready%22%29%29+AND+publicationYear%3A2025",
+  "status": 200,
+  "file": "raw/datacite_ai_ready_all_2025.json",
+  "sha256": "487febcdded785135c5c474708a675056ebe36859b51d4da781ba9ed298536d3",
+  "retrieved_utc": "2026-10-30T11:49:50+00:00"
+ },
+ {
+  "name": "datacite_ai_ready_earth_2016",
+  "url": "https://api.datacite.org/dois?resource-type-id=dataset&page%5Bsize%5D=0&query=%28%28%22AI-ready%22+OR+%22AI+ready%22+OR+%22ML-ready%22+OR+%22ML+ready%22+OR+%22machine+learning+ready%22+OR+%22machine-learning-ready%22%29+AND+subjects.subject%3A%22FOS%3A+Earth+and+related+environmental+sciences%22%29+AND+publicationYear%3A2016",
+  "status": 200,
+  "file": "raw/datacite_ai_ready_earth_2016.json",
+  "sha256": "0872b84d84498d6c072e0844609228d053e227debb03a41c17c466664b096bf6",
+  "retrieved_utc": "2026-10-30T11:49:51+00:00"
+ },
+ {
+  "name": "datacite_ai_ready_earth_2017",
+  "url": "https://api.datacite.org/dois?resource-type-id=dataset&page%5Bsize%5D=0&query=%28%28%22AI-ready%22+OR+%22AI+ready%22+OR+%22ML-ready%22+OR+%22ML+ready%22+OR+%22machine+learning+ready%22+OR+%22machine-learning-ready%22%29+AND+subjects.subject%3A%22FOS%3A+Earth+and+related+environmental+sciences%22%29+AND+publicationYear%3A2017",
+  "status": 200,
+  "file": "raw/datacite_ai_ready_earth_2017.json",
+  "sha256": "6c461ddbac3149b5793b18c3b537d497a7854b072ec9b8647c91d25249c065ce",
+  "retrieved_utc": "2026-10-30T11:49:52+00:00"
+ },
+ {
+  "name": "datacite_ai_ready_earth_2018",
+  "url": "https://api.datacite.org/dois?resource-type-id=dataset&page%5Bsize%5D=0&query=%28%28%22AI-ready%22+OR+%22AI+ready%22+OR+%22ML-ready%22+OR+%22ML+ready%22+OR+%22machine+learning+ready%22+OR+%22machine-learning-ready%22%29+AND+subjects.subject%3A%22FOS%3A+Earth+and+related+environmental+sciences%22%29+AND+publicationYear%3A2018",
+  "status": 200,
+  "file": "raw/datacite_ai_ready_earth_2018.json",
+  "sha256": "9f8957ebe137935b96a8bc58d6dce201fa096bc9d2f3213eef2a385f1676d291",
+  "retrieved_utc": "2026-10-30T11:49:53+00:00"
+ },
+ {
+  "name": "datacite_ai_ready_earth_2019",
+  "url": "https://api.datacite.org/dois?resource-type-id=dataset&page%5Bsize%5D=0&query=%28%28%22AI-ready%22+OR+%22AI+ready%22+OR+%22ML-ready%22+OR+%22ML+ready%22+OR+%22machine+learning+ready%22+OR+%22machine-learning-ready%22%29+AND+subjects.subject%3A%22FOS%3A+Earth+and+related+environmental+sciences%22%29+AND+publicationYear%3A2019",
+  "status": 200,
+  "file": "raw/datacite_ai_ready_earth_2019.json",
+  "sha256": "170acc81f789fe9e60c48c705fd890c5f35df5b0b8a72fd55be95cfdad392858",
+  "retrieved_utc": "2026-10-30T11:49:54+00:00"
+ },
+ {
+  "name": "datacite_ai_ready_earth_2020",
+  "url": "https://api.datacite.org/dois?resource-type-id=dataset&page%5Bsize%5D=0&query=%28%28%22AI-ready%22+OR+%22AI+ready%22+OR+%22ML-ready%22+OR+%22ML+ready%22+OR+%22machine+learning+ready%22+OR+%22machine-learning-ready%22%29+AND+subjects.subject%3A%22FOS%3A+Earth+and+related+environmental+sciences%22%29+AND+publicationYear%3A2020",
+  "status": 200,
+  "file": "raw/datacite_ai_ready_earth_2020.json",
+  "sha256": "544bc22fefda49c494d4c579bf5bbbf3aa99eec9e410c729c20f09e23cab8a56",
+  "retrieved_utc": "2026-10-30T11:49:56+00:00"
+ },
+ {
+  "name": "datacite_ai_ready_earth_2021",
+  "url": "https://api.datacite.org/dois?resource-type-id=dataset&page%5Bsize%5D=0&query=%28%28%22AI-ready%22+OR+%22AI+ready%22+OR+%22ML-ready%22+OR+%22ML+ready%22+OR+%22machine+learning+ready%22+OR+%22machine-learning-ready%22%29+AND+subjects.subject%3A%22FOS%3A+Earth+and+related+environmental+sciences%22%29+AND+publicationYear%3A2021",
+  "status": 200,
+  "file": "raw/datacite_ai_ready_earth_2021.json",
+  "sha256": "70989078f2de432393ed16661c74626214db17975b2e21f28f57974eeb46b277",
+  "retrieved_utc": "2026-10-30T11:49:57+00:00"
+ },
+ {
+  "name": "datacite_ai_ready_earth_2022",
+  "url": "https://api.datacite.org/dois?resource-type-id=dataset&page%5Bsize%5D=0&query=%28%28%22AI-ready%22+OR+%22AI+ready%22+OR+%22ML-ready%22+OR+%22ML+ready%22+OR+%22machine+learning+ready%22+OR+%22machine-learning-ready%22%29+AND+subjects.subject%3A%22FOS%3A+Earth+and+related+environmental+sciences%22%29+AND+publicationYear%3A2022",
+  "status": 200,
+  "file": "raw/datacite_ai_ready_earth_2022.json",
+  "sha256": "66ba9fdee3ad174aa2344fb25f45fde6a5a0e0008abec6eb0f31baf21a488fa4",
+  "retrieved_utc": "2026-10-30T11:49:58+00:00"
+ },
+ {
+  "name": "datacite_ai_ready_earth_2023",
+  "url": "https://api.datacite.org/dois?resource-type-id=dataset&page%5Bsize%5D=0&query=%28%28%22AI-ready%22+OR+%22AI+ready%22+OR+%22ML-ready%22+OR+%22ML+ready%22+OR+%22machine+learning+ready%22+OR+%22machine-learning-ready%22%29+AND+subjects.subject%3A%22FOS%3A+Earth+and+related+environmental+sciences%22%29+AND+publicationYear%3A2023",
+  "status": 200,
+  "file": "raw/datacite_ai_ready_earth_2023.json",
+  "sha256": "dfe9ad13747735cd6b8eba5e51a087b230473c17655553f58a9048d35c730aef",
+  "retrieved_utc": "2026-10-30T11:49:59+00:00"
+ },
+ {
+  "name": "datacite_ai_ready_earth_2024",
+  "url": "https://api.datacite.org/dois?resource-type-id=dataset&page%5Bsize%5D=0&query=%28%28%22AI-ready%22+OR+%22AI+ready%22+OR+%22ML-ready%22+OR+%22ML+ready%22+OR+%22machine+learning+ready%22+OR+%22machine-learning-ready%22%29+AND+subjects.subject%3A%22FOS%3A+Earth+and+related+environmental+sciences%22%29+AND+publicationYear%3A2024",
+  "status": 200,
+  "file": "raw/datacite_ai_ready_earth_2024.json",
+  "sha256": "329d86353d0ddcc38bbac878959951a812df2b9f394518730bfe61385f7ea869",
+  "retrieved_utc": "2026-10-30T11:50:00+00:00"
+ },
+ {
+  "name": "datacite_ai_ready_earth_2025",
+  "url": "https://api.datacite.org/dois?resource-type-id=dataset&page%5Bsize%5D=0&query=%28%28%22AI-ready%22+OR+%22AI+ready%22+OR+%22ML-ready%22+OR+%22ML+ready%22+OR+%22machine+learning+ready%22+OR+%22machine-learning-ready%22%29+AND+subjects.subject%3A%22FOS%3A+Earth+and+related+environmental+sciences%22%29+AND+publicationYear%3A2025",
+  "status": 200,
+  "file": "raw/datacite_ai_ready_earth_2025.json",
+  "sha256": "a3b4c2691a7d856a56f739d9fc9b3e2a0daee7e7b24207c775a485fd2304b75d",
+  "retrieved_utc": "2026-10-30T11:50:01+00:00"
+ },
+ {
+  "name": "hf_seismic_p1",
+  "url": "https://huggingface.co/api/datasets?search=seismic&limit=1000",
+  "status": 200,
+  "file": "raw/hf_seismic_p1.json",
+  "sha256": "a8de361cf00fdad23f19c4524aff2de6893c7f6f0abb206114964bcbbda1c570",
+  "retrieved_utc": "2026-10-30T11:50:02+00:00"
+ },
+ {
+  "name": "hf_seismo_p1",
+  "url": "https://huggingface.co/api/datasets?search=seismo&limit=1000",
+  "status": 200,
+  "file": "raw/hf_seismo_p1.json",
+  "sha256": "5c36d6caf108da5b8d7e7855606a132f323c1500b9d5aed925375b5b85e6e53c",
+  "retrieved_utc": "2026-10-30T11:50:02+00:00"
+ },
+ {
+  "name": "hf_earthquake_p1",
+  "url": "https://huggingface.co/api/datasets?search=earthquake&limit=1000",
+  "status": 200,
+  "file": "raw/hf_earthquake_p1.json",
+  "sha256": "0b5e02bfe423eb998832b3c67743bf01ad5ca51e675a10f180f369c9d2f634e8",
+  "retrieved_utc": "2026-10-30T11:50:03+00:00"
+ },
+ {
+  "name": "hf_quake_p1",
+  "url": "https://huggingface.co/api/datasets?search=quake&limit=1000",
+  "status": 200,
+  "file": "raw/hf_quake_p1.json",
+  "sha256": "462aafacc866feea13b2de80199fcf77d23c8b5e82278a304e1db85f8d20bfe0",
+  "retrieved_utc": "2026-10-30T11:50:04+00:00"
+ },
+ {
+  "name": "hf_insar_p1",
+  "url": "https://huggingface.co/api/datasets?search=insar&limit=1000",
+  "status": 200,
+  "file": "raw/hf_insar_p1.json",
+  "sha256": "bde45dcea626d9b340d374161b1cffd54f4fc9b342880b9c42f2026bc86d15c8",
+  "retrieved_utc": "2026-10-30T11:50:05+00:00"
+ },
+ {
+  "name": "hf_gnss_p1",
+  "url": "https://huggingface.co/api/datasets?search=gnss&limit=1000",
+  "status": 200,
+  "file": "raw/hf_gnss_p1.json",
+  "sha256": "0ec1c28d570559fa9648d61fc14ae9172a48e5290a4aa7877cc4e9b229f59cac",
+  "retrieved_utc": "2026-10-30T11:50:05+00:00"
+ },
+ {
+  "name": "hf_sar-_p1",
+  "url": "https://huggingface.co/api/datasets?search=sar-&limit=1000",
+  "status": 200,
+  "file": "raw/hf_sar-_p1.json",
+  "sha256": "c142ca3a6da63c4d7798389f72507bfdf60b2d9711d8b096c4143d97b1fe22d5",
+  "retrieved_utc": "2026-10-30T11:50:06+00:00"
+ },
+ {
+  "name": "hf_sar-_p2",
+  "url": "https://huggingface.co/api/datasets?search=sar-&limit=1000&cursor=eyIkb3IiOlt7InRyZW5kaW5nU2NvcmUiOjAsIl9pZCI6eyIkZ3QiOiI2OTNmMWYxZmIyY2JlMTk2ZDljNTYyMTAifX0seyJ0cmVuZGluZ1Njb3JlIjp7IiRsdCI6MH19LHsidHJlbmRpbmdTY29yZSI6bnVsbH1dfQ%3D%3D",
+  "status": 200,
+  "file": "raw/hf_sar-_p2.json",
+  "sha256": "23158e9287ca95c9222f1640fd508bbb8a3c2a1998af558ae43d6bac54296759",
+  "retrieved_utc": "2026-10-30T11:50:07+00:00"
+ },
+ {
+  "name": "hf_sar-_p3",
+  "url": "https://huggingface.co/api/datasets?search=sar-&limit=1000&cursor=eyIkb3IiOlt7InRyZW5kaW5nU2NvcmUiOjAsIl9pZCI6eyIkZ3QiOiI2YTg3MjMxMDg5ZDQ2ZmJjN2QxY2E0OTEifX0seyJ0cmVuZGluZ1Njb3JlIjp7IiRsdCI6MH19LHsidHJlbmRpbmdTY29yZSI6bnVsbH1dfQ%3D%3D",
+  "status": 200,
+  "file": "raw/hf_sar-_p3.json",
+  "sha256": "4a5f6c00dd434751d2b682a084c18d5884a7072d798fe555242b7ac5f1676565",
+  "retrieved_utc": "2026-10-30T11:50:08+00:00"
+ },
+ {
+  "name": "hf_geodes_p1",
+  "url": "https://huggingface.co/api/datasets?search=geodes&limit=1000",
+  "status": 200,
+  "file": "raw/hf_geodes_p1.json",
+  "sha256": "169b72b33cddbc29d75cfedb1aa1fc0081a6cafc84d1b805e3384d1cfaa07b37",
+  "retrieved_utc": "2026-10-30T11:50:09+00:00"
+ },
+ {
+  "name": "hf_satellite_p1",
+  "url": "https://huggingface.co/api/datasets?search=satellite&limit=1000",
+  "status": 200,
+  "file": "raw/hf_satellite_p1.json",
+  "sha256": "4b1a95c2671fb7813df338f0d304b1fe14e192db60290aeeedbff1a0fa2631ef",
+  "retrieved_utc": "2026-10-30T11:50:10+00:00"
+ },
+ {
+  "name": "hf_sentinel_p1",
+  "url": "https://huggingface.co/api/datasets?search=sentinel&limit=1000",
+  "status": 200,
+  "file": "raw/hf_sentinel_p1.json",
+  "sha256": "c9fa6546144cc45a820bb517eea185c1a1449e779e20a5a7c610b632cba21172",
+  "retrieved_utc": "2026-10-30T11:50:10+00:00"
+ },
+ {
+  "name": "hf_landsat_p1",
+  "url": "https://huggingface.co/api/datasets?search=landsat&limit=1000",
+  "status": 200,
+  "file": "raw/hf_landsat_p1.json",
+  "sha256": "6d07c914b79c8e8d92af7adbba3f450c0eacd1f2b6493afa9e380ec882e4f0cb",
+  "retrieved_utc": "2026-10-30T11:50:11+00:00"
+ },
+ {
+  "name": "hf_remote-sensing_p1",
+  "url": "https://huggingface.co/api/datasets?search=remote-sensing&limit=1000",
+  "status": 200,
+  "file": "raw/hf_remote-sensing_p1.json",
+  "sha256": "310a80333cc5c0c40b0b6a7c1aebe838e70bd3edd8fe80121e528381e81d64b7",
+  "retrieved_utc": "2026-10-30T11:50:12+00:00"
+ },
+ {
+  "name": "hf_remote_sensing_p1",
+  "url": "https://huggingface.co/api/datasets?search=remote_sensing&limit=1000",
+  "status": 200,
+  "file": "raw/hf_remote_sensing_p1.json",
+  "sha256": "310a80333cc5c0c40b0b6a7c1aebe838e70bd3edd8fe80121e528381e81d64b7",
+  "retrieved_utc": "2026-10-30T11:50:12+00:00"
+ },
+ {
+  "name": "hf_remotesensing_p1",
+  "url": "https://huggingface.co/api/datasets?search=remotesensing&limit=1000",
+  "status": 200,
+  "file": "raw/hf_remotesensing_p1.json",
+  "sha256": "43eea6ddc688005e1b2066ea8a073e2bc43d256eb9625ea11a3b6b9781219c49",
+  "retrieved_utc": "2026-10-30T11:50:13+00:00"
+ },
+ {
+  "name": "hf_weather_p1",
+  "url": "https://huggingface.co/api/datasets?search=weather&limit=1000",
+  "status": 200,
+  "file": "raw/hf_weather_p1.json",
+  "sha256": "9ee6f2afb75655fcb60ca3b3a60869949ad33570323be452320500f1f16dad98",
+  "retrieved_utc": "2026-10-30T11:50:14+00:00"
+ },
+ {
+  "name": "hf_climate_p1",
+  "url": "https://huggingface.co/api/datasets?search=climate&limit=1000",
+  "status": 200,
+  "file": "raw/hf_climate_p1.json",
+  "sha256": "f284f58879f37fc6f7f27797cdab4c12229a324cfab9fddce5a2f151ba1f76ac",
+  "retrieved_utc": "2026-10-30T11:50:15+00:00"
+ },
+ {
+  "name": "hf_era5_p1",
+  "url": "https://huggingface.co/api/datasets?search=era5&limit=1000",
+  "status": 200,
+  "file": "raw/hf_era5_p1.json",
+  "sha256": "9dc0a24bf35efccd5af3827170fd9c65a9e7cc133ac3875bc280e0b38e81037b",
+  "retrieved_utc": "2026-10-30T11:50:16+00:00"
+ },
+ {
+  "name": "hf_cmip_p1",
+  "url": "https://huggingface.co/api/datasets?search=cmip&limit=1000",
+  "status": 200,
+  "file": "raw/hf_cmip_p1.json",
+  "sha256": "997a03f4ff508cf0b26102de8ee75e6a56e033d428caadfca2173f3b7f15e0b3",
+  "retrieved_utc": "2026-10-30T11:50:16+00:00"
+ },
+ {
+  "name": "hf_hydro_p1",
+  "url": "https://huggingface.co/api/datasets?search=hydro&limit=1000",
+  "status": 200,
+  "file": "raw/hf_hydro_p1.json",
+  "sha256": "c4d9ddd40b474049dab4f2e1405d5e2b8000a1de87471cb43fdb75217fe7cee0",
+  "retrieved_utc": "2026-10-30T11:50:17+00:00"
+ },
+ {
+  "name": "hf_streamflow_p1",
+  "url": "https://huggingface.co/api/datasets?search=streamflow&limit=1000",
+  "status": 200,
+  "file": "raw/hf_streamflow_p1.json",
+  "sha256": "aa445e95cf03a1d465266daa6baf26b44b87bdc4b18a6b6c561e655139ad2f73",
+  "retrieved_utc": "2026-10-30T11:50:18+00:00"
+ },
+ {
+  "name": "hf_flood_p1",
+  "url": "https://huggingface.co/api/datasets?search=flood&limit=1000",
+  "status": 200,
+  "file": "raw/hf_flood_p1.json",
+  "sha256": "b44bce3b421b3d5ef73199bd05793c9550eaad75264dfd74a60d9df09efb06bb",
+  "retrieved_utc": "2026-10-30T11:50:19+00:00"
+ },
+ {
+  "name": "hf_ocean_p1",
+  "url": "https://huggingface.co/api/datasets?search=ocean&limit=1000",
+  "status": 200,
+  "file": "raw/hf_ocean_p1.json",
+  "sha256": "ce9b6d2801ca9ea8781aae32497fd6ac85a99236adeeca2f195493bf894774cc",
+  "retrieved_utc": "2026-10-30T11:50:19+00:00"
+ },
+ {
+  "name": "hf_marine_p1",
+  "url": "https://huggingface.co/api/datasets?search=marine&limit=1000",
+  "status": 200,
+  "file": "raw/hf_marine_p1.json",
+  "sha256": "58a3d6b244be1118300fe9d63d570f42ba2d86d4b171e2f76ad4e21d539acef7",
+  "retrieved_utc": "2026-10-30T11:50:20+00:00"
+ },
+ {
+  "name": "hf_medical_p1",
+  "url": "https://huggingface.co/api/datasets?search=medical&limit=1000",
+  "status": 200,
+  "file": "raw/hf_medical_p1.json",
+  "sha256": "538aac4350d776e41f5769ba4c2ffd0afa492d67d3fd5909125a3828169d122e",
+  "retrieved_utc": "2026-10-30T11:50:21+00:00"
+ },
+ {
+  "name": "hf_medical_p2",
+  "url": "https://huggingface.co/api/datasets?search=medical&limit=1000&cursor=eyIkb3IiOlt7InRyZW5kaW5nU2NvcmUiOjAsIl9pZCI6eyIkZ3QiOiI2N2I1OWM3MGMyYjQ4NjdiNmRmMDY2ZWMifX0seyJ0cmVuZGluZ1Njb3JlIjp7IiRsdCI6MH19LHsidHJlbmRpbmdTY29yZSI6bnVsbH1dfQ%3D%3D",
+  "status": 200,
+  "file": "raw/hf_medical_p2.json",
+  "sha256": "ec914ac495316c7288272aa41bb76ef0892fb4d0e1c877e7c7b0404c8b806291",
+  "retrieved_utc": "2026-10-30T11:50:22+00:00"
+ },
+ {
+  "name": "hf_medical_p3",
+  "url": "https://huggingface.co/api/datasets?search=medical&limit=1000&cursor=eyIkb3IiOlt7InRyZW5kaW5nU2NvcmUiOjAsIl9pZCI6eyIkZ3QiOiI2OTQwMTg4NDczOGRhNGQyMDI2YWY3MWMifX0seyJ0cmVuZGluZ1Njb3JlIjp7IiRsdCI6MH19LHsidHJlbmRpbmdTY29yZSI6bnVsbH1dfQ%3D%3D",
+  "status": 200,
+  "file": "raw/hf_medical_p3.json",
+  "sha256": "29377b880398dba48d3c54fee244cf56154209fa6adefa3c5c56048a89a4818a",
+  "retrieved_utc": "2026-10-30T11:50:23+00:00"
+ },
+ {
+  "name": "hf_medical_p4",
+  "url": "https://huggingface.co/api/datasets?search=medical&limit=1000&cursor=eyIkb3IiOlt7InRyZW5kaW5nU2NvcmUiOjAsIl9pZCI6eyIkZ3QiOiI2YTg4ODcxYzY0ZDlmODNmOWY5NjkwMTgifX0seyJ0cmVuZGluZ1Njb3JlIjp7IiRsdCI6MH19LHsidHJlbmRpbmdTY29yZSI6bnVsbH1dfQ%3D%3D",
+  "status": 200,
+  "file": "raw/hf_medical_p4.json",
+  "sha256": "4d96b3d74b163473bbc1ea7bfe898975c31c07e792fc02a18f02725669f15423",
+  "retrieved_utc": "2026-10-30T11:50:24+00:00"
+ },
+ {
+  "name": "hf_clinical_p1",
+  "url": "https://huggingface.co/api/datasets?search=clinical&limit=1000",
+  "status": 200,
+  "file": "raw/hf_clinical_p1.json",
+  "sha256": "65790e4fc3794832a7dec011f562d52a4dc669895067d6b2430dc48f84eb494e",
+  "retrieved_utc": "2026-10-30T11:50:24+00:00"
+ },
+ {
+  "name": "hf_clinical_p2",
+  "url": "https://huggingface.co/api/datasets?search=clinical&limit=1000&cursor=eyIkb3IiOlt7InRyZW5kaW5nU2NvcmUiOjAsIl9pZCI6eyIkZ3QiOiI2OWMyY2JhNTNiZDZhNjZjMzRmYWMzOTcifX0seyJ0cmVuZGluZ1Njb3JlIjp7IiRsdCI6MH19LHsidHJlbmRpbmdTY29yZSI6bnVsbH1dfQ%3D%3D",
+  "status": 200,
+  "file": "raw/hf_clinical_p2.json",
+  "sha256": "a743b32887fe3aafc52066a8af101112e10cc8f4a4a19f5b2a3d16cc99e9ac7f",
+  "retrieved_utc": "2026-10-30T11:50:25+00:00"
+ },
+ {
+  "name": "hf_radiology_p1",
+  "url": "https://huggingface.co/api/datasets?search=radiology&limit=1000",
+  "status": 200,
+  "file": "raw/hf_radiology_p1.json",
+  "sha256": "37a0611cb81a240c9564b5253794d2d67be15c95e3a4136b4fd6394b70dfb408",
+  "retrieved_utc": "2026-10-30T11:50:26+00:00"
+ },
+ {
+  "name": "hf_molecul_p1",
+  "url": "https://huggingface.co/api/datasets?search=molecul&limit=1000",
+  "status": 200,
+  "file": "raw/hf_molecul_p1.json",
+  "sha256": "8aefda751f6f7b27483859ad0e0ffa08e1b43335686750b1210fc9b75ac0272a",
+  "retrieved_utc": "2026-10-30T11:50:27+00:00"
+ },
+ {
+  "name": "hf_chemistry_p1",
+  "url": "https://huggingface.co/api/datasets?search=chemistry&limit=1000",
+  "status": 200,
+  "file": "raw/hf_chemistry_p1.json",
+  "sha256": "b42792f8686243c6a2ae2e86762ecb67d18b2b84eb852e27cf0daa5513cda155",
+  "retrieved_utc": "2026-10-30T11:50:28+00:00"
+ },
+ {
+  "name": "hf_materials_p1",
+  "url": "https://huggingface.co/api/datasets?search=materials&limit=1000",
+  "status": 200,
+  "file": "raw/hf_materials_p1.json",
+  "sha256": "9974220c9024044dbc3bb71256016581678934aaeeb5511295c859ffecc22284",
+  "retrieved_utc": "2026-10-30T11:50:28+00:00"
+ },
+ {
+  "name": "openalex_aiready_all",
+  "url": "https://api.openalex.org/works?filter=from_publication_date%3A2016-01-01%2Cto_publication_date%3A2025-12-31%2Ctype%3Aarticle%2Ctitle_and_abstract.search%3A%28%22AI-ready%22+OR+%22AI+ready%22+OR+%22ML-ready%22+OR+%22ML+ready%22+OR+%22machine+learning+ready%22+OR+%22machine-learning-ready%22%29&group_by=publication_year&per_page=200",
+  "status": 200,
+  "file": "raw/openalex_aiready_all.json",
+  "sha256": "7592a5de436e29e70740208a910bcdbe9bd00d65cef86d046f27e2785b9348bf",
+  "retrieved_utc": "2026-10-30T11:50:30+00:00"
+ },
+ {
+  "name": "openalex_aiready_earth",
+  "url": "https://api.openalex.org/works?filter=from_publication_date%3A2016-01-01%2Cto_publication_date%3A2025-12-31%2Ctype%3Aarticle%2Cprimary_topic.field.id%3Afields%2F19%7Cfields%2F23%2Ctitle_and_abstract.search%3A%28%22AI-ready%22+OR+%22AI+ready%22+OR+%22ML-ready%22+OR+%22ML+ready%22+OR+%22machine+learning+ready%22+OR+%22machine-learning-ready%22%29&group_by=publication_year&per_page=200",
+  "status": 200,
+  "file": "raw/openalex_aiready_earth.json",
+  "sha256": "fec13bfba53a819880fd41ca0a083a74242e43b2abc7f70f4d4892ff5f9f8673",
+  "retrieved_utc": "2026-10-30T11:50:31+00:00"
+ },
+ {
+  "name": "openalex_all_by_year",
+  "url": "https://api.openalex.org/works?filter=from_publication_date%3A2016-01-01%2Cto_publication_date%3A2025-12-31%2Ctype%3Aarticle&group_by=publication_year&per_page=200",
+  "status": 200,
+  "file": "raw/openalex_all_by_year.json",
+  "sha256": "53adfa9cedbee8568b3399e89877866cd27b186a8ed0452d1113617384f75b5a",
+  "retrieved_utc": "2026-10-30T11:50:32+00:00"
+ },
+ {
+  "name": "openalex_earth_by_year",
+  "url": "https://api.openalex.org/works?filter=from_publication_date%3A2016-01-01%2Cto_publication_date%3A2025-12-31%2Ctype%3Aarticle%2Cprimary_topic.field.id%3Afields%2F19%7Cfields%2F23&group_by=publication_year&per_page=200",
+  "status": 200,
+  "file": "raw/openalex_earth_by_year.json",
+  "sha256": "0f357e92f20b96eca14f8f93927cf695ae27c6e09a4807911f938b1d57e137a8",
+  "retrieved_utc": "2026-10-30T11:50:33+00:00"
+ },
+ {
+  "name": "openalex_ml_all",
+  "url": "https://api.openalex.org/works?filter=from_publication_date%3A2016-01-01%2Cto_publication_date%3A2025-12-31%2Ctype%3Aarticle%2Ctitle_and_abstract.search%3A%28%22machine+learning%22+OR+%22deep+learning%22+OR+%22neural+network%22%29&group_by=publication_year&per_page=200",
+  "status": 200,
+  "file": "raw/openalex_ml_all.json",
+  "sha256": "85b767dd17097aeabdecfcbc8b43c6d13d0097ada7cb17414a64af7e6a72e49e",
+  "retrieved_utc": "2026-10-30T11:50:35+00:00"
+ },
+ {
+  "name": "openalex_ml_earth",
+  "url": "https://api.openalex.org/works?filter=from_publication_date%3A2016-01-01%2Cto_publication_date%3A2025-12-31%2Ctype%3Aarticle%2Cprimary_topic.field.id%3Afields%2F19%7Cfields%2F23%2Ctitle_and_abstract.search%3A%28%22machine+learning%22+OR+%22deep+learning%22+OR+%22neural+network%22%29&group_by=publication_year&per_page=200",
+  "status": 200,
+  "file": "raw/openalex_ml_earth.json",
+  "sha256": "5c4b12bfa29ef331faf8cecf86dbf692b8d7334505619a85b391a47e7226d4b4",
+  "retrieved_utc": "2026-10-30T11:50:36+00:00"
+ },
+ {
+  "name": "openalex_subfield_all",
+  "url": "https://api.openalex.org/works?filter=from_publication_date%3A2023-01-01%2Cto_publication_date%3A2025-12-31%2Ctype%3Aarticle%2Cprimary_topic.field.id%3Afields%2F19%7Cfields%2F23&group_by=primary_topic.subfield.id&per_page=200",
+  "status": 200,
+  "file": "raw/openalex_subfield_all.json",
+  "sha256": "e578d2566ea484adac3c7e8d3cfc697c1046dfafabaab0296bac13dc70f40445",
+  "retrieved_utc": "2026-10-30T11:50:37+00:00"
+ },
+ {
+  "name": "openalex_subfield_ml",
+  "url": "https://api.openalex.org/works?filter=from_publication_date%3A2023-01-01%2Cto_publication_date%3A2025-12-31%2Ctype%3Aarticle%2Cprimary_topic.field.id%3Afields%2F19%7Cfields%2F23%2Ctitle_and_abstract.search%3A%28%22machine+learning%22+OR+%22deep+learning%22+OR+%22neural+network%22%29&group_by=primary_topic.subfield.id&per_page=200",
+  "status": 200,
+  "file": "raw/openalex_subfield_ml.json",
+  "sha256": "19b34bd735d9c040b52c097a2e51b0b36c91fb6c8962419d8477d9e952812379",
+  "retrieved_utc": "2026-10-30T11:50:38+00:00"
+ }
+]

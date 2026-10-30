@@ -40,10 +40,24 @@ das-screen-submit = { cmd = "python -m ai_readiness.semantic_screen submit --out
 das-screen-collect = { cmd = "python -m ai_readiness.semantic_screen collect --out runs/das_topic_2026-10-29/semantic", description = "Collect the DAS batch into screen_semantic.jsonl" }
 das-screen-aggregate = { cmd = "python -m ai_readiness.semantic_screen aggregate --out runs/das_topic_2026-10-29/semantic", description = "Per-year shares with denominators (offline)" }
 
+# Opt-in: executes the analysis notebooks and builds the HTML technical report (offline by default).
+[feature.report.dependencies]
+nbformat = ">=5.9"
+nbclient = ">=0.10"
+ipykernel = ">=6.29"
+
+[feature.report.tasks]
+notebooks = { cmd = "python scripts/run_notebooks.py", description = "Execute notebooks/ in place (offline; set READINESS_LIVE=1 to re-query OpenAlex/DataCite)" }
+figures-readiness = { cmd = "python scripts/archive_readiness_figures.py", description = "Domain-readiness figures into build/archive_readiness" }
+report = { cmd = "python scripts/build_report.py", description = "Build docs/report/ai_readiness_solid_earth.html", depends-on = ["figures-readiness"] }
+requery-offline = { cmd = "python scripts/requery_check.py --offline", description = "Verify frozen-snapshot hashes" }
+requery-live = { cmd = "python scripts/requery_check.py --out runs/requery_$(date +%Y-%m-%d)", description = "Re-query OpenAlex, DataCite and the DAS series live and compare with frozen counts" }
+
 [environments]
 default = { features = ["study", "instrument"], solve-group = "default" }
 core = { features = [], solve-group = "default" }
 semantic = { features = ["study", "instrument", "semantic"] }
+report = { features = ["study", "instrument", "report"], solve-group = "default" }
 
 [tasks]
 check = { cmd = "python scripts/check_offline.py", description = "Run the figure, preferred-analysis and standalone test suites offline" }

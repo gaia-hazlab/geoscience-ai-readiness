@@ -474,7 +474,7 @@ def aggregate(args):
                "years": summarize(rows)}
     core.atomic_json(out / "summary.json", summary)
     with (out / "summary.csv").open("w", newline="", encoding="utf-8") as stream:
-        writer = csv.writer(stream)
+        writer = csv.writer(stream, lineterminator="\n")   # LF, so Git does not rewrite it and hashes hold
         writer.writerow(["year", "works", "abstract_available", "labeled", "ai_as_method", "ai_known", "ai_as_method_share",
                          "wilson_low", "wilson_high", "das_used_yes", "das_known", "das_confirmed_ai_as_method", "das_confirmed",
                          "multimodal", "families_known"])

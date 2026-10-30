@@ -2,9 +2,9 @@
 
 Usage: python scripts/explore_das_semantic.py [REPO_ROOT]
 
-Reads runs/das_topic_2026-10-29/semantic/screen_semantic.jsonl (gitignored, produced by
-ai_readiness.semantic_screen collect) and the frozen keyword series in
-legacy/community_demand/, and writes explore_1..4 PNG/SVG into runs/das_topic_2026-10-29/figures/.
+Reads the frozen screen data/semantic_screen/das_topic_2026-10-29/screen_semantic.jsonl (copied from
+the gitignored run by ai_readiness.semantic_screen collect) and the frozen keyword series in
+legacy/community_demand/, and writes explore_1..4 PNG/SVG into build/das_semantic/.
 Every figure is labeled as an unvalidated draft until the human validation set is coded.
 """
 import csv, json, math, sys, textwrap
@@ -15,8 +15,8 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 ROOT = Path(sys.argv[1]) if len(sys.argv) > 1 else Path(__file__).resolve().parents[1]
-RUN = ROOT / "runs/das_topic_2026-10-29"
-OUT = RUN / "figures"
+SCREEN = ROOT / "data/semantic_screen/das_topic_2026-10-29/screen_semantic.jsonl"
+OUT = ROOT / "build/das_semantic"
 OUT.mkdir(parents=True, exist_ok=True)
 YEARS = list(range(2020, 2026))
 # reference palette, light mode (dataviz skill references/palette.md), fixed slot order
@@ -28,7 +28,7 @@ plt.rcParams.update({"font.size": 9, "axes.edgecolor": INK2, "axes.labelcolor": 
                      "axes.spines.top": False, "axes.spines.right": False, "axes.grid": True, "grid.color": GRID, "grid.linewidth": 0.6,
                      "axes.axisbelow": True, "axes.titlelocation": "left", "axes.titlesize": 10, "axes.titlecolor": INK})
 
-rows = [json.loads(l) for l in open(RUN / "semantic/screen_semantic.jsonl")]
+rows = [json.loads(l) for l in open(SCREEN)]
 lab = [r for r in rows if r["status"] == "labeled"]
 das = [r for r in lab if r["das_used"] == "yes"]
 

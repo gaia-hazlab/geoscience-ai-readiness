@@ -1,0 +1,683 @@
+{
+  "retrieved_utc": "2026-10-30T12:18:28+00:00",
+  "queries": {
+    "ai_ready": "(\"AI-ready\" OR \"AI ready\" OR \"ML-ready\" OR \"ML ready\" OR \"machine learning ready\" OR \"machine-learning-ready\")",
+    "ml": "(\"machine learning\" OR \"deep learning\" OR \"neural network\")",
+    "earth_fos": "subjects.subject:\"FOS: Earth and related environmental sciences\"",
+    "disciplines_datacite": {
+      "seismology": "(seismic OR seismology OR earthquake OR \"distributed acoustic sensing\")",
+      "geodesy_sar": "(InSAR OR GNSS OR geodetic OR \"synthetic aperture radar\")",
+      "optical_remote_sensing": "(\"remote sensing\" OR Landsat OR \"Sentinel-2\" OR multispectral OR hyperspectral)",
+      "weather_climate": "(weather OR climate OR reanalysis OR ERA5 OR CMIP6)",
+      "hydrology": "(hydrology OR streamflow OR groundwater OR \"soil moisture\")",
+      "ocean": "(oceanography OR \"sea surface\" OR Argo OR \"ocean model\")",
+      "biomedicine": "(clinical OR medical OR patient OR genomics)",
+      "materials_chemistry": "(materials OR molecule OR \"crystal structure\")"
+    },
+    "terms_hf": {
+      "seismology": [
+        "seismic",
+        "seismo",
+        "earthquake",
+        "quake"
+      ],
+      "geodesy_sar": [
+        "insar",
+        "gnss",
+        "sar-",
+        "geodes"
+      ],
+      "optical_remote_sensing": [
+        "satellite",
+        "sentinel",
+        "landsat",
+        "remote-sensing",
+        "remote_sensing",
+        "remotesensing"
+      ],
+      "weather_climate": [
+        "weather",
+        "climate",
+        "era5",
+        "cmip"
+      ],
+      "hydrology": [
+        "hydro",
+        "streamflow",
+        "flood"
+      ],
+      "ocean": [
+        "ocean",
+        "marine"
+      ],
+      "biomedicine": [
+        "medical",
+        "clinical",
+        "radiology"
+      ],
+      "materials_chemistry": [
+        "molecul",
+        "chemistry",
+        "materials"
+      ]
+    },
+    "openalex_fields": {
+      "earth_planetary": "fields/19",
+      "environmental": "fields/23"
+    },
+    "simulation": "(\"numerical simulation\" OR \"finite element\" OR \"finite difference\" OR \"spectral element\" OR \"finite volume\")",
+    "surrogate_ml": "(\"physics-informed neural network\" OR \"neural operator\" OR DeepONet OR ((\"surrogate model\" OR emulator) AND (\"machine learning\" OR \"deep learning\" OR \"neural network\")))"
+  },
+  "simulation": {
+    "field_works_2023_2025": {
+      "27": {
+        "name": "Medicine",
+        "count": 3520122
+      },
+      "33": {
+        "name": "Social Sciences",
+        "count": 3097796
+      },
+      "22": {
+        "name": "Engineering",
+        "count": 2178989
+      },
+      "12": {
+        "name": "Arts and Humanities",
+        "count": 1256326
+      },
+      "17": {
+        "name": "Computer Science",
+        "count": 1049181
+      },
+      "11": {
+        "name": "Agricultural and Biological Sciences",
+        "count": 958849
+      },
+      "14": {
+        "name": "Business, Management and Accounting",
+        "count": 852813
+      },
+      "23": {
+        "name": "Environmental Science",
+        "count": 848490
+      },
+      "13": {
+        "name": "Biochemistry, Genetics and Molecular Biology",
+        "count": 687511
+      },
+      "32": {
+        "name": "Psychology",
+        "count": 668177
+      },
+      "25": {
+        "name": "Materials Science",
+        "count": 522920
+      },
+      "36": {
+        "name": "Health Professions",
+        "count": 455791
+      },
+      "20": {
+        "name": "Economics, Econometrics and Finance",
+        "count": 410058
+      },
+      "31": {
+        "name": "Physics and Astronomy",
+        "count": 391071
+      },
+      "26": {
+        "name": "Mathematics",
+        "count": 291721
+      },
+      "16": {
+        "name": "Chemistry",
+        "count": 257475
+      },
+      "18": {
+        "name": "Decision Sciences",
+        "count": 230023
+      },
+      "19": {
+        "name": "Earth and Planetary Sciences",
+        "count": 221722
+      },
+      "28": {
+        "name": "Neuroscience",
+        "count": 200958
+      },
+      "21": {
+        "name": "Energy",
+        "count": 175668
+      },
+      "24": {
+        "name": "Immunology and Microbiology",
+        "count": 143363
+      },
+      "35": {
+        "name": "Dentistry",
+        "count": 133410
+      },
+      "29": {
+        "name": "Nursing",
+        "count": 92820
+      },
+      "30": {
+        "name": "Pharmacology, Toxicology and Pharmaceutics",
+        "count": 80894
+      },
+      "15": {
+        "name": "Chemical Engineering",
+        "count": 52185
+      },
+      "34": {
+        "name": "Veterinary",
+        "count": 39520
+      }
+    },
+    "field_sim_2023_2025": {
+      "22": {
+        "name": "Engineering",
+        "count": 147345
+      },
+      "31": {
+        "name": "Physics and Astronomy",
+        "count": 12611
+      },
+      "27": {
+        "name": "Medicine",
+        "count": 11284
+      },
+      "25": {
+        "name": "Materials Science",
+        "count": 10219
+      },
+      "17": {
+        "name": "Computer Science",
+        "count": 7735
+      },
+      "26": {
+        "name": "Mathematics",
+        "count": 5994
+      },
+      "23": {
+        "name": "Environmental Science",
+        "count": 5114
+      },
+      "19": {
+        "name": "Earth and Planetary Sciences",
+        "count": 4574
+      },
+      "35": {
+        "name": "Dentistry",
+        "count": 1837
+      },
+      "21": {
+        "name": "Energy",
+        "count": 1737
+      },
+      "15": {
+        "name": "Chemical Engineering",
+        "count": 1197
+      },
+      "18": {
+        "name": "Decision Sciences",
+        "count": 980
+      },
+      "13": {
+        "name": "Biochemistry, Genetics and Molecular Biology",
+        "count": 928
+      },
+      "20": {
+        "name": "Economics, Econometrics and Finance",
+        "count": 710
+      },
+      "11": {
+        "name": "Agricultural and Biological Sciences",
+        "count": 691
+      },
+      "16": {
+        "name": "Chemistry",
+        "count": 649
+      },
+      "14": {
+        "name": "Business, Management and Accounting",
+        "count": 555
+      },
+      "28": {
+        "name": "Neuroscience",
+        "count": 460
+      },
+      "33": {
+        "name": "Social Sciences",
+        "count": 366
+      },
+      "36": {
+        "name": "Health Professions",
+        "count": 210
+      },
+      "30": {
+        "name": "Pharmacology, Toxicology and Pharmaceutics",
+        "count": 88
+      },
+      "32": {
+        "name": "Psychology",
+        "count": 66
+      },
+      "12": {
+        "name": "Arts and Humanities",
+        "count": 52
+      },
+      "34": {
+        "name": "Veterinary",
+        "count": 22
+      },
+      "24": {
+        "name": "Immunology and Microbiology",
+        "count": 17
+      },
+      "29": {
+        "name": "Nursing",
+        "count": 6
+      }
+    },
+    "field_surr_ml_2023_2025": {
+      "22": {
+        "name": "Engineering",
+        "count": 4143
+      },
+      "31": {
+        "name": "Physics and Astronomy",
+        "count": 4033
+      },
+      "17": {
+        "name": "Computer Science",
+        "count": 1280
+      },
+      "23": {
+        "name": "Environmental Science",
+        "count": 448
+      },
+      "25": {
+        "name": "Materials Science",
+        "count": 389
+      },
+      "19": {
+        "name": "Earth and Planetary Sciences",
+        "count": 293
+      },
+      "27": {
+        "name": "Medicine",
+        "count": 228
+      },
+      "18": {
+        "name": "Decision Sciences",
+        "count": 194
+      },
+      "26": {
+        "name": "Mathematics",
+        "count": 111
+      },
+      "13": {
+        "name": "Biochemistry, Genetics and Molecular Biology",
+        "count": 68
+      },
+      "21": {
+        "name": "Energy",
+        "count": 62
+      },
+      "28": {
+        "name": "Neuroscience",
+        "count": 53
+      },
+      "11": {
+        "name": "Agricultural and Biological Sciences",
+        "count": 36
+      },
+      "20": {
+        "name": "Economics, Econometrics and Finance",
+        "count": 29
+      },
+      "15": {
+        "name": "Chemical Engineering",
+        "count": 27
+      },
+      "16": {
+        "name": "Chemistry",
+        "count": 26
+      },
+      "33": {
+        "name": "Social Sciences",
+        "count": 26
+      },
+      "32": {
+        "name": "Psychology",
+        "count": 21
+      },
+      "36": {
+        "name": "Health Professions",
+        "count": 19
+      },
+      "12": {
+        "name": "Arts and Humanities",
+        "count": 12
+      },
+      "14": {
+        "name": "Business, Management and Accounting",
+        "count": 11
+      },
+      "35": {
+        "name": "Dentistry",
+        "count": 6
+      },
+      "24": {
+        "name": "Immunology and Microbiology",
+        "count": 5
+      }
+    },
+    "subfield_sim_2023_2025": {
+      "2305": {
+        "name": "Environmental Engineering",
+        "count": 2176
+      },
+      "1908": {
+        "name": "Geophysics",
+        "count": 1665
+      },
+      "1902": {
+        "name": "Atmospheric Science",
+        "count": 924
+      },
+      "1910": {
+        "name": "Oceanography",
+        "count": 871
+      },
+      "1904": {
+        "name": "Earth-Surface Processes",
+        "count": 801
+      },
+      "2308": {
+        "name": "Management, Monitoring, Policy and Law",
+        "count": 732
+      },
+      "2306": {
+        "name": "Global and Planetary Change",
+        "count": 642
+      },
+      "2303": {
+        "name": "Ecology",
+        "count": 307
+      },
+      "2312": {
+        "name": "Water Science and Technology",
+        "count": 291
+      },
+      "2304": {
+        "name": "Environmental Chemistry",
+        "count": 267
+      },
+      "2302": {
+        "name": "Ecological Modeling",
+        "count": 260
+      },
+      "2310": {
+        "name": "Pollution",
+        "count": 178
+      },
+      "1907": {
+        "name": "Geology",
+        "count": 161
+      },
+      "2311": {
+        "name": "Waste Management and Disposal",
+        "count": 155
+      },
+      "1906": {
+        "name": "Geochemistry and Petrology",
+        "count": 80
+      },
+      "1911": {
+        "name": "Paleontology",
+        "count": 72
+      },
+      "2307": {
+        "name": "Health, Toxicology and Mutagenesis",
+        "count": 62
+      },
+      "2309": {
+        "name": "Nature and Landscape Conservation",
+        "count": 44
+      }
+    },
+    "subfield_surr_ml_2023_2025": {
+      "2305": {
+        "name": "Environmental Engineering",
+        "count": 243
+      },
+      "1902": {
+        "name": "Atmospheric Science",
+        "count": 125
+      },
+      "2306": {
+        "name": "Global and Planetary Change",
+        "count": 104
+      },
+      "1908": {
+        "name": "Geophysics",
+        "count": 88
+      },
+      "1910": {
+        "name": "Oceanography",
+        "count": 62
+      },
+      "2312": {
+        "name": "Water Science and Technology",
+        "count": 30
+      },
+      "2303": {
+        "name": "Ecology",
+        "count": 28
+      },
+      "1904": {
+        "name": "Earth-Surface Processes",
+        "count": 15
+      },
+      "2311": {
+        "name": "Waste Management and Disposal",
+        "count": 12
+      },
+      "2308": {
+        "name": "Management, Monitoring, Policy and Law",
+        "count": 11
+      },
+      "2310": {
+        "name": "Pollution",
+        "count": 8
+      },
+      "2304": {
+        "name": "Environmental Chemistry",
+        "count": 7
+      },
+      "1906": {
+        "name": "Geochemistry and Petrology",
+        "count": 3
+      },
+      "2302": {
+        "name": "Ecological Modeling",
+        "count": 3
+      },
+      "2307": {
+        "name": "Health, Toxicology and Mutagenesis",
+        "count": 2
+      }
+    },
+    "surr_ml_all_by_year": {
+      "2025": {
+        "name": "2025",
+        "count": 5905
+      },
+      "2024": {
+        "name": "2024",
+        "count": 3406
+      },
+      "2023": {
+        "name": "2023",
+        "count": 2209
+      },
+      "2022": {
+        "name": "2022",
+        "count": 1546
+      },
+      "2021": {
+        "name": "2021",
+        "count": 1030
+      },
+      "2020": {
+        "name": "2020",
+        "count": 685
+      },
+      "2019": {
+        "name": "2019",
+        "count": 419
+      },
+      "2018": {
+        "name": "2018",
+        "count": 259
+      },
+      "2017": {
+        "name": "2017",
+        "count": 144
+      },
+      "2016": {
+        "name": "2016",
+        "count": 114
+      }
+    },
+    "surr_ml_earth_env_by_year": {
+      "2025": {
+        "name": "2025",
+        "count": 399
+      },
+      "2024": {
+        "name": "2024",
+        "count": 199
+      },
+      "2023": {
+        "name": "2023",
+        "count": 143
+      },
+      "2022": {
+        "name": "2022",
+        "count": 132
+      },
+      "2021": {
+        "name": "2021",
+        "count": 86
+      },
+      "2020": {
+        "name": "2020",
+        "count": 41
+      },
+      "2019": {
+        "name": "2019",
+        "count": 24
+      },
+      "2018": {
+        "name": "2018",
+        "count": 16
+      },
+      "2017": {
+        "name": "2017",
+        "count": 14
+      },
+      "2016": {
+        "name": "2016",
+        "count": 10
+      }
+    },
+    "sim_all_by_year": {
+      "2025": {
+        "name": "2025",
+        "count": 81554
+      },
+      "2024": {
+        "name": "2024",
+        "count": 70490
+      },
+      "2023": {
+        "name": "2023",
+        "count": 63414
+      },
+      "2022": {
+        "name": "2022",
+        "count": 62452
+      },
+      "2021": {
+        "name": "2021",
+        "count": 60305
+      },
+      "2020": {
+        "name": "2020",
+        "count": 56384
+      },
+      "2019": {
+        "name": "2019",
+        "count": 52693
+      },
+      "2018": {
+        "name": "2018",
+        "count": 49423
+      },
+      "2017": {
+        "name": "2017",
+        "count": 45472
+      },
+      "2016": {
+        "name": "2016",
+        "count": 44437
+      }
+    },
+    "sim_earth_env_by_year": {
+      "2025": {
+        "name": "2025",
+        "count": 3652
+      },
+      "2024": {
+        "name": "2024",
+        "count": 3234
+      },
+      "2022": {
+        "name": "2022",
+        "count": 2930
+      },
+      "2023": {
+        "name": "2023",
+        "count": 2802
+      },
+      "2021": {
+        "name": "2021",
+        "count": 2801
+      },
+      "2020": {
+        "name": "2020",
+        "count": 2590
+      },
+      "2019": {
+        "name": "2019",
+        "count": 2539
+      },
+      "2018": {
+        "name": "2018",
+        "count": 2439
+      },
+      "2017": {
+        "name": "2017",
+        "count": 2276
+      },
+      "2016": {
+        "name": "2016",
+        "count": 2240
+      }
+    }
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "created_at": "2026-10-29T21:16:56.853029+00:00",
+  "seed": "das-validation-2026-10-29",
+  "n_per_stratum": 8,
+  "layout": "year_x_model_ai_role",
+  "strata": [
+    {
+      "stratum": "2020|ai_as_method",
+      "N": 15,
+      "n": 8
+    },
+    {
+      "stratum": "2020|ai_as_subject",
+      "N": 3,
+      "n": 3
+    },
+    {
+      "stratum": "2020|none",
+      "N": 81,
+      "n": 8
+    },
+    {
+      "stratum": "2020|unclear",
+      "N": 1,
+      "n": 1
+    },
+    {
+      "stratum": "2021|ai_as_method",
+      "N": 18,
+      "n": 8
+    },
+    {
+      "stratum": "2021|ai_as_subject",
+      "N": 2,
+      "n": 2
+    },
+    {
+      "stratum": "2021|none",
+      "N": 107,
+      "n": 8
+    },
+    {
+      "stratum": "2022|ai_as_method",
+      "N": 28,
+      "n": 8
+    },
+    {
+      "stratum": "2022|ai_as_subject",
+      "N": 4,
+      "n": 4
+    },
+    {
+      "stratum": "2022|none",
+      "N": 143,
+      "n": 8
+    },
+    {
+      "stratum": "2022|unclear",
+      "N": 1,
+      "n": 1
+    },
+    {
+      "stratum": "2023|ai_as_method",
+      "N": 43,
+      "n": 8
+    },
+    {
+      "stratum": "2023|ai_as_subject",
+      "N": 4,
+      "n": 4
+    },
+    {
+      "stratum": "2023|none",
+      "N": 161,
+      "n": 8
+    },
+    {
+      "stratum": "2023|unclear",
+      "N": 3,
+      "n": 3
+    },
+    {
+      "stratum": "2024|ai_as_method",
+      "N": 60,
+      "n": 8
+    },
+    {
+      "stratum": "2024|ai_as_subject",
+      "N": 5,
+      "n": 5
+    },
+    {
+      "stratum": "2024|none",
+      "N": 210,
+      "n": 8
+    },
+    {
+      "stratum": "2024|unclear",
+      "N": 3,
+      "n": 3
+    },
+    {
+      "stratum": "2025|ai_as_method",
+      "N": 96,
+      "n": 8
+    },
+    {
+      "stratum": "2025|ai_as_subject",
+      "N": 15,
+      "n": 8
+    },
+    {
+      "stratum": "2025|none",
+      "N": 259,
+      "n": 8
+    }
+  ],
+  "sample_size": 130,
+  "sample_ids_sha256": "ccb84156a5dd277251f37a21941e4e7adb212087dbcbe5571e5a5592f41042e9",
+  "screen_semantic_sha256": "1323610c9d75055edc688a8662d2c4b0c951baabafff864973d5d3b517ff150f",
+  "note": "Model labels drawn by stratum; coders see title and abstract only. Report precision and recall per label after adjudication."
+}
