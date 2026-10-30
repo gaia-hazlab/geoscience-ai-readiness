@@ -4,9 +4,11 @@ Prepared October 30, 2026. No tag, GitHub release, PyPI upload or Zenodo deposit
 has been published by this preparation.
 
 This version adds the domain-level solid-earth report, frozen platform and
-simulation evidence, DAS screening tools and eleven editorial-style report
+simulation evidence, DAS screening tools and fourteen editorial-style report
 figures. Figures have larger text and PNG/SVG/PDF exports. Figure 9 uses `n =`,
 defined as the count of metadata records saying AI-ready or ML-ready.
+
+Includes the complexity evidence tables, readiness profile and additional report section from main.
 
 The DAS model screen remains unvalidated. Keyword counts do not measure actual
 adoption, and the software supplies no universal AI-readiness score. Frozen
@@ -26,7 +28,7 @@ figure ZIP and checksums under `dist/0.4.0/`. Build the report first: its genera
 figures are included separately; they are not needed by the installed library.
 The wheel installs the analysis and figure libraries and packaged DAS snapshots;
 the source archives additionally contain the report, notebooks and protocols.
-The optional figure ZIP requires all eleven PNG/SVG/PDF exports to be present.
+The optional figure ZIP requires all fourteen PNG/SVG/PDF exports to be present.
 
 Before publication, merge the reviewed PR, rerun validation and packaging from
 that commit, and tag it `v0.4.0`. Attach the prepared archives and checksums to the

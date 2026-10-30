@@ -1,0 +1,121 @@
+{
+ "retrieved": "2026-10-30",
+ "url": "https://eos.org/wp-content/uploads/2025/12/Eos-Author-Guidelines_Dec25.pdf",
+ "url_secondary": "https://eos.org/submit",
+ "notes": "Guidelines PDF (dated December 2025, 4 pages) downloaded and read in full with pdftotext; quotes string-matched. eos.org/submit blocked raw curl (Cloudflare), so it was read only through the WebFetch summarizer; its quotes are marked checked_in_text false.",
+ "items": [
+  {
+   "item": "Opinion maximum length",
+   "value_text": "1,500 words",
+   "quote": "An Opinion should engage or move forward a conversation in the science community. Maximum length: 1,500 words",
+   "source": "Eos Author Guidelines for Accepted Proposals, December 2025 (PDF)",
+   "checked_in_text": true
+  },
+  {
+   "item": "Opinion scope",
+   "value_text": "identify a problem in the Earth and space science community (cultural or scientific) and offer solutions; move quickly to recommendations if the problem is widely known",
+   "quote": "Opinions identify a problem within the Earth and space science community (culturally or scientifically) and offer solutions for the reader.",
+   "source": "Eos Author Guidelines, December 2025",
+   "checked_in_text": true
+  },
+  {
+   "item": "Number of references",
+   "value_text": "no more than 12; hyperlinks to sources are an accepted and sometimes preferred alternative",
+   "quote": "keep references to a minimum (no more than 12)",
+   "source": "Eos Author Guidelines, December 2025",
+   "checked_in_text": true
+  },
+  {
+   "item": "Hyperlinks vs reference list",
+   "value_text": "in-line citations with a reference list at the end are allowed; linking text to outside sources is an alternative and 'in some cases ... the preferred and/or necessary approach'; the submit page says Eos prefers hyperlinks",
+   "quote": "An alternative to formal, in-line citations and references is to link text in your article to outside information or references",
+   "source": "Eos Author Guidelines, December 2025",
+   "checked_in_text": true
+  },
+  {
+   "item": "Number of figures",
+   "value_text": "not found (no numeric cap; figures must be simple, non-technical and may be redesigned or declined)",
+   "quote": "Figures must be high-resolution, relatively simple (including only information covered by the manuscript), and visually interesting.",
+   "source": "Eos Author Guidelines, December 2025",
+   "checked_in_text": true
+  },
+  {
+   "item": "Lead image",
+   "value_text": "required: an eye-catching landscape photograph, not a figure, collage or map; separate .jpg/.png files with caption and credit; permissions needed",
+   "quote": "Provide an eye-catching, landscape-oriented photograph to lead the story.",
+   "source": "Eos Author Guidelines, December 2025",
+   "checked_in_text": true
+  },
+  {
+   "item": "Headline length",
+   "value_text": "up to 64 characters including spaces; no acronyms or abbreviations",
+   "quote": "Headlines may be up to 64 characters long, including spaces.",
+   "source": "Eos Author Guidelines, December 2025",
+   "checked_in_text": true
+  },
+  {
+   "item": "Teaser (dek) length",
+   "value_text": "up to 200 characters including spaces; must not repeat the headline",
+   "quote": "A teaser summary that accompanies the headline (but does not repeat it) can be up to 200 characters, including spaces.",
+   "source": "Eos Author Guidelines, December 2025",
+   "checked_in_text": true
+  },
+  {
+   "item": "Author bio",
+   "value_text": "not found (neither the guidelines PDF nor the submit page mentions a bio)",
+   "quote": null,
+   "source": "Eos Author Guidelines, December 2025; eos.org/submit",
+   "checked_in_text": false
+  },
+  {
+   "item": "Maximum number of authors",
+   "value_text": "5; only people who write the manuscript; no project-team names",
+   "quote": "We allow a maximum of 5 authors per article.",
+   "source": "Eos Author Guidelines, December 2025",
+   "checked_in_text": true
+  },
+  {
+   "item": "Structure",
+   "value_text": "narrative, not Abstract-Introduction-Methods; significance in first or second paragraph; subsections with subtitles; minimal lists",
+   "quote": "Authors should state clearly and succinctly in the first or second paragraph the significance of the topic",
+   "source": "Eos Author Guidelines, December 2025",
+   "checked_in_text": true
+  },
+  {
+   "item": "Prior publication and preprints",
+   "value_text": "must not have been published before, including as a preprint; posting drafts under Eos editing is not permitted",
+   "quote": "your manuscript should not have been published previously in print or online (including as a preprint)",
+   "source": "Eos Author Guidelines, December 2025",
+   "checked_in_text": true
+  },
+  {
+   "item": "Manuscript file format",
+   "value_text": ".docx/.doc (or .txt); no PDF, no cloud links, no line numbers",
+   "quote": "Submit articles as Microsoft Word documents (.docx or .doc) or, if necessary, as .txt documents.",
+   "source": "Eos Author Guidelines, December 2025",
+   "checked_in_text": true
+  },
+  {
+   "item": "Submission route",
+   "value_text": "proposal (outline, not a manuscript) via a Google Form linked from eos.org/submit; after acceptance, drafts go through Basecamp with the corresponding author only",
+   "quote": "Scientists may submit proposals through this form",
+   "source": "eos.org/submit (read via WebFetch summarizer; direct curl blocked by Cloudflare)",
+   "checked_in_text": false
+  },
+  {
+   "item": "Use of AI tools",
+   "value_text": "proposals and articles may not be written, in part or full, with AI tools",
+   "quote": "Proposals (and articles) may not be written—in part or full—using artificial intelligence (AI) tools.",
+   "source": "eos.org/submit (WebFetch summary by subagent; page text re-read in browser by main session)",
+   "checked_in_text": true,
+   "notes": "Re-read in the eos.org/submit page text (browser innerText) on 2026-10-30 in the main session."
+  },
+  {
+   "item": "Timeline",
+   "value_text": "proposal response within 4 weeks; manuscript due within 6 weeks of acceptance; about 8 weeks in queue; 14-18 weeks proposal to publication",
+   "quote": "Time from proposal to publication is between 14 and 18 weeks.",
+   "source": "eos.org/submit (WebFetch summary by subagent; page text re-read in browser by main session)",
+   "checked_in_text": false
+  }
+ ]
+}

@@ -17,11 +17,11 @@ def main():
     subprocess.run([sys.executable, str(ROOT / 'scripts/verify_release.py')], check=True)
     tracked = subprocess.check_output(['git', 'ls-files', '-z'], cwd=ROOT).decode().split('\0')
     tracked = [p for p in tracked if p]
-    figures = sorted(p for folder in ('archive_readiness', 'das_semantic')
+    figures = sorted(p for folder in ('archive_readiness', 'das_semantic', 'complexity')
                      for p in (ROOT / 'build' / folder).glob('*')
                      if p.suffix in ('.png', '.svg', '.pdf'))
-    if len(figures) != 33 or len({p.stem for p in figures}) != 11:
-        raise SystemExit('Rebuild the report first: expected eleven PNG/SVG/PDF figure sets.')
+    if len(figures) != 42 or len({p.stem for p in figures}) != 14:
+        raise SystemExit('Rebuild the report first: expected fourteen PNG/SVG/PDF figure sets.')
     if out.exists() and any(out.iterdir()):
         raise SystemExit(f'Release output already exists: {out}. Move it aside before rebuilding.')
     out.mkdir(parents=True, exist_ok=True)
