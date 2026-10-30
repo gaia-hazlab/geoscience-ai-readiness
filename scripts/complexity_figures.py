@@ -21,12 +21,9 @@ import argparse
 import csv
 import importlib.util
 import json
+import sys
 import textwrap
 from pathlib import Path
-
-import matplotlib
-matplotlib.use("Agg")
-import matplotlib.pyplot as plt
 
 ROOT = Path(__file__).resolve().parents[1]
 _spec = importlib.util.spec_from_file_location("complexity_tables", ROOT / "scripts" / "complexity_tables.py")
@@ -35,12 +32,9 @@ _spec.loader.exec_module(ct)
 _spec = importlib.util.spec_from_file_location("archive_readiness_figures", ROOT / "scripts" / "archive_readiness_figures.py")
 arf = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(arf)
-
-S1, S2, S3 = "#2a78d6", "#eb6834", "#1baf7a"   # reference palette slots 1-3 (dataviz skill), as in archive_readiness_figures.py
-INK, INK2, GRID, NEUTRAL = "#0b0b0b", "#52514e", "#e4e3df", "#b9b8b2"
-plt.rcParams.update({"font.size": 9, "axes.edgecolor": INK2, "axes.labelcolor": INK2, "xtick.color": INK2, "ytick.color": INK2,
-                     "axes.spines.top": False, "axes.spines.right": False, "axes.grid": True, "grid.color": GRID,
-                     "grid.linewidth": 0.6, "axes.axisbelow": True, "axes.titlelocation": "left", "axes.titlesize": 10})
+sys.path.insert(0, str(ROOT / "scripts"))
+import figure_style as fs   # noqa: E402  shared look of every report figure
+plt = fs.plt
 
 # Rows whose source states a density exponent, p(x) ~ x^-alpha (or dN/dx ~ x^-alpha), with a short plot label.
 PDF_ROWS = {
@@ -84,21 +78,13 @@ PDE_LABELS = {
     "pde-19": "Maxwell's equations",
     "pde-20": "Ideal magnetohydrodynamics",
 }
-VERDICT_STYLE = {  # verdict: (colour, filled, legend label)
-    "tested, power law favored": (S3, True, "Tested: power law favored"),
-    "tested, mixed": (S1, True, "Tested: mixed result"),
-    "tested, alternative favored or not distinguishable": (S2, True, "Tested: alternative favored or equally good"),
-    "not tested in this source": (NEUTRAL, False, "Not tested against alternatives"),
-    "not stated": (NEUTRAL, False, "Not tested against alternatives"),
+VERDICT_STYLE = {  # verdict: (colour, filled, legend label); slots 1-3 of the validated palette
+    "tested, power law favored": (fs.THIRD, True, "Tested: power law favored"),
+    "tested, mixed": (fs.FOCUS, True, "Tested: mixed result"),
+    "tested, alternative favored or not distinguishable": (fs.SECOND, True, "Tested: alternative favored or equally good"),
+    "not tested in this source": (fs.MUTED, False, "Not tested against alternatives"),
+    "not stated": (fs.MUTED, False, "Not tested against alternatives"),
 }
-
-
-def finish(fig, out, name, note):
-    width = int(fig.get_figwidth() * 17)
-    fig.text(0.01, 0.01, "\n".join(textwrap.fill(p, width) for p in note.split("\n")), fontsize=6.5, color=INK2, va="bottom")
-    for ext in ("png", "svg"):
-        fig.savefig(out / f"{name}.{ext}", dpi=200)
-    plt.close(fig)
 
 
 def pdf_exponent_rows(power):
@@ -120,71 +106,87 @@ def fig_power_laws(out, rows):
     geo = [r for r in rows if r["domain"] == "geoscience"]
     comp = [r for r in rows if r["domain"] != "geoscience"]
     order = geo + comp
-    fig, ax = plt.subplots(figsize=(7.6, 6.0))
-    fig.subplots_adjust(left=0.36, right=0.97, top=0.86, bottom=0.17)
+    note = ("Sources: docs/complexity_2026-10-30/power_laws.json (rows listed in power_law_pdf_exponents.csv), retrieved "
+            "2026-10-30. Only exponents stated in the density convention are drawn; b-values, survivor-function exponents, "
+            "Hack's law and fractal dimensions use other conventions and stay in the table, not converted. Bars are ranges "
+            "stated by the source. Landslide exponents written with a minus sign by their sources are drawn by magnitude. "
+            "'Tested' means compared with lognormal, stretched exponential or truncated forms in that source.")
+    gap = 0.8
     n = len(order)
-    seen = set()
-    for i, r in enumerate(order):
-        y = n - 1 - i
-        colour, filled, label = VERDICT_STYLE[r["verdict"]]
+    ys = [n - 1 - i + (gap if r["domain"] == "geoscience" else 0) for i, r in enumerate(order)]
+    fig, ax = fs.figure(7.6, 0.25 * (n + gap) + 0.35, note, left=2.45, right=0.35)
+    fs.header(fig, "Heavy tails are common; a pure power law rarely beats the alternatives",
+              "Density exponent alpha in p(x) ~ x^-alpha, as stated by each source, coloured by its test against alternatives")
+    for r, y in zip(order, ys):
+        colour, filled, _ = VERDICT_STYLE[r["verdict"]]
         if r["high"] > r["low"]:
-            ax.plot([r["low"], r["high"]], [y, y], color=colour, lw=2.4, solid_capstyle="round")
-        x = r["point"] if r["point"] is not None else (r["low"] + r["high"]) / 2
+            ax.plot([r["low"], r["high"]], [y, y], color=colour, lw=3.2, solid_capstyle="round", alpha=0.45 if not filled else 0.9,
+                    zorder=2)
         if r["point"] is not None or r["high"] == r["low"]:
-            ax.plot(x, y, "o", ms=6.5, mfc=colour if filled else "white", mec=colour if filled else INK2, mew=1.2,
-                    label=None if label in seen else label)
-        elif label not in seen:
-            ax.plot([], [], "o", ms=6.5, mfc=colour if filled else "white", mec=colour if filled else INK2, label=label)
-        seen.add(label)
-    ax.axhline(len(comp) - 0.5, color=INK2, lw=0.8)
-    ax.text(3.45, len(comp) - 0.35, "geoscience", ha="right", va="bottom", fontsize=7.5, color=INK2, style="italic")
-    ax.text(3.45, len(comp) - 0.65, "comparison", ha="right", va="top", fontsize=7.5, color=INK2, style="italic")
-    ax.set_yticks(range(n), [r["label"] for r in order][::-1])
-    ax.set_xlim(1.0, 3.5)
-    ax.set_xlabel("Density exponent alpha, p(x) ~ x^-alpha (as stated by each source)")
+            x = r["point"] if r["point"] is not None else r["low"]
+            ax.plot(x, y, "o", ms=7.5, mfc=colour if filled else fs.SURFACE, mec=fs.SURFACE if filled else fs.INK2,
+                    mew=1.6 if filled else 1.3, zorder=3)
+    ax.set_yticks(ys, [r["label"] for r in order])
+    ax.set_ylim(-0.7, max(ys) + 0.7)
+    ax.set_xlim(1.0, 3.4)
+    ax.tick_params(axis="y", length=0)
     ax.grid(axis="y", visible=False)
-    ax.legend(frameon=False, loc="upper center", bbox_to_anchor=(0.32, 1.10), ncol=2, fontsize=7.5)
-    fig.suptitle("Heavy tails are common; a pure power law rarely beats the alternatives", x=0.01, ha="left", fontsize=10, color=INK)
-    finish(fig, out, "fig1_power_law_exponents",
-           "Sources: docs/complexity_2026-10-30/power_laws.json (rows listed in power_law_pdf_exponents.csv), retrieved "
-           "2026-10-30. Only exponents stated in the density convention are drawn; b-values, survivor-function exponents, "
-           "Hack's law and fractal dimensions use other conventions and are left in the table, not converted. Bars are "
-           "ranges stated by the source. Landslide exponents written with a minus sign by their sources are drawn by "
-           "magnitude. 'Tested' means compared with lognormal, stretched exponential or truncated forms in that source.")
+    ax.spines["left"].set_visible(False)
+    split = len(comp) - 0.5 + gap / 2
+    ax.axhline(split, color=fs.AXIS, lw=0.6)
+    for label, y in (("Geoscience", max(ys) + 0.55), ("Comparison", len(comp) - 1 + 0.55)):
+        ax.annotate(label.upper(), (0, y), xycoords=("axes fraction", "data"), xytext=(-6, 0), textcoords="offset points",
+                    ha="right", va="bottom", fontsize=6.8, color=fs.MUTED, fontweight="bold", annotation_clip=False)
+    seen = []
+    for v in VERDICT_STYLE.values():
+        if v[2] not in [s[0] for s in seen]:
+            seen.append((v[2], v[0], v[1]))
+    fs.swatch_legend(ax, [(lab, col) for lab, col, _ in seen], marker="o", loc="upper right",
+                     hollow=[lab for lab, _, filled in seen if not filled])
+    fs.finish(fig, out, "fig1_power_law_exponents")
 
 
 def fig_pdes(out, pdes):
     rows = [r for r in pdes["rows"] if r["value"] is not None]
     geo = [r for r in rows if "(comparison)" not in r["item"]]
     comp = [r for r in rows if "(comparison)" in r["item"]]
-    order = sorted(geo, key=lambda r: r["value"] + r["ode_state_variables"]) + sorted(comp, key=lambda r: r["value"])
-    fig, ax = plt.subplots(figsize=(8.4, 0.30 * len(order) + 2.0))
-    fig.subplots_adjust(left=0.40, right=0.97, top=0.91, bottom=0.17)
-    for i, r in enumerate(order[::-1]):
+    order = sorted(geo, key=lambda r: -(r["value"] + r["ode_state_variables"])) + sorted(comp, key=lambda r: -r["value"])
+    note = ("Sources: docs/complexity_2026-10-30/coupled_pdes.json, retrieved 2026-10-30. Count rule (README): balance laws as "
+            "written in one cited source (earthquake-cycle rows use rate-and-state friction), vector equations expanded to scalar "
+            "components in the stated dimensionality (label at bar end); '1D steady' rows are ordinary differential equations in "
+            "one coordinate. Constitutive closures (friction law, Darcy, equations of state, rheology) are listed in the table but "
+            "not counted. Light blue: the glacier-ocean composite sums two sources. Counts measure model size, not difficulty.")
+    gap = 0.8
+    ys = [len(order) - 1 - i + (gap if r in geo else 0) for i, r in enumerate(order)]
+    fig, ax = fs.figure(7.8, 0.25 * (len(order) + gap) + 0.2, note, left=2.95, right=0.35)
+    fs.header(fig, "Minimal coupled models need 1 to 17 balance equations; physics comparisons need 4 to 8",
+              "Scalar balance equations, plus ODE state variables on the fault or bubble, counted by one rule")
+    for r, y in zip(order, ys):
         pde, ode = r["balance_equations_scalar_3d"], r["ode_state_variables"]
-        hatch = None if r["checked_in_text"] else "////"
-        ax.barh(i, pde, color=S1 if r in geo else NEUTRAL, height=0.62, hatch=hatch, edgecolor="white", lw=0)
+        colour = fs.CONTEXT if r in comp else (fs.FOCUS if r["checked_in_text"] else fs.FOCUS_LIGHT)
         if ode:
-            ax.barh(i, ode, left=pde, color=S2, height=0.62)
+            fs.hbar(ax, y, pde + ode, fs.SECOND, height=0.56)
+            fs.hbar(ax, y, pde, colour, height=0.56, radius_pt=0)
+            ax.plot([pde, pde], [y - 0.28, y + 0.28], color=fs.SURFACE, lw=1.6, zorder=2.6, solid_capstyle="butt")
+        else:
+            fs.hbar(ax, y, pde, colour, height=0.56)
         count = f"{pde}" + (f" + {ode}" if ode else "")
-        ax.text(pde + ode + 0.2, i, f"{count}   {r['dims_tag']}", va="center", fontsize=7.5, color=INK)
-    ax.set_yticks(range(len(order)), [PDE_LABELS[r["id"]] for r in order][::-1], fontsize=8)
-    if comp:
-        ax.axhline(len(comp) - 0.5, color=INK2, lw=0.8)
-    ax.set_xlim(0, 24)
-    ax.set_xlabel("Scalar balance equations + ODE state variables on fault or bubble (orange)")
-    ax.grid(axis="y", visible=False)
-    fig.suptitle("Minimal coupled models need 1 to 17 balance equations; the physics comparisons need 4 to 8",
-                 x=0.01, ha="left", fontsize=10, color=INK)
-    finish(fig, out, "fig2_coupled_pde_counts",
-           "Sources: docs/complexity_2026-10-30/coupled_pdes.json, retrieved 2026-10-30. Count rule (README): balance laws as "
-           "written in one cited source (earthquake-cycle rows use rate-and-state friction), vector equations expanded to scalar components in the stated dimensionality "
-           "(label at bar end); '1D steady' rows are ordinary differential equations in one coordinate. Constitutive closures "
-           "(friction law, Darcy, equations of state, rheology) are listed in the table but not counted. Hatched: the "
-           "glacier-ocean composite sums two sources and was not read as one model. Counts measure model size, not difficulty.")
+        fs.tip(ax, pde + ode, y, count, weight="bold")
+        fs.tip(ax, pde + ode, y, r["dims_tag"], color=fs.MUTED, size=7, dx=10 + fs.text_width_pt(count))
+    ax.set_yticks(ys, [PDE_LABELS[r["id"]] for r in order])
+    ax.set_ylim(-0.7, max(ys) + 0.7); ax.set_xlim(0, 21)
+    ax.xaxis.set_major_locator(fs.MaxNLocator(nbins=6, integer=True))
+    ax.tick_params(axis="y", length=0); ax.grid(axis="y", visible=False); ax.spines["bottom"].set_visible(False)
+    ax.axhline(len(comp) - 0.5 + gap / 2, color=fs.AXIS, lw=0.6)
+    ax.annotate("PHYSICS COMPARISONS", (0, len(comp) - 1 + 0.55), xycoords=("axes fraction", "data"), xytext=(-6, 0),
+                textcoords="offset points", ha="right", va="bottom", fontsize=6.8, color=fs.MUTED, fontweight="bold")
+    fs.swatch_legend(ax, [("Scalar balance equations", fs.FOCUS), ("ODE state variables", fs.SECOND),
+                          ("Comparison systems", fs.CONTEXT)], loc="lower right")
+    fs.finish(fig, out, "fig2_coupled_pde_counts")
 
 
-STATUS_STYLE = {"measured": (S1, "white"), "partial": ("#a8c8ee", INK), "not found": (S2, "white"), "not assessed": (GRID, INK2)}
+STATUS_STYLE = {"measured": (fs.FOCUS, "white"), "partial": (fs.FOCUS_LIGHT, fs.INK), "not found": (fs.SECOND, "white"),
+                "not assessed": (fs.EMPTY, fs.MUTED)}
 
 
 def profile_cells(profile, tables, pairs):
@@ -209,7 +211,7 @@ def profile_cells(profile, tables, pairs):
                         shares.append("no benchmark")
                     else:
                         shares.append("no archive size")
-                label = ", ".join(shares)
+                label = "\n".join(shares)
             elif ev:
                 sourced = [rows[i] for i in ev if any(rows[i][k] is not None for k in ("value", "value_min", "value_max"))]
                 label = f"{len(sourced)} sourced row" + ("s" if len(sourced) != 1 else "")
@@ -221,32 +223,31 @@ def profile_cells(profile, tables, pairs):
 def fig_profile(out, profile, cells):
     cols = [c["label"] for c in profile["columns"]]
     discs = [r["discipline"] for r in profile["rows"]]
-    fig, ax = plt.subplots(figsize=(9.0, 0.48 * len(discs) + 2.3))
-    fig.subplots_adjust(left=0.24, right=0.99, top=0.80, bottom=0.17)
+    note = ("Sources: docs/complexity_2026-10-30/readiness_profile.json and the tables it cites; the ML-ready share is from "
+            "docs/archive_readiness_2026-10-30 (archive pairs), retrieved 2026-10-30. Measured = a sourced value read in the "
+            "source text for this discipline; partial = proxy, secondary, small-sample or qualitative evidence; not found = "
+            "searched and absent; not assessed = not searched. Labels give the share or the number of sourced rows behind a cell; "
+            "values are in readiness_profile.csv and the report.")
+    fig, ax = fs.figure(8.4, 0.46 * len(discs), note, left=2.25, right=0.2, xband=0.45, top=fs.TITLE_BAND + 0.5)
+    fs.header(fig, "AI-readiness profile by discipline",
+              "Five separate measures per discipline, each with its own evidence; cells are never summed into a score")
+    from matplotlib.patches import FancyBboxPatch
     for c in cells:
         x, y = cols.index(c["column"]), len(discs) - 1 - discs.index(c["discipline"])
         face, ink = STATUS_STYLE[c["status"]]
-        ax.add_patch(plt.Rectangle((x + 0.03, y + 0.06), 0.94, 0.88, color=face, lw=0))
+        ax.add_patch(FancyBboxPatch((x + 0.04, y + 0.08), 0.92, 0.84, boxstyle="round,pad=0,rounding_size=0.08",
+                                    fc=face, ec="none", mutation_aspect=1 / 2.2))
         ax.text(x + 0.5, y + 0.5, c["label"] or c["status"], ha="center", va="center", fontsize=7.2, color=ink,
-                style="italic" if not c["label"] else "normal")
+                fontweight="bold" if c["status"] == "measured" and c["label"].endswith("%") else "normal")
     ax.set_xlim(0, len(cols)); ax.set_ylim(0, len(discs))
-    ax.set_xticks([i + 0.5 for i in range(len(cols))], [textwrap.fill(c, 16) for c in cols], fontsize=8)
+    ax.set_xticks([i + 0.5 for i in range(len(cols))], [textwrap.fill(c, 15) for c in cols], fontsize=8, color=fs.INK2)
     ax.xaxis.tick_top()
-    ax.set_yticks([i + 0.5 for i in range(len(discs))], discs[::-1], fontsize=8)
-    ax.tick_params(length=0)
-    ax.grid(False)
+    ax.set_yticks([i + 0.5 for i in range(len(discs))], discs[::-1])
+    ax.tick_params(length=0); ax.grid(False)
     for side in ("left", "bottom"):
         ax.spines[side].set_visible(False)
-    handles = [plt.Rectangle((0, 0), 1, 1, color=STATUS_STYLE[k][0]) for k in profile["statuses"]]
-    ax.legend(handles, profile["statuses"], frameon=False, ncol=4, fontsize=7.5, loc="upper center", bbox_to_anchor=(0.45, -0.01))
-    fig.suptitle("AI-readiness profile by discipline: each column is a separate measure, never summed", x=0.01, ha="left",
-                 fontsize=10, color=INK)
-    finish(fig, out, "fig3_readiness_profile",
-           "Sources: docs/complexity_2026-10-30/readiness_profile.json and the tables it cites; the ML-ready share is from "
-           "docs/archive_readiness_2026-10-30 (archive pairs), retrieved 2026-10-30. Status rule in readiness_profile.json: measured = "
-           "a sourced value read in the source text for this discipline; partial = proxy, secondary, small-sample or qualitative "
-           "evidence; not found = searched and absent; not assessed = not searched. Cell labels give the share or the count of "
-           "sourced rows behind the cell; values are in readiness_profile.csv and the report.")
+    fs.swatch_legend(ax, [(k, STATUS_STYLE[k][0]) for k in profile["statuses"]], loc="upper left", anchor=(0.0, -0.02), ncol=4)
+    fs.finish(fig, out, "fig3_readiness_profile")
 
 
 def main():

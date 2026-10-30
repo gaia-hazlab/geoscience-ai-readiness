@@ -1,5 +1,15 @@
 # Unreleased — 2026-10-30
 
+- Figures: one shared style (`scripts/figure_style.py`) for all report figures.
+  It has the validated reference palette, with colour carrying one meaning
+  across figures (blue = the geoscience series in focus, grey = comparisons
+  and references, orange = a second series only), a system sans, bold titles
+  with a units subtitle, thin bars with a rounded data end, 2 px lines with end
+  dots, solid hairline references and muted source notes.
+  `archive_readiness_figures.py`, `explore_das_semantic.py` and
+  `complexity_figures.py` now draw through it. Data, values and file names are
+  unchanged; per-bar article counts moved out of the labels and into the JSON
+  inputs the notes cite. The report and notebooks 01 to 04 were rebuilt.
 - Added `docs/complexity_2026-10-30/`: a scoping note and four sourced tables on
   how complex the geosciences are (power-law exponents and tests, data
   dimensionality, minimal coupled PDE counts, unobserved drivers of outcomes).

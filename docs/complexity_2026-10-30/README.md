@@ -206,7 +206,7 @@ TRIGRS is the US Geological Survey (USGS) Transient Rainfall Infiltration and Gr
 
 **Departures from the protocol** (see row notes):
 - Full McKenzie 1984: equations not readable, so not found.
-- Glacier-ocean: a composite of two sources, hatched in Figure 2.
+- Glacier-ocean: a composite of two sources, drawn in light blue in Figure 2.
 - Iverson 2000: counted from the USGS implementation of it.
 - Ideal magnetohydrodynamics: counts div B = 0 as an initial condition (8). Maxwell counts both divergence equations (8). Counted the way Maxwell is, ideal magnetohydrodynamics would be 9.
 
