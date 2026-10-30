@@ -1,3 +1,12 @@
+# Unreleased — 2026-10-30
+
+- Added `docs/complexity_2026-10-30/`: a scoping note and four sourced tables on
+  how complex the geosciences are (power-law exponents and tests, data
+  dimensionality, minimal coupled PDE counts, unobserved drivers of outcomes).
+- Added `scripts/complexity_tables.py` (offline validator of the sourcing rules),
+  `scripts/complexity_figures.py` (two figures) and
+  `tests/test_complexity_tables.py`. SHA256SUMS extended to the new files.
+
 # Unreleased — 2026-10-29
 
 - Standalone harvester 0.3.0: `frame.kind: "topic"` harvests a quoted
