@@ -27,9 +27,23 @@ matplotlib = ">=3.8,<4"
 [feature.instrument.dependencies]
 python-docx = ">=1.1,<2"
 
+# Opt-in: the Claude API client for the abstract-level semantic screen. Never imported by default;
+# `pilot`/`submit` spend money and need existing credentials (none are created here).
+[feature.semantic.pypi-dependencies]
+anthropic = ">=1,<2"
+
+[feature.semantic.tasks]
+das-harvest = { cmd = "python standalone/literature_study.py harvest --config standalone/config.das_topic.json --out runs/das_topic_2026-10-29 --execute --max-pages 20", description = "Harvest the DAS topic frame (network; needs OPENALEX_API_KEY beyond page 1 of each year)" }
+das-screen-prepare = { cmd = "python -m ai_readiness.semantic_screen prepare --works runs/das_topic_2026-10-29/works.jsonl --out runs/das_topic_2026-10-29/semantic", description = "Build the semantic-screen requests for the DAS corpus (offline)" }
+das-screen-pilot = { cmd = "python -m ai_readiness.semantic_screen pilot --out runs/das_topic_2026-10-29/semantic --limit 5 --execute", description = "Screen five DAS abstracts synchronously (spends money)" }
+das-screen-submit = { cmd = "python -m ai_readiness.semantic_screen submit --out runs/das_topic_2026-10-29/semantic --execute --max-usd 40", description = "Submit the DAS semantic-screen batch (spends money)" }
+das-screen-collect = { cmd = "python -m ai_readiness.semantic_screen collect --out runs/das_topic_2026-10-29/semantic", description = "Collect the DAS batch into screen_semantic.jsonl" }
+das-screen-aggregate = { cmd = "python -m ai_readiness.semantic_screen aggregate --out runs/das_topic_2026-10-29/semantic", description = "Per-year shares with denominators (offline)" }
+
 [environments]
 default = { features = ["study", "instrument"], solve-group = "default" }
 core = { features = [], solve-group = "default" }
+semantic = { features = ["study", "instrument", "semantic"] }
 
 [tasks]
 check = { cmd = "python scripts/check_offline.py", description = "Run the figure, preferred-analysis and standalone test suites offline" }

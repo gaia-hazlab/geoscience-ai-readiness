@@ -170,6 +170,56 @@ Plots write SVG and PNG points with denominator labels. They do not connect miss
 years or manufacture trends, draw intervals for descriptive subsets, or create a
 figure when no reviewed data exist. A template-only report is not a result figure.
 
+## Abstract-level semantic screen (opt-in model calls)
+
+`semantic_screen.py` labels title plus abstract with the Claude API under
+`semantic_screen_codebook_v0.1.md`: `ai_role` (AI as method, AI as subject, none,
+unclear), AI method families, measurement families from the protocol codebook,
+`das_used`, confidence and a short rationale. It is a second screening tier, not
+actual use: rows carry `screen_only: true`, every label is `unclear` when the
+abstract is missing or the model answer fails validation, and every row records
+model, prompt hash, usage and cost. The default package never imports the client;
+`pilot` and `submit` need `--execute`, the `anthropic` package (pixi environment
+`semantic`, or `pip install '.[semantic]'`) and existing credentials
+(`ANTHROPIC_API_KEY` or an `ant auth login` profile). Nothing here creates a key.
+Server-side refusal fallbacks are off so one validated classifier answers every row.
+
+```sh
+python3 -m ai_readiness.semantic_screen prepare --works runs/das/works.jsonl --out runs/das/semantic
+python3 -m ai_readiness.semantic_screen pilot --out runs/das/semantic --limit 5 --execute
+python3 -m ai_readiness.semantic_screen submit --out runs/das/semantic --execute --max-usd 40
+python3 -m ai_readiness.semantic_screen collect --out runs/das/semantic
+python3 -m ai_readiness.semantic_screen aggregate --out runs/das/semantic
+```
+
+`prepare` is offline and writes one Message Batch request per work with an
+abstract, a `missing_abstract.jsonl` list and a manifest with a token and cost
+estimate (4 characters per token; `--count-tokens` measures a sample with the
+free endpoint). `pilot` screens a few abstracts synchronously so the labels can
+be read before a batch. `collect` writes `screen_semantic.jsonl` with one row per
+work, including unlabeled ones, and a receipt with totals. `aggregate` writes
+per-year counts and shares with Wilson intervals; denominators are rows the model
+labeled with a non-unclear value, and unclear, unlabeled and missing-abstract
+counts stand beside every share.
+
+Validate before any figure:
+
+```sh
+python3 -m ai_readiness.semantic_screen validation-sample --out runs/das/semantic --n-per-stratum 8
+# two coders fill human_* fields in copies of validation_template.jsonl; adjudicate
+python3 -m ai_readiness.semantic_screen validate --out runs/das/semantic --human coded_adjudicated.jsonl --human2 coder_b.jsonl
+python3 -m ai_readiness.semantic_screen aggregate --out runs/das/semantic_v --validation runs/das/semantic/validation_metrics.json
+python3 -m ai_readiness.semantic_screen plot --out runs/das/semantic_v --outprefix runs/das/figures/das_ai
+```
+
+The template is blind: coders see title and abstract only. `validate` reports
+per-class precision, recall, percent agreement and Cohen's kappa against the
+human coding, plus inter-coder agreement when two files are given. `plot` draws
+the topic-frame counts and the AI-as-method share with denominators and the
+validation metrics in the caption; without metrics it refuses unless `--draft`,
+which watermarks the figure. The abstract tier estimates the share of abstracts
+that describe AI as a method; the full-text tier above estimates actual use.
+
 ## Add a separate CS cohort
 
 Copy and resolve `cohort_protocol.example.json` before acquisition. It deliberately

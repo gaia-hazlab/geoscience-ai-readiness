@@ -94,6 +94,13 @@ reliable task-specific targets; pretraining readiness needs defensible samples,
 objectives, correspondence, permissions and scalable access. File homogenization
 alone establishes neither.
 
+For the abstract-level semantic screen (AI as method, measurement families, DAS
+use from title and abstract through the Claude API, opt-in, with human validation
+before any figure) see the semantic screen section of the same guide and
+`docs/semantic_scan_workflow_2026-10-29.md`. The DAS topic frame is
+`standalone/config.das_topic.json`; `pixi run -e semantic das-harvest` and the
+`das-screen-*` tasks run it once `OPENALEX_API_KEY` and Claude credentials exist.
+
 Start with [the preferred workflow guide](tools/ai_readiness/README.md):
 
 ```sh

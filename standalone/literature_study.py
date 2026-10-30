@@ -22,7 +22,7 @@ from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
-VERSION = "0.2.0"
+VERSION = "0.3.0"
 ENDPOINT = "https://api.openalex.org/works"
 FAMILIES = {
     "seismic_elastic": r"\b(seismi\w*|earthquake waveform\w*|acoustic sensing|DAS)\b",
@@ -42,6 +42,11 @@ FAMILIES = {
 }
 AI_PATTERN = r"\b(machine learning|deep learning|neural network\w*|foundation model\w*|artificial intelligence|random forest\w*|support vector machine\w*|transformer\w*)\b"
 FUSION = ["co_used_only", "joint_non_ml_inversion", "late_output_fusion", "joint_ml_inputs", "cross_modal_representation_learning", "cross_modal_transfer_test"]
+FRAME_NOTES = {
+    "journal": "Source-ID frame: articles in frozen journals, no topic or AI keyword in the denominator.",
+    "topic": ("Topic frame: works whose title or abstract matches a phrase. The phrase may name a modality (DAS); "
+              "AI/ML terms are refused. Counts measure indexed activity on the topic, not actual use or users."),
+}
 
 
 def utc_now():
@@ -159,6 +164,49 @@ def screen_work(work):
             "source_id": ((work.get("primary_location") or {}).get("source") or {}).get("id")}
 
 
+def frame_kind(config):
+    """'journal' (default; source-ID frame) or 'topic' (title/abstract phrase frame, e.g. DAS adoption)."""
+    kind = config["frame"].get("kind", "journal")
+    if kind not in ("journal", "topic"):
+        raise ValueError("frame.kind must be 'journal' or 'topic'.")
+    return kind
+
+
+def topic_slug(phrase):
+    return re.sub(r"[^a-z0-9]+", "_", phrase.lower()).strip("_")
+
+
+def build_topic_queries(config, start, end, page_size):
+    """One query per year for works whose title or abstract matches a quoted phrase.
+
+    A topic frame is a query-conditioned corpus, not a journal census: its
+    denominator is 'works matching the phrase', and the phrase itself may name a
+    measurement modality (DAS). AI terms are still refused in the phrase so the
+    AI-as-method share keeps an AI-free denominator.
+    """
+    frame = config["frame"]
+    phrase = frame.get("topic_search")
+    if not isinstance(phrase, str) or not phrase.strip():
+        raise ValueError("A topic frame needs frame.topic_search, a quoted title/abstract phrase.")
+    if re.search(AI_PATTERN, phrase, flags=re.I):
+        raise ValueError("The topic phrase must not contain AI/ML terms; the AI share needs an AI-free denominator.")
+    types = frame.get("types", ["article"])
+    if not types or any(not re.fullmatch(r"[a-z-]+", t) for t in types):
+        raise ValueError("frame.types must list OpenAlex work types such as article or review.")
+    quoted = phrase if phrase.startswith('"') and phrase.endswith('"') else f'"{phrase}"'
+    slug = topic_slug(phrase)
+    queries = []
+    for year in range(start, end + 1):
+        filters = [f"from_publication_date:{year}-01-01", f"to_publication_date:{year}-12-31",
+                   "type:" + "|".join(types), f"title_and_abstract.search:{quoted}"]
+        if frame.get("language"):
+            filters.append("language:" + frame["language"])
+        queries.append({"query_id": f"topic_{slug}_{year}", "year": year, "source_id": None,
+                        "source_label": f"topic:{phrase}", "parameters": {"filter": ",".join(filters),
+                        "per_page": page_size, "sort": "publication_date:asc"}})
+    return queries, []
+
+
 def build_queries(config):
     start, end = config["years"]["start"], config["years"]["end"]
     if start > end or end >= 2026:
@@ -166,6 +214,8 @@ def build_queries(config):
     page_size = config.get("per_page", 100)
     if not 1 <= page_size <= 100:
         raise ValueError("per_page must be between 1 and 100 under current OpenAlex documentation.")
+    if frame_kind(config) == "topic":
+        return build_topic_queries(config, start, end, page_size)
     queries, unresolved = [], []
     for source in config["frame"]["sources"]:
         source_id = source.get("openalex_source_id")
@@ -182,7 +232,7 @@ def build_queries(config):
                 filters.append("language:" + config["frame"]["language"])
             queries.append({"query_id": f"{source_id}_{year}", "year": year, "source_id": source_id,
                             "source_label": source["label"], "parameters": {"filter": ",".join(filters),
-                            "per_page": page_size, "sort": "id:asc"}})
+                            "per_page": page_size, "sort": "publication_date:asc"}})
     return queries, unresolved
 
 
@@ -243,9 +293,13 @@ def rebuild_corpus(out):
 def harvest(args):
     config = read_json(args.config)
     queries, unresolved = build_queries(config)
-    plan = {"mode": "dry_run" if not args.execute else "execute", "query_count": len(queries),
+    kind = frame_kind(config)
+    plan = {"mode": "dry_run" if not args.execute else "execute", "frame_kind": kind, "query_count": len(queries),
             "unresolved_source_labels": unresolved, "years": config["years"],
-            "max_pages_this_run": args.max_pages, "parameters_contain_no_modality_or_AI_keywords": True,
+            "max_pages_this_run": args.max_pages,
+            "parameters_contain_no_modality_or_AI_keywords": kind == "journal",
+            "parameters_contain_no_AI_keywords": True,
+            "frame_note": FRAME_NOTES[kind],
             "sample_public_urls": [query_url(q["parameters"]) for q in queries[:3]],
             "note": "No network request occurs unless --execute is given. Resolve and freeze every source ID first."}
     if not args.execute:
@@ -290,12 +344,17 @@ def harvest(args):
         works, receipts = rebuild_corpus(out)
         complete = all(checkpoint["queries"].get(q["query_id"], {}).get("complete") for q in queries)
         atomic_json(out / "manifest.json", {"created_at": utc_now(), "tool_version": VERSION,
+                    "frame_kind": kind, "frame_note": FRAME_NOTES[kind],
+                    "topic_search": config["frame"].get("topic_search") if kind == "topic" else None,
                     "frame_complete": complete, "query_count": len(queries), "unique_works": len(works),
                     "works_jsonl_sha256": hashlib.sha256((out / "works.jsonl").read_bytes()).hexdigest(),
                     "paper_ids_sha256": paper_ids_digest([work["id"] for work in works]),
                     "pages_this_run": pages_this_run, "stop_reason": stop_reason or ("page limit" if not complete else None),
                     "config_sha256": config_fingerprint(config), "raw_pages": receipts,
-                    "credentials_saved": False, "population_claim_allowed": complete})
+                    "credentials_saved": False, "population_claim_allowed": complete,
+                    "population": ("works matching the topic phrase in title or abstract at retrieval time; "
+                                   "not a journal census and not all literature on the topic") if kind == "topic"
+                                  else "articles in the frozen source frame"})
     print(json.dumps({"pages_this_run": pages_this_run, "unique_works": len(works), "frame_complete": complete,
                       "stop_reason": stop_reason or ("page limit" if not complete else None)}, indent=2))
 
@@ -320,12 +379,13 @@ def validate_sample_frame(rows, manifest):
         raise ValueError("Screen provenance does not match the manifest's original works.jsonl hash.")
 
 
-def sample_rows(rows, n_per_stratum, seed):
+def sample_rows(rows, n_per_stratum, seed, by_source=True):
     if n_per_stratum < 2:
         raise ValueError("Use at least two per stratum to allow design-based variance estimation.")
     strata = {}
     for row in rows:
-        stratum = f"{row['year']}|{row.get('source_id') or 'unknown_source'}|AI_screen_{int(row['ai_candidate'])}"
+        middle = (row.get("source_id") or "unknown_source") if by_source else "topic"
+        stratum = f"{row['year']}|{middle}|AI_screen_{int(row['ai_candidate'])}"
         strata.setdefault(stratum, []).append(row)
     selected, design = [], []
     for stratum, population in sorted(strata.items()):
@@ -348,12 +408,16 @@ def sample(args):
     validate_sample_frame(rows, manifest)
     if any(not row.get("screen_only") for row in rows):
         raise ValueError("Sampling expects the metadata screen output, including AI-screen negatives.")
-    selected, strata = sample_rows(rows, args.n_per_stratum, args.seed)
+    topic = manifest.get("frame_kind", "journal") == "topic"
+    selected, strata = sample_rows(rows, args.n_per_stratum, args.seed, by_source=not topic)
     write_jsonl(args.out, selected)
     atomic_json(args.design, {"design": "stratified_simple_random_without_replacement", "seed": args.seed,
-                "prototype_layout": "year_x_source_x_AI_screen; differs from the protocol's subject_x_year_band_x_AI_screen pilot",
+                "frame_kind": manifest.get("frame_kind", "journal"),
+                "prototype_layout": ("year_x_AI_screen within one topic frame" if topic else
+                                     "year_x_source_x_AI_screen; differs from the protocol's subject_x_year_band_x_AI_screen pilot"),
                 "frame_complete": True, "frame_manifest_sha256": hashlib.sha256(Path(args.manifest).read_bytes()).hexdigest(),
-                "scope": "Frozen source frame, complete publication years; not all geoscientific literature.",
+                "scope": (manifest.get("population") or "Topic-phrase corpus at retrieval time; not a journal census.") if topic
+                         else "Frozen source frame, complete publication years; not all geoscientific literature.",
                 "sample_assignments": [{"paper_id": r["paper_id"], "year": r["year"],
                     "sampling_stratum": r["sampling_stratum"], "inclusion_probability": r["inclusion_probability"]}
                     for r in selected],

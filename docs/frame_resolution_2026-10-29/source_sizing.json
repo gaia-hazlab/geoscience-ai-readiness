@@ -1,0 +1,311 @@
+{
+  "retrieved_utc": "2026-10-29T18:39:54+00:00",
+  "filter_template": "primary_location.source.id:<S>,type:article,from_publication_date:2016-01-01,to_publication_date:2025-12-31 group_by publication_year",
+  "note": "Aggregate sizing only; counts depend on OpenAlex type labels and source mapping and are not a frozen frame.",
+  "sources": [
+    {
+      "label": "Journal of Geophysical Research: Solid Earth",
+      "source_id": "S4210228715",
+      "url": "https://api.openalex.org/works?filter=primary_location.source.id%3AS4210228715%2Ctype%3Aarticle%2Cfrom_publication_date%3A2016-01-01%2Cto_publication_date%3A2025-12-31&group_by=publication_year&per_page=100",
+      "sha256": "778cee03e4e44cebb65baddd1a7d5a8d49003dba868257f65466285df1a9eaf6",
+      "counts": {
+        "2016": 481,
+        "2017": 555,
+        "2018": 602,
+        "2019": 707,
+        "2020": 695,
+        "2021": 749,
+        "2022": 601,
+        "2023": 510,
+        "2024": 497,
+        "2025": 596
+      },
+      "total": 5993
+    },
+    {
+      "label": "Geophysical Journal International",
+      "source_id": "S108821158",
+      "url": "https://api.openalex.org/works?filter=primary_location.source.id%3AS108821158%2Ctype%3Aarticle%2Cfrom_publication_date%3A2016-01-01%2Cto_publication_date%3A2025-12-31&group_by=publication_year&per_page=100",
+      "sha256": "48f647e2c47c7b588775e963b35c793fd815065ec6ad522e6b7332e5ede17419",
+      "counts": {
+        "2016": 530,
+        "2017": 561,
+        "2018": 529,
+        "2019": 571,
+        "2020": 607,
+        "2021": 519,
+        "2022": 513,
+        "2023": 481,
+        "2024": 450,
+        "2025": 520
+      },
+      "total": 5281
+    },
+    {
+      "label": "Seismological Research Letters",
+      "source_id": "S183957208",
+      "url": "https://api.openalex.org/works?filter=primary_location.source.id%3AS183957208%2Ctype%3Aarticle%2Cfrom_publication_date%3A2016-01-01%2Cto_publication_date%3A2025-12-31&group_by=publication_year&per_page=100",
+      "sha256": "de499adc7918230e123ec57d7665f153cebc3336e076b37121622682d88ed518",
+      "counts": {
+        "2016": 155,
+        "2017": 145,
+        "2018": 284,
+        "2019": 202,
+        "2020": 328,
+        "2021": 289,
+        "2022": 257,
+        "2023": 218,
+        "2024": 307,
+        "2025": 264
+      },
+      "total": 2449
+    },
+    {
+      "label": "Water Resources Research",
+      "source_id": "S204847658",
+      "url": "https://api.openalex.org/works?filter=primary_location.source.id%3AS204847658%2Ctype%3Aarticle%2Cfrom_publication_date%3A2016-01-01%2Cto_publication_date%3A2025-12-31&group_by=publication_year&per_page=100",
+      "sha256": "4b0ca97ac2b2fb1a99144ce98fc8cd9e3688c6fc3a1ad18b226370a4f1b65e34",
+      "counts": {
+        "2016": 575,
+        "2017": 578,
+        "2018": 597,
+        "2019": 599,
+        "2020": 704,
+        "2021": 657,
+        "2022": 639,
+        "2023": 563,
+        "2024": 607,
+        "2025": 692
+      },
+      "total": 6211
+    },
+    {
+      "label": "Hydrology and Earth System Sciences",
+      "source_id": "S93121129",
+      "url": "https://api.openalex.org/works?filter=primary_location.source.id%3AS93121129%2Ctype%3Aarticle%2Cfrom_publication_date%3A2016-01-01%2Cto_publication_date%3A2025-12-31&group_by=publication_year&per_page=100",
+      "sha256": "d087945f0715e7d562a6802d92b5bd3ee117f3f2a3abfa61dee471ec4788fafd",
+      "counts": {
+        "2016": 293,
+        "2017": 363,
+        "2018": 367,
+        "2019": 278,
+        "2020": 315,
+        "2021": 322,
+        "2022": 318,
+        "2023": 238,
+        "2024": 265,
+        "2025": 336
+      },
+      "total": 3095
+    },
+    {
+      "label": "Remote Sensing of Environment",
+      "source_id": "S141808269",
+      "url": "https://api.openalex.org/works?filter=primary_location.source.id%3AS141808269%2Ctype%3Aarticle%2Cfrom_publication_date%3A2016-01-01%2Cto_publication_date%3A2025-12-31&group_by=publication_year&per_page=100",
+      "sha256": "02fdfd00873ff008c144a3ce8d2614a2a492686b66325bc34113eecc21886257",
+      "counts": {
+        "2016": 432,
+        "2017": 571,
+        "2018": 485,
+        "2019": 525,
+        "2020": 494,
+        "2021": 476,
+        "2022": 428,
+        "2023": 409,
+        "2024": 486,
+        "2025": 464
+      },
+      "total": 4770
+    },
+    {
+      "label": "Journal of Advances in Modeling Earth Systems",
+      "source_id": "S185824406",
+      "url": "https://api.openalex.org/works?filter=primary_location.source.id%3AS185824406%2Ctype%3Aarticle%2Cfrom_publication_date%3A2016-01-01%2Cto_publication_date%3A2025-12-31&group_by=publication_year&per_page=100",
+      "sha256": "660c485dc1d8d8efc112d3078d66b3f004e3ba1b7ffaf10d2d225201d2ebdfa0",
+      "counts": {
+        "2016": 104,
+        "2017": 162,
+        "2018": 165,
+        "2019": 220,
+        "2020": 239,
+        "2021": 191,
+        "2022": 249,
+        "2023": 220,
+        "2024": 248,
+        "2025": 284
+      },
+      "total": 2082
+    },
+    {
+      "label": "Geoscientific Model Development",
+      "source_id": "S60406085",
+      "url": "https://api.openalex.org/works?filter=primary_location.source.id%3AS60406085%2Ctype%3Aarticle%2Cfrom_publication_date%3A2016-01-01%2Cto_publication_date%3A2025-12-31&group_by=publication_year&per_page=100",
+      "sha256": "78b7457f8a00b83662b1726bf2b6148adcefc08c5386c89bd1de5832c749f0e6",
+      "counts": {
+        "2016": 223,
+        "2017": 220,
+        "2018": 247,
+        "2019": 231,
+        "2020": 291,
+        "2021": 348,
+        "2022": 396,
+        "2023": 336,
+        "2024": 394,
+        "2025": 434
+      },
+      "total": 3120
+    },
+    {
+      "label": "Geophysical Research Letters",
+      "source_id": "S36624081",
+      "url": "https://api.openalex.org/works?filter=primary_location.source.id%3AS36624081%2Ctype%3Aarticle%2Cfrom_publication_date%3A2016-01-01%2Cto_publication_date%3A2025-12-31&group_by=publication_year&per_page=100",
+      "sha256": "5762997d3b686c3f36b864e78acfbf35dee55301200d0493d186e7c6d679b171",
+      "counts": {
+        "2016": 1496,
+        "2017": 1407,
+        "2018": 1514,
+        "2019": 1552,
+        "2020": 1819,
+        "2021": 1711,
+        "2022": 1765,
+        "2023": 1518,
+        "2024": 1750,
+        "2025": 2017
+      },
+      "total": 16549
+    },
+    {
+      "label": "Journal of Geophysical Research: Atmospheres",
+      "source_id": "S207178839",
+      "url": "https://api.openalex.org/works?filter=primary_location.source.id%3AS207178839%2Ctype%3Aarticle%2Cfrom_publication_date%3A2016-01-01%2Cto_publication_date%3A2025-12-31&group_by=publication_year&per_page=100",
+      "sha256": "5ff475062412d800021ec984a8f8b436e155f4f8efecc26440993130d720fda1",
+      "counts": {
+        "2016": 852,
+        "2017": 1391,
+        "2018": 825,
+        "2019": 812,
+        "2020": 819,
+        "2021": 804,
+        "2022": 729,
+        "2023": 746,
+        "2024": 831,
+        "2025": 982
+      },
+      "total": 8791
+    },
+    {
+      "label": "Journal of Geophysical Research: Earth Surface",
+      "source_id": "S4210168721",
+      "url": "https://api.openalex.org/works?filter=primary_location.source.id%3AS4210168721%2Ctype%3Aarticle%2Cfrom_publication_date%3A2016-01-01%2Cto_publication_date%3A2025-12-31&group_by=publication_year&per_page=100",
+      "sha256": "f436dd6b4f9e06360eaeefb0e44cbdcd3df883452f2cdf8b8ef98f0c186fc250",
+      "counts": {
+        "2016": 136,
+        "2017": 110,
+        "2018": 167,
+        "2019": 157,
+        "2020": 147,
+        "2021": 177,
+        "2022": 153,
+        "2023": 175,
+        "2024": 176,
+        "2025": 176
+      },
+      "total": 1574
+    },
+    {
+      "label": "Journal of Geophysical Research: Oceans",
+      "source_id": "S4210200322",
+      "url": "https://api.openalex.org/works?filter=primary_location.source.id%3AS4210200322%2Ctype%3Aarticle%2Cfrom_publication_date%3A2016-01-01%2Cto_publication_date%3A2025-12-31&group_by=publication_year&per_page=100",
+      "sha256": "f66be6d19840513ac730a5856794f1ea881ef4db26af9b0934fbc83f2e8846f4",
+      "counts": {
+        "2016": 493,
+        "2017": 544,
+        "2018": 517,
+        "2019": 491,
+        "2020": 553,
+        "2021": 497,
+        "2022": 460,
+        "2023": 336,
+        "2024": 494,
+        "2025": 532
+      },
+      "total": 4917
+    },
+    {
+      "label": "Earth System Science Data",
+      "source_id": "S106909380",
+      "url": "https://api.openalex.org/works?filter=primary_location.source.id%3AS106909380%2Ctype%3Aarticle%2Cfrom_publication_date%3A2016-01-01%2Cto_publication_date%3A2025-12-31&group_by=publication_year&per_page=100",
+      "sha256": "7f54cd16efc90f82a009e158a7b70d0b495db23aee039e779f01977f9469f7db",
+      "counts": {
+        "2016": 41,
+        "2017": 61,
+        "2018": 127,
+        "2019": 104,
+        "2020": 192,
+        "2021": 287,
+        "2022": 269,
+        "2023": 262,
+        "2024": 259,
+        "2025": 334
+      },
+      "total": 1936
+    },
+    {
+      "label": "Geophysics",
+      "source_id": "S106174089",
+      "url": "https://api.openalex.org/works?filter=primary_location.source.id%3AS106174089%2Ctype%3Aarticle%2Cfrom_publication_date%3A2016-01-01%2Cto_publication_date%3A2025-12-31&group_by=publication_year&per_page=100",
+      "sha256": "d2d1a9f2acd8c31dc5228ae0054079c2afd64d04b01d911b5b84e68cf941e3fb",
+      "counts": {
+        "2016": 448,
+        "2017": 442,
+        "2018": 412,
+        "2019": 429,
+        "2020": 417,
+        "2021": 476,
+        "2022": 384,
+        "2023": 380,
+        "2024": 365,
+        "2025": 340
+      },
+      "total": 4093
+    },
+    {
+      "label": "IEEE Transactions on Geoscience and Remote Sensing",
+      "source_id": "S111326731",
+      "url": "https://api.openalex.org/works?filter=primary_location.source.id%3AS111326731%2Ctype%3Aarticle%2Cfrom_publication_date%3A2016-01-01%2Cto_publication_date%3A2025-12-31&group_by=publication_year&per_page=100",
+      "sha256": "1bc553f11550d13a19d20f50ece7697d112fcdd53e72e1214bec39d03ca732d1",
+      "counts": {
+        "2016": 609,
+        "2017": 736,
+        "2018": 668,
+        "2019": 815,
+        "2020": 1116,
+        "2021": 1466,
+        "2022": 1598,
+        "2023": 2200,
+        "2024": 2906,
+        "2025": 2608
+      },
+      "total": 14722
+    },
+    {
+      "label": "Journal of Geophysical Research (legacy combined, pre-2013 split)",
+      "source_id": "S207178839",
+      "url": "https://api.openalex.org/works?filter=primary_location.source.id%3AS207178839%2Ctype%3Aarticle%2Cfrom_publication_date%3A2016-01-01%2Cto_publication_date%3A2025-12-31&group_by=publication_year&per_page=100",
+      "sha256": "8b3ba9e667e351adc0903ffd819dcd8d2e4eb69c8c9b860c57a37d99f82f5f46",
+      "counts": {
+        "2016": 852,
+        "2017": 1391,
+        "2018": 825,
+        "2019": 812,
+        "2020": 819,
+        "2021": 804,
+        "2022": 729,
+        "2023": 746,
+        "2024": 831,
+        "2025": 982
+      },
+      "total": 8791
+    }
+  ]
+}

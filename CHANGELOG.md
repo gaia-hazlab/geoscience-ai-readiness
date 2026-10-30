@@ -1,5 +1,25 @@
 # Unreleased — 2026-10-29
 
+- Standalone harvester 0.3.0: `frame.kind: "topic"` harvests a quoted
+  title/abstract phrase per year (AI/ML terms refused in the phrase); manifests,
+  plans and sample designs label the frame kind and population. Added
+  `standalone/config.das_topic.json`, the DAS topic frame for Comment 4.
+- New `ai_readiness.semantic_screen`: abstract-level semantic screen through the
+  Claude API Message Batches (prepare, pilot, submit, collect, aggregate,
+  validation-sample, validate, plot) with `semantic_screen_codebook_v0.1.md`.
+  Rows are screening evidence with model, prompt hash and cost recorded; missing
+  abstracts and failed answers stay `unclear`. The client is imported only by
+  the commands that call it; `pilot` and `submit` need `--execute`.
+- Optional `semantic` extra and pixi environment (anthropic 1.x) with DAS tasks;
+  the default environment is unchanged.
+- Ran the DAS path on 29 October 2026: 1,423 works harvested, 1,264 abstracts
+  screened (batch msgbatch_01HdBu5onQdhwxu6adW2ZjqL, $4.48). Results are
+  unvalidated and live in the gitignored `runs/` folder; the summary and the
+  validation instructions are in `docs/semantic_scan_workflow_2026-10-29.md`.
+- `validate` reads coder spreadsheets (CSV) and reports design-weighted
+  precision and recall.
+- Added `scripts/explore_das_semantic.py`, four exploratory draft plots of the
+  DAS screen.
 - Added a pixi environment (`pixi.toml`, `pixi.lock`) for macOS and Linux with
   tasks for verification, the offline test suites, figures, the instrument
   builder and the standalone dry run. Poppler is now provided by the environment.
