@@ -9,6 +9,8 @@ Four directions can be measured from published sources today, though with very d
 
 No number in this folder was estimated. A value that could not be found in a source is recorded as "not found". The four directions are never added into one complexity score.
 
+Section 5 sets each axis against sourced AI successes and limitations, and summarizes readiness per discipline as a profile of separate measures. The same material is section 6 of the HTML report `docs/report/ai_readiness_solid_earth.html` and notebook `notebooks/04_complexity_and_readiness.ipynb`.
+
 ## Files
 
 | File | Content | Rows | Rows with a value | Read in source text |
@@ -17,9 +19,13 @@ No number in this folder was estimated. A value that could not be found in a sou
 | `dimensionality.json` | nominal sizes and published effective dimensions | 41 | 36 | 36 |
 | `coupled_pdes.json` | balance-equation and state-variable counts per coupled system | 20 | 19 | 18 |
 | `unobserved_drivers.json` | sourced gaps in what drives hazard outcomes | 29 | 21 (+3 qualitative) | 20 |
+| `ai_evidence.json` | AI successes and limitations along the four axes | 30 | 28 | 28 |
+| `readiness_profile.json` | status per discipline and measure, citing row ids; no numbers of its own | 8 disciplines × 5 measures | | |
+| `eos_guidelines.json` | Eos Opinion rules, read 2026-10-30 | 16 items | | 13 |
+| `eos_evidence_brief.md` | sourced fact sheet for an Eos Opinion; not a draft (Eos bars AI-written text) | | | |
 | `SUMMARY.md` | one-page summary: what is measurable, what needs data, headline | | | |
 
-How the tables were made: four web-research subagents ran on 2026-10-30 under one sourcing protocol, and their output was reviewed in this session.
+How the tables were made: five web-research subagents ran on 2026-10-30 under one sourcing protocol, and their output was reviewed in this session.
 - Every Digital Object Identifier (DOI) was checked against the Crossref API.
 - I re-read the following numbers in the downloaded text myself:
   - Pope et al. 2021, Table 1
@@ -27,6 +33,8 @@ How the tables were made: four web-research subagents ran on 2026-10-30 under on
   - Gruszczynski et al. 2016: "nearly 40 %"
   - Faranda et al. 2017: D = 13
   - Issah & Martin: the singular-value remark
+  - the Eos rule on AI tools, in the eos.org/submit page text
+  - Dascher-Cousineau et al. 2023 and Stockman et al. 2023 abstracts (rows `ai-30`, `ai-31`)
 - Everything else was read by a subagent and not re-read here.
 
 Figures rebuild offline. Both scripts run with the standard library plus matplotlib, and the checks below run under `pixi run all`:
@@ -39,9 +47,9 @@ python scripts/complexity_tables.py
 pixi run python scripts/complexity_figures.py
 ```
 
-The first validates all four tables against the sourcing rules. The second writes `build/complexity/fig1_power_law_exponents.{png,svg}`, `fig2_coupled_pde_counts.{png,svg}` and `power_law_pdf_exponents.csv`. `tests/test_complexity_tables.py` runs the validator inside `pixi run all`.
+The first validates the five tables and the readiness profile against the sourcing rules. The second writes `build/complexity/fig1_power_law_exponents.{png,svg}`, `fig2_coupled_pde_counts.{png,svg}`, `fig3_readiness_profile.{png,svg}`, `power_law_pdf_exponents.csv` and `readiness_profile.csv`. The report and notebook rebuild with `pixi run -e report report` and `pixi run -e report notebooks`. `tests/test_complexity_tables.py` runs the validator inside `pixi run all`.
 
-### Row conventions (all four tables)
+### Row conventions (all five tables)
 
 Each row carries:
 - `value`, or `value_min` and `value_max`, exactly as stated, plus `value_text` with the source's wording;
@@ -242,6 +250,41 @@ Qualitative findings, with no number:
 - A percentage of seismic loss variance due to exposure and vulnerability versus hazard. No peer-reviewed number was found (row `uo-05`), and the qualitative sources disagree on scope.
 - A global fraction of the subsurface constrained by observation. Seafloor mapping is a surface quantity.
 - The fraction of damaging earthquakes on unmapped faults. England & Jackson give no fraction, and the 2023 Türkiye ruptures were mainly on mapped faults (Reitman et al. 2023).
+
+## 5. AI evidence along the four axes, and a readiness profile
+
+**AI evidence.** `ai_evidence.json` holds 28 sourced results, each tagged with its axis and as a success or a limitation against a stated baseline. Both kinds were sought on purpose, so the counts describe what was collected, not how often AI succeeds.
+
+| Axis | Successes | Limitations | Example success | Example limitation |
+|---|---|---|---|---|
+| Dimensionality | 8 | 2 | GraphCast beats the best operational deterministic system on 90% of 1,380 targets (Lam et al. 2023) | Pangu-Weather's effective resolution is 500 to 700 km on a 0.25° grid (Bonavita 2024) |
+| Closures | 5 | 3 | a neural point process keeps forecast skill at M1.2 where ETAS degrades (Stockman et al. 2023) | neural convection and NeuralGCM fail at +4 K warming (Rasp et al. 2018; Kochkov et al. 2024) |
+| Tails | 1 | 3 | probabilistic AI beats the IFS ensemble on record heat (Wessel et al. 2026, preprint) | the HRES physics model beats GraphCast, Pangu-Weather and FuXi (five configurations) on 2020 record extremes (Zhang et al. 2026) |
+| Unobserved drivers | 3 | 3 | 1.4 billion building footprints from imagery (Microsoft) | building recall 70.9% in Africa against 85.9% in Europe |
+
+ETAS is the epidemic-type aftershock sequence model; IFS and HRES are the ECMWF Integrated Forecasting System and its high-resolution configuration.
+
+DeVries et al. (2018), the deep-learning aftershock study, was removed as a contested exemplar. On 2026-10-30, Nature and Crossref showed a Matters Arising (Mignan & Broccardo 2019) and a Reply, with no retraction notice. The Mignan & Broccardo limitation stays (`ai-22`).
+
+**Readiness profile.** `readiness_profile.json` scores nothing. For 8 disciplines and 5 measures it records:
+- a status: measured, partial, not found or not assessed;
+- the row ids the cell rests on.
+
+The measures are ML-ready share of the archive, published AI results, effective dimension, tail test, and unobserved drivers. The validator rejects:
+- unknown row ids;
+- statuses claimed without evidence;
+- free-standing numbers in the notes.
+
+Figure 12 of the report draws the profile.
+
+**How the axes bear on AI readiness:**
+- **Suited.** Native data are large over modestly sized measured structure, and the physics is few known laws plus empirical closures. Both are settings where learned representations and learned closures have documented gains.
+- **Opportunity.** Small ML-ready shares of the archives (`docs/archive_readiness_2026-10-30`).
+- **Work that remains.**
+  - tails: the form is untested, and AI degrades on records;
+  - labels: outcome and exposure data are missing;
+  - transfer: regional models fail out of domain;
+  - sensor data: no effective-dimension estimate for seismic, DAS or ERA5 archives.
 
 ## What this folder does not do
 

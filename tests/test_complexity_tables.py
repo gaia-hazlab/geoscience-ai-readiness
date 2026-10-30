@@ -56,6 +56,27 @@ class ComplexityTableTests(unittest.TestCase):
         table = {"retrieved": "2026-10-30", "rows": [copy.deepcopy(GOOD), copy.deepcopy(GOOD)]}
         self.assertIn("pl-01: duplicate id", ct.validate_table(table, PREFIX, EXTRA))
 
+    def test_profile_cites_known_rows_and_pairs(self):
+        import json
+        tables = ct.load()
+        profile = json.loads((ct.DOCS / "readiness_profile.json").read_text())
+        spec = importlib.util.spec_from_file_location("arf", ROOT / "scripts" / "archive_readiness_figures.py")
+        arf = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(arf)
+        self.assertEqual(ct.validate_profile(profile, tables, [p[0] for p in arf.PAIRS]), [])
+
+    def test_profile_rejects_bad_cells(self):
+        tables = {"t": {"rows": [{"id": "pl-01"}]}}
+        base = {"statuses": ["measured", "partial", "not found", "not assessed"], "columns": [{"key": "c"}]}
+        cell = lambda **kw: dict(base, rows=[{"discipline": "D", "c": kw}])
+        self.assertEqual(ct.validate_profile(cell(status="measured", evidence=["pl-01"], note="ERA5 ok"), tables), [])
+        self.assertTrue(ct.validate_profile(cell(status="measured", evidence=["pl-99"], note=""), tables))
+        self.assertTrue(ct.validate_profile(cell(status="measured", evidence=[], note=""), tables))
+        self.assertTrue(ct.validate_profile(cell(status="not assessed", evidence=["pl-01"], note=""), tables))
+        self.assertTrue(ct.validate_profile(cell(status="measured", evidence=["pl-01"], note="about 40 percent"), tables))
+        self.assertTrue(ct.validate_profile(cell(status="likely", evidence=["pl-01"], note=""), tables))
+        self.assertTrue(ct.validate_profile(cell(status="measured", evidence=["pair:Nowhere"], note=""), tables, ["Seismology"]))
+
     def test_pde_counts_are_consistent(self):
         prefix, extra = ct.TABLES["coupled_pdes.json"]
         row = {k: GOOD[k] for k in ct.COMMON}

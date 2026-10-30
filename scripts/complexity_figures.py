@@ -6,8 +6,11 @@ Usage: python scripts/complexity_figures.py [--out build/complexity]
 Inputs (tracked under docs/complexity_2026-10-30/, validated by scripts/complexity_tables.py):
   power_laws.json    sourced exponents with convention and test-against-alternatives verdict
   coupled_pdes.json  balance-equation and state-variable counts per coupled system
+  readiness_profile.json  per-discipline readiness profile (statuses and cited row ids)
+  ../archive_readiness_2026-10-30/  archive and benchmark volumes (via scripts/archive_readiness_figures.py)
 
-Outputs: two PNG/SVG figures and power_law_pdf_exponents.csv (the rows behind figure 1).
+Outputs: three PNG/SVG figures, power_law_pdf_exponents.csv (the rows behind figure 1) and
+readiness_profile.csv (the cells behind figure 3).
 Figure 1 draws only exponents that the source states in the density convention p(x) ~ x^-alpha;
 a source that writes the exponent with its sign (x^-2.40 reported as -2.40) is drawn by magnitude.
 No other convention is converted, and the figures never combine directions into one score.
@@ -17,6 +20,7 @@ from __future__ import annotations
 import argparse
 import csv
 import importlib.util
+import json
 import textwrap
 from pathlib import Path
 
@@ -28,6 +32,9 @@ ROOT = Path(__file__).resolve().parents[1]
 _spec = importlib.util.spec_from_file_location("complexity_tables", ROOT / "scripts" / "complexity_tables.py")
 ct = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(ct)
+_spec = importlib.util.spec_from_file_location("archive_readiness_figures", ROOT / "scripts" / "archive_readiness_figures.py")
+arf = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(arf)
 
 S1, S2, S3 = "#2a78d6", "#eb6834", "#1baf7a"   # reference palette slots 1-3 (dataviz skill), as in archive_readiness_figures.py
 INK, INK2, GRID, NEUTRAL = "#0b0b0b", "#52514e", "#e4e3df", "#b9b8b2"
@@ -177,6 +184,71 @@ def fig_pdes(out, pdes):
            "glacier-ocean composite sums two sources and was not read as one model. Counts measure model size, not difficulty.")
 
 
+STATUS_STYLE = {"measured": (S1, "white"), "partial": ("#a8c8ee", INK), "not found": (S2, "white"), "not assessed": (GRID, INK2)}
+
+
+def profile_cells(profile, tables, pairs):
+    """One record per cell: status, cited evidence and the short label drawn in figure 3."""
+    rows = {r["id"]: r for payload in tables.values() for r in payload["rows"]}
+    pairs = {p["row"]: p for p in pairs}
+    cells = []
+    for prow in profile["rows"]:
+        for col in profile["columns"]:
+            cell = prow[col["key"]]
+            ev = cell["evidence"]
+            label = ""
+            if col["key"] == "ml_ready" and ev:
+                shares = []
+                for ref in ev:
+                    pr = pairs[ref[5:]]
+                    tag = ref[5:].split(": ")[1] + " " if ": " in ref and len(ev) > 1 else ""
+                    if pr["share_percent"] is not None:
+                        pct = pr["share_percent"]
+                        shares.append(tag + ("below 0.001%" if pct < 0.001 else f"{pct:.2g}%"))
+                    elif pr["packaged_bytes"] is None:
+                        shares.append("no benchmark")
+                    else:
+                        shares.append("no archive size")
+                label = ", ".join(shares)
+            elif ev:
+                sourced = [rows[i] for i in ev if any(rows[i][k] is not None for k in ("value", "value_min", "value_max"))]
+                label = f"{len(sourced)} sourced row" + ("s" if len(sourced) != 1 else "")
+            cells.append({"discipline": prow["discipline"], "column": col["label"], "status": cell["status"], "label": label,
+                          "evidence": "; ".join(ev), "note": cell["note"]})
+    return cells
+
+
+def fig_profile(out, profile, cells):
+    cols = [c["label"] for c in profile["columns"]]
+    discs = [r["discipline"] for r in profile["rows"]]
+    fig, ax = plt.subplots(figsize=(9.0, 0.48 * len(discs) + 2.3))
+    fig.subplots_adjust(left=0.24, right=0.99, top=0.80, bottom=0.17)
+    for c in cells:
+        x, y = cols.index(c["column"]), len(discs) - 1 - discs.index(c["discipline"])
+        face, ink = STATUS_STYLE[c["status"]]
+        ax.add_patch(plt.Rectangle((x + 0.03, y + 0.06), 0.94, 0.88, color=face, lw=0))
+        ax.text(x + 0.5, y + 0.5, c["label"] or c["status"], ha="center", va="center", fontsize=7.2, color=ink,
+                style="italic" if not c["label"] else "normal")
+    ax.set_xlim(0, len(cols)); ax.set_ylim(0, len(discs))
+    ax.set_xticks([i + 0.5 for i in range(len(cols))], [textwrap.fill(c, 16) for c in cols], fontsize=8)
+    ax.xaxis.tick_top()
+    ax.set_yticks([i + 0.5 for i in range(len(discs))], discs[::-1], fontsize=8)
+    ax.tick_params(length=0)
+    ax.grid(False)
+    for side in ("left", "bottom"):
+        ax.spines[side].set_visible(False)
+    handles = [plt.Rectangle((0, 0), 1, 1, color=STATUS_STYLE[k][0]) for k in profile["statuses"]]
+    ax.legend(handles, profile["statuses"], frameon=False, ncol=4, fontsize=7.5, loc="upper center", bbox_to_anchor=(0.45, -0.01))
+    fig.suptitle("AI-readiness profile by discipline: each column is a separate measure, never summed", x=0.01, ha="left",
+                 fontsize=10, color=INK)
+    finish(fig, out, "fig3_readiness_profile",
+           "Sources: docs/complexity_2026-10-30/readiness_profile.json and the tables it cites; the ML-ready share is from "
+           "docs/archive_readiness_2026-10-30 (archive pairs), retrieved 2026-10-30. Status rule in readiness_profile.json: measured = "
+           "a sourced value read in the source text for this discipline; partial = proxy, secondary, small-sample or qualitative "
+           "evidence; not found = searched and absent; not assessed = not searched. Cell labels give the share or the count of "
+           "sourced rows behind the cell; values are in readiness_profile.csv and the report.")
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--out", type=Path, default=ROOT / "build" / "complexity")
@@ -190,6 +262,16 @@ def main():
         writer.writerows(rows)
     fig_power_laws(args.out, rows)
     fig_pdes(args.out, tables["coupled_pdes.json"])
+    profile = json.loads((ct.DOCS / "readiness_profile.json").read_text())
+    errs = ct.validate_profile(profile, tables, [p[0] for p in arf.PAIRS])
+    if errs:
+        raise SystemExit("\n".join(errs))
+    cells = profile_cells(profile, tables, arf.pairs_table())
+    with open(args.out / "readiness_profile.csv", "w", newline="") as fh:
+        writer = csv.DictWriter(fh, fieldnames=list(cells[0]))
+        writer.writeheader()
+        writer.writerows(cells)
+    fig_profile(args.out, profile, cells)
     print(f"Wrote figures to {args.out}")
 
 

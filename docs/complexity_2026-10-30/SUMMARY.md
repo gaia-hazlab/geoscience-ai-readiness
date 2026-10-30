@@ -10,6 +10,16 @@ So extreme-event statistics, where losses concentrate, rest on a functional form
 - **Equation counts.** Minimal coupled geoscience models need 1 to 17 scalar balance equations, against 4 to 8 for Navier-Stokes, Maxwell and magnetohydrodynamics. Equation count does not separate geoscience from physics; closures and scale span do.
 - **Intrinsic dimension.** Published estimates for smooth climate fields are tens: 18.5 to 27 for Northern Hemisphere 500-hPa height, and 27 to 90 for surface temperature, depending on hemisphere and averaging (Wang & Shen 1999). Natural-image benchmarks give 7 to 43 (Pope et al. 2021). There is no estimate for seismic, distributed acoustic sensing (DAS) or ERA5 reanalysis data. The evidence does not show geoscience data to be intrinsically higher-dimensional.
 
+## How this connects to AI readiness
+
+Geoscience is suited to AI on two axes and is hard on two:
+- **Suited:** large native data over modest measured structure, and few known balance laws with empirical closures.
+- **Hard:** heavy tails of uncertain form, and unobserved drivers with missing outcome labels.
+
+`ai_evidence.json` sets each axis against sourced successes and limitations, 28 rows in all. `readiness_profile.json` summarizes 8 disciplines on 5 separate measures, with no score. The same material is section 6 of the HTML report and notebook 04.
+
+**Eos.** eos.org/submit bars proposals and articles written in part or full with AI tools. Checked in the page text on 2026-10-30. `eos_evidence_brief.md` is a sourced fact sheet with the Opinion limits (1,500 words, at most 12 references, headline up to 64 characters). The piece itself is yours to write.
+
 ## What is measurable now (sourced, in this folder)
 
 | Direction | Measured | Table |
@@ -18,6 +28,8 @@ So extreme-event statistics, where losses concentrate, rest on a functional form
 | Dimensionality | 20 nominal sizes; 16 published effective-dimension values, 4 of them comparisons | `dimensionality.json` |
 | Coupled partial differential equations (PDEs) | balance-equation and state counts for 16 geoscience and 3 physics systems under one counting rule | `coupled_pdes.json` |
 | Unobserved drivers | 21 sourced gaps: faults, seafloor, geologic maps, building completeness, loss records, gauges | `unobserved_drivers.json` |
+| AI evidence | 17 successes and 11 limitations across the four axes, each against a stated baseline | `ai_evidence.json` |
+| Readiness profile | 8 disciplines × 5 measures, status and cited rows per cell | `readiness_profile.json` |
 
 ## What needs new data or analysis
 

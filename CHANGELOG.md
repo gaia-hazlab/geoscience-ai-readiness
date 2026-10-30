@@ -6,6 +6,15 @@
 - Added `scripts/complexity_tables.py` (offline validator of the sourcing rules),
   `scripts/complexity_figures.py` (two figures) and
   `tests/test_complexity_tables.py`. SHA256SUMS extended to the new files.
+- Added `ai_evidence.json` (AI successes and limitations along the four complexity
+  axes), `readiness_profile.json` (per-discipline profile citing row ids, never
+  summed), `eos_guidelines.json` and `eos_evidence_brief.md` (a fact sheet, not a
+  draft: Eos bars AI-written proposals and articles). The validator checks the
+  profile; `complexity_figures.py` adds figure 3, the profile.
+- Report: new section 6 "Why the geosciences are hard, and why that suits AI"
+  (figures 10 to 12, AI-evidence table, profile); Methods, Reproducibility and
+  Limitations renumbered to 7 to 9 and extended. New notebook
+  `notebooks/04_complexity_and_readiness.ipynb`.
 
 # Unreleased — 2026-10-29
 

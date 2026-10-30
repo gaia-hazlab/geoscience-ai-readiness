@@ -26,7 +26,9 @@ TABLES = {  # file name: (id prefix, direction-specific required fields)
     "coupled_pdes.json": ("pde-", ("balance_equations_vector", "balance_equations_scalar_3d", "ode_state_variables",
                                    "field_unknowns", "constitutive_closures", "count_derived_by")),
     "unobserved_drivers.json": ("uo-", ("category", "region", "outcome")),
+    "ai_evidence.json": ("ai-", ("axis", "evidence_type", "task", "baseline", "metric")),
 }
+AXES = {"dimensionality", "closures", "tails", "unobserved"}
 COMMON = ("id", "item", "quantity", "value", "value_min", "value_max", "value_text", "units", "source", "doi", "url",
           "as_of", "quote", "where_read", "checked_in_text", "notes")
 WHERE_READ = {"full text", "abstract", "landing page", "search snippet", "not read"}
@@ -34,6 +36,7 @@ TESTED = {"tested, power law favored", "tested, alternative favored or not disti
           "not tested in this source", "not stated"}
 DOI = re.compile(r"^10\.\d{4,9}/\S+$")
 NUMBER = (int, float)
+NOTE_NUMBER = re.compile(r"(?<![A-Za-z])\d")  # a free-standing number; names such as ERA5 pass
 
 
 def row_errors(row, prefix, extra):
@@ -83,6 +86,8 @@ def row_errors(row, prefix, extra):
         bad("quote longer than 40 words; keep quotations short")
     if "tested_vs_alternatives" in extra and row["tested_vs_alternatives"] not in TESTED:
         bad(f"tested_vs_alternatives must be one of {sorted(TESTED)}")
+    if "axis" in extra and (row["axis"] not in AXES or row["evidence_type"] not in ("success", "limitation")):
+        bad(f"axis must be one of {sorted(AXES)} and evidence_type success or limitation")
     if "kind" in extra and row["kind"] not in ("nominal", "effective"):
         bad("kind must be 'nominal' or 'effective'")
     if "balance_equations_scalar_3d" in extra and found:
@@ -121,9 +126,46 @@ def load(directory=DOCS):
         payload = json.loads(path.read_text())
         errs += [f"{name}: {e}" for e in validate_table(payload, prefix, extra)]
         tables[name] = payload
+    profile_path = Path(directory) / "readiness_profile.json"
+    if not errs and profile_path.is_file():
+        errs += [f"readiness_profile.json: {e}" for e in validate_profile(json.loads(profile_path.read_text()), tables)]
     if errs:
         raise ValueError("\n".join(errs))
     return tables
+
+
+def validate_profile(profile, tables, pair_labels=None):
+    """Check readiness_profile.json: known statuses and columns, and every cited row id exists.
+
+    pair_labels: row labels of the archive-pair table (scripts/archive_readiness_figures.py PAIRS);
+    when None, pair:<row> references are not checked.
+    """
+    errs = []
+    statuses, keys = set(profile["statuses"]), [c["key"] for c in profile["columns"]]
+    ids = {r["id"] for payload in tables.values() for r in payload["rows"]}
+    for row in profile["rows"]:
+        d = row.get("discipline", "?")
+        for key in keys:
+            cell = row.get(key)
+            if not isinstance(cell, dict):
+                errs.append(f"{d}/{key}: missing cell")
+                continue
+            if cell.get("status") not in statuses:
+                errs.append(f"{d}/{key}: unknown status {cell.get('status')!r}")
+            ev = cell.get("evidence", [])
+            if cell.get("status") in ("measured", "partial", "not found") and not ev:
+                errs.append(f"{d}/{key}: status {cell['status']!r} needs evidence")
+            if cell.get("status") == "not assessed" and ev:
+                errs.append(f"{d}/{key}: 'not assessed' cannot cite evidence")
+            if NOTE_NUMBER.search(cell.get("note", "")):
+                errs.append(f"{d}/{key}: notes carry no numbers; numbers come from the cited rows")
+            for ref in ev:
+                if ref.startswith("pair:"):
+                    if pair_labels is not None and ref[5:] not in pair_labels:
+                        errs.append(f"{d}/{key}: unknown archive pair {ref!r}")
+                elif ref not in ids:
+                    errs.append(f"{d}/{key}: unknown row id {ref!r}")
+    return errs
 
 
 def summary(tables):
