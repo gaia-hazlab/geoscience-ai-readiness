@@ -38,6 +38,18 @@ class RequeryCheckTests(unittest.TestCase):
         self.assertGreaterEqual(len(results), 12)
         self.assertTrue(all(r["ok"] for r in results), [r for r in results if not r["ok"]])
 
+    def test_missing_frozen_file_fails_the_check_without_raising(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            folder = Path(temporary)
+            (folder / "present.json").write_text("{}")
+            digest = __import__("hashlib").sha256(b"{}").hexdigest()
+            manifest = folder / "manifest.json"
+            manifest.write_text(json.dumps({"files": {"present.json": digest, "absent.json": digest}}))
+            results = {Path(r["file"]).name: r["ok"] for r in self.rq.check_hashes([manifest])}
+            self.assertEqual(results, {"present.json": True, "absent.json": False})
+            with patch.object(self.rq, "DAS_MANIFEST", manifest):
+                self.assertEqual(self.rq.main(["--offline"]), 1)
+
     def test_offline_mode_makes_no_request(self):
         with patch("urllib.request.urlopen") as urlopen:
             self.assertEqual(self.rq.main(["--offline"]), 0)

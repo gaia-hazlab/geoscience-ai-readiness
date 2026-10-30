@@ -128,7 +128,7 @@ def collect_datacite(c: Collector):
 
 
 def hf_search(c: Collector, term: str, max_pages: int = 40):
-    ids, downloads, pages, truncated = {}, 0, 0, False
+    ids, pages, truncated = {}, 0, False
     url = "https://huggingface.co/api/datasets?" + urlencode({"search": term, "limit": 1000})
     while url:
         data, link = c.get(f"hf_{term}_p{pages + 1}", url, sleep=0.6)

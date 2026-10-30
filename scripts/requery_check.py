@@ -72,17 +72,15 @@ def summarize(rows):
             "largest": sorted((r for r in rows if r["relative_change"] is not None), key=lambda r: -abs(r["relative_change"]))[:10]}
 
 
-def check_hashes():
-    """Frozen inputs must still match their manifests (offline)."""
+def check_hashes(manifests=None):
+    """Frozen inputs must still match their manifests (offline). A missing file is a failed check, never an exception."""
     results = []
-    das = json.loads(DAS_MANIFEST.read_text())
-    for name, digest in das["files"].items():
-        path = DAS_MANIFEST.parent / name
-        results.append({"file": str(path.relative_to(ROOT)), "ok": hashlib.sha256(path.read_bytes()).hexdigest() == digest})
-    screen = json.loads(SCREEN_MANIFEST.read_text())
-    for name, digest in screen["files"].items():
-        path = SCREEN_MANIFEST.parent / name
-        results.append({"file": str(path.relative_to(ROOT)), "ok": path.is_file() and hashlib.sha256(path.read_bytes()).hexdigest() == digest})
+    for manifest_path in manifests or (DAS_MANIFEST, SCREEN_MANIFEST):
+        manifest = json.loads(Path(manifest_path).read_text())
+        for name, digest in manifest["files"].items():
+            path = Path(manifest_path).parent / name
+            label = str(path.relative_to(ROOT)) if path.is_relative_to(ROOT) else str(path)
+            results.append({"file": label, "ok": path.is_file() and hashlib.sha256(path.read_bytes()).hexdigest() == digest})
     return results
 
 
