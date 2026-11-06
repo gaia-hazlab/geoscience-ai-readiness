@@ -103,8 +103,9 @@ before any figure) see the semantic screen section of the same guide and
 
 A domain-level assessment, framed from a solid-earth perspective, is in
 [docs/report/ai_readiness_solid_earth.html](docs/report/ai_readiness_solid_earth.html)
-with its data and method notes in `docs/archive_readiness_2026-10-30/` and the analysis
-notebooks in `notebooks/`. Rebuild and check it with `pixi run -e report report`,
+with its data and method notes in `docs/archive_readiness_2026-10-30/`, checks on the DAS
+labels in `docs/das_screen_checks_2026-11-06/` and the analysis notebooks in `notebooks/`.
+Each report figure follows a statement of how it was made. Rebuild and check it with `pixi run -e report report`,
 `pixi run -e report notebooks` and `pixi run -e report requery-live`.
 
 Start with [the preferred workflow guide](tools/ai_readiness/README.md):

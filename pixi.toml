@@ -1,6 +1,6 @@
 [workspace]
 name = "geoscience-ai-readiness"
-version = "0.3.0"
+version = "0.4.0"
 description = "Evidence-first geoscience AI-readiness literature tools, rubric and reproducible figures"
 authors = ["Marine Denolle <mdenolle@uw.edu>"]
 channels = ["conda-forge"]
@@ -51,7 +51,7 @@ notebooks = { cmd = "python scripts/run_notebooks.py", description = "Execute no
 figures-readiness = { cmd = "python scripts/archive_readiness_figures.py", description = "Domain-readiness figures into build/archive_readiness" }
 report = { cmd = "python scripts/build_report.py", description = "Build docs/report/ai_readiness_solid_earth.html", depends-on = ["figures-readiness"] }
 requery-offline = { cmd = "python scripts/requery_check.py --offline", description = "Verify frozen-snapshot hashes" }
-requery-live = { cmd = "python scripts/requery_check.py --out runs/requery_$(date +%Y-%m-%d)", description = "Re-query OpenAlex, DataCite and the DAS series live and compare with frozen counts" }
+requery-live = { cmd = "python scripts/requery_check.py --out runs/requery_$(date +%Y-%m-%d) --with-hf --publish", description = "Re-query OpenAlex, DataCite, Hugging Face and the DAS series live, compare with frozen counts, write the dated summary to docs/" }
 
 [environments]
 default = { features = ["study", "instrument"], solve-group = "default" }

@@ -93,10 +93,17 @@ From the December 2025 author guidelines and eos.org/submit, retrieved 2026-10-3
 | `ai-27` | AI success: catalog of ~900,000 earthquakes ... an order of magnitude more events than the catalog routinely produced | Tan et al. (2021), The Seismic Record | https://doi.org/10.1785/0320210001 | yes |
 | `ai-28` | AI limitation: no model trained on a regional dataset reaches an AUC score above 0.75 for detection on GEOFON ... in-domain performance of 0.85 to 0.99 | Munchmeyer et al. (2022), JGR Solid Earth | https://doi.org/10.1029/2021JB023499 | yes |
 
+## Corrections of 6 November 2026
+
+Archive shares, the ML rate and the DAS comparison in the report were corrected. Use section 10 of the HTML report and `docs/archive_readiness_2026-10-30/README.md`, not earlier copies. The DAS AI-as-method share remains unvalidated: the 130-abstract sample has no human coding. Rows added on 2026-11-06 were read through page summaries and need reading in the source.
+
 ## Statements the evidence does not support
 
 - That AI handles higher-dimensional problems than physics-based methods. The sourced point is narrower: learning cost scales with intrinsic dimension (Pope et al. 2021), and the measured effective dimensions of climate fields are tens while native data are far larger. No estimate exists for seismic, distributed acoustic sensing (DAS) or ERA5 reanalysis data.
 - That geoscience is more complex than other fields. Exponents, equation counts and effective dimensions overlap the comparison systems in these tables.
+- That ERA5 at 20% and seismology at 0.2% measure the same thing, or that shares differ by six orders of magnitude. The first is a reformatted copy, the second curated benchmarks.
+- That packaging caused ML success in weather, or that platform counts settle a hub lag either way.
+- A rate of power-law verdicts: the 13 tested rows use different tests, and 4 further rows were read only in part.
 - Any single readiness or complexity score. The profile (`readiness_profile.json`, figure 12 of the report) is a set of separate measures.
 - A percentage of seismic loss variance due to exposure and vulnerability (row `uo-05`: not found).
 - That DeVries et al. (2018) was retracted. As of 2026-10-30, Nature and Crossref show a Matters Arising (Mignan & Broccardo 2019) and a Reply (Meade 2019), with no retraction notice. It was removed from the evidence table as a contested exemplar.

@@ -1,0 +1,128 @@
+{
+  "run_utc": "2026-11-06T14:15:57+00:00",
+  "hashes_ok": 12,
+  "hashes_total": 12,
+  "das_series": {
+    "frozen_2026_10_21": {
+      "2025": 424,
+      "2024": 311,
+      "2023": 238,
+      "2022": 194,
+      "2021": 137,
+      "2020": 118
+    },
+    "live": {
+      "2025": 420,
+      "2024": 311,
+      "2023": 234,
+      "2022": 193,
+      "2021": 137,
+      "2020": 117
+    }
+  },
+  "errors": [],
+  "ml_rates": [
+    {
+      "year": "2016",
+      "frozen_all_percent": 0.43347981022568954,
+      "frozen_earth_env_percent": 0.49768431052909995,
+      "live_all_percent": 0.43384543169109224,
+      "live_earth_env_percent": 0.49740753356149203
+    },
+    {
+      "year": "2017",
+      "frozen_all_percent": 0.5811595714714742,
+      "frozen_earth_env_percent": 0.6354117744564467,
+      "live_all_percent": 0.5814710649495329,
+      "live_earth_env_percent": 0.6354337333392375
+    },
+    {
+      "year": "2018",
+      "frozen_all_percent": 0.8653300806517615,
+      "frozen_earth_env_percent": 0.865033762529883,
+      "live_all_percent": 0.8653759114910736,
+      "live_earth_env_percent": 0.8640737454919604
+    },
+    {
+      "year": "2019",
+      "frozen_all_percent": 1.2432370976420049,
+      "frozen_earth_env_percent": 1.250898068046493,
+      "live_all_percent": 1.243752791078804,
+      "live_earth_env_percent": 1.251805726062112
+    },
+    {
+      "year": "2020",
+      "frozen_all_percent": 1.6078539208790976,
+      "frozen_earth_env_percent": 1.6933066249309856,
+      "live_all_percent": 1.6082610509018087,
+      "live_earth_env_percent": 1.6982925669993785
+    },
+    {
+      "year": "2021",
+      "frozen_all_percent": 2.0987952475403335,
+      "frozen_earth_env_percent": 2.239565511129829,
+      "live_all_percent": 2.0999956114183775,
+      "live_earth_env_percent": 2.2394453451434746
+    },
+    {
+      "year": "2022",
+      "frozen_all_percent": 2.552628021852188,
+      "frozen_earth_env_percent": 2.9390108945333338,
+      "live_all_percent": 2.5552890945736912,
+      "live_earth_env_percent": 2.9374607970457536
+    },
+    {
+      "year": "2023",
+      "frozen_all_percent": 2.8773829819825374,
+      "frozen_earth_env_percent": 3.3059190031152648,
+      "live_all_percent": 2.8794768282914425,
+      "live_earth_env_percent": 3.312019182735538
+    },
+    {
+      "year": "2024",
+      "frozen_all_percent": 3.4622908138900783,
+      "frozen_earth_env_percent": 4.034534792657537,
+      "live_all_percent": 3.4644914961218194,
+      "live_earth_env_percent": 4.042650943757418
+    },
+    {
+      "year": "2025",
+      "frozen_all_percent": 4.021246420525318,
+      "frozen_earth_env_percent": 5.028389281800976,
+      "live_all_percent": 4.023807759837259,
+      "live_earth_env_percent": 5.033641911632581
+    }
+  ],
+  "comparisons": {
+    "openalex": {
+      "metrics_compared": 89,
+      "within_1_percent": 29,
+      "within_5_percent": 79,
+      "within_20_percent": 86
+    },
+    "simulation": {
+      "metrics_compared": 148,
+      "within_1_percent": 74,
+      "within_5_percent": 134,
+      "within_20_percent": 148
+    },
+    "datacite": {
+      "metrics_compared": 36,
+      "within_1_percent": 29,
+      "within_5_percent": 36,
+      "within_20_percent": 36
+    },
+    "hf": {
+      "metrics_compared": 45,
+      "within_1_percent": 16,
+      "within_5_percent": 35,
+      "within_20_percent": 42
+    },
+    "ml_share_abstract": {
+      "metrics_compared": 78,
+      "within_1_percent": 64,
+      "within_5_percent": 72,
+      "within_20_percent": 76
+    }
+  }
+}

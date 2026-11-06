@@ -81,6 +81,25 @@ class CollectorTests(unittest.TestCase):
             self.assertEqual(receipt["status"], 200)
             self.assertEqual(Path(temporary, receipt["file"]).read_bytes(), body)
 
+    def test_api_key_reaches_openalex_but_never_a_receipt(self):
+        seen = []
+        class Response:
+            headers = {"Link": None}
+            def read(self): return json.dumps({"meta": {"total": 7}}).encode()
+            def __enter__(self): return self
+            def __exit__(self, *a): return False
+        def fake_urlopen(request, timeout=None):
+            seen.append(request.full_url)
+            return Response()
+        with tempfile.TemporaryDirectory() as temporary, patch.dict("os.environ", {"OPENALEX_API_KEY": "secret-value"}):
+            c = self.pc.Collector(Path(temporary))
+            with patch.object(self.pc, "urlopen", side_effect=fake_urlopen), patch.object(self.pc.time, "sleep"):
+                c.get("oa", "https://api.openalex.org/works?filter=x")
+                c.get("dc", "https://api.datacite.org/dois?x=1")
+            self.assertIn("api_key=secret-value", seen[0])
+            self.assertNotIn("secret-value", seen[1])
+            self.assertNotIn("secret-value", json.dumps(c.receipts))
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -1,0 +1,80 @@
+{
+ "retrieved": "2026-11-06",
+ "method": "Copies of an archive that a compute job can read as a whole, kept apart from curated ML benchmarks. For data mining and pretraining the archive is the intended population, so this table asks how much of that population is reachable. Values as stated on the source page, read through a page summary on 2026-11-06 unless noted; computed marks sums. Regridded stores can exceed the raw archive in bytes, so a byte ratio is not a coverage fraction. Not searched: GNSS, OOI, DAS, hydrology, InSAR, Sentinel-1.",
+ "rows": [
+  {
+   "discipline": "Reanalysis: ERA5",
+   "name": "ARCO-ERA5, 0.25 degree pressure and surface levels",
+   "form": "analysis ready, regridded Zarr",
+   "source_archive": "ECMWF ERA5 (raw, on MARS)",
+   "bytes": 2050000000000000.0,
+   "stated": "2.05 PB",
+   "as_of": "read 2026-11-06",
+   "computed": false,
+   "source_url": "https://github.com/google-research/arco-era5",
+   "quote": "Size: 2.05 PB"
+  },
+  {
+   "discipline": "Reanalysis: ERA5",
+   "name": "ARCO-ERA5, 0.25 degree model levels",
+   "form": "analysis ready, regridded Zarr",
+   "source_archive": "ECMWF ERA5 (raw, on MARS)",
+   "bytes": 5880000000000000.0,
+   "stated": "5.88 PB",
+   "as_of": "read 2026-11-06",
+   "computed": false,
+   "source_url": "https://github.com/google-research/arco-era5",
+   "quote": "Size: 5.88 PB"
+  },
+  {
+   "discipline": "Reanalysis: ERA5",
+   "name": "ARCO-ERA5, four native-grid stores",
+   "form": "cloud optimized Zarr, native grid",
+   "source_archive": "ECMWF ERA5 (raw, on MARS)",
+   "bytes": 2267320000000000.0,
+   "stated": "2.42 TB + 60.9 TB + 664 TB + 1.54 PB",
+   "as_of": "read 2026-11-06",
+   "computed": true,
+   "source_url": "https://github.com/google-research/arco-era5",
+   "quote": "Size: 1.54 PB"
+  },
+  {
+   "discipline": "Climate projections: CMIP6",
+   "name": "Pangeo CMIP6 on Google Cloud, AWS mirror",
+   "form": "analysis ready Zarr, subset of the archive",
+   "source_archive": "CMIP6 on ESGF, distinct",
+   "bytes": 1000000000000000.0,
+   "stated": "> 1 PB and counting",
+   "as_of": "2022-05",
+   "computed": false,
+   "source_url": "https://speakerdeck.com/jbusecke/going-both-far-and-fast-as-a-community-climate-science-with-pangeo",
+   "quote": "> 1 PB and counting",
+   "weak": "2022 slide against a 2025 denominator; lower bound"
+  },
+  {
+   "discipline": "Seismology",
+   "name": "EarthScope, NCEDC and SCEDC read in cloud by Ni et al. 2025",
+   "form": "native miniSEED on S3, not analysis ready; EarthScope access for credentialed users",
+   "source_archive": "US seismic archives combined (EarthScope, NCEDC, SCEDC), as processed by Ni et al. 2025",
+   "bytes": 1300000000000000.0,
+   "stated": ">1.3 PB",
+   "as_of": "2025-03",
+   "computed": false,
+   "source_url": "https://doi.org/10.26443/seismica.v4i2.1738",
+   "quote": "for a total of more than 1.3 PB",
+   "weak": "numerator equals the denominator by construction; shows reachable for inference, not training; Marine Denolle is a co-author"
+  },
+  {
+   "discipline": "Optical: Sentinel-2",
+   "name": "Sentinel-2 L2A Cloud-Optimized GeoTIFFs on AWS",
+   "form": "cloud optimized GeoTIFF",
+   "source_archive": null,
+   "bytes": null,
+   "stated": "size not found",
+   "as_of": "read 2026-11-06",
+   "computed": false,
+   "source_url": "https://registry.opendata.aws/sentinel-2-l2a-cogs/",
+   "quote": null
+  }
+ ]
+}

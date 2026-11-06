@@ -3,8 +3,9 @@
 
 Usage: python scripts/platform_readiness_counts.py --out runs/platform_counts_<date> [--skip openalex]
 
-Read-only public API queries, no keys (OpenAlex keyless budget is small; the script stops a
-source on HTTP 4xx/429 and records the failure instead of retrying). Every raw response is
+Read-only public API queries. OpenAlex uses OPENALEX_API_KEY when it is set, because the keyless
+budget is small; the key is sent only to api.openalex.org and never written to receipts, file names or
+output. The script stops a source on HTTP 4xx/429 and records the failure instead of retrying. Every raw response is
 saved under OUT/raw/ with its SHA256 in OUT/receipts.json; derived counts go to OUT/counts.json.
 
 What each source measures, and what it does not:
@@ -25,6 +26,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 import re
 import time
 from datetime import datetime, timezone
@@ -33,7 +35,7 @@ from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
-UA = "GeoscienceAIReadiness/0.3 (research metadata counts; mailto:mdenolle@uw.edu)"
+UA = "GeoscienceAIReadiness/0.4 (research metadata counts)"
 AI_READY = '("AI-ready" OR "AI ready" OR "ML-ready" OR "ML ready" OR "machine learning ready" OR "machine-learning-ready")'
 ML = '("machine learning" OR "deep learning" OR "neural network")'
 SIM = '("numerical simulation" OR "finite element" OR "finite difference" OR "spectral element" OR "finite volume")'
@@ -73,8 +75,10 @@ class Collector:
 
     def get(self, name: str, url: str, sleep: float = 0.4):
         time.sleep(sleep)
+        key = os.environ.get("OPENALEX_API_KEY")
+        request_url = url + "&" + urlencode({"api_key": key}) if key and url.startswith("https://api.openalex.org/") else url
         try:
-            with urlopen(Request(url, headers={"User-Agent": UA}), timeout=60) as response:
+            with urlopen(Request(request_url, headers={"User-Agent": UA}), timeout=60) as response:
                 body = response.read()
                 link = response.headers.get("Link")
         except HTTPError as error:

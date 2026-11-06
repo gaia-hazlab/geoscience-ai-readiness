@@ -5,11 +5,13 @@ Usage:
   python scripts/requery_check.py --offline                      # verify frozen-file hashes only, no network
   python scripts/requery_check.py --out runs/requery_<date>      # live: DAS series + OpenAlex + simulation + DataCite
   python scripts/requery_check.py --out runs/requery_<date> --with-hf   # also Hugging Face (about 80 requests)
+  python scripts/requery_check.py --out runs/requery_<date> --with-hf --publish  # also write the dated summary to docs/
 
-Live mode never uses keys. It re-runs the same query builders as scripts/platform_readiness_counts.py,
+Live mode reads OPENALEX_API_KEY from the environment when it is set and never records it. It re-runs the same query builders as scripts/platform_readiness_counts.py,
 re-queries the DAS title/abstract counts per year that feed Fig. 2B, and writes:
   OUT/counts.json, OUT/receipts.json   the new live responses (same format as the frozen snapshot)
   OUT/comparison.json, OUT/comparison.md   every frozen number beside its new value and the relative change
+With --publish, a summary and the markdown go to docs/archive_readiness_2026-10-30/requery_<date>_summary.json and requery_<date>.md.
 
 Bibliographic and repository indexes change daily, so differences are expected. The check reports them;
 it fails only when a query errors or a frozen file's hash no longer matches its manifest.
@@ -33,6 +35,28 @@ DAS_MANIFEST = ROOT / "data/openalex/2026-10-21/manifest.json"
 SCREEN_MANIFEST = ROOT / "data/semantic_screen/das_topic_2026-10-29/MANIFEST.json"
 DAS_FILTER = ('from_publication_date:2020-01-01,to_publication_date:2025-12-31,type:article|review,'
               'title_and_abstract.search:"distributed acoustic sensing"')
+
+
+def load_script(name):
+    spec = importlib.util.spec_from_file_location(name, ROOT / f"scripts/{name}.py")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def rate_comparison(frozen, live):
+    """ML rates for the frozen and live abstract-matched counts. Absolute counts can move while the rates hold."""
+    rate = lambda d, group, year: 100 * d[f"ml_works_{group}_by_year"][year]["count"] / d[f"works_{group}_by_year"][year]["count"]
+    return [{"year": year, **{f"{name}_{group}_percent": rate(d, group, year) for name, d in (("frozen", frozen), ("live", live)) for group in ("all", "earth_env")}}
+            for year in sorted(frozen["works_all_by_year"]) if year in live["works_all_by_year"]]
+
+
+def publishable(report):
+    """The summary tracked in docs/: counts only, without the per-metric rows."""
+    keep = ("metrics_compared", "within_1_percent", "within_5_percent", "within_20_percent")
+    return {"run_utc": report["run_utc"], "hashes_ok": sum(h["ok"] for h in report["hashes"]), "hashes_total": len(report["hashes"]),
+            "das_series": report.get("das_series"), "errors": report.get("errors", []), "ml_rates": report.get("ml_rates", []),
+            "comparisons": {name: {k: block["summary"][k] for k in keep} for name, block in report.get("comparisons", {}).items()}}
 
 
 def load_collector():
@@ -116,6 +140,7 @@ def main(argv=None):
     parser.add_argument("--out")
     parser.add_argument("--offline", action="store_true")
     parser.add_argument("--with-hf", action="store_true")
+    parser.add_argument("--publish", action="store_true", help="Write the dated summary and markdown to docs/archive_readiness_2026-10-30/")
     args = parser.parse_args(argv)
     hashes = check_hashes()
     report = {"run_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"), "hashes": hashes}
@@ -143,8 +168,18 @@ def main(argv=None):
         except Exception as error:  # noqa: BLE001
             errors.append(f"{name}: {error}")
             print(f"{name}: failed ({error})", flush=True)
+    try:
+        live["ml_share_abstract"] = load_script("ml_share_abstract_counts").collect(c)
+        print("ml_share_abstract: done", flush=True)
+    except Exception as error:  # noqa: BLE001
+        errors.append(f"ml_share_abstract: {error}")
     frozen = json.loads(FROZEN_COUNTS.read_text())
     frozen["simulation"] = json.loads(FROZEN_SIM.read_text())["simulation"]
+    abstract_files = sorted(p for p in FROZEN_COUNTS.parent.glob("ml_share_abstract_*.json") if not p.name.endswith("_receipts.json"))
+    if abstract_files:
+        frozen["ml_share_abstract"] = json.loads(abstract_files[-1].read_text())["openalex"]
+    if "ml_share_abstract" in live and "ml_share_abstract" in frozen:
+        report["ml_rates"] = rate_comparison(frozen["ml_share_abstract"], live["ml_share_abstract"])
     report["comparisons"] = {}
     for name, value in live.items():
         rows = compare(frozen.get(name, {}), value)
@@ -156,6 +191,10 @@ def main(argv=None):
     (out / "comparison.json").write_text(json.dumps(report, indent=2, default=str) + "\n")
     (out / "comparison.md").write_text(markdown(report))
     print((out / "comparison.md").read_text())
+    if args.publish:
+        stamp = report["run_utc"][:10]
+        (FROZEN_COUNTS.parent / f"requery_{stamp}_summary.json").write_text(json.dumps(publishable(report), indent=2, default=str) + "\n")
+        (FROZEN_COUNTS.parent / f"requery_{stamp}.md").write_text(markdown(report))
     return 1 if errors or not all(h["ok"] for h in hashes) else 0
 
 

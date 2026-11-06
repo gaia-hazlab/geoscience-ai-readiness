@@ -1,0 +1,28 @@
+{
+ "release": "0.4.0 plus unreleased corrections",
+ "prepared_date": "2026-11-06",
+ "published": false,
+ "committed": false,
+ "offline_suite_tests_passed": [
+  51,
+  84,
+  40
+ ],
+ "total_tests_passed": 175,
+ "live_requery": {
+  "date": "2026-11-06",
+  "folder": "runs/requery_2026-11-06_keyed",
+  "errors": 0,
+  "summary": "docs/archive_readiness_2026-10-30/requery_2026-11-06_summary.json"
+ },
+ "notebooks": "01-04 executed offline without errors",
+ "report_build": "passed; every figure follows a method block (tests/test_report_transparency.py)",
+ "paid_runs": {
+  "das_retest_batch": "msgbatch_01K4bnZbSjUVPqLqgAyxp174",
+  "usd": 4.4573
+ },
+ "not_run": [
+  "scripts/build_release.py: packages tracked files, so it should run after the changes are committed"
+ ],
+ "evidence_status": "DAS semantic screen unvalidated: 0 of 130 human-coded abstracts. Keyword mentions do not measure adoption. Volumes added 2026-11-06 were read through page summaries and need reading in the source."
+}

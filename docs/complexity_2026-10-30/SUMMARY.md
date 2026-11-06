@@ -1,10 +1,11 @@
 # Geoscience complexity: summary for Marine, 30 October 2026
 
-**Recommended headline: the tail problem.** In the 24 geoscience power-law rows that report an exponent:
-- 13 were tested against alternatives, and only 4 of those 13 favored a pure power law;
-- the other 11 were never tested in the cited source.
+**Tail evidence, corrected 2026-11-06.** In the 24 geoscience power-law rows that report an exponent:
+- 13 were tested against alternatives, and 4 of those favored a pure power law. The 13 use different tests, so this is a count of published statements, not an estimated rate;
+- 7 were read in full text with no test, and 4 of those 7 are not hazards (Hack's law twice, drainage area, coastlines);
+- 4 were read only from an abstract or snippet, so a test may exist that was not seen.
 
-So extreme-event statistics, where losses concentrate, rest on a functional form the data do not pin down. That is a defensible, sourced statement about why learning from geoscience data is hard. Its companion for AI readiness is the label gap: EM-DAT, the Emergency Events Database, has no total-damage estimate for 41.5% of natural-hazard events from 1990 to 2020 (Jones, Guha-Sapir & Tubeuf 2022).
+The tested rows show that the tail form of several hazards is not settled. A uniform refit of open catalogs has not been done. The companion for AI readiness is the label gap: EM-DAT, the Emergency Events Database, has no total-damage estimate for 41.5% of natural-hazard events from 1990 to 2020 (Jones, Guha-Sapir & Tubeuf 2022).
 
 **Not recommended as a headline:**
 - **Equation counts.** Minimal coupled geoscience models need 1 to 17 scalar balance equations, against 4 to 8 for Navier-Stokes, Maxwell and magnetohydrodynamics. Equation count does not separate geoscience from physics; closures and scale span do.
@@ -35,7 +36,7 @@ Geoscience is suited to AI on two axes and is hard on two:
 
 | Gap | What would close it | Cost |
 |---|---|---|
-| Power law: 11 untested rows | Refit with the Clauset et al. (2009) tests on open catalogs: ComCat earthquakes, a landslide inventory, a wildfire perimeter database, USGS peak flows | days; keyless public data |
+| Power law: 11 rows without a seen test, and no common test across the 13 tested | Refit with the Clauset et al. (2009) tests on open catalogs: ComCat earthquakes, a landslide inventory, a wildfire perimeter database, USGS peak flows | days; keyless public data |
 | Effective dimension of sensor data | One estimator (maximum-likelihood intrinsic dimension at fixed k, plus EOF count for 90% of variance) on an open DAS record, a SeisBench waveform set, an InSAR stack and an ERA5 subset, compared with the image benchmarks | days to a week; laptop or one GPU |
 | Loss variance split (hazard vs exposure vs vulnerability) | No peer-reviewed percentage found. It needs a variance decomposition with an open risk engine (for example GEM OpenQuake) on a published exposure model | weeks; a study in itself |
 | Fraction of damaging earthquakes on unmapped faults | No sourced fraction. It needs a catalog of damaging events matched against pre-event fault databases | weeks |

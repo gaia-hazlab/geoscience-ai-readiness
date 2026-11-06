@@ -34,23 +34,29 @@ from figure_style import (OCEAN as S1, OCHRE as S2, MOSS as S3,
 apply_style()
 
 # (row label, archive name in archives.json or None, benchmark names in benchmarks.json, caveat)
+# Rule: the label says what the denominator is, and every benchmark in the numerator was drawn from that denominator.
+# Reformatted whole-record copies (ARCO-ERA5, Pangeo CMIP6) are not benchmarks; see analysis_ready_copies.json.
 PAIRS = [
-    ("Reanalysis: ERA5", "ECMWF ERA5 (raw, on MARS)", ["ARCO-ERA5 0.25 deg"],
-     "ARCO-ERA5 pressure and surface levels only; the model-level store adds 5.88 PB"),
-    ("Seismology", "EarthScope seismic archive", ["STEAD", "INSTANCE", "ETHZ", "PNW-ML ComCat", "CEED", "SCEDC (SeisBench)", "CREW"],
-     "benchmarks also draw on SCEDC, NCEDC, INGV and Swiss archives; EarthScope alone is the denominator, so the share is an upper bound"),
-    ("SAR: Sentinel-1", "ASF DAAC SAR archive", ["Major TOM Core-S1RTC", "Sen1Floods11"],
-     "ASF figure from 2023, secondary source; ASF also holds non-Sentinel SAR"),
-    ("Optical: Sentinel-2", "Copernicus Data Space Ecosystem (Sentinel)", ["Major TOM Core-S2L2A", "SSL4EO-S12", "SEN12MS", "BigEarthNet v2.0"],
-     "CDSE volume covers all Sentinel missions; Major TOM L1C (another ~23 TB) not added"),
-    ("Climate projections: CMIP6", "CMIP6 on ESGF, distinct", ["ClimateBench"], "ClimateBench uses one model, NorESM2"),
+    ("Reanalysis: ERA5", "ECMWF ERA5 (raw, on MARS)", ["WeatherBench 2"],
+     "WeatherBench 2 publishes no total size, so no curated share exists; the whole-record ARCO-ERA5 copies are in the next table"),
+    ("Seismology: EarthScope, NCEDC, SCEDC", "US seismic archives combined (EarthScope, NCEDC, SCEDC), as processed by Ni et al. 2025",
+     ["STEAD", "PNW-ML ComCat", "CEED", "SCEDC (SeisBench)", "CREW", "MLAAPDE"],
+     "at most: the denominator is a lower bound, CEED and SCEDC overlap, STEAD and CREW include stations outside these archives, MLAAPDE has no stated size"),
+    ("Seismology: INGV and Swiss archives", None, ["INSTANCE", "ETHZ"],
+     "no volume in hand for the source archives; these two benchmarks are excluded from the row above"),
+    ("SAR: all ASF holdings", "ASF DAAC SAR archive", ["Major TOM Core-S1RTC", "Sen1Floods11"],
+     "at most: the denominator is all ASF SAR, including older missions, from a 2023 secondary source; no Sentinel-1 volume found"),
+    ("Sentinel missions: all, Copernicus", "Copernicus Data Space Ecosystem (Sentinel)",
+     ["Major TOM Core-S1RTC", "Major TOM Core-S2L2A", "Major TOM Core-S2L1C", "SSL4EO-S12", "SEN12MS", "BigEarthNet v2.0", "Sen1Floods11", "SatlasPretrain"],
+     "the 91 PB covers all Sentinel missions; benchmarks use Sentinel-1 and -2 only, and no per-mission volume was found; SatlasPretrain has no stated size"),
+    ("Climate projections: CMIP6", "CMIP6 on ESGF, distinct", ["ClimateBench"], "at most: the denominator is a lower bound; ClimateBench uses one model, NorESM2"),
     ("Geodesy: GNSS", "EarthScope geodetic archive (GAGE)", [], "archive figure from 2020; no released ML-ready GNSS benchmark found"),
     ("Ocean observatory: OOI", "OOI raw data", [], "no ML-ready benchmark derived from OOI found"),
     ("DAS", None, ["QuakeFlow DAS", "DeepSubDAS", "Stanford DAS earthquake detection", "DAS fin whale labeled"],
      "DAS has no central archive with a published volume"),
     ("Hydrology: gauges", None, ["CAMELS US", "Caravan v1.6", "LamaH-CE"], "USGS NWIS publishes site counts, not bytes"),
 ]
-NOTE = ("Sources: docs/archive_readiness_2026-10-30 (archives.json, benchmarks.json), retrieved 2026-10-30. Volumes as stated by "
+NOTE = ("Sources: docs/archive_readiness_2026-10-30 (archives.json, benchmarks.json), retrieved 2026-10-30 and 2026-11-06. Volumes as stated by "
         "each source; benchmark totals sum the listed datasets with a stated size.")
 
 
@@ -72,18 +78,44 @@ def pairs_table():
     for label, arch, names, caveat in PAIRS:
         a = archives[arch] if arch else None
         sized = [benches[n] for n in names if benches[n]["bytes"]]
+        unsized = [n for n in names if not benches[n]["bytes"]]
         packaged = sum(b["bytes"] for b in sized) if sized else None
         archive_bytes = a["bytes"] if a else None
+        lower_bound = bool(a and a["stated"].lstrip().startswith(">"))
         rows.append({"row": label, "archive": arch, "archive_bytes": archive_bytes, "archive_as_of": a["as_of"] if a else None,
-                     "archive_lower_bound": bool(a and a["stated"].lstrip().startswith(">")),
-                     "benchmarks": "; ".join(b["name"] for b in sized), "packaged_bytes": packaged,
-                     "share_percent": 100 * packaged / archive_bytes if packaged and archive_bytes else None, "caveat": caveat})
+                     "archive_lower_bound": lower_bound,
+                     "benchmarks": "; ".join(b["name"] for b in sized), "benchmarks_without_size": "; ".join(unsized),
+                     "packaged_bytes": packaged,
+                     "share_percent": 100 * packaged / archive_bytes if packaged and archive_bytes else None,
+                     "share_is_upper_bound": lower_bound, "caveat": caveat})
     return rows
 
 
+def copies_table():
+    """Whole-record copies against their source archive; for regridded stores the byte ratio is not a coverage fraction."""
+    archives = {a["archive"]: a for a in json.loads((DOCS / "archives.json").read_text())["archives"]}
+    rows = []
+    for r in json.loads((DOCS / "analysis_ready_copies.json").read_text())["rows"]:
+        a = archives.get(r["source_archive"])
+        ratio = 100 * r["bytes"] / a["bytes"] if a and a["bytes"] and r["bytes"] else None
+        rows.append({**r, "archive_bytes": a["bytes"] if a else None, "byte_ratio_percent": ratio})
+    return rows
+
+
+def latest_ml_counts():
+    """The newest abstract-matched ML counts: numerator and denominator both limited to articles with an abstract."""
+    path = sorted(p for p in DOCS.glob("ml_share_abstract_*.json") if not p.name.endswith("_receipts.json"))[-1]
+    return json.loads(path.read_text()), path
+
+
+def hf_geodesy_count(hf):
+    """Geodesy on Hugging Face keeps 'insar' and 'gnss' id matches; 'sar-' and 'geodes' matched unrelated repositories."""
+    return hf["geodesy_sar"]["per_term"]["insar"] + hf["geodesy_sar"]["per_term"]["gnss"]
+
+
 def fig_archive_vs_packaged(out, rows):
-    fig, ax = plt.subplots(figsize=(8.4, 5.4))
-    fig.subplots_adjust(left=0.24, right=0.97, top=0.90, bottom=0.17)
+    fig, ax = plt.subplots(figsize=(9.2, 6.0))
+    fig.subplots_adjust(left=0.29, right=0.97, top=0.91, bottom=0.17)
     labels = [r["row"] for r in rows][::-1]
     y = range(len(labels))
     for i, r in enumerate(rows[::-1]):
@@ -95,14 +127,16 @@ def fig_archive_vs_packaged(out, rows):
             ax.text(r["archive_bytes"] * 1.25, i + 0.19, prefix + human(r["archive_bytes"]) + f" ({r['archive_as_of']})",
                     va="center", fontsize=7.5, color=INK)
         else:
-            ax.text(2e9, i + 0.19, "archive volume not published", va="center", fontsize=7.5, color=INK2, style="italic")
+            ax.text(2e9, i + 0.19, "no archive volume in hand", va="center", fontsize=7.5, color=INK2, style="italic")
         if r["packaged_bytes"]:
             ax.barh(i - 0.19, r["packaged_bytes"], height=0.36, color=S2, label="ML-ready packaged" if i == 0 else None)
             pct = r["share_percent"]
-            share = "" if not pct else ("  (below 0.001% of archive)" if pct < 0.001 else f"  ({pct:.2g}% of archive)")
+            bound = "at most " if r["share_is_upper_bound"] else ""
+            share = "" if not pct else ("  (below 0.001% of archive)" if pct < 0.001 else f"  ({bound}{pct:.2g}% of archive)")
             ax.text(r["packaged_bytes"] * 1.25, i - 0.19, human(r["packaged_bytes"]) + share, va="center", fontsize=7.5, color=INK)
         else:
-            ax.text(2e9, i - 0.19, "no ML-ready benchmark found", va="center", fontsize=7.5, color=INK2, style="italic")
+            missing = "benchmark size not stated" if r["benchmarks_without_size"] else "no ML-ready benchmark found"
+            ax.text(2e9, i - 0.19, missing, va="center", fontsize=7.5, color=INK2, style="italic")
     ax.set_xscale("log")
     ax.set_xlim(1e9, 1e20)
     ax.set_xticks([1e9, 1e12, 1e15, 1e18], ["1 GB", "1 TB", "1 PB", "1 EB"])
@@ -110,10 +144,10 @@ def fig_archive_vs_packaged(out, rows):
     ax.set_xlabel("Bytes (log scale)")
     ax.grid(axis="y", visible=False)
     handles = [plt.Rectangle((0, 0), 1, 1, color=S1), plt.Rectangle((0, 0), 1, 1, color=S2)]
-    ax.legend(handles, ["Raw archive", "Listed ML benchmarks (see pairing caveats)"], frameon=False, loc="lower right", fontsize=8)
+    ax.legend(handles, ["Source archive", "Curated ML benchmarks drawn from it"], frameon=False, loc="lower right", fontsize=8)
     fig.suptitle("From Earth archives to learning datasets", x=0.01, ha="left", fontsize=10, color=INK)
-    finish(fig, out, "fig1_archive_vs_ml_ready", NOTE + " Caveats per row are in archive_pairs.csv. A benchmark is a designed "
-           "subsample, so a small share is not by itself a deficit; it bounds what can be trained without new curation.")
+    finish(fig, out, "fig1_archive_vs_ml_ready", NOTE + " Caveats per row are in archive_pairs.csv. Bytes do not map to samples because formats differ. "
+           "For data mining and pretraining the archive is the intended population; for a supervised task it may not be.")
 
 
 def fig_ml_share_years(out, counts):
@@ -131,8 +165,8 @@ def fig_ml_share_years(out, counts):
     ax.set_xticks(xs[::2]); ax.set_ylim(0, None); ax.set_ylabel("Articles mentioning ML (%)")
     # Series are identified at their endpoints.
     ax.set_title("Machine learning enters the Earth science literature")
-    finish(fig, out, "fig2_ml_share_by_year", "OpenAlex articles 2016-2025, retrieved 2026-10-30; keyword co-occurrence of 'machine learning', "
-           "'deep learning' or 'neural network' in title or abstract, not actual use. Earth and environmental sciences = OpenAlex "
+    finish(fig, out, "fig2_ml_share_by_year", f"OpenAlex articles with an abstract, 2016-2025, retrieved {counts['retrieved_utc'][:10]}; keyword co-occurrence of 'machine learning', "
+           "'deep learning' or 'neural network' in title or abstract, not actual use. Numerator and denominator both have an abstract. Earth and environmental sciences = OpenAlex "
            "fields 19 and 23 by primary topic.")
 
 
@@ -154,8 +188,8 @@ def fig_ml_share_subfield(out, counts):
     ax.set_xlim(0, max(vals) * 1.45); ax.set_xlabel("Articles mentioning ML, 2023-2025 (%)")
     ax.grid(axis="y", visible=False)
     fig.suptitle("One planet, different patterns of ML mention", x=0.01, ha="left", fontsize=10, color=INK)
-    finish(fig, out, "fig3_ml_share_by_subfield", "OpenAlex articles 2023-2025 by primary-topic subfield within fields 19 and 23, subfields with "
-           "at least 5,000 articles; keyword co-occurrence, not actual use. Remote sensing papers are mostly filed under other fields.")
+    finish(fig, out, "fig3_ml_share_by_subfield", "OpenAlex articles with an abstract, 2023-2025, by primary-topic subfield within fields 19 and 23, subfields with "
+           "at least 5,000 such articles; keyword co-occurrence, not actual use. Remote sensing papers are mostly filed under other fields.")
 
 
 def fig_platforms(out, counts):
@@ -164,7 +198,7 @@ def fig_platforms(out, counts):
     names = {"seismology": "Seismology", "geodesy_sar": "Geodesy, SAR", "optical_remote_sensing": "Optical remote sensing",
              "weather_climate": "Weather, climate", "hydrology": "Hydrology", "ocean": "Ocean",
              "biomedicine": "Biomedicine (comparison)", "materials_chemistry": "Materials (comparison)"}
-    hf_geo_sar = 25   # insar + gnss id matches only; "sar-" and "geodes" matches were unrelated repositories
+    hf_geo_sar = hf_geodesy_count(h)
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(9.6, 4.4), sharey=True)
     fig.subplots_adjust(left=0.22, right=0.97, top=0.84, bottom=0.22, wspace=0.12)
     labels = [names[k] for k in order][::-1]
@@ -187,6 +221,7 @@ def fig_platforms(out, counts):
     finish(fig, out, "fig4_platform_datasets", "Retrieved 2026-10-30. A: DataCite dataset DOIs whose metadata match the discipline clause; share also "
            "matching 'machine learning', 'deep learning' or 'neural network'; n counts datasets whose metadata say AI-ready or ML-ready; it is not the denominator of the ML percentage. "
            "B: Hugging Face dataset ids containing discipline terms (upper bound; hydrology is mostly 'flood'; geodesy counts 'insar' and 'gnss' only). "
+           "Term lists differ in length between disciplines, so the bars in B are not comparable shares. "
            "Queries in platform_counts.json.")
 
 
@@ -248,7 +283,7 @@ def fig_surrogate_earth(out, sim_counts):
     ax2.set_ylabel("ML-surrogate per 100 simulation articles")
     # Series are identified at their endpoints.
     ax2.set_title("b  Change through time")
-    fig.suptitle("Solid-earth papers mention fewer ML surrogates", x=0.01, ha="left", fontsize=10, color=INK)
+    fig.suptitle("Solid-earth papers mention fewer ML surrogates, 2023-2025", x=0.01, ha="left", fontsize=10, color=INK)
     finish(fig, out, "fig6_surrogate_earth_subfields", SURR_NOTE + " Panel A: subfields of OpenAlex fields 19 and 23 with at least 500 "
            "simulation articles. Panel B uses all years 2016-2025.")
 
@@ -297,9 +332,10 @@ def main():
     with (out / "archive_pairs.csv").open("w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=list(rows[0])); w.writeheader(); w.writerows(rows)
     counts = json.loads((DOCS / "platform_counts.json").read_text())
+    ml_counts, _ = latest_ml_counts()
     fig_archive_vs_packaged(out, rows)
-    fig_ml_share_years(out, counts)
-    fig_ml_share_subfield(out, counts)
+    fig_ml_share_years(out, ml_counts)
+    fig_ml_share_subfield(out, ml_counts)
     fig_platforms(out, counts)
     sim_counts = json.loads((DOCS / "simulation_counts.json").read_text())
     fig_surrogate_fields(out, sim_counts)

@@ -9,8 +9,10 @@ Files in this folder:
 
 | File | Content | How it was produced |
 |---|---|---|
-| `archives.json` | 16 raw-archive volumes with source, date and quote | subagent web research, 2026-10-30 |
-| `benchmarks.json` | 30 ML-ready benchmarks, 24 with a stated byte size | subagent web research, 2026-10-30 |
+| `archives.json` | 20 raw-archive volumes with source, date and quote | subagent web research, 2026-10-30; 4 rows added 2026-11-06 from page summaries |
+| `benchmarks.json` | 30 curated ML benchmarks | subagent web research, 2026-10-30; ARCO-ERA5 moved out and Major TOM L1C added 2026-11-06 |
+| `analysis_ready_copies.json` | whole-record copies, separate from benchmarks | page summaries, 2026-11-06 |
+| `ml_share_abstract_2026-11-06.json`, `_receipts.json` | ML rate with articles with an abstract as denominator | `scripts/ml_share_abstract_counts.py`, 6 keyless requests |
 | `platform_counts.json` | DataCite, Hugging Face and OpenAlex counts | `scripts/platform_readiness_counts.py`, 93 keyless requests, 2026-10-30 |
 | `platform_receipts.json` | URL, status and SHA256 of every response | same run; raw responses in gitignored `runs/platform_counts_2026-10-30/raw/` |
 | `simulation_counts.json`, `simulation_receipts.json` | simulation and ML-surrogate article counts by field, subfield, year | same script, simulation block, 9 requests |
@@ -20,24 +22,25 @@ Files in this folder:
 Figures and `archive_pairs.csv` rebuild offline with
 `python scripts/archive_readiness_figures.py` into `build/archive_readiness/`.
 
-## Finding 1: geoscience papers adopt ML methods at or above the average field
+## Corrected on 6 November 2026
 
-Share of OpenAlex articles whose title or abstract mentions "machine learning",
-"deep learning" or "neural network" (Earth and environmental sciences are OpenAlex
-fields 19 and 23 by primary topic):
+This note replaces the findings of 30 October. The HTML report, section 10, lists every change. The earlier tables mixed curated benchmarks with whole-record copies, used denominators that did not match their row labels, and divided abstract matches by articles with no abstract.
 
-| Year | All fields | Earth and environmental sciences |
-|---|---|---|
-| 2016 | 0.35% | 0.42% |
-| 2020 | 1.42% | 1.56% |
-| 2025 | 3.89% | 5.11% |
+Readiness depends on the use, because the use sets the intended population. For data mining and pretraining the total archive tends to be that population, so a share of the archive is the right kind of number. For a supervised task the population may be a set of events, sites or conditions.
 
-For 2023 to 2025 the all-field rate is 3.4%. Atmospheric science (6.9%),
-oceanography (6.1%) and geophysics (4.8%) sit above it; geology (3.0%),
-geochemistry (2.6%) and paleontology (0.4%) sit below. Remote sensing papers are
-mostly filed outside these two fields, so they are not in the subfield split.
+## Finding 1: ML is mentioned at least as often here as across all fields
 
-## Finding 2: "AI-ready" is a rare label everywhere, not a geoscience deficit
+Share of OpenAlex articles with an abstract whose title or abstract mentions "machine learning", "deep learning" or "neural network" (`ml_share_abstract_2026-11-06.json`; Earth and environmental sciences are OpenAlex fields 19 and 23 by primary topic):
+
+| Year | All fields | Earth and environmental sciences | Share of articles with an abstract, all fields | Same, Earth and environmental |
+|---|---|---|---|---|
+| 2016 | 0.43% | 0.50% | 53.9% | 50.5% |
+| 2020 | 1.61% | 1.69% | 64.7% | 62.7% |
+| 2025 | 4.02% | 5.03% | 78.2% | 75.7% |
+
+The old rates, over all articles, were 3.89% and 5.11% in 2025. These are keyword counts, not use. Remote sensing papers are mostly filed outside these two fields.
+
+## Finding 2: "AI-ready" is a rare label everywhere
 
 DataCite dataset DOIs on 2026-10-30:
 
@@ -52,48 +55,45 @@ DataCite dataset DOIs on 2026-10-30:
 | Ocean keywords | 148,653 | 1,120 (0.8%) | 10 |
 | Biomedicine keywords (comparison) | 453,674 | 12,551 (2.8%) | 90 |
 
-The AI-ready label is new: DataCite datasets using it number 5 in 2020, 27 in 2023
-and 156 in 2025. OpenAlex articles using it number 165 in 2025 across all fields,
-7 of them in Earth and environmental sciences. The subject tag undercounts Earth
-datasets badly (PANGAEA and most agency archives do not use it), which is why the
-tagged row shows 3.
+The subject tag undercounts Earth datasets, because PANGAEA and most agency archives do not use it. DataCite datasets using the label number 5 in 2020, 27 in 2023 and 156 in 2025.
 
-On Hugging Face, dataset repositories whose names contain geoscience terms total
-about 4,000 across six disciplines, against 4,624 for three biomedical terms. These
-are upper bounds from name matching ("flood" dominates hydrology); the geodesy count
-keeps only "insar" and "gnss" matches, 25 repositories. The most downloaded
-geoscience item is an ERA5 copy (456,702 downloads in 30 days).
+Hugging Face name counts cannot settle whether geoscience lags on hubs. The geoscience total uses far more terms than the 3 biomedical terms, matches names only, and has no hub total as a denominator. The proposal sentence that geoscience datasets on AI-native hubs lag general repositories has no local source; these counts neither support nor refute it, so it should be sourced or reworded.
 
-These counts do not support the proposal sentence that geoscience datasets on
-AI-native hubs lag general repositories. I found no local script or data behind
-that sentence; it should be sourced or reworded.
+## Finding 3: two different measures of packaging
 
-## Finding 3: the gap is volume, and the packaged share differs by up to six orders of magnitude between disciplines
+**Curated ML benchmarks against the archive they were drawn from** (`archive_pairs.csv`). Each label names the denominator.
 
-ML-ready benchmarks against the archive they were drawn from (`fig1_archive_vs_ml_ready`):
-
-| Discipline | Raw archive | ML-ready packaged | Share |
+| Row and denominator | Source archive | Curated benchmarks | Share |
 |---|---|---|---|
-| Reanalysis: ERA5 | 10 PB (ECMWF, Sep 2026) | 2.05 PB (ARCO-ERA5) | 20% |
-| Seismology | more than 1 PB (EarthScope seismic, 2025) | 2.66 TB (7 benchmarks) | 0.27%, upper bound |
-| SAR: Sentinel-1 | more than 20 PB (ASF DAAC, 2023) | 16 TB (Major TOM S1, Sen1Floods11) | 0.08% |
-| Optical: Sentinel-2 | 91 PB (Copernicus Data Space, end 2025) | 25.1 TB (Major TOM S2 L2A, SSL4EO, SEN12MS, BigEarthNet) | 0.03% |
-| Climate projections: CMIP6 | more than 16 PB distinct (ESGF, 2025) | 2.39 GB (ClimateBench) | below 0.001% |
-| Geodesy: GNSS | more than 300 TB (EarthScope GAGE, 2020) | none found | none |
+| Reanalysis: ERA5 | 10 PB (ECMWF, Sep 2026) | WeatherBench 2, size not stated | not computable |
+| Seismology: EarthScope, NCEDC, SCEDC | more than 1.3 PB (Ni et al. 2025) | 2.48 TB (5 benchmarks) | at most 0.19% |
+| Seismology: INGV and Swiss archives | no volume in hand | 182 GB (INSTANCE, ETHZ) | not computable |
+| SAR: all ASF holdings | more than 20 PB (2023, secondary source) | 16 TB | at most 0.08% |
+| Sentinel missions: all, Copernicus | 91 PB (end 2025) | 64.1 TB (7 benchmarks) | 0.07% |
+| Climate projections: CMIP6 | more than 16 PB distinct (2025) | 2.39 GB (ClimateBench) | below 0.001% |
+| Geodesy: GNSS | more than 300 TB (2020) | none found | none |
 | Ocean observatory: OOI | 2.8 PB raw (2025) | none found | none |
 | DAS | no published archive volume | 680 GB (4 datasets) | not computable |
-| Hydrology: gauges | USGS NWIS publishes no byte total | 54 GB (CAMELS, Caravan, LamaH) | not computable |
+| Hydrology: gauges | USGS NWIS publishes no byte total | 54 GB | not computable |
 
-Reanalysis is the one discipline where a large fraction of the archive exists in an
-analysis-ready cloud format. It is also the discipline where ML weather models are
-trained on decades of the full record; this note does not test whether the
-packaging caused that. Elsewhere the packaged data are a fraction of a percent
-of the archive, and for GNSS and ocean observatories I found no ML-ready benchmark
-at all. A benchmark is a designed subsample, so a small share is not by itself a
-deficit. It does bound what can be trained without new curation, and it is the
-quantity a pretraining effort would have to raise.
+No per-mission Sentinel volume was found. The report PDFs that may hold one exceeded the fetch limit and were not read.
 
-## Finding 4: solid-earth simulation communities adopt ML surrogates more slowly, and package almost no simulation output
+**Whole-record copies a compute job can read** (`analysis_ready_copies.json`). This is the measure that fits data mining.
+
+| Discipline | Copy | Form | Size |
+|---|---|---|---|
+| ERA5 | ARCO-ERA5 pressure and surface levels | regridded, analysis ready | 2.05 PB |
+| ERA5 | ARCO-ERA5 model levels | regridded, analysis ready | 5.88 PB |
+| ERA5 | ARCO-ERA5 four native-grid stores | cloud optimized | 2.27 PB (computed sum) |
+| CMIP6 | Pangeo on Google Cloud, AWS mirror | analysis ready, subset | more than 1 PB (2022) |
+| Seismology | EarthScope, NCEDC, SCEDC, read by Ni et al. 2025 | native miniSEED on S3 | more than 1.3 PB |
+| Sentinel-2 | L2A Cloud-Optimized GeoTIFFs on AWS | cloud optimized | size not found |
+
+Regridded stores can exceed the raw archive, and sources disagree on raw ERA5 (about 10 PB at ECMWF, about 5 PB in the ARCO-ERA5 README). A byte ratio is therefore not a coverage fraction. The earlier "ERA5 20%" compared a reformatted copy with curated subsets elsewhere and is withdrawn, as is the claim of six orders of magnitude between disciplines. GNSS, OOI, DAS, hydrology, InSAR and Sentinel-1 were not searched for this table.
+
+Seismology has a small curated share and also a whole-archive inference run. Inference over an archive is not training on it. This note does not test whether packaging caused ML success in weather.
+
+## Finding 4: solid-earth simulation papers mention ML surrogates less often, and little output is packaged
 
 Articles naming an ML surrogate (physics-informed neural network, neural operator,
 DeepONet, or a surrogate model or emulator with an ML term) per 100 articles naming
@@ -110,27 +110,18 @@ a numerical method, OpenAlex 2023 to 2025 (`simulation_counts.json`):
 | Engineering | 2.8 |
 | Earth-Surface Processes | 1.9 |
 
-The Earth and environmental index rose from 0.45 (2016) to 10.9 (2025), ahead of
-all fields (7.2), carried by climate and atmosphere. ML-ready simulation corpora in
-solid earth total 2.48 TB (OpenFWI 2.1 TB, HEMEW-3D 0.37 TB, two rupture sets),
-against 101 TB in other physics and atmosphere (DrivAerNet++, The Well, ClimSim,
-PDEBench, BLASTNet). One CyberShake study (22.12) kept 75 TB and handled 2.5 PB
-during its run (`simulation_corpora.json`).
+This is a ratio of two keyword groups at one period, not a rate of adoption. ML-ready simulation corpora found in solid earth total 2.48 TB (OpenFWI 2.1 TB, HEMEW-3D 0.37 TB, two rupture sets), against 101 TB found in other physics and atmosphere (`simulation_corpora.json`). The lists are purposive. One CyberShake study (22.12) kept 75 TB and handled 2.5 PB during its run.
 
 ## Reproducibility
 
-| Check | Command | Result on 2026-10-30 |
-|---|---|---|
-| Frozen snapshots | `pixi run -e report requery-offline` | 12 of 12 hashes match |
-| Live re-query, no key | `pixi run -e report requery-live` | OpenAlex 90/90, simulation 148/148, DataCite 36/36 numbers within 1%; DAS series identical for 2020-2023, +1 in 2024 and 2025 |
-| Notebooks | `pixi run -e report notebooks` | `notebooks/01`-`03` execute offline without errors |
-| HTML report | `pixi run -e report report` | `docs/report/ai_readiness_solid_earth.html`, every number computed from tracked inputs |
+| Check | Command |
+|---|---|
+| Frozen snapshots | `pixi run -e report requery-offline` |
+| Live re-query of every source, dated summary written here | `pixi run -e report requery-live` |
+| Notebooks | `pixi run -e report notebooks` |
+| HTML report | `pixi run -e report report` |
 
-The live receipt is `requery_2026-10-30.md` (summary in
-`requery_2026-10-30_summary.json`). Web-researched volumes cannot be re-queried by a
-script; each row carries its source URL, date and a checked-in-text flag. The DAS
-semantic labels are frozen in `data/semantic_screen/das_topic_2026-10-29/`; rerunning
-the screen needs an OpenAlex key, Claude credentials and about $4.50.
+Results are in the newest `requery_<date>.md` and `requery_<date>_summary.json`, and in section 8 of the report. Web-researched volumes cannot be re-queried by a script; each row carries its source URL, date and a checked-in-text flag. The DAS labels are frozen in `data/semantic_screen/das_topic_2026-10-29/`, and checks on them are in `docs/das_screen_checks_2026-11-06/`.
 
 ## The archive figures in the request, checked
 
@@ -151,8 +142,10 @@ replicas.
 - Weakest archive figures: ASF (secondary source, 2023), GAGE (2020), NCAR GDEX
   (migrated volume), NCEI (2023), Landsat (two USGS figures). Quotes not checked in
   the source text are marked `checked_in_text: false` in `archives.json`.
-- Seismology's share uses only the EarthScope archive as denominator, though the
-  benchmarks also draw on SCEDC, NCEDC, INGV and Swiss archives.
+- The seismology denominator is the data used in one study, from a paper Marine Denolle
+  co-authored, so it is a lower bound on holdings. CEED and SCEDC benchmarks overlap.
+- Rows added on 2026-11-06 were read through page summaries and need reading in the
+  source before citation.
 - Platform counts depend on keyword clauses recorded in `platform_counts.json`.
   Hugging Face matching uses repository names only.
 - All paper counts are keyword co-occurrence, not actual use.

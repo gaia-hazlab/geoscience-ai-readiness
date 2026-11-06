@@ -199,6 +199,15 @@ same fiber. That share (15% in 2020, 18% in 2025) depends on whether DTS counts
 as a separate family, which the protocol leaves to ontology review. Do not
 report it until that is decided.
 
+## Checks added 6 November 2026
+
+`docs/das_screen_checks_2026-11-06/checks.json` (`scripts/das_screen_checks.py`) holds counts only. None of them validates the labels.
+
+- A second batch, `msgbatch_01K4bnZbSjUVPqLqgAyxp174`, used the same requests, model and prompt hash at $4.46, for test-retest agreement.
+- The keyword share is recomputed on the abstracts the screen labeled. The comparison above used different denominators and two phrases, so it overstated the gap. Use the new one.
+- Bounds count every unknown work as not AI and then as AI.
+- A new harvest on 2026-11-06 returned 1,412 works against 1,423. OpenAlex also lists one 2022 DOI under two records, so 2022 has 193 works against its count of 194.
+
 ## Validation, in progress
 
 `validation-sample --n-per-stratum 8 --seed das-validation-2026-10-29` drew 130

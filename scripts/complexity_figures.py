@@ -82,8 +82,8 @@ VERDICT_STYLE = {  # verdict: (colour, filled, legend label); slots 1-3 of the v
     "tested, power law favored": (fs.THIRD, True, "Tested: power law favored"),
     "tested, mixed": (fs.FOCUS, True, "Tested: mixed result"),
     "tested, alternative favored or not distinguishable": (fs.SECOND, True, "Tested: alternative favored or equally good"),
-    "not tested in this source": (fs.MUTED, False, "Not tested against alternatives"),
-    "not stated": (fs.MUTED, False, "Not tested against alternatives"),
+    "not tested in this source": (fs.MUTED, False, "No test seen: not tested, or source read only in part"),
+    "not stated": (fs.MUTED, False, "No test seen: not tested, or source read only in part"),
 }
 
 
@@ -114,8 +114,8 @@ def fig_power_laws(out, rows):
     gap = 0.8
     n = len(order)
     ys = [n - 1 - i + (gap if r["domain"] == "geoscience" else 0) for i, r in enumerate(order)]
-    fig, ax = fs.figure(7.6, 0.25 * (n + gap) + 0.35, note, left=2.45, right=0.35)
-    fs.header(fig, "Heavy tails are common; a pure power law rarely beats the alternatives",
+    fig, ax = fs.figure(7.6, 0.25 * (n + gap) + 0.35, note, left=2.45, right=0.35, xband=1.15)
+    fs.header(fig, "Heavy tails are common; tests of a pure power law give mixed results",
               "Density exponent alpha in p(x) ~ x^-alpha, as stated by each source, coloured by its test against alternatives")
     for r, y in zip(order, ys):
         colour, filled, _ = VERDICT_STYLE[r["verdict"]]
@@ -141,7 +141,7 @@ def fig_power_laws(out, rows):
     for v in VERDICT_STYLE.values():
         if v[2] not in [s[0] for s in seen]:
             seen.append((v[2], v[0], v[1]))
-    fs.swatch_legend(ax, [(lab, col) for lab, col, _ in seen], marker="o", loc="upper right",
+    fs.swatch_legend(ax, [(lab, col) for lab, col, _ in seen], marker="o", loc="upper left", anchor=(-0.55, -0.055), ncol=2,
                      hollow=[lab for lab, _, filled in seen if not filled])
     fs.finish(fig, out, "fig1_power_law_exponents")
 
@@ -206,9 +206,10 @@ def profile_cells(profile, tables, pairs):
                     tag = ref[5:].split(": ")[1] + " " if ": " in ref and len(ev) > 1 else ""
                     if pr["share_percent"] is not None:
                         pct = pr["share_percent"]
-                        shares.append(tag + ("below 0.001%" if pct < 0.001 else f"{pct:.2g}%"))
+                        bound = "\u2264" if pr["share_is_upper_bound"] else ""
+                        shares.append(tag + ("<0.001%" if pct < 0.001 else bound + f"{pct:.2g}%"))
                     elif pr["packaged_bytes"] is None:
-                        shares.append("no benchmark")
+                        shares.append(tag + ("unstated" if pr["benchmarks_without_size"] else "no benchmark"))
                     else:
                         shares.append("no archive size")
                 label = "\n".join(shares)
@@ -224,9 +225,9 @@ def fig_profile(out, profile, cells):
     cols = [c["label"] for c in profile["columns"]]
     discs = [r["discipline"] for r in profile["rows"]]
     note = ("Sources: docs/complexity_2026-10-30/readiness_profile.json and the tables it cites; the ML-ready share is from "
-            "docs/archive_readiness_2026-10-30 (archive pairs), retrieved 2026-10-30. Measured = a sourced value read in the "
+            "docs/archive_readiness_2026-10-30 (archive pairs), retrieved 2026-10-30 and 2026-11-06. Measured = a sourced value read in the "
             "source text for this discipline; partial = proxy, secondary, small-sample or qualitative evidence; not found = "
-            "searched and absent; not assessed = not searched. Labels give the share or the number of sourced rows behind a cell; "
+            "searched and absent; not assessed = not searched. Labels give the share (\u2264 where the archive volume is a minimum) or the number of sourced rows behind a cell; "
             "values are in readiness_profile.csv and the report.")
     fig, ax = fs.figure(8.4, 0.46 * len(discs), note, left=2.25, right=0.2, xband=0.45, top=fs.TITLE_BAND + 0.5)
     fs.header(fig, "AI-readiness profile by discipline",
@@ -238,7 +239,7 @@ def fig_profile(out, profile, cells):
         ax.add_patch(FancyBboxPatch((x + 0.04, y + 0.08), 0.92, 0.84, boxstyle="round,pad=0,rounding_size=0.08",
                                     fc=face, ec="none", mutation_aspect=1 / 2.2))
         ax.text(x + 0.5, y + 0.5, "\n".join(textwrap.fill(line, 14) for line in (c["label"] or c["status"]).splitlines()), ha="center", va="center", fontsize=7.2, color=ink,
-                fontweight="bold" if c["status"] == "measured" and c["label"].endswith("%") else "normal")
+                fontweight="bold" if c["status"] == "measured" and c["label"].endswith("%") and "\n" not in c["label"] else "normal")
     ax.set_xlim(0, len(cols)); ax.set_ylim(0, len(discs))
     ax.set_xticks([i + 0.5 for i in range(len(cols))], [textwrap.fill(c, 15) for c in cols], fontsize=8, color=fs.INK2)
     ax.xaxis.tick_top()
