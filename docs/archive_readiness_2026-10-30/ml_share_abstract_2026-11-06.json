@@ -1,0 +1,331 @@
+{
+ "retrieved_utc": "2026-11-06T12:39:46+00:00",
+ "filter": "type:article,has_abstract:true",
+ "ml_query": "(\"machine learning\" OR \"deep learning\" OR \"neural network\")",
+ "openalex": {
+  "works_all_by_year": {
+   "2025": {
+    "name": "2025",
+    "count": 5606968
+   },
+   "2024": {
+    "name": "2024",
+    "count": 4897971
+   },
+   "2023": {
+    "name": "2023",
+    "count": 4524111
+   },
+   "2022": {
+    "name": "2022",
+    "count": 4283507
+   },
+   "2021": {
+    "name": "2021",
+    "count": 4219373
+   },
+   "2020": {
+    "name": "2020",
+    "count": 4160266
+   },
+   "2019": {
+    "name": "2019",
+    "count": 3746912
+   },
+   "2018": {
+    "name": "2018",
+    "count": 3482255
+   },
+   "2016": {
+    "name": "2016",
+    "count": 3428072
+   },
+   "2017": {
+    "name": "2017",
+    "count": 3326453
+   }
+  },
+  "works_earth_env_by_year": {
+   "2025": {
+    "name": "2025",
+    "count": 301170
+   },
+   "2024": {
+    "name": "2024",
+    "count": 261765
+   },
+   "2023": {
+    "name": "2023",
+    "count": 240750
+   },
+   "2021": {
+    "name": "2021",
+    "count": 227946
+   },
+   "2022": {
+    "name": "2022",
+    "count": 226811
+   },
+   "2020": {
+    "name": "2020",
+    "count": 219157
+   },
+   "2019": {
+    "name": "2019",
+    "count": 203214
+   },
+   "2018": {
+    "name": "2018",
+    "count": 190744
+   },
+   "2016": {
+    "name": "2016",
+    "count": 185258
+   },
+   "2017": {
+    "name": "2017",
+    "count": 180985
+   }
+  },
+  "ml_works_all_by_year": {
+   "2025": {
+    "name": "2025",
+    "count": 225470
+   },
+   "2024": {
+    "name": "2024",
+    "count": 169582
+   },
+   "2023": {
+    "name": "2023",
+    "count": 130176
+   },
+   "2022": {
+    "name": "2022",
+    "count": 109342
+   },
+   "2021": {
+    "name": "2021",
+    "count": 88556
+   },
+   "2020": {
+    "name": "2020",
+    "count": 66891
+   },
+   "2019": {
+    "name": "2019",
+    "count": 46583
+   },
+   "2018": {
+    "name": "2018",
+    "count": 30133
+   },
+   "2017": {
+    "name": "2017",
+    "count": 19332
+   },
+   "2016": {
+    "name": "2016",
+    "count": 14860
+   }
+  },
+  "ml_works_earth_env_by_year": {
+   "2025": {
+    "name": "2025",
+    "count": 15144
+   },
+   "2024": {
+    "name": "2024",
+    "count": 10561
+   },
+   "2023": {
+    "name": "2023",
+    "count": 7959
+   },
+   "2022": {
+    "name": "2022",
+    "count": 6666
+   },
+   "2021": {
+    "name": "2021",
+    "count": 5105
+   },
+   "2020": {
+    "name": "2020",
+    "count": 3711
+   },
+   "2019": {
+    "name": "2019",
+    "count": 2542
+   },
+   "2018": {
+    "name": "2018",
+    "count": 1650
+   },
+   "2017": {
+    "name": "2017",
+    "count": 1150
+   },
+   "2016": {
+    "name": "2016",
+    "count": 922
+   }
+  },
+  "subfield_works_2023_2025": {
+   "2306": {
+    "name": "Global and Planetary Change",
+    "count": 105501
+   },
+   "2303": {
+    "name": "Ecology",
+    "count": 100905
+   },
+   "2312": {
+    "name": "Water Science and Technology",
+    "count": 82583
+   },
+   "2308": {
+    "name": "Management, Monitoring, Policy and Law",
+    "count": 75556
+   },
+   "2305": {
+    "name": "Environmental Engineering",
+    "count": 62883
+   },
+   "2307": {
+    "name": "Health, Toxicology and Mutagenesis",
+    "count": 54396
+   },
+   "2310": {
+    "name": "Pollution",
+    "count": 49345
+   },
+   "1902": {
+    "name": "Atmospheric Science",
+    "count": 41231
+   },
+   "2311": {
+    "name": "Waste Management and Disposal",
+    "count": 40954
+   },
+   "1908": {
+    "name": "Geophysics",
+    "count": 38899
+   },
+   "2309": {
+    "name": "Nature and Landscape Conservation",
+    "count": 30431
+   },
+   "1910": {
+    "name": "Oceanography",
+    "count": 28593
+   },
+   "2304": {
+    "name": "Environmental Chemistry",
+    "count": 23898
+   },
+   "1911": {
+    "name": "Paleontology",
+    "count": 19284
+   },
+   "1904": {
+    "name": "Earth-Surface Processes",
+    "count": 16888
+   },
+   "1907": {
+    "name": "Geology",
+    "count": 14643
+   },
+   "1906": {
+    "name": "Geochemistry and Petrology",
+    "count": 9829
+   },
+   "2302": {
+    "name": "Ecological Modeling",
+    "count": 6717
+   },
+   "1912": {
+    "name": "Space and Planetary Science",
+    "count": 1140
+   }
+  },
+  "subfield_ml_works_2023_2025": {
+   "2305": {
+    "name": "Environmental Engineering",
+    "count": 9211
+   },
+   "2306": {
+    "name": "Global and Planetary Change",
+    "count": 4397
+   },
+   "2303": {
+    "name": "Ecology",
+    "count": 3728
+   },
+   "1902": {
+    "name": "Atmospheric Science",
+    "count": 2978
+   },
+   "2312": {
+    "name": "Water Science and Technology",
+    "count": 2634
+   },
+   "1908": {
+    "name": "Geophysics",
+    "count": 2009
+   },
+   "1910": {
+    "name": "Oceanography",
+    "count": 1760
+   },
+   "2308": {
+    "name": "Management, Monitoring, Policy and Law",
+    "count": 1588
+   },
+   "2307": {
+    "name": "Health, Toxicology and Mutagenesis",
+    "count": 955
+   },
+   "2310": {
+    "name": "Pollution",
+    "count": 908
+   },
+   "2311": {
+    "name": "Waste Management and Disposal",
+    "count": 825
+   },
+   "2304": {
+    "name": "Environmental Chemistry",
+    "count": 560
+   },
+   "1904": {
+    "name": "Earth-Surface Processes",
+    "count": 530
+   },
+   "1907": {
+    "name": "Geology",
+    "count": 464
+   },
+   "2302": {
+    "name": "Ecological Modeling",
+    "count": 372
+   },
+   "2309": {
+    "name": "Nature and Landscape Conservation",
+    "count": 337
+   },
+   "1906": {
+    "name": "Geochemistry and Petrology",
+    "count": 242
+   },
+   "1912": {
+    "name": "Space and Planetary Science",
+    "count": 83
+   },
+   "1911": {
+    "name": "Paleontology",
+    "count": 81
+   }
+  }
+ }
+}

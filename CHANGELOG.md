@@ -1,3 +1,22 @@
+# Unreleased — 2026-11-06
+
+- Archive shares: curated benchmarks and whole-record copies are separate
+  (`analysis_ready_copies.json`). Row labels now name their denominators, and benchmarks
+  are matched to them. Seismology uses the 1.3 PB of EarthScope, NCEDC and SCEDC data in
+  Ni et al. (2025). The "ERA5 20%" comparison and "six orders of magnitude" are withdrawn.
+- ML rate: numerator and denominator limited to articles with an abstract
+  (`scripts/ml_share_abstract_counts.py`).
+- DAS: `scripts/das_screen_checks.py` adds a same-denominator keyword comparison, bounds,
+  test-retest (second batch, $4.46) and frame drift. Labels remain unvalidated.
+- Power laws: 11 "never tested" rows split into 7 not tested and 4 unknown; report lists the
+  tests behind the 13 tested rows.
+- Report: every figure follows a method statement with input hashes, and the build refuses a
+  figure without one. New sections on how the report was produced and on changes. Overclaims
+  withdrawn; typed numbers computed.
+- `requery_check.py --publish` writes the dated summary; `requery-live` includes Hugging Face.
+  `scripts/update_checksums.py` regenerates SHA256SUMS. Contact address removed from the API
+  User-Agent. pixi workspace version set to 0.4.0.
+
 # 0.4.0 — 2026-10-30 (prepared; not yet published)
 
 - Restyled all eleven report figures for Earth scientists, with larger typography,

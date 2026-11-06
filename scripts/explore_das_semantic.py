@@ -42,32 +42,26 @@ def finish(fig, name, note=NOTE):
     finish_figure(fig, OUT, name, note)
 
 
-# 1. keyword co-occurrence share vs semantic AI-as-method share
-kw = {}
-with open(ROOT / "legacy/community_demand/annual_title_abstract_article_review_counts.csv") as f:
-    for r in csv.DictReader(f):
-        kw.setdefault(r["query_id"], {})[int(r["year"])] = int(r["count"])
-kw_share = {y: kw["das_ml_article_review"][y] / kw["das_article_review"][y] for y in YEARS}
-sem = {}
-for y in YEARS:
-    g = [r for r in lab if r["year"] == y and r["ai_role"] != "unclear"]
-    k = sum(r["ai_role"] == "ai_as_method" for r in g)
-    sem[y] = (k, len(g))
+# 1. keyword share vs semantic AI-as-method share, on one population: abstracts with a known AI role
+checks = json.loads((ROOT / "docs/das_screen_checks_2026-11-06/checks.json").read_text())["keyword_crosstab"]
+cross = {c["year"]: c for c in checks}
+sem = {y: (cross[y]["screen_ai_as_method"], cross[y]["population"]) for y in YEARS}
+kw_share = {y: cross[y]["keyword"] / cross[y]["population"] for y in YEARS}
 fig, ax = plt.subplots(figsize=(6.4, 3.8))
 fig.subplots_adjust(left=0.10, right=0.78, top=0.88, bottom=0.22)
-ax.plot(YEARS, [100 * kw_share[y] for y in YEARS], color=S2, lw=2, marker="o", ms=5, label="Keyword co-occurrence")
+ax.plot(YEARS, [100 * kw_share[y] for y in YEARS], color=S2, lw=2, marker="o", ms=5, label="Keyword")
 ys = [100 * sem[y][0] / sem[y][1] for y in YEARS]
 lo = [100 * wilson(*sem[y])[0] for y in YEARS]; hi = [100 * wilson(*sem[y])[1] for y in YEARS]
 ax.fill_between(YEARS, lo, hi, color=S1, alpha=0.15, lw=0)
 ax.plot(YEARS, ys, color=S1, lw=2, marker="o", ms=5, label="Semantic screen")
-ax.text(2025.12, ys[-1], "Semantic screen:\nAI as a method", color=INK, fontsize=8, va="center")
-ax.text(2025.12, 100 * kw_share[2025], "Keyword: 'machine\nlearning' or 'deep\nlearning' present", color=INK, fontsize=8, va="center")
+ax.text(2025.12, ys[-1] + 1.5, "Semantic screen:\nAI as a method", color=INK, fontsize=8, va="center")
+ax.text(2025.12, 100 * kw_share[2025] - 2.5, "Keyword in title\nor abstract", color=INK, fontsize=8, va="center")
 ax.set_xlim(2019.6, 2025.1); ax.set_ylim(0, 40); ax.set_xticks(YEARS)
-ax.set_ylabel("Percent of DAS papers")
-ax.set_title("Two lenses on AI in DAS papers")
+ax.set_ylabel("Percent of DAS abstracts")
+ax.set_title("Two lenses on AI in DAS papers, same abstracts")
 ax.legend(frameon=False, loc="upper left", fontsize=8)
 finish(fig, "explore_1_keyword_vs_semantic",
-       NOTE + "\nBoth series cover the DAS topic frame. Keyword: frozen 2026-10-21 snapshot, share of all DAS works. Semantic: share of labeled abstracts with a non-unclear AI role, including the few that do not analyze DAS. Band: Wilson 95% (label sampling only, not classifier error).")
+       NOTE + "\nBoth series share one denominator: labeled abstracts with a non-unclear AI role, including the few that do not analyze DAS. Keyword: 'machine learning', 'deep learning' or 'neural network' in title or abstract. Band: Wilson 95% (label sampling only, not classifier error).")
 
 # 2. how the screen labeled each year
 cats = [("ai_as_method", "AI as method", S1), ("ai_as_subject", "AI as subject", S2), ("none", "No AI", S3)]
@@ -137,5 +131,5 @@ for i, (_, v) in enumerate(items):
 ax.set_xlabel("DAS-using papers that also use this measurement family")
 ax.grid(axis="y", visible=False)
 fig.suptitle(f"Measured alongside DAS, in {len(das):,} DAS-using papers", x=0.01, ha="left", fontsize=10, color=INK)
-finish(fig, "explore_4_co_measured_families", NOTE + "\nFamilies from the protocol codebook; the 'other' family is split by a word rule on the model's note. Families seen once are left out.")
+finish(fig, "explore_4_co_measured_families", NOTE + "\nFamilies from the protocol codebook; the 'other' family is split by a word rule on the model's note. Whether fiber temperature counts as a separate family is undecided, so this is not a multimodality measure. Families seen once are left out.")
 print(sorted(p.name for p in OUT.glob("explore_*.png")))

@@ -1,0 +1,50 @@
+[
+ {
+  "name": "openalex_abs_all",
+  "url": "https://api.openalex.org/works?filter=from_publication_date%3A2016-01-01%2Cto_publication_date%3A2025-12-31%2Ctype%3Aarticle%2Chas_abstract%3Atrue&group_by=publication_year&per_page=200",
+  "status": 200,
+  "file": "raw/openalex_abs_all.json",
+  "sha256": "b9de403c11ee61e213b3e903f8e841fd5fc3ceaf13db4a8f2abc54dc5afd6c5c",
+  "retrieved_utc": "2026-11-06T12:39:48+00:00"
+ },
+ {
+  "name": "openalex_abs_earth",
+  "url": "https://api.openalex.org/works?filter=from_publication_date%3A2016-01-01%2Cto_publication_date%3A2025-12-31%2Ctype%3Aarticle%2Chas_abstract%3Atrue%2Cprimary_topic.field.id%3Afields%2F19%7Cfields%2F23&group_by=publication_year&per_page=200",
+  "status": 200,
+  "file": "raw/openalex_abs_earth.json",
+  "sha256": "82202c55533acc170c184e9738b0a4d9db678cdea09a2e1499b394a7b38628ac",
+  "retrieved_utc": "2026-11-06T12:39:49+00:00"
+ },
+ {
+  "name": "openalex_abs_ml_all",
+  "url": "https://api.openalex.org/works?filter=from_publication_date%3A2016-01-01%2Cto_publication_date%3A2025-12-31%2Ctype%3Aarticle%2Chas_abstract%3Atrue%2Ctitle_and_abstract.search%3A%28%22machine+learning%22+OR+%22deep+learning%22+OR+%22neural+network%22%29&group_by=publication_year&per_page=200",
+  "status": 200,
+  "file": "raw/openalex_abs_ml_all.json",
+  "sha256": "10383a7440ea25095c4fe2688cf3e4c819ee3fb52b74e5308a4774c3370f0864",
+  "retrieved_utc": "2026-11-06T12:39:50+00:00"
+ },
+ {
+  "name": "openalex_abs_ml_earth",
+  "url": "https://api.openalex.org/works?filter=from_publication_date%3A2016-01-01%2Cto_publication_date%3A2025-12-31%2Ctype%3Aarticle%2Chas_abstract%3Atrue%2Cprimary_topic.field.id%3Afields%2F19%7Cfields%2F23%2Ctitle_and_abstract.search%3A%28%22machine+learning%22+OR+%22deep+learning%22+OR+%22neural+network%22%29&group_by=publication_year&per_page=200",
+  "status": 200,
+  "file": "raw/openalex_abs_ml_earth.json",
+  "sha256": "993b917050d9721a7972440a171821b3e2ce3b16064c989840435bf559978e2f",
+  "retrieved_utc": "2026-11-06T12:39:52+00:00"
+ },
+ {
+  "name": "openalex_abs_sub",
+  "url": "https://api.openalex.org/works?filter=from_publication_date%3A2023-01-01%2Cto_publication_date%3A2025-12-31%2Ctype%3Aarticle%2Chas_abstract%3Atrue%2Cprimary_topic.field.id%3Afields%2F19%7Cfields%2F23&group_by=primary_topic.subfield.id&per_page=200",
+  "status": 200,
+  "file": "raw/openalex_abs_sub.json",
+  "sha256": "8dd3eef73a7ccf557ddcbf641fa8fc681d6eb5ab3556f0694823ba366e8991ab",
+  "retrieved_utc": "2026-11-06T12:39:54+00:00"
+ },
+ {
+  "name": "openalex_abs_sub_ml",
+  "url": "https://api.openalex.org/works?filter=from_publication_date%3A2023-01-01%2Cto_publication_date%3A2025-12-31%2Ctype%3Aarticle%2Chas_abstract%3Atrue%2Cprimary_topic.field.id%3Afields%2F19%7Cfields%2F23%2Ctitle_and_abstract.search%3A%28%22machine+learning%22+OR+%22deep+learning%22+OR+%22neural+network%22%29&group_by=primary_topic.subfield.id&per_page=200",
+  "status": 200,
+  "file": "raw/openalex_abs_sub_ml.json",
+  "sha256": "3d8cb14a1ccd5d8ad69bfa62532c4e3abdda545644817a62c62e5d451373325f",
+  "retrieved_utc": "2026-11-06T12:39:55+00:00"
+ }
+]

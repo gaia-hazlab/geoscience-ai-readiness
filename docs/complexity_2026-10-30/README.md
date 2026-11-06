@@ -82,7 +82,8 @@ The table records each convention as stated and converts none. Figure 1 draws on
 | Tested, power law favored | 4 | southern California seismic moment (Corral & González 2019); southern California b (Sornette et al. 1996); rockfall volumes (Dussauge et al. 2003); tropical cyclone power dissipation (Corral & González 2019) |
 | Tested, mixed result | 4 | global Centroid Moment Tensor (CMT) moment, double power law; Omori-Utsu p (Utsu et al. 1995); landslide areas, double Pareto (Stark & Hovius 2001); Canadian wildfires |
 | Tested, alternative favored or equally good | 5 | California earthquake amplitudes and US wildfires (Clauset 2009); global moment, tapered Pareto (Kagan 2010); global b with two regimes (Sornette 1996); Angola wildfires, truncated lognormal |
-| Not tested in that source | 11 | landslide areas (Malamud 2004, Guzzetti 2002), Hack's law, drainage area, flood peaks, eruption sizes (Papale 2018, KS fit only), US and Australian wildfires (Malamud 1998), coastlines |
+| Read in full text, no test | 7 | Omori-Utsu southern California (Utsu 1995), Hack's law (two rows), drainage area, eruption sizes (Papale 2018, KS fit only), US and Australian wildfires (Malamud 1998), coastlines |
+| Abstract or snippet only, no test stated | 4 | landslide areas (Malamud 2004, Guzzetti 2002), flood peaks (Malamud & Turcotte 2006), b-value variability (El-Isa & Eaton 2014) |
 
 Selected values. All are in `power_laws.json`, with conventions.
 
@@ -107,7 +108,8 @@ VEI is the Volcanic Explosivity Index.
 
 **What it cannot claim.**
 - How many geoscience observables are heavy tailed in general. The table is a purposive sample, not a census.
-- That the 11 untested rows would fail a test.
+- That the 11 rows without a seen test would fail one, or that the 4 read only in part were never tested.
+- A rate of favorable verdicts: the 13 tested rows use different tests (listed in section 6 of the report).
 - Any comparison of exponents across conventions.
 
 **Not found.**

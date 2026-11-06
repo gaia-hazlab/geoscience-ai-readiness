@@ -1,0 +1,338 @@
+{
+ "status": "No check here is a validation. Human coding of the 130-abstract sample remains undone.",
+ "keyword_definition": "machine[- ]learning|deep[- ]learning|neural[- ]network",
+ "first_batch": {
+  "batch_id": "msgbatch_01HdBu5onQdhwxu6adW2ZjqL",
+  "usd_total": 4.4849,
+  "model": "claude-opus-5-5",
+  "prompt_sha256": "fea5a7ace5f4c907777f65c098a1504b003934299ef8efb8fa13199f29ba16cf",
+  "screen_semantic_sha256": "1323610c9d75055edc688a8662d2c4b0c951baabafff864973d5d3b517ff150f"
+ },
+ "second_batch": {
+  "batch_id": "msgbatch_01K4bnZbSjUVPqLqgAyxp174",
+  "usd_total": 4.4573,
+  "model": "claude-opus-5-5",
+  "prompt_sha256": "fea5a7ace5f4c907777f65c098a1504b003934299ef8efb8fa13199f29ba16cf",
+  "screen_semantic_sha256": "7b676605416f14e618a995e3dc49737e944e8f13c9eb9f481775df2afe5b6bd6"
+ },
+ "keyword_crosstab": [
+  {
+   "year": 2020,
+   "population": 99,
+   "keyword": 16,
+   "screen_ai_as_method": 15,
+   "both": 13,
+   "keyword_only": 3,
+   "screen_only": 2,
+   "neither": 81,
+   "keyword_percent": 16.161616161616163,
+   "screen_percent": 15.151515151515152
+  },
+  {
+   "year": 2021,
+   "population": 127,
+   "keyword": 16,
+   "screen_ai_as_method": 18,
+   "both": 13,
+   "keyword_only": 3,
+   "screen_only": 5,
+   "neither": 106,
+   "keyword_percent": 12.598425196850394,
+   "screen_percent": 14.173228346456693
+  },
+  {
+   "year": 2022,
+   "population": 175,
+   "keyword": 28,
+   "screen_ai_as_method": 28,
+   "both": 24,
+   "keyword_only": 4,
+   "screen_only": 4,
+   "neither": 143,
+   "keyword_percent": 16.0,
+   "screen_percent": 16.0
+  },
+  {
+   "year": 2023,
+   "population": 208,
+   "keyword": 39,
+   "screen_ai_as_method": 43,
+   "both": 33,
+   "keyword_only": 6,
+   "screen_only": 10,
+   "neither": 159,
+   "keyword_percent": 18.75,
+   "screen_percent": 20.673076923076923
+  },
+  {
+   "year": 2024,
+   "population": 275,
+   "keyword": 48,
+   "screen_ai_as_method": 60,
+   "both": 44,
+   "keyword_only": 4,
+   "screen_only": 16,
+   "neither": 211,
+   "keyword_percent": 17.454545454545453,
+   "screen_percent": 21.818181818181817
+  },
+  {
+   "year": 2025,
+   "population": 370,
+   "keyword": 80,
+   "screen_ai_as_method": 96,
+   "both": 69,
+   "keyword_only": 11,
+   "screen_only": 27,
+   "neither": 263,
+   "keyword_percent": 21.62162162162162,
+   "screen_percent": 25.945945945945947
+  }
+ ],
+ "bounds": [
+  {
+   "year": 2020,
+   "works": 118,
+   "das_used_no": 7,
+   "known": 85,
+   "unknown": 26,
+   "ai_as_method": 13,
+   "point_percent": 15.294117647058824,
+   "lower_percent": 11.711711711711711,
+   "upper_percent": 35.13513513513514
+  },
+  {
+   "year": 2021,
+   "works": 137,
+   "das_used_no": 17,
+   "known": 98,
+   "unknown": 22,
+   "ai_as_method": 16,
+   "point_percent": 16.3265306122449,
+   "lower_percent": 13.333333333333334,
+   "upper_percent": 31.666666666666668
+  },
+  {
+   "year": 2022,
+   "works": 193,
+   "das_used_no": 16,
+   "known": 142,
+   "unknown": 35,
+   "ai_as_method": 26,
+   "point_percent": 18.309859154929576,
+   "lower_percent": 14.689265536723164,
+   "upper_percent": 34.463276836158194
+  },
+  {
+   "year": 2023,
+   "works": 238,
+   "das_used_no": 13,
+   "known": 186,
+   "unknown": 39,
+   "ai_as_method": 42,
+   "point_percent": 22.580645161290324,
+   "lower_percent": 18.666666666666668,
+   "upper_percent": 36.0
+  },
+  {
+   "year": 2024,
+   "works": 312,
+   "das_used_no": 16,
+   "known": 243,
+   "unknown": 53,
+   "ai_as_method": 59,
+   "point_percent": 24.279835390946502,
+   "lower_percent": 19.93243243243243,
+   "upper_percent": 37.83783783783784
+  },
+  {
+   "year": 2025,
+   "works": 425,
+   "das_used_no": 26,
+   "known": 325,
+   "unknown": 74,
+   "ai_as_method": 93,
+   "point_percent": 28.615384615384617,
+   "lower_percent": 23.30827067669173,
+   "upper_percent": 41.854636591478695
+  }
+ ],
+ "retest": {
+  "papers_compared": 1260,
+  "ai_role": {
+   "agree": 1255,
+   "percent_agree": 99.60317460317461,
+   "cohen_kappa": 0.9894558904751545
+  },
+  "das_used": {
+   "agree": 1245,
+   "percent_agree": 98.80952380952381,
+   "cohen_kappa": 0.9534442624364171
+  },
+  "ai_as_method_flips": 1,
+  "by_year": [
+   {
+    "year": 2020,
+    "first": {
+     "works": 118,
+     "das_used_no": 7,
+     "known": 85,
+     "unknown": 26,
+     "ai_as_method": 13,
+     "point_percent": 15.294117647058824,
+     "lower_percent": 11.711711711711711,
+     "upper_percent": 35.13513513513514
+    },
+    "second": {
+     "works": 118,
+     "das_used_no": 8,
+     "known": 86,
+     "unknown": 24,
+     "ai_as_method": 13,
+     "point_percent": 15.116279069767442,
+     "lower_percent": 11.818181818181818,
+     "upper_percent": 33.63636363636363
+    }
+   },
+   {
+    "year": 2021,
+    "first": {
+     "works": 137,
+     "das_used_no": 17,
+     "known": 98,
+     "unknown": 22,
+     "ai_as_method": 16,
+     "point_percent": 16.3265306122449,
+     "lower_percent": 13.333333333333334,
+     "upper_percent": 31.666666666666668
+    },
+    "second": {
+     "works": 137,
+     "das_used_no": 17,
+     "known": 97,
+     "unknown": 23,
+     "ai_as_method": 15,
+     "point_percent": 15.463917525773196,
+     "lower_percent": 12.5,
+     "upper_percent": 31.666666666666668
+    }
+   },
+   {
+    "year": 2022,
+    "first": {
+     "works": 193,
+     "das_used_no": 16,
+     "known": 142,
+     "unknown": 35,
+     "ai_as_method": 26,
+     "point_percent": 18.309859154929576,
+     "lower_percent": 14.689265536723164,
+     "upper_percent": 34.463276836158194
+    },
+    "second": {
+     "works": 193,
+     "das_used_no": 16,
+     "known": 142,
+     "unknown": 35,
+     "ai_as_method": 26,
+     "point_percent": 18.309859154929576,
+     "lower_percent": 14.689265536723164,
+     "upper_percent": 34.463276836158194
+    }
+   },
+   {
+    "year": 2023,
+    "first": {
+     "works": 238,
+     "das_used_no": 13,
+     "known": 186,
+     "unknown": 39,
+     "ai_as_method": 42,
+     "point_percent": 22.580645161290324,
+     "lower_percent": 18.666666666666668,
+     "upper_percent": 36.0
+    },
+    "second": {
+     "works": 238,
+     "das_used_no": 12,
+     "known": 189,
+     "unknown": 37,
+     "ai_as_method": 43,
+     "point_percent": 22.75132275132275,
+     "lower_percent": 19.02654867256637,
+     "upper_percent": 35.39823008849557
+    }
+   },
+   {
+    "year": 2024,
+    "first": {
+     "works": 312,
+     "das_used_no": 16,
+     "known": 243,
+     "unknown": 53,
+     "ai_as_method": 59,
+     "point_percent": 24.279835390946502,
+     "lower_percent": 19.93243243243243,
+     "upper_percent": 37.83783783783784
+    },
+    "second": {
+     "works": 312,
+     "das_used_no": 16,
+     "known": 242,
+     "unknown": 54,
+     "ai_as_method": 59,
+     "point_percent": 24.380165289256198,
+     "lower_percent": 19.93243243243243,
+     "upper_percent": 38.17567567567568
+    }
+   },
+   {
+    "year": 2025,
+    "first": {
+     "works": 425,
+     "das_used_no": 26,
+     "known": 325,
+     "unknown": 74,
+     "ai_as_method": 93,
+     "point_percent": 28.615384615384617,
+     "lower_percent": 23.30827067669173,
+     "upper_percent": 41.854636591478695
+    },
+    "second": {
+     "works": 425,
+     "das_used_no": 24,
+     "known": 324,
+     "unknown": 77,
+     "ai_as_method": 92,
+     "point_percent": 28.395061728395063,
+     "lower_percent": 22.942643391521198,
+     "upper_percent": 42.14463840399002
+    }
+   }
+  ]
+ },
+ "frame_drift": {
+  "first_harvest": "2026-10-29",
+  "second_harvest": "2026-11-06",
+  "first_works": 1423,
+  "second_works": 1412,
+  "added": 1,
+  "removed": 12,
+  "removed_by_year": {
+   "2020": 1,
+   "2022": 3,
+   "2023": 2,
+   "2024": 1,
+   "2025": 5
+  },
+  "second_by_year": {
+   "2020": 117,
+   "2021": 137,
+   "2022": 193,
+   "2023": 234,
+   "2024": 311,
+   "2025": 420
+  }
+ },
+ "duplicate_doi_note": "OpenAlex lists W4281491833 and W4291158743 under one DOI (10.1029/2022gl098727). The harvester merges them, so 2022 has 193 works against an OpenAlex count of 194."
+}
