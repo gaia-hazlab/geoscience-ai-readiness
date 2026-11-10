@@ -1,5 +1,10 @@
 # Unreleased — 2026-11-06
 
+- Review fixes, 2026-11-10 (Copilot review of PR 4): the OpenAlex key is joined with `?` when a
+  URL has no query string (`with_key`); `das_screen_checks.py` returns None instead of dividing
+  by zero on empty inputs and counts screen rows with no harvested text
+  (`screen_rows_without_text`, 0 in every year) instead of raising KeyError; the
+  `ml_share_abstract_counts.py` docstring states the optional key. Frozen DAS numbers unchanged.
 - Archive shares: curated benchmarks and whole-record copies are separate
   (`analysis_ready_copies.json`). Row labels now name their denominators, and benchmarks
   are matched to them. Seismology uses the 1.3 PB of EarthScope, NCEDC and SCEDC data in

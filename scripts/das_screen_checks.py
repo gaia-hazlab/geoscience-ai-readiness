@@ -65,14 +65,16 @@ def keyword_crosstab(works, screen):
     text = {w["id"]: f'{w.get("title") or ""} {abstract_text(w.get("abstract_inverted_index"))}' for w in works}
     out = []
     for year in YEARS:
-        group = [r for r in screen if r["year"] == year and r["status"] == "labeled" and r["ai_role"] != "unclear"]
+        labeled = [r for r in screen if r["year"] == year and r["status"] == "labeled" and r["ai_role"] != "unclear"]
+        group = [r for r in labeled if r["paper_id"] in text]
         tab = Counter()
         for r in group:
             tab[(bool(KEYWORD.search(text[r["paper_id"]])), r["ai_role"] == "ai_as_method")] += 1
         n = len(group)
-        out.append({"year": year, "population": n, "keyword": tab[(True, True)] + tab[(True, False)], "screen_ai_as_method": tab[(True, True)] + tab[(False, True)],
+        out.append({"year": year, "population": n, "screen_rows_without_text": len(labeled) - n, "keyword": tab[(True, True)] + tab[(True, False)], "screen_ai_as_method": tab[(True, True)] + tab[(False, True)],
                     "both": tab[(True, True)], "keyword_only": tab[(True, False)], "screen_only": tab[(False, True)], "neither": tab[(False, False)],
-                    "keyword_percent": 100 * (tab[(True, True)] + tab[(True, False)]) / n, "screen_percent": 100 * (tab[(True, True)] + tab[(False, True)]) / n})
+                    "keyword_percent": 100 * (tab[(True, True)] + tab[(True, False)]) / n if n else None,
+                    "screen_percent": 100 * (tab[(True, True)] + tab[(False, True)]) / n if n else None})
     return out
 
 
@@ -82,7 +84,7 @@ def retest(first, second):
     result = {"papers_compared": len(both)}
     for field in ("ai_role", "das_used"):
         x, y = [a[p][field] for p in both], [b[p][field] for p in both]
-        result[field] = {"agree": sum(i == j for i, j in zip(x, y)), "percent_agree": 100 * sum(i == j for i, j in zip(x, y)) / len(both),
+        result[field] = {"agree": sum(i == j for i, j in zip(x, y)), "percent_agree": 100 * sum(i == j for i, j in zip(x, y)) / len(both) if both else None,
                          "cohen_kappa": cohen_kappa(x, y)}
     method = lambda r: r["ai_role"] == "ai_as_method"
     result["ai_as_method_flips"] = sum(method(a[p]) != method(b[p]) for p in both)

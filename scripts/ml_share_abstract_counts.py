@@ -6,7 +6,8 @@ Usage: python scripts/ml_share_abstract_counts.py --out runs/ml_share_abstract_<
 The original rate (platform_counts.json) divides title-or-abstract ML matches by all articles, including
 articles with no abstract to search. The share of articles with an abstract differs between fields, so that
 denominator does not match the numerator. This script requests numerator and denominator together in one run,
-both filtered to has_abstract:true. Read-only, no key. --publish copies the counts to docs/archive_readiness_2026-10-30/.
+both filtered to has_abstract:true. Read-only. Requests go through platform_readiness_counts.Collector, which adds
+OPENALEX_API_KEY to OpenAlex requests when that variable is set; receipts record the URL without the key. --publish copies the counts to docs/archive_readiness_2026-10-30/.
 """
 from __future__ import annotations
 

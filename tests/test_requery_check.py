@@ -81,6 +81,13 @@ class CollectorTests(unittest.TestCase):
             self.assertEqual(receipt["status"], 200)
             self.assertEqual(Path(temporary, receipt["file"]).read_bytes(), body)
 
+    def test_key_joins_a_url_with_or_without_a_query_string(self):
+        w = self.pc.with_key
+        self.assertEqual(w("https://api.openalex.org/works?filter=x", "k"), "https://api.openalex.org/works?filter=x&api_key=k")
+        self.assertEqual(w("https://api.openalex.org/works/W1", "k"), "https://api.openalex.org/works/W1?api_key=k")
+        self.assertEqual(w("https://api.datacite.org/dois?x=1", "k"), "https://api.datacite.org/dois?x=1")
+        self.assertEqual(w("https://api.openalex.org/works?filter=x", None), "https://api.openalex.org/works?filter=x")
+
     def test_api_key_reaches_openalex_but_never_a_receipt(self):
         seen = []
         class Response:
