@@ -67,6 +67,13 @@ OPENALEX_FIELDS = {"earth_planetary": "fields/19", "environmental": "fields/23"}
 YEARS = list(range(2016, 2026))
 
 
+def with_key(url: str, key: str | None) -> str:
+    """Add the OpenAlex key to an OpenAlex request URL only; the returned URL is never written to a receipt."""
+    if not key or not url.startswith("https://api.openalex.org/"):
+        return url
+    return url + ("&" if "?" in url else "?") + urlencode({"api_key": key})
+
+
 class Collector:
     def __init__(self, out: Path):
         self.out = out
@@ -76,7 +83,7 @@ class Collector:
     def get(self, name: str, url: str, sleep: float = 0.4):
         time.sleep(sleep)
         key = os.environ.get("OPENALEX_API_KEY")
-        request_url = url + "&" + urlencode({"api_key": key}) if key and url.startswith("https://api.openalex.org/") else url
+        request_url = with_key(url, key)
         try:
             with urlopen(Request(request_url, headers={"User-Agent": UA}), timeout=60) as response:
                 body = response.read()

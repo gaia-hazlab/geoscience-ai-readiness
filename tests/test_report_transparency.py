@@ -112,6 +112,22 @@ class DasCheckTests(unittest.TestCase):
         self.assertAlmostEqual(self.checks.cohen_kappa(["a", "b", "a", "b"], ["a", "b", "a", "b"]), 1.0)
         self.assertAlmostEqual(self.checks.cohen_kappa(["a", "a", "b", "b"], ["a", "b", "a", "b"]), 0.0)
 
+    def test_empty_inputs_return_none_instead_of_dividing_by_zero(self):
+        rows = self.checks.keyword_crosstab([], [])
+        self.assertTrue(all(r["population"] == 0 and r["keyword_percent"] is None for r in rows))
+        r = self.checks.retest([], [])
+        self.assertEqual(r["papers_compared"], 0)
+        self.assertIsNone(r["ai_role"]["percent_agree"])
+
+    def test_screen_rows_without_text_are_counted_not_crashed_on(self):
+        year = self.checks.YEARS[0]
+        screen = [{"paper_id": "W1", "year": year, "status": "labeled", "ai_role": "none"}]
+        row = next(r for r in self.checks.keyword_crosstab([], screen) if r["year"] == year)
+        self.assertEqual((row["population"], row["screen_rows_without_text"]), (0, 1))
+
+    def test_frozen_crosstab_lost_no_screen_rows(self):
+        self.assertTrue(all(c["screen_rows_without_text"] == 0 for c in self.frozen["keyword_crosstab"]))
+
     def test_checks_file_holds_no_abstract_text(self):
         self.assertNotIn("abstract_inverted_index", json.dumps(self.frozen))
 

@@ -19,6 +19,7 @@
   {
    "year": 2020,
    "population": 99,
+   "screen_rows_without_text": 0,
    "keyword": 16,
    "screen_ai_as_method": 15,
    "both": 13,
@@ -31,6 +32,7 @@
   {
    "year": 2021,
    "population": 127,
+   "screen_rows_without_text": 0,
    "keyword": 16,
    "screen_ai_as_method": 18,
    "both": 13,
@@ -43,6 +45,7 @@
   {
    "year": 2022,
    "population": 175,
+   "screen_rows_without_text": 0,
    "keyword": 28,
    "screen_ai_as_method": 28,
    "both": 24,
@@ -55,6 +58,7 @@
   {
    "year": 2023,
    "population": 208,
+   "screen_rows_without_text": 0,
    "keyword": 39,
    "screen_ai_as_method": 43,
    "both": 33,
@@ -67,6 +71,7 @@
   {
    "year": 2024,
    "population": 275,
+   "screen_rows_without_text": 0,
    "keyword": 48,
    "screen_ai_as_method": 60,
    "both": 44,
@@ -79,6 +84,7 @@
   {
    "year": 2025,
    "population": 370,
+   "screen_rows_without_text": 0,
    "keyword": 80,
    "screen_ai_as_method": 96,
    "both": 69,
